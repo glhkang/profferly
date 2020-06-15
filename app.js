@@ -16,6 +16,9 @@ mongoose
 
 app.get("/", (req, res) => res.send("Hello World"));
 
+
+
+
 app.get("/logout", function (req, res) {
   req.logout();
   res.redirect("/");
