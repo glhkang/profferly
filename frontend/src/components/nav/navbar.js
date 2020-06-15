@@ -1,8 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-// import "./navbar.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './navbar.css';
 
 class NavBar extends React.Component {
+debugger
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
@@ -19,17 +20,17 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div>
-          <Link to={"/"}>Test Link</Link>
-          <Link to={"/"}>Test Link</Link>
-          <Link to={"/"}>Test Link</Link>
+          <Link to={'/'}>Random</Link>
+          <Link to={'/'}>Random</Link>
+          <Link to={'/'}>Random</Link>
           <button onClick={this.logoutUser}>Logout</button>
         </div>
       );
     } else {
       return (
         <div>
-          <Link to={"/signup"}>Signup</Link>
-          <Link to={"/login"}>Login</Link>
+          <Link to={'/signup'}>Signup</Link>
+          <Link to={'/login'}>Login</Link>
         </div>
       );
     }
@@ -38,7 +39,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <div>
-        <h1>profferly</h1>
+        <h1>Chirper</h1>
         {this.getLinks()}
       </div>
     );
