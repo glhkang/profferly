@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import "./session_form.css";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -41,7 +42,7 @@ debugger
     };
   debugger
     
-    this.props.login(user); 
+    this.props.session(user); 
   }
 
   // Render the session errors if there are any
@@ -60,22 +61,34 @@ debugger
   render() {
 debugger
     return (
-      <div>
+      <div className="session-form-container">
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <div className="session-form">
+            <h3>Welcome Back to Profferly!</h3>
+              <label
+                className="session-form-label">Email
+              <br/>
               <input type="text"
+                className="session-form-field"
                 value={this.state.email}
                 onChange={this.update('email')}
                 placeholder="Email"
               />
-            <br/>
+              </label>
+            
+              <label className="session-form-label">Password
+              <br/>
               <input type="password"
+              className="session-form-field"
                 value={this.state.password}
                 onChange={this.update('password')}
                 placeholder="Password"
               />
-            <br/>
-            <input type="submit" value="Submit" />
+              </label>
+  
+            <input 
+              className="session-button"
+              type="submit" value="Submit" />
             {this.renderErrors()}
           </div>
         </form>
