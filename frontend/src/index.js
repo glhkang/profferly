@@ -10,12 +10,21 @@ import jwt_decode from "jwt-decode";
 
 import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
+import * as PostAction from "./actions/post_actions";
 
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
+  // let store = configureStore();
+  // window.state = store.getState;
+  // window.dispatch = store.dispatch;
+  // window.fetchPosts = PostAction.fetchPosts;
+  // window.fetchPost = PostAction.fetchPost;
+  // window.removePost = PostAction.removePost;
+  // window.composePost = PostAction.composePost;
+  // window.fetchUserPosts = PostAction.fetchUserPosts;
 
   if (localStorage.jwtToken) {
     setAuthToken(localStorage.jwtToken);
