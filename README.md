@@ -63,11 +63,13 @@ Allowing seamless user journey through UX/UI design.
 
 ### Day 2
 - Build newsfeed (user’s show page) and ability to submit a post and or picture
+- Set up AWS
+- User’s show pages/uploading pics (newsfeed - comments, pics, posts)
 - Styling for newsfeed
-User’s show pages/uploading pics (newsfeed - comments, pics, posts)
 
 ### Day 3
 - Build ability to comment on newsfeed
+- Set up Google Maps API
 - Complete styling for newsfeed
 - Discuss current state of progress
 
