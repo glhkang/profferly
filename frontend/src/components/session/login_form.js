@@ -1,10 +1,11 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import "./session_form.css";
 
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
-
+debugger
     this.state = {
       email: '',
       password: '',
@@ -35,13 +36,13 @@ class LoginForm extends React.Component {
   // Handle form submission
   handleSubmit(e) {
     e.preventDefault();
-
     let user = {
       email: this.state.email,
       password: this.state.password
     };
-
-    this.props.login(user); 
+  debugger
+    
+    this.props.session(user); 
   }
 
   // Render the session errors if there are any
@@ -58,23 +59,36 @@ class LoginForm extends React.Component {
   }
 
   render() {
+debugger
     return (
-      <div>
+      <div className="session-form-container">
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <div className="session-form">
+            <h3>Welcome Back to Profferly!</h3>
+              <label
+                className="session-form-label">Email
+              <br/>
               <input type="text"
+                className="session-form-field"
                 value={this.state.email}
                 onChange={this.update('email')}
                 placeholder="Email"
               />
-            <br/>
+              </label>
+            
+              <label className="session-form-label">Password
+              <br/>
               <input type="password"
+              className="session-form-field"
                 value={this.state.password}
                 onChange={this.update('password')}
                 placeholder="Password"
               />
-            <br/>
-            <input type="submit" value="Submit" />
+              </label>
+  
+            <input 
+              className="session-button"
+              type="submit" value="Submit" />
             {this.renderErrors()}
           </div>
         </form>

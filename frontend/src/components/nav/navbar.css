@@ -1,4 +1,4 @@
-.NavBar {
+/* .nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -18,4 +18,75 @@
     width: 400px;
     display: flex;
     justify-content: space-between;
+} */
+
+.body {
+    margin: auto;
+}
+
+.navbar-main {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #455078;
+}
+
+.navbar-left-holder {
+    color: none;
+    width: 120px;
+}
+
+.navbar-logo {
+    color: whitesmoke;
+}
+
+.navbar-menu {
+    font-size: 12.5px;
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    width: 120px;
+    padding: 10px;
+}
+
+.navbar-menu a:link {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.navbar-menu a:hover {
+    color: whitesmoke;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-menu a:active {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.navbar-menu a:visited {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.navbar-logo a:link {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.navbar-logo a:hover {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.navbar-logo a:visited {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.navbar-logo a:active {
+    color: whitesmoke;
+    text-decoration: none;
 }

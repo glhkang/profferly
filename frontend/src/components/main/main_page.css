@@ -1,0 +1,35 @@
+
+
+.mainpage-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    height: 100vh;
+}
+
+.mainpage-index {
+    padding: 15px;
+    font-size: 6px;
+    font-weight: regular;
+    background-color: whitesmoke;
+    height: 90%;
+    width: 60%;
+    border: solid 1px black;
+    margin-left: 5%;
+    margin-right: 5px;
+    border-radius: 20px;
+}
+
+.mainpage-side {
+    padding: 15px;
+    font-weight: regular;
+    font-size: 6px;
+    background-color: whitesmoke;
+    height: 90%;
+    width: 30%;
+    border: solid 1px black;
+    margin-right: 5%;
+    margin-left: 5px;
+    border-radius: 20px;
+}

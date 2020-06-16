@@ -19,7 +19,7 @@ debugger
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div>
+        <div className="navbar-menu">
           <Link to={'/'}>Random</Link>
           <Link to={'/'}>Random</Link>
           <Link to={'/'}>Random</Link>
@@ -28,7 +28,7 @@ debugger
       );
     } else {
       return (
-        <div>
+        <div className="navbar-menu">
           <Link to={'/signup'}>Signup</Link>
           <Link to={'/login'}>Login</Link>
         </div>
@@ -38,8 +38,9 @@ debugger
 
   render() {
     return (
-      <div>
-        <h1>Chirper</h1>
+      <div className="navbar-main">
+        <div className="navbar-left-holder"></div>
+        <h1 className="navbar-logo"><Link to={'/'}>Profferly</Link></h1>
         {this.getLinks()}
       </div>
     );
