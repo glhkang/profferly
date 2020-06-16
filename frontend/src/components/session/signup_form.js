@@ -6,9 +6,9 @@ class SignupForm extends React.Component {
     super(props);
     this.state = {
       email: '',
-      handle: '',
+      username: '',
       password: '',
-      password2: '',
+      // password2: '',
       errors: {}
     };
 
@@ -34,7 +34,7 @@ class SignupForm extends React.Component {
     e.preventDefault();
     let user = {
       email: this.state.email,
-      handle: this.state.handle,
+      username: this.state.username,
       password: this.state.password,
       password2: this.state.password2
     };
@@ -55,6 +55,7 @@ class SignupForm extends React.Component {
   }
 
   render() {
+  debugger
     return (
       <div className="signup-form-container">
         <form onSubmit={this.handleSubmit}>
@@ -67,9 +68,9 @@ class SignupForm extends React.Component {
               />
             <br/>
               <input type="text"
-                value={this.state.handle}
-                onChange={this.update('handle')}
-                placeholder="Handle"
+                value={this.state.username}
+                onChange={this.update('username')}
+                placeholder="Username"
               />
             <br/>
               <input type="password"
@@ -77,12 +78,12 @@ class SignupForm extends React.Component {
                 onChange={this.update('password')}
                 placeholder="Password"
               />
-            <br/>
+            {/* <br/>
               <input type="password"
                 value={this.state.password2}
                 onChange={this.update('password2')}
                 placeholder="Confirm Password"
-              />
+              /> */}
             <br/>
             <input type="submit" value="Submit" />
             {this.renderErrors()}
