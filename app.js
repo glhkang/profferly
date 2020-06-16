@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const path = require("path");
+require("dotenv").config();
 
 const users = require("./routes/api/users");
 const posts = require("./routes/api/posts");
