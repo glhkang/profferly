@@ -19,7 +19,7 @@ class SignupForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
-      this.props.history.push('/tweets');
+      this.props.history.push('/');
     }
 
     this.setState({errors: nextProps.errors})
@@ -56,7 +56,7 @@ class SignupForm extends React.Component {
   }
 
   render() {
-  debugger
+  //debugger
     return (
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit}>

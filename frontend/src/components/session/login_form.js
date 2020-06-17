@@ -5,7 +5,7 @@ import "./session_form.css";
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
-debugger
+//debugger
     this.state = {
       email: '',
       password: '',
@@ -16,10 +16,11 @@ debugger
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  // Once the user has been authenticated, redirect to the Tweets page
+  // Once the user has been authenticated, redirect to the Tweets page. /TWEETS was edited below
+  
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/tweets');
+      this.props.history.push('/');
     }
 
     // Set or clear errors
@@ -40,9 +41,9 @@ debugger
       email: this.state.email,
       password: this.state.password
     };
-  debugger
+  //debugger
     
-    this.props.session(user); 
+    this.props.login(user); 
   }
 
   // Render the session errors if there are any
@@ -50,7 +51,8 @@ debugger
     return(
       <ul>
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
+          <li key={`error-${i}`}
+            className="session-errors">
             {this.state.errors[error]}
           </li>
         ))}
@@ -59,7 +61,7 @@ debugger
   }
 
   render() {
-debugger
+//debugger
     return (
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit}>

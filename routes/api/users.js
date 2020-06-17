@@ -27,11 +27,11 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
-debugger
+//debugger
   if (!isValid) {
     return res.status(400).json(errors);
   }
-debugger
+//debugger
   User.findOne({ username: req.body.username }).then((user) => {
     if (user) {
       errors.username = "This username is taken!";
@@ -73,14 +73,14 @@ debugger
 
 router.post("/login", (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
-debugger
+//debugger
   if (!isValid) {
     return res.status(400).json(errors);
   }
 
   const email = req.body.email;
   const password = req.body.password;
-debugger
+//debugger
   User.findOne({ email }).then((user) => {
     if (!user) {
       errors.email = "An account with this email does not exist!";
@@ -112,14 +112,14 @@ debugger
 
 // router.post("/login", (req, res) => {
 //   const { errors, isValid } = validateLoginInput(req.body);
-// debugger
+// //debugger
 //   if (!isValid) {
 //     return res.status(400).json(errors);
 //   }
 
 //   const username = req.body.username;
 //   const password = req.body.password;
-// debugger
+// //debugger
 //   User.findOne({ username }).then((user) => {
 //     if (!user) {
 //       errors.username = "An account with this username does not exist!";

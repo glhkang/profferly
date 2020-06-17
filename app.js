@@ -10,7 +10,7 @@ const path = require("path");
 const users = require("./routes/api/users");
 const posts = require("./routes/api/posts");
 
-
+//below for heroku
 app.use("/", express.static(path.join(__dirname, "/client/build")));
 
 mongoose
@@ -55,6 +55,7 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client/build", "index.html"));
-});
+//below for heroku
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "/client/build", "index.html"));
+// });
