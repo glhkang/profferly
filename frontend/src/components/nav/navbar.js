@@ -19,11 +19,8 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div className="navbar-menu">
-          <Link to={'/'}>Random</Link>
-          <Link to={'/'}>Random</Link>
-          <Link to={'/'}>Random</Link>
-          <button className="logout-button" onClick={this.logoutUser}>Logout</button>
+        <div>
+          <button onClick={this.logoutUser}>Logout</button>
         </div>
       );
     } else {

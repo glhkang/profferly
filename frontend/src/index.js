@@ -1,18 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/app';
 import Root from './components/root';
-// import * as serviceWorker from './serviceWorker';
-import axios from 'axios';
 import configureStore from './store/store';
 import jwt_decode from "jwt-decode";
 
 import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
-
-
-// ReactDOM.render(<App />, document.getElementById('root'));
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -39,13 +33,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ReactDOM.render(<Root store={store} />, root);
 });
-
-//testing
-// window.axios = axios;
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-// serviceWorker.unregister();
-
-// 

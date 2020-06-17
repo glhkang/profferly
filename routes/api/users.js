@@ -16,13 +16,19 @@ const validateLoginInput = require("../../validation/login");
 
 // router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
-router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
-  res.json({
-    id: req.user.id,
-    username: req.user.username,
-    email: req.user.email
-  });
-})
+router.get(
+  "/current",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    res.json({
+      id: req.user.id,
+      // fname: req.user.fname,
+      // lname: req.user.lname,
+      username: req.user.username,
+      email: req.user.email,
+    });
+  }
+);
 
 
 router.post("/register", (req, res) => {
@@ -39,6 +45,8 @@ router.post("/register", (req, res) => {
     } else {
       const newUser = new User({
         username: req.body.username,
+        // fname: req.body.fname,
+        // lname: req.bod.lname,
         email: req.body.email,
         password: req.body.password,
       });
@@ -50,7 +58,12 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then((user) => {
-              const payload = { id: user.id, username: user.username };
+              const payload = { 
+                                id: user.id, 
+                                username: user.username,
+                                // fname: user.fname,
+                                // lname: user.lname
+                              };
 
               jwt.sign(
                 payload,
@@ -109,6 +122,24 @@ router.post("/login", (req, res) => {
     });
   });
 });
+
+router.get(
+  "/:id", (req, res) => {
+    User
+      .findById(req.params.id)
+      .then(user => res.json(user))
+      .catch(err => res.status(400).json(err))
+  }
+);
+
+router.get(
+  "/", (req, res) => {
+    User
+      .find()
+      .then(users => res.json(users))
+      .catch(err => res.status(400).json(err))
+  }
+);
 
 // router.post("/login", (req, res) => {
 //   const { errors, isValid } = validateLoginInput(req.body);
