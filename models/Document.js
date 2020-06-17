@@ -1,9 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// https://github.com/ramiel/mongoose-sequence
-
-// npm install --save mongoose-sequence
 const AutoIncrement = require("mongoose-sequence")(mongoose);
 
 let documentSchema = new Schema(
