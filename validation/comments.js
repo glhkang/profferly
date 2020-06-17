@@ -7,11 +7,11 @@ module.exports = function validateCommentInput(data) {
   data.text = validText(data.text) ? data.text : "";
 
   if (!Validator.isLength(data.text, { min: 5, max: 200 })) {
-    errors.text = "Comment must be between 5 and 200 long";
+    errors.text = "Comments must be between 5 and 200 characters long.";
   }
 
   if (Validator.isEmpty(data.text)) {
-    errors.text = "Comment can not be empty";
+    errors.text = "You cannot submit an empty comment.";
   }
 
   return {
