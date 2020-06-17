@@ -4,6 +4,8 @@ import errors from './errors_reducer';
 import posts from './posts_reducer';
 import users from './users_reducer';
 
+//debugger
+
 const RootReducer = combineReducers({
   session,
   errors,

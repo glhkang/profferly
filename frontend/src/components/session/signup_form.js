@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './session_form.css';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -49,11 +50,10 @@ debugger
   }
 
   renderErrors() {
-  debugger
-    return(
+    return (
       <ul>
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
+          <li key={`error-${i}`} className="session-errors">
             {this.state.errors[error]}
           </li>
         ))}
@@ -62,29 +62,49 @@ debugger
   }
 
   render() {
-  debugger
+  //debugger
     return (
-      <div className="signup-form-container">
+      <div className="session-form-container">
         <form onSubmit={this.handleSubmit}>
-          <div className="signup-form">
-            <br/>
-              <input type="text"
+          <div className="session-form">
+            <h3>Sign up for Profferly!</h3>
+            <label className="session-form-label">
+              Email
+              <br />
+              <input
+                type="email"
+                className="session-form-field"
                 value={this.state.email}
-                onChange={this.update('email')}
+                onChange={this.update("email")}
                 placeholder="Email"
               />
-            <br/>
-              <input type="text"
+            </label>
+
+            <label className="session-form-label">
+              Username
+              <br />
+              <input
+                type="text"
+                className="session-form-field"
                 value={this.state.username}
-                onChange={this.update('username')}
+                onChange={this.update("username")}
                 placeholder="Username"
               />
-            <br/>
-              <input type="password"
+            </label>
+
+            <label className="session-form-label">
+              Password
+              <br />
+              <input
+                type="password"
+                className="session-form-field"
                 value={this.state.password}
-                onChange={this.update('password')}
+                onChange={this.update("password")}
                 placeholder="Password"
               />
+              
+            </label>
+
             <br />
             {/* <input type="text"
               value={this.state.fname}
@@ -103,8 +123,7 @@ debugger
                 onChange={this.update('password2')}
                 placeholder="Confirm Password"
               /> */}
-            <br/>
-            <input type="submit" value="Submit" />
+            <input className="session-button" type="submit" value="Submit" />
             {this.renderErrors()}
           </div>
         </form>
