@@ -1,0 +1,14 @@
+.footer-main {
+    background-color: black;
+    color: whitesmoke;
+    font-size: 11.5px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.footer-copyright {
+    padding: 20px;
+}

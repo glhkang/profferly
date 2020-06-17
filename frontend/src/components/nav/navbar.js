@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './navbar.css';
 
 class NavBar extends React.Component {
-debugger
+//debugger
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
@@ -20,15 +20,12 @@ debugger
     if (this.props.loggedIn) {
       return (
         <div>
-          <Link to={'/'}>Random</Link>
-          <Link to={'/'}>Random</Link>
-          <Link to={'/'}>Random</Link>
           <button onClick={this.logoutUser}>Logout</button>
         </div>
       );
     } else {
       return (
-        <div>
+        <div className="navbar-menu">
           <Link to={'/signup'}>Signup</Link>
           <Link to={'/login'}>Login</Link>
         </div>
@@ -38,8 +35,9 @@ debugger
 
   render() {
     return (
-      <div>
-        <h1>Chirper</h1>
+      <div className="navbar-main">
+        <div className="navbar-left-holder"></div>
+        <h1 className="navbar-logo"><Link to={'/'}>Profferly</Link></h1>
         {this.getLinks()}
       </div>
     );

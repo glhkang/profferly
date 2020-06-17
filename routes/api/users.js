@@ -5,11 +5,12 @@ const User = require("../../models/User");
 
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
+const passport = require("passport");
 
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 
-const passport = require("passport");
+
 
 
 
@@ -21,6 +22,8 @@ router.get(
   (req, res) => {
     res.json({
       id: req.user.id,
+      // fname: req.user.fname,
+      // lname: req.user.lname,
       username: req.user.username,
       email: req.user.email,
     });
@@ -30,11 +33,11 @@ router.get(
 
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
-debugger
+//debugger
   if (!isValid) {
     return res.status(400).json(errors);
   }
-debugger
+//debugger
   User.findOne({ username: req.body.username }).then((user) => {
     if (user) {
       errors.username = "This username is taken!";
@@ -42,6 +45,8 @@ debugger
     } else {
       const newUser = new User({
         username: req.body.username,
+        // fname: req.body.fname,
+        // lname: req.bod.lname,
         email: req.body.email,
         password: req.body.password,
       });
@@ -53,7 +58,12 @@ debugger
           newUser
             .save()
             .then((user) => {
-              const payload = { id: user.id, username: user.username };
+              const payload = { 
+                                id: user.id, 
+                                username: user.username,
+                                // fname: user.fname,
+                                // lname: user.lname
+                              };
 
               jwt.sign(
                 payload,
@@ -76,14 +86,14 @@ debugger
 
 router.post("/login", (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
-debugger
+//debugger
   if (!isValid) {
     return res.status(400).json(errors);
   }
 
   const email = req.body.email;
   const password = req.body.password;
-debugger
+//debugger
   User.findOne({ email }).then((user) => {
     if (!user) {
       errors.email = "An account with this email does not exist!";
@@ -113,16 +123,34 @@ debugger
   });
 });
 
+router.get(
+  "/:id", (req, res) => {
+    User
+      .findById(req.params.id)
+      .then(user => res.json(user))
+      .catch(err => res.status(400).json(err))
+  }
+);
+
+router.get(
+  "/", (req, res) => {
+    User
+      .find()
+      .then(users => res.json(users))
+      .catch(err => res.status(400).json(err))
+  }
+);
+
 // router.post("/login", (req, res) => {
 //   const { errors, isValid } = validateLoginInput(req.body);
-// debugger
+// //debugger
 //   if (!isValid) {
 //     return res.status(400).json(errors);
 //   }
 
 //   const username = req.body.username;
 //   const password = req.body.password;
-// debugger
+// //debugger
 //   User.findOne({ username }).then((user) => {
 //     if (!user) {
 //       errors.username = "An account with this username does not exist!";

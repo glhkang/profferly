@@ -8,7 +8,8 @@
     "server": "nodemon app.js",
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\""
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "repository": {
     "type": "git",
@@ -34,8 +35,10 @@
     "mongoose-sequence": "^5.2.2",
     "multer": "^1.4.2",
     "npm": "^6.14.5",
+    "node-sass": "^4.14.1",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "sass-loader": "^8.0.2",
     "validator": "^13.1.1"
   },
   "devDependencies": {

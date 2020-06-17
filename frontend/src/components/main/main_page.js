@@ -1,14 +1,17 @@
 import React from 'react';
+import './main_page.css'; 
 
 class MainPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>profferly</h1>
-        <footer>
-          Copyright &copy; 2020 Profferly
-        </footer>
+      <div className="mainpage-main">
+        <div className="mainpage-index">
+          <h1>profferly index page :D</h1>
+        </div>
+        <div className="mainpage-side">
+          <h1>Right</h1>
+        </div>
       </div>
     );
   }

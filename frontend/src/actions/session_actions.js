@@ -6,13 +6,17 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
 
-export const receiveCurrentUser = currentUser => ({
-    type: RECEIVE_CURRENT_USER,
-    currentUser
-});
+export const receiveCurrentUser = currentUser => {
+//debugger
+return {
+        type: RECEIVE_CURRENT_USER,
+        currentUser
+    }
+};
 
 // This will be used to redirect the user to the login page upon signup
 export const receiveUserSignIn = () => {
+//debugger
     return {
         type: RECEIVE_USER_SIGN_IN
     }
@@ -30,21 +34,28 @@ export const logoutUser = () => ({
 
 export const signup = user => dispatch => {
 debugger
-    return APIUtil.signup(user).then(() => (
-        dispatch(receiveUserSignIn())
-    ), err => (
-        dispatch(receiveErrors(err.response.data))
-    ))
-};
-
-// Upon login, set the session token and dispatch the current user. Dispatch errors on failure.
-export const login = user => dispatch => {
-debugger
-return APIUtil.login(user).then(res => {
+    return APIUtil.signup(user).then(res => {
         const { token } = res.data;
         localStorage.setItem('jwtToken', token);
         APIUtil.setAuthToken(token);
         const decoded = jwt_decode(token);
+        dispatch(receiveCurrentUser(decoded))
+    })
+        .catch(err => {
+            dispatch(receiveErrors(err.response.data));
+        })
+}
+
+// Upon login, set the session token and dispatch the current user. Dispatch errors on failure.
+export const login = user => dispatch => {
+//debugger
+return APIUtil.login(user).then(res => {
+        const { token } = res.data;
+        localStorage.setItem('jwtToken', token);
+//debugger
+        APIUtil.setAuthToken(token);
+        const decoded = jwt_decode(token);
+//debugger
         dispatch(receiveCurrentUser(decoded))
     })
     .catch(err => {
