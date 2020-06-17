@@ -18,10 +18,10 @@ mongoose
 
 // app.get("/", (req, res) => res.send("Hello World"));
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/frontend/public", "index.html"));
+  res.sendFile(path.join(__dirname, "/frontend/src", "index.js"));
 });
 
-app.use("/", express.static(path.join(__dirname, "/frontend/public")));
+app.use("/", express.static(path.join(__dirname, "/frontend/src")));
 
 
 if (process.env.NODE_ENV === "production") {
