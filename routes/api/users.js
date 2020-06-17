@@ -21,6 +21,8 @@ router.get(
   (req, res) => {
     res.json({
       id: req.user.id,
+      // fname: req.user.fname,
+      // lname: req.user.lname,
       username: req.user.username,
       email: req.user.email,
     });
@@ -42,6 +44,8 @@ debugger
     } else {
       const newUser = new User({
         username: req.body.username,
+        // fname: req.body.fname,
+        // lname: req.bod.lname,
         email: req.body.email,
         password: req.body.password,
       });
@@ -53,7 +57,12 @@ debugger
           newUser
             .save()
             .then((user) => {
-              const payload = { id: user.id, username: user.username };
+              const payload = { 
+                                id: user.id, 
+                                username: user.username,
+                                // fname: user.fname,
+                                // lname: user.lname
+                              };
 
               jwt.sign(
                 payload,

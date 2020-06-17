@@ -8,6 +8,8 @@ class SignupForm extends React.Component {
       email: '',
       username: '',
       password: '',
+      // fname: '',
+      // lname: '',
       // password2: '',
       errors: {}
     };
@@ -17,6 +19,7 @@ class SignupForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+  debugger
     if (nextProps.signedIn === true) {
       this.props.history.push('/posts');
     }
@@ -31,18 +34,22 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit(e) {
+debugger
     e.preventDefault();
     let user = {
       email: this.state.email,
       username: this.state.username,
       password: this.state.password,
-      password2: this.state.password2
+      // fname: this.state.fname,
+      // lname: this.state.lname,
+      // password2: this.state.password2
     };
 
     this.props.signup(user, this.props.history); 
   }
 
   renderErrors() {
+  debugger
     return(
       <ul>
         {Object.keys(this.state.errors).map((error, i) => (
@@ -78,6 +85,18 @@ class SignupForm extends React.Component {
                 onChange={this.update('password')}
                 placeholder="Password"
               />
+            <br />
+            {/* <input type="text"
+              value={this.state.fname}
+              onChange={this.update('fname')}
+              placeholder="First Name"
+            />
+            <br />
+            <input type="text"
+              value={this.state.lname}
+              onChange={this.update('lname')}
+              placeholder="Last name"
+            /> */}
             {/* <br/>
               <input type="password"
                 value={this.state.password2}

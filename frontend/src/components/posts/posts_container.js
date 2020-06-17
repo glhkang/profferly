@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPosts, composePost } from '../../actions/post_actions';
+import { fetchPosts, composePost, removePost } from '../../actions/post_actions';
 import { fetchUsers } from '../../actions/user_actions';
 import Posts from './posts';
 
@@ -18,7 +18,8 @@ debugger
     return {
         fetchPosts: () => dispatch(fetchPosts()),
         composePost: data => dispatch(composePost(data)),
-        fetchUsers: () => dispatch(fetchUsers())
+        fetchUsers: () => dispatch(fetchUsers()),
+        removePost: id => dispatch(removePost(id))
     };
 };
 

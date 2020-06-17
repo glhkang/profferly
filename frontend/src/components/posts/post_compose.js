@@ -13,10 +13,9 @@ class PostCompose extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentWillReceiveProps(nextProps) {
-debugger
-        this.setState({ newPost: nextProps.newPost.text });
-    }
+    // componentWillReceiveProps(nextProps) {
+    //     this.setState({ newPost: nextProps.newPost.text });
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -26,8 +25,27 @@ debugger
 
         this.props.composePost(post);
         this.setState({ text: '' })
+        this.props.history.go()
     }
 
+    // handleSubmit(e) {
+    //     e.preventDefault();
+    //     let annotation = merge(
+    //         {},
+    //         this.state,
+    //         { poem_id: this.props.poem.id },
+    //         { start_i: this.props.startPos },
+    //         { end_i: this.props.endPos }
+    //     );
+            
+    //     this.props.createAnnotation(annotation).then((payload) => {
+    //         let newAnnotationId = payload.annotation.id;
+    //         this.props.history.push(
+    //         `/poems/${this.props.poem.id}/annotations/${newAnnotationId}`
+    //         );
+    //     });
+    // }
+           
     update() {
 debugger
         return e => this.setState({

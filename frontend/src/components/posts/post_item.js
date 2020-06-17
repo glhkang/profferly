@@ -5,10 +5,16 @@ class PostItem extends React.Component {
         super(props)
         
         this.handleClick = this.handleClick.bind(this);
+        this.handleButton = this.handleButton.bind(this);
     }
 
     handleClick() {
-        this.props.history.push(`/users/${this.props.post.user}`)
+        this.props.history.push(`/users/${this.props.post.user}` )
+    }
+    
+    handleButton() {
+        this.props.removePost(this.props.post._id);
+        this.props.history.go();
     }
 
     render() {
@@ -23,6 +29,9 @@ class PostItem extends React.Component {
                         <div onClick={this.handleClick}>
                             {user.username}
                         </div>
+                        {(this.props.currentUser.id === user._id) ? 
+                            <button onClick={this.handleButton}>Delete</button> : <div></div>
+                        }
                     </div>
                 </li>
             )

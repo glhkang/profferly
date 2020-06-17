@@ -17,6 +17,7 @@ class Profile extends React.Component {
     componentWillMount() {
 debugger
         this.props.fetchUserPosts(this.props.user);
+        this.props.fetchUsers();
     }
 
     componentWillReceiveProps(newState) {
@@ -32,7 +33,7 @@ debugger
                     <button onClick={() => {
                         return(
                         this.props.removePost(post._id)
-                        .then(() => this.props.history.push(`/users/${post.user}`))                        
+                        .then(() => this.props.history.go())                        
                         )
                     }
                 }
@@ -44,8 +45,9 @@ debugger
 
         return (
             <div>
-                <h2>Hello {this.props.user}</h2>
-                {/* <PostCompose currentUser={this.props.currentUser} newPost={this.props.newPost} composePost={this.props.composePost} /> */}
+             
+                <h2>Hello {this.props.currentUser.username}</h2>
+                <PostCompose currentUser={this.props.currentUser} newPost={this.props.newPost} composePost={this.props.composePost} history={this.props.history} />
                 <ul>
                     {list}
                 </ul>
@@ -58,30 +60,32 @@ debugger
 
 
     renderAsAnotherUser() {
+        if (this.props.users) {
         const list = Object.values(this.props.posts[1]).map((post) => {
 debugger
-            return(
+        return(
                     <li key={post._id}>{post.text}</li>  
             )
         });
 
         return (
             <div>
-                <h2>All of This User's Posts</h2>
+                <h2>All of {this.props.users[this.props.user].username}'s Posts</h2>
                 <ul>
                     {list}
                 </ul>
             </div>
         )
     }
+}
 
     render() {
-        console.log(this.props)
         if (this.state.posts.length === 0) {
-            return (<div>This user has no Posts</div>)
+            return (<div>Loading..</div>)
         } else {
             return (
                 <div>
+                    <button onClick={() => this.props.history.push('/posts')}>Go back</button>
                     {this.props.currentUser.id === this.props.user ? 
                     this.renderCurrentUser() : this.renderAsAnotherUser()}
                 </div>
