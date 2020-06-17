@@ -15,18 +15,18 @@ class Profile extends React.Component {
     }
 
     componentWillMount() {
-debugger
+//debugger
         this.props.fetchUserPosts(this.props.user);
         this.props.fetchUsers();
     }
 
     componentWillReceiveProps(newState) {
-debugger
+//debugger
         this.setState({ posts: newState.posts });
     }
 
     renderCurrentUser() {
-debugger
+//debugger
         const list = Object.values(this.props.posts[1]).map((post) => {
             return (
                     <li key={post._id}>{post.text}
@@ -62,7 +62,7 @@ debugger
     renderAsAnotherUser() {
         if (this.props.users) {
         const list = Object.values(this.props.posts[1]).map((post) => {
-debugger
+//debugger
         return(
                     <li key={post._id}>{post.text}</li>  
             )

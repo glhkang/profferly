@@ -11,7 +11,7 @@
   flex-direction: column;
   align-items: center;
   width: 400px;
-  max-height: 500px;
+  max-height: 520px;
   border: 1px solid lightslategray;
   background: white;
   margin: auto;
@@ -40,15 +40,15 @@
   color: red;
   list-style: none;
   /* align-items: center; */
-
 }
+
 
 .session-button {
   width: 75px;
   padding: 10px;
   height: 40px;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   border-radius: 10px;
   border: 0;
   /* background-color: #323a58; */
@@ -66,3 +66,22 @@
 .session-button:hover {
   background-color: #4e5c89;
 }
+
+.session-form-bottom {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 0x;
+  padding-bottom: 10px;
+}
+
+.bottom-session-text {
+  font-size: 15px;
+  padding-bottom: 10px;
+
+}
+
+.bottom-session-link {
+  text-decoration: none;
+}
+

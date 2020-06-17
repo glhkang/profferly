@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import './session_form.css';
 
 class SignupForm extends React.Component {
@@ -20,7 +20,7 @@ class SignupForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-  debugger
+  //debugger
     if (nextProps.signedIn === true) {
       this.props.history.push('/posts');
     }
@@ -35,7 +35,7 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit(e) {
-debugger
+//debugger
     e.preventDefault();
     let user = {
       email: this.state.email,
@@ -62,7 +62,7 @@ debugger
   }
 
   render() {
-  //debugger
+  ////debugger
     return (
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit}>
@@ -102,7 +102,6 @@ debugger
                 onChange={this.update("password")}
                 placeholder="Password"
               />
-              
             </label>
 
             <br />
@@ -125,6 +124,26 @@ debugger
               /> */}
             <input className="session-button" type="submit" value="Submit" />
             {this.renderErrors()}
+
+            <div className="session-form-bottom">
+              <span className="bottom-session-text">
+                Already have an account?{" "}
+                <Link to="/login" className="bottom-session-link">
+                  Click here!
+                </Link>
+              </span>
+
+              <span className="bottom-session-text">
+                Or, check us out as a{" "}
+                <Link
+                  to="/"
+                  className="bottom-session-link"
+                  onClick={this.guestUserLogin}
+                >
+                  Guest!
+                </Link>
+              </span>
+            </div>
           </div>
         </form>
       </div>
