@@ -4,7 +4,9 @@ const validText = require("./valid-text");
 module.exports = function validateCommentInput(data) {
   let errors = {};
 
-  data.text = validText(data.text) ? data.text : "";
+
+    data.text = validText(data.text) ? data.text : "";
+    // data.post = validText(data.post) ? data.post : "";
 
   if (!Validator.isLength(data.text, { min: 5, max: 200 })) {
     errors.text = "Comments must be between 5 and 200 characters long.";

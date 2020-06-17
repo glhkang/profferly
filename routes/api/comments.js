@@ -21,7 +21,7 @@ router.post(
         }
         const newComment = new Comment({
             text: req.body.text,
-            post: req.post.id,
+            post: req.body.post,
         });
 
         newComment.save().then((comment) => res.json(comment));
@@ -47,6 +47,13 @@ router.get("/post/:post_id", (req, res) => {
         .catch((err) => res.status(400).json(err));
 });
 
+// router.post("/post/:post_id", (req, res) => {
+//     Comment
+//         .find({ post: req.params.post_id })
+//         .sort({ date: -1 })
+//         .then((comments) => res.json(comments))
+//         .catch((err) => res.status(400).json(err));
+// });
 
 
 //TESTED IN POSTMAN AND WORKS
