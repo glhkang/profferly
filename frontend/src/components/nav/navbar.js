@@ -20,9 +20,6 @@ debugger
     if (this.props.loggedIn) {
       return (
         <div>
-          <Link to={'/'}>Random</Link>
-          <Link to={'/'}>Random</Link>
-          <Link to={'/'}>Random</Link>
           <button onClick={this.logoutUser}>Logout</button>
         </div>
       );
