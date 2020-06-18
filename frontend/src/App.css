@@ -38,10 +38,10 @@
   }
 }
 
-.footer-main {
+/* .footer-main {
   width: 100%;
   height: 200px;
-}
+} */
 
 .app-main {
   display: flex;
@@ -55,6 +55,6 @@
   z-index: 0;
 } */
 
-.app-main-footer {
+/* .app-main-footer {
   z-index: 1;
-}
+} */

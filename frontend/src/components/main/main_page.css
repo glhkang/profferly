@@ -107,11 +107,11 @@
     color: white;
 }
 
-.bottom-container {
+/* .bottom-container {
   display: flex;
   align-items: flex-start;
   padding-top: 70px;
-}
+} */
 
 .bottom-container img {
     margin: 0;
