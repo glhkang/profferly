@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-import { Card, CardHeader, CardText, CardBody, Row, Col } from "reactstrap";
 
-const endpoint = "http://localhost:3000/api/document/upload";
+const endpoint = "http://localhost:3000/api/photos/upload";
 
-class NewFileUpload extends Component {
+class NewPhotoUpload extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,41 +39,30 @@ class NewFileUpload extends Component {
   };
 
   render() {
-    const { selectedFile } = this.state;
 
     return (
       <div>
-        <Row>
-          <Col xs="4">
-            <Card>
-              <CardHeader >
-                Upload a photo!
-              </CardHeader>
-              <CardBody>
-                <CardText>
-                  <form onSubmit={this.handleUpload}>
+
+            Upload a photo!
+            <form onSubmit={this.handleUpload}>
 
 
-                    <div>
-                      <input
+                <div>
+                    <input
                         type="file"
                         name=""
                         id=""
                         onChange={this.handleSelectedFile}
-                      />
-                    </div>
+                    />
+                </div>
                     <button type="submit" >
-                      Upload
+                        Upload
                     </button>
-                  </form>
-                </CardText>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
+            </form>
+
       </div>
     );
   }
 }
 
-export default NewFileUpload;
+export default NewPhotoUpload;

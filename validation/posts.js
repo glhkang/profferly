@@ -7,12 +7,12 @@ module.exports = function validatePostInput(data) {
 
   data.text = validText(data.text) ? data.text : "";
 
-  if (!Validator.isLength(data.text, { min: 5, max: 200 })) {
-      errors.text = "Post must be between 5 and 200 long";
+  if (!Validator.isLength(data.text, { min: 5, max: 1000 })) {
+      errors.text = "Posts must be between 5 and 1000 characters long.";
   }
 
   if (Validator.isEmpty(data.text)) {
-      errors.text = "Post can not be empty";
+      errors.text = "You cannot submit an empty post.";
   }
 
   return {

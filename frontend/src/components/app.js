@@ -9,17 +9,15 @@ import SignupFormContainer from './session/signup_form_container';
 import '../App.css';
 import PostsContainer from './posts/posts_container';
 import ProfileContainer from './profile/profile_container';
-    
+import PhotoDelete from "./PhotoDelete";
+import NewPhotoUpload from "./NewPhotoUpload";
 
-import FileUpload from "./FileUpload";
-import NewFileUpload from "./NewFileUpload";
 const App = () => (
   <div className="app-main">
     <NavBarContainer />
     {/* <BrowserRouter> */}
-    <FileUpload />
-
-    <NewFileUpload />
+    <PhotoDelete />
+    <NewPhotoUpload />
     <Switch>
       <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
