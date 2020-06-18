@@ -12,7 +12,8 @@ class PostItem extends React.Component {
         this.props.history.push(`/users/${this.props.post.user}` )
     }
     
-    handleButton() {
+    handleButton(e) {
+        e.preventDefault();
         this.props.removePost(this.props.post._id);
         this.props.history.go();
     }
@@ -26,6 +27,7 @@ class PostItem extends React.Component {
                 <li>
                     <div>
                         <div>{post.text}</div>
+                        <div>{post.date}</div>
                         <div onClick={this.handleClick}>
                             {user.username}
                         </div>

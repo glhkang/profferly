@@ -48,7 +48,7 @@ debugger
         return (
             <div>
              
-                <h2>Hello {this.props.currentUser.username}</h2>
+                <h2>Hello {this.props.currentUser.email}</h2>
                 <PostCompose currentUser={this.props.currentUser} newPost={this.props.newPost} composePost={this.props.composePost} history={this.props.history} />
                 <ul>
                     {list}
@@ -82,6 +82,7 @@ debugger
 }
 
     render() {
+        console.log(this.props)
         if (this.state.posts.length === 0) {
             return (<div>Loading..</div>)
         } else {

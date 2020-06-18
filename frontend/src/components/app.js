@@ -1,6 +1,6 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import { Switch, BrowserRouter } from 'react-router-dom';
+import { Switch, BrowserRouter, Route } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
 import Footer from './footer/footer';
 import MainPage from './main/main_page';
@@ -9,6 +9,8 @@ import SignupFormContainer from './session/signup_form_container';
 import '../App.css';
 import PostsContainer from './posts/posts_container';
 import ProfileContainer from './profile/profile_container';
+import MapContainer from "./map/map";
+
 import PhotoIndex from "./photos/PhotoIndex";
 import NewPhotoUpload from "./photos/NewPhotoUpload";
 
@@ -25,6 +27,7 @@ const App = () => (
 
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/users/:id" component={ProfileContainer} />
+      <Route exact path="/map" component={MapContainer} />
     </Switch>
     <div className="app-main-footer">
       <Footer />

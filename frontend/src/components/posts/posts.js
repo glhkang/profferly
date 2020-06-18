@@ -15,6 +15,8 @@ class Posts extends React.Component {
 debugger
         if (this.props.users) {
             return (
+                <div>
+                    <button onClick={(e) => {e.preventDefault(); this.props.history.push('/map')}}>Map</button>
                 <div className="posts-main">
                     <div className="post-header-spacing"></div>
                     <div className="posts-body">
@@ -35,6 +37,7 @@ debugger
                         )}
                     </div>
                     </div>
+                </div>
                 </div>
             )
         } else {
