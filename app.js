@@ -9,6 +9,7 @@ const path = require("path");
 
 const users = require("./routes/api/users");
 const posts = require("./routes/api/posts");
+const markers = require("./routes/api/markers");
 
 //below for heroku
 app.use("/", express.static(path.join(__dirname, "/client/build")));
@@ -40,7 +41,8 @@ require("./config/passport")(passport);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use("/api/users", users);
-app.use("/api/posts", posts)
+app.use("/api/posts", posts);
+app.use("/api/markers", markers);
 
 
 const port = process.env.PORT || 5000;

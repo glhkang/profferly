@@ -7,9 +7,15 @@ import jwt_decode from "jwt-decode";
 
 import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
+import { fetchMarkers, createMarker } from './actions/marker_action';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
+  store = configureStore();
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.fetchMarkers = fetchMarkers;
+  window.createMarker = createMarker;
 
   if (localStorage.jwtToken) {
     setAuthToken(localStorage.jwtToken);

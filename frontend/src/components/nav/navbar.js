@@ -37,7 +37,9 @@ class NavBar extends React.Component {
     return (
       <div className="navbar-main">
         <div className="navbar-left-holder"></div>
-        <h1 className="navbar-logo"><Link to={'/'}>Profferly</Link></h1>
+        <h1 className="navbar-logo">
+          <Link to={"/"}>Profferly</Link>
+        </h1>
         {this.getLinks()}
       </div>
     );

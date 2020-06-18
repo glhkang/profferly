@@ -25,10 +25,57 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var map = new google.maps.Map(
+          document.getElementById('map'), { zoom: 8, center: {lat: 38.9072, lng: -77.0369} });
+
+          google.maps.event.addListener(map, 'click',
+          function(event) {
+            addMarker({ position: event.latLng, content: '<h1>Hello</h1>' })
+          })
+          
+          function addMarker(props) {
+            var marker = new google.maps.Marker({ 
+              position: props.position, 
+              map: map
+             });
+
+             if (props.content) {
+                var infoWindow = new google.maps.InfoWindow({
+                  content: props.content
+                });
+
+              marker.addListener('click', function(){
+              infoWindow.open(map, marker);
+              })
+
+            }
+
+          }
+
+          var markers = [
+            { position: { lat: 40.7128, lng: -74.0060 }, content: '<h1>Emina</h1>' },
+            { position: { lat: 42.3601, lng: -71.0589 }, content: '<h1>Ramovic</h1>' }
+          ];
+
+          markers.forEach(marker => addMarker(marker))
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUMJKNcL7nP8Gkw_0PjupMIiLAQA8YrRY&callback=initMap">
+    </script> -->
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
