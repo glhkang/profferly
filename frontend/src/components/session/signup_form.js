@@ -69,6 +69,13 @@ class SignupForm extends React.Component {
     );
   }
 
+  demoUserLogin(e) {
+    e.preventDefault();
+    const demoUser = { email: "gloria@gloria.com", password: "gloria" };
+    this.props.login(demoUser);
+  }
+
+
   render() {
   ////debugger
     return (
@@ -126,28 +133,14 @@ class SignupForm extends React.Component {
                 onClick={this.demoUserLogin}
               />
               <div className="session-errors">
-
-              {this.renderErrors()}
+                {this.renderErrors()}
+              </div>
 
               <div className="session-form-bottom">
-                  <span className="bottom-session-text">
-                    Already have an account?{" "}
-                    <Link to="/login" className="bottom-session-link">
-                      Click here!
-                    </Link>
-                  </span>
-
-                  {/* <span className="bottom-session-text">
-                    Or, check us out as a{" "}
-                    <Link
-                      to="/"
-                      className="bottom-session-link"
-                      onClick={this.guestUserLogin}
-                    >
-                      Guest!
-                    </Link>
-                  </span> */}
-                </div>
+                <span className="bottom-session-text">Already have an account?{" "}
+                  <Link to="/login" className="bottom-session-link">Click here!
+                  </Link>
+                </span>
               </div>
             </div>
           </form>

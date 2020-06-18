@@ -4,7 +4,7 @@ class MainPageMid extends React.Component {
   render() {
     return (
       <div className="mid-container">
-          <h3>Featured Opportunities</h3>
+        <h3>Featured Opportunities</h3>
 
         <div className="mid-body">
           <div className="mid-body-row">

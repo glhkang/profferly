@@ -96,16 +96,20 @@ class LoginForm extends React.Component {
               <input
                 type="password"
                 className="session-form-field"
-                value={this.state.password}
-                onChange={this.update("password")}
-                placeholder="Password"
-              />
-
-              <input className="session-button" type="submit" value="Submit" />
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  placeholder="Password"
+                />
+    
+              <input 
+                className="session-button"
+                type="submit" value="Submit" />
               <input className="demo-button" type="submit" value="Demo User" />
-
-              {this.renderErrors()}
-
+              
+              <div className="session-errors">
+                {this.renderErrors()}
+              </div>
+              
               <div className="session-form-bottom">
                 <span className="bottom-session-text">
                   Don't have an account?{" "}
@@ -113,17 +117,6 @@ class LoginForm extends React.Component {
                     Click here!
                   </Link>
                 </span>
-
-                {/* <span className="bottom-session-text">
-                    Or, check us out as a{" "}
-                    <Link
-                      to="/"
-                      className="bottom-session-link"
-                      onClick={this.guestUserLogin}
-                    >
-                      Guest!
-                    </Link>
-                  </span> */}
               </div>
             </div>
           </form>
