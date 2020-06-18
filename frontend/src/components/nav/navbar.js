@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './navbar.css';
 
 class NavBar extends React.Component {
-//debugger
+////debugger
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
@@ -20,7 +20,7 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div>
-          <button onClick={this.logoutUser}>Logout</button>
+          <button className="navbar-logout" onClick={this.logoutUser}>Logout</button>
         </div>
       );
     } else {
@@ -34,14 +34,16 @@ class NavBar extends React.Component {
   }
 
   render() {
-    return (
-      <div className="navbar-main">
-        <div className="navbar-left-holder"></div>
-        <h1 className="navbar-logo">
-          <Link to={"/"}>Profferly</Link>
-        </h1>
-        {this.getLinks()}
-      </div>
+      return (
+        <div className="navbar-container">
+          <div className="navbar-main">
+            <div className="navbar-logo"><Link to={'/'}><img src="/assets/images/profferly_logo_white_small.png" /></Link></div>
+            
+            
+            <div className="navbar-left-holder"></div>
+            {this.getLinks()}
+          </div>
+        </div>
     );
   }
 }

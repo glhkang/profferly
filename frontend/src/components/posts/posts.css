@@ -1,0 +1,9 @@
+.post-header-spacing {
+    height: 150px;
+    width: 100%;
+    position: fixed;
+}
+
+.posts-body {
+    height: 100vh;
+}

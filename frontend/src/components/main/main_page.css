@@ -1,39 +1,176 @@
-
-
 .mainpage-main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aliceblue;
     height: 100vh;
+    /* position: relative; */
+    background: url("/assets/images/rubber-tree-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    /* background-position: fixed; */
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: -1;
+    padding-bottom: 50px;
 }
 
-.mainpage-index {
-    padding: 15px;
-    font-size: 6px;
-    font-weight: regular;
-    background-color: whitesmoke;
-    height: 90%;
-    width: 60%;
-    border: solid 1px black;
-    margin-left: 5%;
-    margin-right: 5px;
-    border-radius: 20px;
+/* .mainpage-border {
+  border-top: 1px solid black;
+  padding: 15px;
+  height: 600px;
+  width: 600px;
+  margin-bottom: 100px;
+  margin-top: 100px;
+  background-color: white;
+} */
+
+.mainpage-header {
+    display: block;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    /* top: 400px; */
+    top: 320px;
+    font-size: 65px;
+    text-shadow: azure;
+    color: #000c07;
+    /* font-family: 'Tajawal', sans-serif; */
+    font-family: 'Ubuntu', sans-serif;
+    font-style: italic;
+    font-weight: 700;
 }
 
-.mainpage-side {
-    padding: 15px;
-    font-weight: regular;
-    font-size: 6px;
-    background-color: whitesmoke;
-    height: 90%;
-    width: 30%;
-    border: solid 1px black;
-    margin-right: 5%;
-    margin-left: 5px;
-    border-radius: 20px;
+/* .mainpage-dummy-second {
+    scroll-snap-align: center;
+    height: 915px;
+} */
+
+/* .mainpage-dummy-third {
+    scroll-snap-align: center;
+    height: 915px;
+    background-color: aliceblue;
+} */
+
+.mid-container {
+    /* background: white; */
+    scroll-snap-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    /* min-height: 600px; */
+    padding-top: 70px;
+    padding-bottom: 70px;
+    border-top: 2px dotted #132113;
+    /* border-top: 1px dotted white; */
+    margin-right: 140px;
+    margin-left: 140px;
+
 }
 
-.form-window {
-    bottom: 20px;
+.mid-container h3 {
+  font-size: 60px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.mid-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+.mid-body-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 45%;
+  margin: 10px;
+  font-size: 25px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.mid-icon-1 {
+    height: 100px;
+    width: 100px;
+    padding-top: 10px;
+    opacity: 0.7;
+    
+}
+
+.mid-icon-2 {
+    height: 100px;
+    width: 100px;
+    padding-top: 10px;
+    opacity: 0.7;
+}
+
+.mid-icon-3 {
+    height: 100px;
+    width: 100px;
+    padding-top: 10px;
+    opacity: 0.7;
+}
+
+.bottom-container {
+    scroll-snap-align: center;
+    background: url("/assets/images/leaf-striation-bg.jpg");
+    opacity: 0.9;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    padding-top: 100px;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 50px;
+    min-height: 175px;
+    color: white;
+}
+
+/* .bottom-container {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 70px;
+} */
+
+.bottom-container img {
+    margin: 0;
+    margin-top: 0px;
+    margin-left: 15px;
+    width: 150px;
+    height: 150px;
+    padding-bottom: 10px;
+}
+
+.bottom-container h3 {
+    display: flex;
+    align-self: flex-start;
+    font-size: 53px;
+    font-family: 'Tajawal', sans-serif;
+    margin: 0px;
+    padding-bottom: 20px;
+    display: flex;
+}
+
+.bottom-container h5 {
+    display: flex;
+    align-self: flex-start;
+    margin: 0px;
+    font-size: 35px;
+    /* padding-top: 6px; */
+    font-family: 'Tajawal', sans-serif;
+}
+
+.bottom-container  p {
+    margin: 0px;
+    padding-top: 20px;
+    font-size: 23px;
+    font-weight: bolder;
+    padding-bottom: 50px;
+    font-family: 'Open Sans', sans-serif;
 }

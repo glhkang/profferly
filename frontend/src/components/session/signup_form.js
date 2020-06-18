@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import './session_form.css';
 
 class SignupForm extends React.Component {
@@ -17,10 +17,11 @@ class SignupForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
+    this.demoUserLogin = this.demoUserLogin.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
-  debugger
+  //debugger
     if (nextProps.signedIn === true) {
       this.props.history.push('/posts');
     }
@@ -35,7 +36,7 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit(e) {
-debugger
+//debugger
     e.preventDefault();
     let user = {
       email: this.state.email,
@@ -49,6 +50,13 @@ debugger
     this.props.signup(user, this.props.history); 
   }
 
+  demoUserLogin(e) {
+    e.preventDefault();
+    const demoUser = { email: "gloria@gloria.com", password: "gloria" };
+    this.props.login(demoUser)
+  };
+
+
   renderErrors() {
     return (
       <ul>
@@ -61,15 +69,27 @@ debugger
     );
   }
 
+  demoUserLogin(e) {
+    e.preventDefault();
+    const demoUser = { email: "gloria@gloria.com", password: "gloria" };
+    this.props.login(demoUser);
+  }
+
+
   render() {
-  //debugger
+  ////debugger
     return (
-      <div className="session-form-container">
-        <form onSubmit={this.handleSubmit}>
-          <div className="session-form">
-            <h3>Sign up for Profferly!</h3>
-            <label className="session-form-label">
-              Email
+      <div className="session-form-main">
+        <div className="session-form-container">
+          <form onSubmit={this.handleSubmit}>
+            <div className="session-form">
+              <div className="login-signup-header">
+                <img src="/assets/images/black_logo_bold.png" />
+                <h3>Sign Up for Profferly!</h3>
+              </div>
+              {/* <label className="session-form-label">
+                Email
+              </label> */}
               <br />
               <input
                 type="email"
@@ -78,10 +98,10 @@ debugger
                 onChange={this.update("email")}
                 placeholder="Email"
               />
-            </label>
 
-            <label className="session-form-label">
-              Username
+              {/* <label className="session-form-label">
+                Username
+              </label> */}
               <br />
               <input
                 type="text"
@@ -90,10 +110,10 @@ debugger
                 onChange={this.update("username")}
                 placeholder="Username"
               />
-            </label>
 
-            <label className="session-form-label">
-              Password
+              {/* <label className="session-form-label">
+                Password
+              </label> */}
               <br />
               <input
                 type="password"
@@ -102,31 +122,29 @@ debugger
                 onChange={this.update("password")}
                 placeholder="Password"
               />
-              
-            </label>
 
-            <br />
-            {/* <input type="text"
-              value={this.state.fname}
-              onChange={this.update('fname')}
-              placeholder="First Name"
-            />
-            <br />
-            <input type="text"
-              value={this.state.lname}
-              onChange={this.update('lname')}
-              placeholder="Last name"
-            /> */}
-            {/* <br/>
-              <input type="password"
-                value={this.state.password2}
-                onChange={this.update('password2')}
-                placeholder="Confirm Password"
-              /> */}
-            <input className="session-button" type="submit" value="Submit" />
-            {this.renderErrors()}
-          </div>
-        </form>
+              <br />
+
+              <input className="session-button" type="submit" value="Submit" />
+              <input
+                className="demo-button"
+                type="submit"
+                value="Demo User"
+                onClick={this.demoUserLogin}
+              />
+              <div className="session-errors">
+                {this.renderErrors()}
+              </div>
+
+              <div className="session-form-bottom">
+                <span className="bottom-session-text">Already have an account?{" "}
+                  <Link to="/login" className="bottom-session-link">Click here!
+                  </Link>
+                </span>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
