@@ -1,6 +1,4 @@
 require("dotenv").config();
-const fileUploadRoutes = require("./routes/api/fileUploadRoutes");
-
 const express = require("express");
 const app = express();
 const db = require("./config/keys").mongoURI;
@@ -11,6 +9,7 @@ const path = require("path");
 
 const users = require("./routes/api/users");
 const posts = require("./routes/api/posts");
+const photos = require("./routes/api/photos");
 const comments = require("./routes/api/comments");
 
 //below for heroku
@@ -43,7 +42,7 @@ app.use(bodyParser.json());
 
 app.use("/api/users", users);
 app.use("/api/posts", posts);
-app.use("/api/document", fileUploadRoutes);
+app.use("/api/photos", photos);
 app.use("/api/comments", comments);
 
 
