@@ -16,9 +16,10 @@ class Profile extends React.Component {
     }
 
     componentWillMount() {
-//debugger
+debugger
         this.props.fetchUserPosts(this.props.user);
         this.props.fetchUsers();
+        this.props.fetchPhotos();
     }
 
     componentWillReceiveProps(newState) {

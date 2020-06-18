@@ -50,6 +50,13 @@ class SignupForm extends React.Component {
     this.props.signup(user, this.props.history); 
   }
 
+  demoUserLogin(e) {
+    e.preventDefault();
+    const demoUser = { email: "gloria@gloria.com", password: "gloria" };
+    this.props.login(demoUser)
+  };
+
+
   renderErrors() {
     return (
       <ul>
@@ -83,42 +90,41 @@ class SignupForm extends React.Component {
               {/* <label className="session-form-label">
                 Email
               </label> */}
-                <br />
-                <input
-                  type="email"
-                  className="session-form-field"
-                  value={this.state.email}
-                  onChange={this.update("email")}
-                  placeholder="Email"
-                />
+              <br />
+              <input
+                type="email"
+                className="session-form-field"
+                value={this.state.email}
+                onChange={this.update("email")}
+                placeholder="Email"
+              />
 
               {/* <label className="session-form-label">
                 Username
               </label> */}
-                <br />
-                <input
-                  type="text"
-                  className="session-form-field"
-                  value={this.state.username}
-                  onChange={this.update("username")}
-                  placeholder="Username"
-                />
+              <br />
+              <input
+                type="text"
+                className="session-form-field"
+                value={this.state.username}
+                onChange={this.update("username")}
+                placeholder="Username"
+              />
 
               {/* <label className="session-form-label">
                 Password
               </label> */}
-                <br />
-                <input
-                  type="password"
-                  className="session-form-field"
-                  value={this.state.password}
-                  onChange={this.update("password")}
-                  placeholder="Password"
-                />
-                
+              <br />
+              <input
+                type="password"
+                className="session-form-field"
+                value={this.state.password}
+                onChange={this.update("password")}
+                placeholder="Password"
+              />
 
               <br />
-              
+
               <input className="session-button" type="submit" value="Submit" />
               <input
                 className="demo-button"

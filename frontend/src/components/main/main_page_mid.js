@@ -28,7 +28,6 @@ class MainPageMid extends React.Component {
               I'm out of food. Can someone please help me get groceries?
             </p>
           </div>
-
           <div className="mid-body-row">
             <img className="mid-icon-3" src="/assets/icons/world.svg" />
             <p>

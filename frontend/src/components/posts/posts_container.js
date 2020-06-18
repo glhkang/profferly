@@ -4,7 +4,7 @@ import { fetchUsers } from '../../actions/user_actions';
 import Posts from './posts';
 
 const mapStateToProps = (state, ownProps) => {
-//debugger
+debugger
     return {
         posts: Object.values(state.posts.all),
         currentUser: state.session.user,
@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => {
-//debugger
+debugger
     return {
         fetchPosts: () => dispatch(fetchPosts()),
         composePost: data => dispatch(composePost(data)),

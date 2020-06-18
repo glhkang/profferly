@@ -1,10 +1,17 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { fetchPhotos } from '../../actions/photo_actions';
 
 class PhotoIndex extends Component {
   state = {
     photos: []
   };
+
+  componentDidMount() {
+    axios.get("/api/photos").then(res => {
+      this.setState({ photos: res.data });
+    });
+  }
 
   deletePhoto = id => {
     axios.delete("/api/photos/" + id).then(() => {
@@ -14,13 +21,8 @@ class PhotoIndex extends Component {
     });
   };
 
-  componentDidMount() {
-    axios.get("/api/photos").then(res => {
-      this.setState({ photos: res.data });
-    });
-  }
-
   render() {
+debugger
     return (
       <div >
             <table>
@@ -40,7 +42,6 @@ class PhotoIndex extends Component {
                      
                             <img src={photo.fileLink}></img>
                             </td>
-                    
 
                             <td>
                                 <button
@@ -63,4 +64,4 @@ class PhotoIndex extends Component {
   }
 }
 
-export default PhotoDelete;
+export default PhotoIndex;

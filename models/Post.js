@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const AutoIncrement = require("mongoose-sequence")(mongoose);
+
 const PostSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
@@ -14,6 +16,15 @@ const PostSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  fileLink: { 
+    type: String 
+  },
+
+  s3_key: { 
+    type: String 
+  },
 });
+
+// postSchema.plugin(AutoIncrement, { inc_field: "photo_id" });
 
 module.exports = Post = mongoose.model("posts", PostSchema);

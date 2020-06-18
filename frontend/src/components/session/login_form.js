@@ -5,11 +5,11 @@ import "./session_form.css";
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
-////debugger
+    ////debugger
     this.state = {
-      email: '',
-      password: '',
-      errors: {}
+      email: "",
+      password: "",
+      errors: {},
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,21 +18,22 @@ class LoginForm extends React.Component {
   }
 
   // Once the user has been authenticated, redirect to the Tweets page. /TWEETS was edited below
-  
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/posts');
+      this.props.history.push("/posts");
     }
 
     // Set or clear errors
-    this.setState({errors: nextProps.errors})
+    this.setState({ errors: nextProps.errors });
   }
 
   // Handle field updates (called in the render method)
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return (e) =>
+      this.setState({
+        [field]: e.currentTarget.value,
+      });
   }
 
   // Handle form submission
@@ -40,20 +41,19 @@ class LoginForm extends React.Component {
     e.preventDefault();
     let user = {
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
     };
-  ////debugger
-    
-    this.props.login(user); 
+    ////debugger
+
+    this.props.login(user);
   }
 
   // Render the session errors if there are any
   renderErrors() {
-    return(
+    return (
       <ul>
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}
-            className="session-errors">
+          <li key={`error-${i}`} className="session-errors">
             {this.state.errors[error]}
           </li>
         ))}
@@ -67,9 +67,8 @@ class LoginForm extends React.Component {
     this.props.login(demoUser);
   }
 
-
   render() {
-////debugger
+    ////debugger
     return (
       <div className="session-form-main">
         <div className="session-form-container">
@@ -79,21 +78,23 @@ class LoginForm extends React.Component {
                 <img src="/assets/images/black_logo_bold.png" />
                 <h3>Welcome Back to Profferly!</h3>
               </div>
-                {/* <label
+              {/* <label
                   className="session-form-label">Email
                 </label> */}
-                <br/>
-                <input type="text"
-                  className="session-form-field"
-                  value={this.state.email}
-                  onChange={this.update('email')}
-                  placeholder="Email"
-                />
-              
-                {/* <label className="session-form-label">Password
+              <br />
+              <input
+                type="text"
+                className="session-form-field"
+                value={this.state.email}
+                onChange={this.update("email")}
+                placeholder="Email"
+              />
+
+              {/* <label className="session-form-label">Password
                 </label> */}
-                <br/>
-                <input type="password"
+              <br />
+              <input
+                type="password"
                 className="session-form-field"
                   value={this.state.password}
                   onChange={this.update('password')}

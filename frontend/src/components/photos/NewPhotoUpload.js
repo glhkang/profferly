@@ -3,6 +3,8 @@ import axios from "axios";
 
 
 const endpoint = "http://localhost:3000/api/photos/upload";
+//comment in for heroku
+// const endpoint = "http://profferly.herokuapp.com/#/photos/upload";
 
 class NewPhotoUpload extends Component {
   constructor(props) {
