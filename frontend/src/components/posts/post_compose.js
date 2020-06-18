@@ -1,7 +1,10 @@
 import React from 'react';
+import axios from 'axios';
 import PostItem from './post_item';
 import PhotoDelete from "../PhotoDelete";
 import NewPhotoUpload from "../NewPhotoUpload";
+
+const endpoint = "http://localhost:3000/api/photos/upload";
 
 class PostCompose extends React.Component {
     constructor(props) {
@@ -59,8 +62,8 @@ class PostCompose extends React.Component {
 //debugger
         return (
             <div>
-                    <PhotoDelete />
-                    <NewPhotoUpload />
+                <PhotoDelete />
+                <NewPhotoUpload />
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <input type="textarea"

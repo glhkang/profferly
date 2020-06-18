@@ -6,6 +6,7 @@ const AutoIncrement = require("mongoose-sequence")(mongoose);
 let photoSchema = new Schema(
   {
     photo_id: { type: Number, default: 0 },
+    post_id: { type: Schema.Types.ObjectId, ref: "posts" },
     description: { type: String },
     fileLink: { type: String },
     s3_key: { type: String },

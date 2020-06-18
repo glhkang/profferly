@@ -60,6 +60,7 @@ router.post("/upload", upload.single("file"), function (req, res) {
         res.send({ data });
         
         let newFileUploaded = {
+                post_id: req.body.post_id,
                 description: req.body.description,
                 fileLink: s3FileURL + file.originalname,
                 s3_key: params.Key,
@@ -107,5 +108,16 @@ router.route("/:id").delete((req, res, next) => {
     });
 
 });
+
+//posts-photo get req
+
+router.get("/post/:post_id", (req, res) => {
+    Photo
+        .find({ post: req.params.post_id })
+        .sort({ date: -1 })
+        .then((photos) => res.json(photos))
+        .catch((err) => res.status(400).json(err));
+});
+
 
 module.exports = router;
