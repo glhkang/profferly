@@ -11,16 +11,31 @@
     background-repeat: no-repeat;
     opacity: 0.5;
     z-index: -1;
+    padding-bottom: 50px;
 }
+
+/* .mainpage-border {
+  border-top: 1px solid black;
+  padding: 15px;
+  height: 600px;
+  width: 600px;
+  margin-bottom: 100px;
+  margin-top: 100px;
+  background-color: white;
+} */
 
 .mainpage-header {
     display: block;
     width: 100%;
     text-align: center;
     position: absolute;
-    top: 390px;
-    font-size: 26px;
-    color: #132113;
+    /* top: 400px; */
+    top: 320px;
+    font-size: 65px;
+    text-shadow: azure;
+    color: #000c07;
+    /* font-family: 'Tajawal', sans-serif; */
+    font-family: 'Ubuntu', sans-serif;
     font-style: italic;
     font-weight: 700;
 }
@@ -37,24 +52,33 @@
 } */
 
 .mid-container {
-    background: white;
+    /* background: white; */
     scroll-snap-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
     /* min-height: 600px; */
     padding-top: 70px;
     padding-bottom: 70px;
+    border-top: 2px dotted #132113;
+    /* border-top: 1px dotted white; */
+    margin-right: 140px;
+    margin-left: 140px;
+
 }
 
 .mid-container h3 {
-  font-size: 45px;
+  font-size: 60px;
   display: flex;
   text-align: center;
   flex-direction: column;
+  font-family: 'Tajawal', sans-serif;
 }
 
 .mid-body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 
@@ -66,6 +90,7 @@
   width: 45%;
   margin: 10px;
   font-size: 25px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -126,6 +151,7 @@
     display: flex;
     align-self: flex-start;
     font-size: 53px;
+    font-family: 'Tajawal', sans-serif;
     margin: 0px;
     padding-bottom: 20px;
     display: flex;
@@ -135,8 +161,9 @@
     display: flex;
     align-self: flex-start;
     margin: 0px;
-    font-size: 30px;
-    padding-top: 6px;
+    font-size: 35px;
+    /* padding-top: 6px; */
+    font-family: 'Tajawal', sans-serif;
 }
 
 .bottom-container  p {
@@ -145,5 +172,6 @@
     font-size: 23px;
     font-weight: bolder;
     padding-bottom: 50px;
+    font-family: 'Open Sans', sans-serif;
 }
 

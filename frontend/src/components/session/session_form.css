@@ -137,18 +137,34 @@ to   { opacity: 1; }
   border-radius: 25px;
 }
 
-.session-form-bottom {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-}
-
 .bottom-session-text {
   color: black;
   display: flex;
+  /* flex-direction: column; */
   align-self: center;
+  text-align: center; 
+  font-size: 15px;
 }
 
 .bottom-session-link {
   text-decoration: none;
+}
+
+.demo-button {
+  width: 87%;
+  padding: 15px;
+  border-radius: 25px;
+  border: 0;
+  background-color: #161a27;
+  color: white;
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.demo-button:focus {
+  outline-width: 0;
+}
+
+.demo-button:hover {
+  background-color: #4e5c89;
 }

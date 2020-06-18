@@ -46,7 +46,8 @@
 .app-main {
   display: flex;
   flex-direction: column;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
+  background-color: #f0f4ff;
 }
 
 /* .app-main-container {

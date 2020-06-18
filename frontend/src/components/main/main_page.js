@@ -22,6 +22,7 @@ class MainPage extends React.Component {
           <div className="mainpage-bottom">
             <MainPageBottom />
           </div>
+          {/* <div className="mainpage-border" /> */}
         </div>
     );
   }

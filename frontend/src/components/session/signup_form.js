@@ -17,6 +17,7 @@ class SignupForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
+    this.demoUserLogin = this.demoUserLogin.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -61,11 +62,11 @@ class SignupForm extends React.Component {
     );
   }
 
-  guestUserLogin(e) {
+  demoUserLogin(e) {
     e.preventDefault();
-    const guestUser = { email: "profferly8@profferly.com", password: "profferly8" };
-    this.props.login(guestUser)
-  };
+    const demoUser = { email: "gloria@gloria.com", password: "gloria" };
+    this.props.login(demoUser);
+  }
 
 
   render() {
@@ -119,25 +120,21 @@ class SignupForm extends React.Component {
               <br />
               
               <input className="session-button" type="submit" value="Submit" />
+              <input
+                className="demo-button"
+                type="submit"
+                value="Demo User"
+                onClick={this.demoUserLogin}
+              />
               <div className="session-errors">
                 {this.renderErrors()}
+              </div>
 
-                <div className="session-form-bottom">
-                  <span className="bottom-session-text">Already have an account?{" "}
-                    <Link to="/login" className="bottom-session-link">Click here!
-                    </Link>
-                  </span>
-
-                  <span className="bottom-session-text">Or, check us out as a{" "}
-                    <Link
-                      to="/"
-                      className="bottom-session-link"
-                      onClick={this.guestUserLogin}
-                    >Guest!
-                    </Link>
-                  </span>
-                </div>
-
+              <div className="session-form-bottom">
+                <span className="bottom-session-text">Already have an account?{" "}
+                  <Link to="/login" className="bottom-session-link">Click here!
+                  </Link>
+                </span>
               </div>
             </div>
           </form>

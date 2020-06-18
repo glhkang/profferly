@@ -14,7 +14,7 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-    this.guestUserLogin = this.guestUserLogin.bind(this);
+    this.demoUserLogin = this.demoUserLogin.bind(this);
   }
 
   // Once the user has been authenticated, redirect to the Tweets page. /TWEETS was edited below
@@ -61,11 +61,11 @@ class LoginForm extends React.Component {
     );
   }
 
-  guestUserLogin(e) {
+  demoUserLogin(e) {
     e.preventDefault();
-    const guestUser = { email: "profferly8@profferly.com", password: "profferly8" };
-    this.props.login(guestUser)
-  };
+    const demoUser = { email: "gloria@gloria.com", password: "gloria" };
+    this.props.login(demoUser);
+  }
 
 
   render() {
@@ -103,26 +103,20 @@ class LoginForm extends React.Component {
               <input 
                 className="session-button"
                 type="submit" value="Submit" />
-              {this.renderErrors()}
-
+              <input className="demo-button" type="submit" value="Demo User" />
+              
+              <div className="session-errors">
+                {this.renderErrors()}
+              </div>
+              
               <div className="session-form-bottom">
                 <span className="bottom-session-text">
                   Don't have an account?{" "}
-                  <Link to="/signup" className="bottom-session-link">Click here!
-                    </Link>
-                </span>
-
-                <span className="bottom-session-text">
-                  Or, check us out as a{" "}
-                  <Link
-                    to="/"
-                    className="bottom-session-link"
-                    onClick={this.guestUserLogin}
-                  >Guest!
-                    </Link>
+                  <Link to="/signup" className="bottom-session-link">
+                    Click here!
+                  </Link>
                 </span>
               </div>
-
             </div>
           </form>
         </div>

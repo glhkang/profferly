@@ -7,7 +7,8 @@
     /* background-color: #bcc4c8; */
     /* background-color: white; */
     color: #132113;
-    font-size: 18px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     text-align: center;
     display: flex;
@@ -22,7 +23,8 @@
 }
 
 .footer-copyright {
-    padding: 20px;
+    /* padding: 20px; */
+    margin-left: 60px;
 }
 
 .footer-links ul {
@@ -30,7 +32,7 @@
     flex-direction: row;
     list-style: none;
     text-decoration: none;
-    margin-right: 20px;
+    margin-right: 60px;
 }
 
 .footer-links ul li {
