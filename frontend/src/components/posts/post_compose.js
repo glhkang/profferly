@@ -49,14 +49,14 @@ class PostCompose extends React.Component {
     // }
            
     update() {
-debugger
+//debugger
         return e => this.setState({
             text: e.currentTarget.value
         });
     }
 
     render() {
-debugger
+//debugger
         return (
             <div>
                     <FileUpload />

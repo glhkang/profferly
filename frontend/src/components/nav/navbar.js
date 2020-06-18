@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './navbar.css';
 
 class NavBar extends React.Component {
-//debugger
+////debugger
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
@@ -19,8 +19,13 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
+<<<<<<< HEAD
         <div className="navbar-menu">
           <div onClick={this.logoutUser} className="navbar-button">Logout</div>
+=======
+        <div>
+          <button className="logout-button" onClick={this.logoutUser}>Logout</button>
+>>>>>>> 235c610b4afc82bb3e5f453e5908e7e2dc32bce7
         </div>
       );
     } else {

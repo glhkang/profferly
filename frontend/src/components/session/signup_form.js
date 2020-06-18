@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import './session_form.css';
 
 class SignupForm extends React.Component {
@@ -20,7 +20,7 @@ class SignupForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-  debugger
+  //debugger
     if (nextProps.signedIn === true) {
       this.props.history.push('/posts');
     }
@@ -35,7 +35,7 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit(e) {
-debugger
+//debugger
     e.preventDefault();
     let user = {
       email: this.state.email,
@@ -62,7 +62,7 @@ debugger
   }
 
   render() {
-  //debugger
+  ////debugger
     return (
       <div className="session-form-main">
         <div className="session-form-container">
@@ -110,26 +110,30 @@ debugger
                 
 
               <br />
-              {/* <input type="text"
-                value={this.state.fname}
-                onChange={this.update('fname')}
-                placeholder="First Name"
-              />
-              <br />
-              <input type="text"
-                value={this.state.lname}
-                onChange={this.update('lname')}
-                placeholder="Last name"
-              /> */}
-              {/* <br/>
-                <input type="password"
-                  value={this.state.password2}
-                  onChange={this.update('password2')}
-                  placeholder="Confirm Password"
-                /> */}
+              
               <input className="session-button" type="submit" value="Submit" />
               <div className="session-errors">
                 {this.renderErrors()}
+
+                <div className="session-form-bottom">
+                  <span className="bottom-session-text">
+                    Already have an account?{" "}
+                    <Link to="/login" className="bottom-session-link">
+                      Click here!
+                    </Link>
+                  </span>
+
+                  <span className="bottom-session-text">
+                    Or, check us out as a{" "}
+                    <Link
+                      to="/"
+                      className="bottom-session-link"
+                      onClick={this.guestUserLogin}
+                    >
+                      Guest!
+                    </Link>
+                  </span>
+                </div>
               </div>
             </div>
           </form>

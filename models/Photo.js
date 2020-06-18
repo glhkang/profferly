@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const AutoIncrement = require("mongoose-sequence")(mongoose);
 
-let documentSchema = new Schema(
+let photoSchema = new Schema(
   {
-    document_id: { type: Number, default: 0 },
+    photo_id: { type: Number, default: 0 },
     description: { type: String },
     fileLink: { type: String },
     s3_key: { type: String },
@@ -15,6 +15,6 @@ let documentSchema = new Schema(
   }
 );
 
-documentSchema.plugin(AutoIncrement, { inc_field: "document_id" });
+photoSchema.plugin(AutoIncrement, { inc_field: "photo_id" });
 
-module.exports = mongoose.model("Document", documentSchema);
+module.exports = mongoose.model("Photo", photoSchema);
