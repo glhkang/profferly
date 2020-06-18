@@ -40,6 +40,8 @@
     background: white;
     scroll-snap-align: center;
     /* min-height: 600px; */
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
 
 .mid-container h3 {
@@ -47,7 +49,6 @@
   display: flex;
   text-align: center;
   flex-direction: column;
-  padding-top: 50px;
 }
 
 .mid-body {
@@ -57,7 +58,7 @@
 }
 
 
-.mid-body-col {
+.mid-body-row {
   display: flex;
   flex-direction: column;
   align-items: center;

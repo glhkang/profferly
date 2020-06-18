@@ -104,6 +104,25 @@ class LoginForm extends React.Component {
                 className="session-button"
                 type="submit" value="Submit" />
               {this.renderErrors()}
+
+              <div className="session-form-bottom">
+                <span className="bottom-session-text">
+                  Don't have an account?{" "}
+                  <Link to="/signup" className="bottom-session-link">Click here!
+                    </Link>
+                </span>
+
+                <span className="bottom-session-text">
+                  Or, check us out as a{" "}
+                  <Link
+                    to="/"
+                    className="bottom-session-link"
+                    onClick={this.guestUserLogin}
+                  >Guest!
+                    </Link>
+                </span>
+              </div>
+
             </div>
           </form>
         </div>

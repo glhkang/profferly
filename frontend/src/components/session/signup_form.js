@@ -61,6 +61,13 @@ class SignupForm extends React.Component {
     );
   }
 
+  guestUserLogin(e) {
+    e.preventDefault();
+    const guestUser = { email: "profferly8@profferly.com", password: "profferly8" };
+    this.props.login(guestUser)
+  };
+
+
   render() {
   ////debugger
     return (
@@ -116,24 +123,21 @@ class SignupForm extends React.Component {
                 {this.renderErrors()}
 
                 <div className="session-form-bottom">
-                  <span className="bottom-session-text">
-                    Already have an account?{" "}
-                    <Link to="/login" className="bottom-session-link">
-                      Click here!
+                  <span className="bottom-session-text">Already have an account?{" "}
+                    <Link to="/login" className="bottom-session-link">Click here!
                     </Link>
                   </span>
 
-                  <span className="bottom-session-text">
-                    Or, check us out as a{" "}
+                  <span className="bottom-session-text">Or, check us out as a{" "}
                     <Link
                       to="/"
                       className="bottom-session-link"
                       onClick={this.guestUserLogin}
-                    >
-                      Guest!
+                    >Guest!
                     </Link>
                   </span>
                 </div>
+
               </div>
             </div>
           </form>

@@ -7,7 +7,7 @@ class MainPageMid extends React.Component {
         <h3>Featured Opportunities</h3>
 
         <div className="mid-body">
-          <div className="mid-body-col">
+          <div className="mid-body-row">
             <img className="mid-icon-1" src="/assets/icons/chat_bubble.svg" />
 
             <p>
@@ -20,7 +20,7 @@ class MainPageMid extends React.Component {
               Thanks, profferly!
             </p>
           </div>
-          <div className="mid-body-col">
+          <div className="mid-body-row">
             <img className="mid-icon-2" src="/assets/icons/location.svg" />
             <p>
               Hey! Oldie but goodie here. Was advised by my doctor to avoid
@@ -29,7 +29,7 @@ class MainPageMid extends React.Component {
             </p>
           </div>
 
-          <div className="mid-body-col">
+          <div className="mid-body-row">
             <img className="mid-icon-3" src="/assets/icons/world.svg" />
             <p>
               I had so much fun today volunteering for Sea Turtle Conservation

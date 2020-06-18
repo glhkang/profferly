@@ -137,3 +137,18 @@ to   { opacity: 1; }
   border-radius: 25px;
 }
 
+.session-form-bottom {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.bottom-session-text {
+  color: black;
+  display: flex;
+  align-self: center;
+}
+
+.bottom-session-link {
+  text-decoration: none;
+}
