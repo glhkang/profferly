@@ -46,4 +46,15 @@
 .app-main {
   display: flex;
   flex-direction: column;
+  background-color: aliceblue;
+}
+
+/* .app-main-container {
+  background-color: white;
+  opacity: 0.5;
+  z-index: 0;
+} */
+
+.app-main-footer {
+  z-index: 1;
 }

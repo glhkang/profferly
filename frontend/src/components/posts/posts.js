@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import PostItem from './post_item';
 import PostCompose from './post_compose';
 import { removePost } from '../../actions/post_actions';
+import './posts.css';
 
 class Posts extends React.Component {
      componentDidMount() {
@@ -13,7 +14,9 @@ class Posts extends React.Component {
     render() {
         if (this.props.users) {
             return (
-                <div>
+                <div className="posts-main">
+                    <div className="post-header-spacing"></div>
+                    <div className="posts-body">
                     <PostCompose currentUser={this.props.currentUser} newPost={this.props.newPost} composePost={this.props.composePost} history={this.props.history}/>
                     <p>All posts</p>
                     <div>
@@ -29,6 +32,7 @@ class Posts extends React.Component {
                                 removePost={this.props.removePost} 
                             />
                         )}
+                    </div>
                     </div>
                 </div>
             )

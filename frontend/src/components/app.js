@@ -17,9 +17,10 @@ const App = () => (
   <div className="app-main">
     <NavBarContainer />
     {/* <BrowserRouter> */}
-    <FileUpload />
+    {/* <FileUpload />
 
-    <NewFileUpload />
+<NewFileUpload /> */}
+  <div className="app-main-container">
     <Switch>
       <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
@@ -28,8 +29,11 @@ const App = () => (
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/users/:id" component={ProfileContainer} />
     </Switch>
-    <Footer />
+    <div className="app-main-footer">
+      <Footer />
+    </div>
     {/* </BrowserRouter> */}
+    </div>
   </div>
 );
 

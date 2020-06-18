@@ -63,37 +63,42 @@ class LoginForm extends React.Component {
   render() {
 //debugger
     return (
-      <div className="session-form-container">
-        <form onSubmit={this.handleSubmit}>
-          <div className="session-form">
-            <h3>Welcome Back to Profferly!</h3>
-              <label
-                className="session-form-label">Email
-              <br/>
-              <input type="text"
+      <div className="session-form-main">
+        <div className="session-form-container">
+          <form onSubmit={this.handleSubmit}>
+            <div className="session-form">
+              <div className="login-signup-header">
+                <img src="/assets/images/black_logo_bold.png" />
+                <h3>Welcome Back to Profferly!</h3>
+              </div>
+                {/* <label
+                  className="session-form-label">Email
+                </label> */}
+                <br/>
+                <input type="text"
+                  className="session-form-field"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  placeholder="Email"
+                />
+              
+                {/* <label className="session-form-label">Password
+                </label> */}
+                <br/>
+                <input type="password"
                 className="session-form-field"
-                value={this.state.email}
-                onChange={this.update('email')}
-                placeholder="Email"
-              />
-              </label>
-            
-              <label className="session-form-label">Password
-              <br/>
-              <input type="password"
-              className="session-form-field"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="Password"
-              />
-              </label>
-  
-            <input 
-              className="session-button"
-              type="submit" value="Submit" />
-            {this.renderErrors()}
-          </div>
-        </form>
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  placeholder="Password"
+                />
+    
+              <input 
+                className="session-button"
+                type="submit" value="Submit" />
+              {this.renderErrors()}
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

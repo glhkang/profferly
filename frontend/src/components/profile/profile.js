@@ -1,6 +1,7 @@
 import React from 'react';
 import PostItem from '../posts/post_item';
 import PostCompose from '../posts/post_compose';
+import './profile.css';
 
 class Profile extends React.Component {
     constructor(props) {
