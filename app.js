@@ -20,7 +20,10 @@ mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch((err) => console.log(err));
 
+
+// app.get("/", (req, res) => res.send("Hello World"));
 app.get("/", (req, res) => res.send("Hello World"));
+
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("frontend/build"));
@@ -49,6 +52,14 @@ app.use("/api/comments", comments);
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 
+<<<<<<< HEAD
+=======
+
+// below for heroku
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/client/build", "index.html"));
+});
+>>>>>>> master
 //below for heroku
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "/client/build", "index.html"));
