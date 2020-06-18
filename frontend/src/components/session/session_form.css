@@ -1,4 +1,7 @@
 .session-form-main {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
   width: 100%;
   height: 100%;
   padding-top: 30px;
@@ -50,10 +53,6 @@ to   { opacity: 1; }
 }
 
 .session-form {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   display: block;
   text-align: center;
   width: 400px;
@@ -87,7 +86,6 @@ to   { opacity: 1; }
   opacity: 0.6;
 }
 
-
 .session-errors {
   display: flex;
   font-size: 12px;
@@ -118,6 +116,43 @@ to   { opacity: 1; }
 }
 
 .session-button:hover {
+  background-color: #4e5c89;
+}
+.demo-button {
+  width: 87%;
+  padding: 15px;
+  border-radius: 25px;
+  border: 0;
+  background-color: #161a27;
+  color: white;
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+/* .session-form-bottom {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+} */
+
+.bottom-session-text {
+  color: black;
+  display: flex;
+  /* flex-direction: column; */
+  align-self: center;
+  text-align: center; 
+  font-size: 15px;
+}
+
+.bottom-session-link {
+  text-decoration: none;
+}
+
+.demo-button:focus {
+  outline-width: 0;
+}
+
+.demo-button:hover {
   background-color: #4e5c89;
 }
 

@@ -20,7 +20,7 @@ class PostItem extends React.Component {
     render() {
              const post = this.props.post;
              const user = this.props.users[this.props.post.user];
-// //debugger
+//debugger
         if (post && user) {
             return (
                 <li>

@@ -12,6 +12,7 @@ class Posts extends React.Component {
     }
 
     render() {
+debugger
         if (this.props.users) {
             return (
                 <div className="posts-main">

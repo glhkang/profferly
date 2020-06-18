@@ -112,7 +112,8 @@ router.route("/:id").delete((req, res, next) => {
 //posts-photo get req
 
 router.get("/post/:post_id", (req, res) => {
-    Photo
+debugger
+    PHOTO
         .find({ post: req.params.post_id })
         .sort({ date: -1 })
         .then((photos) => res.json(photos))
