@@ -46,12 +46,9 @@ app.use(bodyParser.json());
 
 app.use("/api/users", users);
 app.use("/api/posts", posts);
-<<<<<<< HEAD
 app.use("/api/markers", markers);
-=======
 app.use("/api/photos", photos);
 app.use("/api/comments", comments);
->>>>>>> master
 
 
 const port = process.env.PORT || 5000;
