@@ -4,38 +4,57 @@ import React from 'react';
 class FormWindow extends React.Component {
     constructor(props) {
         super(props);
-        this.state={
-            info: "",
-            another: "yey"
-        }
-         this.handleSubmit = this.handleSubmit.bind(this);
-          this.update = this.update.bind(this);
+        this.state = {
+            title: "",
+            description: "",
+        };
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this);
     }
 
     update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+        return (e) =>
+          this.setState({
+            [field]: e.currentTarget.value,
+          });
     }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    const info2 = this.state.info;
-    this.setState({info:"", another:info2})
-  }
+    handleSubmit(e){
+        e.preventDefault();
+        if (this.state.title.length !== 0 && this.state.description.length !== 0) {
+            const newMarker = {
+                title: this.state.title,
+                description: this.state.description,
+                longitude: this.props.longitude,
+                latitude: this.props.latitude,
+            };
+        this.props.newMarker(newMarker);
+        }
+    }
 
     render() {
-        return(
-            <div>
-            <h1>{this.state.another}</h1>
-            <form onSubmit={this.handleSubmit}> 
-            <input type="text"  value={this.state.info}
-                onChange={this.update('info')}
-                placeholder="Info" />
-            <button>Submit!</button>
+        return (
+          <div>
+            <form onSubmit={this.handleSubmit}>
+              <input
+                type="text"
+                value={this.state.description}
+                onChange={this.update("description")}
+                placeholder="Description"
+              />
+              <br />
+              <input
+                type="text"
+                value={this.state.title}
+                onChange={this.update("title")}
+                placeholder="Title"
+              />
+              <br />
+              <button>Submit</button>
             </form>
-            </div>
-        )
+          </div>
+        );
     }
 }
 

@@ -14,6 +14,7 @@ class Posts extends React.Component {
         if (this.props.users) {
             return (
                 <div>
+                    <button onClick={(e) => {e.preventDefault(); this.props.history.push('/map')}}>Map</button>
                     <PostCompose currentUser={this.props.currentUser} newPost={this.props.newPost} composePost={this.props.composePost} history={this.props.history}/>
                     <p>All posts</p>
                     <div>

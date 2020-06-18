@@ -11,7 +11,7 @@ import '../App.css';
 import PostsContainer from './posts/posts_container';
 import ProfileContainer from './profile/profile_container';
 import MapContainer from "./map/map";
-import FormWindow from './map/form';
+
 
 const App = () => {
     return (
@@ -31,7 +31,6 @@ const App = () => {
           />
           <Route exact path="/map" component={MapContainer} />
         </Switch>
-        <FormWindow />
         <Footer />
         {/* </BrowserRouter> */}
       </div>

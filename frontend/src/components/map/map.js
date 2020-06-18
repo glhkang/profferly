@@ -67,6 +67,7 @@ class MapContainer extends React.Component {
   onMarkerClick = (props, marker, e) => {
     this.setState({
       activeMarkerName: props.name,
+      activeMarkerTitle: props.title,
       activeMarkerId: props.id,
       activeMarkerRevision: props.revision,
       activeMarker: marker,
@@ -91,22 +92,26 @@ class MapContainer extends React.Component {
   render() {
     const style = {
       width: "100%",
-      height: "60%",
+      height: "100%",
     };
 
     console.log(this.state)
 
     return (
       <div>
+          <button onClick={(e) => {e.preventDefault(); this.props.history.goBack()}}>Go back</button>
         <Map
           style={style}
           height="400px"
           google={this.props.google}
-          zoom={8}
+          zoom={2}
           onClick={this.onMapClick}
           initialCenter={{ lat: 40.7128, lng: -74.006 }}
         >
-          {this.state.markers.map((marker, index) => ( // {title: "", des: "", lat: , lng: }
+          {this.state.markers.map((
+            marker,
+            index // {title: "", des: "", lat: , lng: }
+          ) => (
             <Marker
               key={index}
               title={marker.title}
@@ -120,8 +125,8 @@ class MapContainer extends React.Component {
             visible={this.state.showingInfoWindow}
           >
             <div>
-              <h1>{this.state.activeMarkerName}</h1>
-              <p>Revision {this.state.activeMarkerRevision}</p>
+              <h1>{this.state.activeMarkerTitle}</h1>
+              <p>{this.state.activeMarkerName}</p>
             </div>
           </InfoWindow>
         </Map>
