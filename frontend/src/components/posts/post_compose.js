@@ -1,7 +1,7 @@
 import React from 'react';
 import PostItem from './post_item';
-import FileUpload from "../FileUpload";
-import NewFileUpload from "../NewFileUpload";
+import PhotoDelete from "../PhotoDelete";
+import NewPhotoUpload from "../NewPhotoUpload";
 
 class PostCompose extends React.Component {
     constructor(props) {
@@ -59,8 +59,8 @@ class PostCompose extends React.Component {
 //debugger
         return (
             <div>
-                    <FileUpload />
-                    <NewFileUpload />
+                    <PhotoDelete />
+                    <NewPhotoUpload />
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <input type="textarea"

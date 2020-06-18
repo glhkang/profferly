@@ -16,15 +16,8 @@ const App = () => (
   <div className="app-main">
     <NavBarContainer />
     {/* <BrowserRouter> */}
-<<<<<<< HEAD
-    {/* <FileUpload />
-
-<NewFileUpload /> */}
-  <div className="app-main-container">
-=======
-    <PhotoDelete />
-    <NewPhotoUpload />
->>>>>>> 235c610b4afc82bb3e5f453e5908e7e2dc32bce7
+    {/* <PhotoDelete />
+    <NewPhotoUpload /> */}
     <Switch>
       <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
@@ -37,7 +30,6 @@ const App = () => (
       <Footer />
     </div>
     {/* </BrowserRouter> */}
-    </div>
   </div>
 );
 
