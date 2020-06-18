@@ -14,7 +14,7 @@ const photos = require("./routes/api/photos");
 const comments = require("./routes/api/comments");
 
 //below for heroku
-// app.use("/", express.static(path.join(__dirname, "/client/build")));
+app.use("/", express.static(path.join(__dirname, "/client/build")));
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -23,7 +23,6 @@ mongoose
 
 
 // app.get("/", (req, res) => res.send("Hello World"));
-app.get("/", (req, res) => res.send("Hello World"));
 
 
 if (process.env.NODE_ENV === "production") {
@@ -55,6 +54,6 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 
 //below for heroku
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "/client/build", "index.html"));
-// });
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/client/build", "index.html"));
+});
