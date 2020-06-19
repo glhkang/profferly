@@ -31,7 +31,7 @@ debugger
 //debugger
         const list = Object.values(this.props.posts[1]).map((post) => {
             return (
-                    <li key={post._id}>{post.text}
+                    <li key={post._id}><img src= {post.file} />{post.text}
                     <button onClick={() => {
                         return(
                         this.props.removePost(post._id)
@@ -48,7 +48,7 @@ debugger
         return (
             <div>
              
-                <h2>Hello {this.props.currentUser.username}</h2>
+                <h2>Hello {this.props.currentUser.email}</h2>
                 <PostCompose currentUser={this.props.currentUser} newPost={this.props.newPost} composePost={this.props.composePost} history={this.props.history} />
                 <ul>
                     {list}
@@ -66,7 +66,7 @@ debugger
         const list = Object.values(this.props.posts[1]).map((post) => {
 //debugger
         return(
-                    <li key={post._id}>{post.text}</li>  
+                    <li key={post._id}><img src= {post.file} />{post.text}</li>  
             )
         });
 
@@ -86,7 +86,7 @@ debugger
             return (<div>Loading..</div>)
         } else {
             return (
-                <div>
+                <div className="profile-main">
                     <button onClick={() => this.props.history.push('/posts')}>Go back</button>
                     {this.props.currentUser.id === this.props.user ? 
                     this.renderCurrentUser() : this.renderAsAnotherUser()}
