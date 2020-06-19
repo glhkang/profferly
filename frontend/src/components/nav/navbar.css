@@ -12,54 +12,37 @@
 
 .navbar-main {
     align-self: center;
-    height: 120px;
+    height: 110px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    /* background-color: #132113; */
-    /* light green below */
-    /* background-color: #aacdaa; */
-    /* background-color: #b6d5b6; */
-    /* middle green */
-    /* blue alts */
-    /* background-color: #56727a; */
-    /* background-color: #41565c; */
-    /* background-color: #516b73; */
-    /* background-color: #97afb6; */
-    /* background-color: #173f47; */
-    /* background-color: #0B353D; */
-    /* background-color: #0B414C; */
-    /* background-color: #0B4E37; */
-    /* background-color: #08423A; */
-    /* background-color: #0B3A3A; */
-    /* background-color: #0B2F2F; */
-    /* background-color: #0C3232; */
-    /* background-color: #155B3F; */
-    /* background-color: #13533C; */
-    /* background-color: #0D3131; */
-    /* background-color: #134545; */
-    /* background-color: #134533; */
-    /* background-color: #0d3124; */
+    background-color: #264026;
+    /* background-color: #1a3515; */
+    /* background-color: #305030; */
 
-    /* background-color: #345834; */
-    background-color: #2d4c2d;
+
+    /* background-color: #11230e; */
+    /* background-color: #22411D; */
+    /* background-color: #345B2E; */
+    /* background-color: #445046; */
+    /* background-color: #425140; */
     position: fixed;
     width: 90%;
     z-index: 1;
     border-radius: 60px;
 } 
 
-.navbar-whitepspace {
+/* .navbar-whitepspace {
   width: 1300px;
   height: 100px;
-  /* background-color: #f6f8fc; */
-  background-color: #e7edf7;
-  opacity: 0.8;
+  background-color: whitesmoke;
+  opacity: 0.5;
   position: fixed;
   z-index: 1;
   top: 0;
-}
+} */
+
 .navbar-center-holder {
     /* width: 100px; */
     height: 100%;
@@ -79,23 +62,34 @@
     height: 85%;
 }
 
-.navbar-menu {
-    font-size: 12.5px;
+.navbar-menu-2 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    text-transform: uppercase;
     width: 150px;
     padding: 0px;
     padding-right: 30px;
+
+}
+.navbar-menu {
+  font-size: 12.5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-transform: uppercase;
+  width: 150px;
+  padding: 0px;
+  padding-right: 30px;
 }
 
 .globe-icon {
-  width: 50px;
-  height: 50px;
+  font-size: 30px;
   color: white;
-    -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
-          filter: invert(100%);
+  border: 0;
+}
+
+.globe-icon:hover {
+  color: #a5b3a7;
 }
 
 .nav-bar-menu a {
@@ -125,7 +119,7 @@
 }
 
 .navbar-logo a:link {
-    /* color: whitesmoke; */
+    color: whitesmoke;
     color: black;
     text-decoration: none;
 
@@ -146,19 +140,46 @@
     text-decoration: none;
 }
 
+.nav-bar-menu a {
+  padding-top: 15px;
+}
+
+.navbar-menu-2 a:link {
+    color: whitesmoke;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.navbar-menu-2 a:hover {
+    color: whitesmoke;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-menu-2 a:active {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.navbar-menu-2 a:visited {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+/* 
 .navbar-logout {
     color: whitesmoke;
 }
 
 .navbar-logout a:link {
-    /* color: whitesmoke; */
+    color: whitesmoke;
     color: inherit;
     text-decoration: none;
-    /* -webkit-appearance: none;
-    -moz-appearance: none; */
+    -webkit-appearance: none;
+    -moz-appearance: none;
     margin: 0;
     border: none;
-    /* margin-right: 10px; */
+    margin-right: 10px;
 }
 
 
@@ -178,9 +199,9 @@
 .navbar-logout a:visited {
     color: whitesmoke;
     text-decoration: none;
-}
+} */
  
-/* .logout-button {
+/* .navbar-logout {
   width: 75px;
   padding: 10px;
   height: 40px;
@@ -189,16 +210,17 @@
   border-radius: 10px;
   border: 0;
   color: white;
+  background-color: #264026;
   font-size: 14px;
   font-weight: bolder;
   margin-right: 140px;
   margin-right: 10px;
-}
-
-.logout-button:focus {
-  outline-width: 0;
 } */
 
-/* .logout-button:hover {
+/* .logout-button:focus {
+  outline-width: 0;
+}
+
+.logout-button:hover {
   background-color: #4e5c89;
 } */

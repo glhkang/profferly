@@ -52,9 +52,10 @@
 } */
 
 .mainpage-mid {
-  /* background-color: #6F84D2; */
-  /* background-color: #8295d8; */
-  background-color: #f6f8fc;
+  background-color: #cfd7d1;
+  background-color: #dae0db;
+  scroll-snap-align: center;
+
 }
 
 .mid-container {

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import MapContainer from "../map/map";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faGlobe, faMapMarker, faMap } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe, faMapMarker, faMap } from "@fortawesome/free-solid-svg-icons";
+import '../../index.css';
 import './navbar.css';
 
 class NavBar extends React.Component {
@@ -22,18 +23,16 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div>
-          {/* <FontAwesomeIcon className="globe-icon" icon={faGlobe} />
-          <FontAwesomeIcon className="globe-icon" icon={faMapMarker} />
-          <FontAwesomeIcon className="globe-icon" icon={faMap} /> */}
-
+        <div className="navbar-menu-2">
           <Link to={"/map"}>
-            <img className="globe-icon" src="/assets/icons/world.svg" />
+            <FontAwesomeIcon className="globe-icon" icon={faGlobe} />
           </Link>
 
-          <button className="navbar-logout" onClick={this.logoutUser}>
+            {/* <img className="globe-icon" src="/assets/icons/world.svg" /> */}
+
+          <Link onClick={this.logoutUser}>
             Logout
-          </button>
+          </Link>
         </div>
       );
     } else {
