@@ -2,6 +2,8 @@ import React from "react";
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from "google-maps-react";
 import FormWindow from "./form";
 import * as MarkerApiUtil from "../../util/marker_util";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 
 class MapContainer extends React.Component {
@@ -21,9 +23,6 @@ class MapContainer extends React.Component {
     // .then(markers => {
     // this.setState({ markers });
     // });
-    console.log(this.state)
-    //debugger;
-    
     MarkerApiUtil.getMarkers().then(markers => this.setState({markers: Object.values(markers)[0]}))
     //     //debugger;
     // if (this.state.markers2.length !== 0) {
@@ -32,8 +31,6 @@ class MapContainer extends React.Component {
     //     this.setState({ markers: markersNew });
 
     // }
-    console.log(this.state)
-    //debugger;
   }
 
   onMapClick = (mapProps, map, clickEvent) => {
@@ -114,50 +111,54 @@ class MapContainer extends React.Component {
       height: "100%",
     };
 
-    console.log(this.state)
-    console.log(this.props)
-
     return (
-      <div>
-          
-          <button onClick={(e) => {e.preventDefault(); this.props.history.push('/posts')}}>Home</button>
-        <Map
-          style={style}
-          height="400px"
-          google={this.props.google}
-          zoom={2}
-          onClick={this.onMapClick}
-          initialCenter={{ lat: 40.7128, lng: -74.006 }}
-        >
-          {this.state.markers.map((
-            marker,
-            index // {title: "", des: "", lat: , lng: }
-          ) => (
-            <Marker
-              key={index}
-              title={marker.title}
-              name={marker.description}
-              position={{ lat: marker.latitude, lng: marker.longitude }}
-              onClick={this.onMarkerClick}
-            />
-          ))}
-          <InfoWindow
-            marker={this.state.activeMarker}
-            visible={this.state.showingInfoWindow}
+      <div className="map-main-border">
+        <div className="map-window">
+          <button
+            className="home-button"
+            onClick={(e) => {
+              e.preventDefault();
+              this.props.history.push("/posts");
+            }}
           >
-            <div>
-              <h1>{this.state.activeMarkerTitle}</h1>
-              <p>{this.state.activeMarkerName}</p>
-            </div>
-          </InfoWindow>
-        </Map>
+            <FontAwesomeIcon className="home-icon" icon={faHome} />
+          </button>
+          <Map
+            google={this.props.google}
+            zoom={2}
+            onClick={this.onMapClick}
+            initialCenter={{ lat: 40.7128, lng: -74.006 }}
+          >
+            {this.state.markers.map((
+              marker,
+              index // {title: "", des: "", lat: , lng: }
+            ) => (
+              <Marker
+                key={index}
+                title={marker.title}
+                name={marker.description}
+                position={{ lat: marker.latitude, lng: marker.longitude }}
+                onClick={this.onMarkerClick}
+              />
+            ))}
+            <InfoWindow
+              marker={this.state.activeMarker}
+              visible={this.state.showingInfoWindow}
+            >
+              <div>
+                <h1>{this.state.activeMarkerTitle}</h1>
+                <p>{this.state.activeMarkerName}</p>
+              </div>
+            </InfoWindow>
+          </Map>
+        </div>
       </div>
     );
   }
 }
 
 export default GoogleApiWrapper({
-  apiKey: process.env.REACT_APP_GOOGLE_API_KEY,
+    apiKey: "AIzaSyAUMJKNcL7nP8Gkw_0PjupMIiLAQA8YrRY",
 })(MapContainer);
 
 
