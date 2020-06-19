@@ -18,24 +18,24 @@ router.get("/test", (req, res) =>
 );
 
 
-router.post(
-  "/",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    const { errors, isValid } = validatePostInput(req.body);
+// router.post(
+//   "/",
+//   passport.authenticate("jwt", { session: false }),
+//   (req, res) => {
+//     const { errors, isValid } = validatePostInput(req.body);
 
-    if (!isValid) {
-      return res.status(400).json(errors);
-    }
+//     if (!isValid) {
+//       return res.status(400).json(errors);
+//     }
 
-    const newPost = new Post({
-      text: req.body.text,
-      user: req.user.id,
-    });
+//     const newPost = new Post({
+//       text: req.body.text,
+//       user: req.user.id,
+//     });
 
-    newPost.save().then((post) => res.json(post));
-  }
-);
+//     newPost.save().then((post) => res.json(post));
+//   }
+// );
 
 router.get(
     "/", (req, res) => {
@@ -100,61 +100,55 @@ router.get(
 //       .catch((err) => res.status(400).json(err));
 // });
 
-// router.post("/", upload.single("file"), 
-//             passport.authenticate("jwt", { session: false }), 
-//             function (req, res) {
+
+router.post("/", upload.single("file"), 
+            passport.authenticate("jwt", { session: false }), 
+            function (req, res) {
  
-//   const { errors, isValid } = validatePostInput(req.body);
-//       if (!isValid) {
-//         return res.status(400).json(errors);
-//       }
+  const { errors, isValid } = validatePostInput(req.body);
+      if (!isValid) {
+        return res.status(400).json(errors);
+      }
+  
+  const file = req.file;
+  const s3FileURL = process.env.AWS_Uploaded_File_URL_LINK;
 
-//   const file = req.file;
-//   const s3FileURL = process.env.AWS_Uploaded_File_URL_LINK;
+  let s3bucket = new AWS.S3({
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      region: process.env.AWS_REGION,
+  });
 
-//   let s3bucket = new AWS.S3({
-//       accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-//       secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-//       region: process.env.AWS_REGION,
-//   });
+  let params = {
+      Bucket: process.env.AWS_BUCKET_NAME,
+      Key: file.originalname,
+      Body: file.buffer,
+      ContentType: file.mimetype,
+      ACL: "public-read",
+  };
 
-//   let params = {
-//       Bucket: process.env.AWS_BUCKET_NAME,
-//       Key: file.originalname,
-//       Body: file.buffer,
-//       ContentType: file.mimetype,
-//       ACL: "public-read",
-//   };
-
-//   s3bucket.upload(params, function (err, data) {
-//       if (err) {
-//       res.status(500).json({ error: true, Message: err });
-//       } else {
-//       res.send({ data });
+  s3bucket.upload(params, function (err, data) {
+      if (err) {
+      res.status(500).json({ error: true, Message: err });
+      } else {
+      res.send({ data });
       
-//       // let newFileUploaded = {
-//       //         post_id: req.body.post_id,
-//       //         description: req.body.description,
-//       // };
-//         const newPost = new Post({
-//           text: req.body.text,
-//           user: req.user.id,
-//           fileLink: s3FileURL + file.originalname,
-//           s3_key: params.Key,
-//         });
+      // let newFileUploaded = {
+      //         post_id: req.body.post_id,
+      //         description: req.body.description,
+      // };
 
-//         newPost.save().then((post) => res.json(post));
-//       }
+        
+        const newPost = new Post({
+          text: req.body.text,
+          user: req.user.id,
+          file: s3FileURL + file.originalname,
+          s3_key: params.Key,
+        });
 
-      
-//       // let photo = new PHOTO(newFileUploaded);
-//       //     photo.save(function (error, newFile) {
-//       //             if (error) {
-//       //                 throw error;
-//       //             }
-//       //     });
-//       // }
-//   });
-// });
+        newPost.save().then((post) => res.json(post));
+      }
+  });
+});
 
 module.exports = router;

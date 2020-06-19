@@ -26,7 +26,8 @@ class PostItem extends React.Component {
             return (
                 <li>
                     <div>
-                        <div className="post-text">{post.text}</div>
+                        <div><img src= {post.file}/></div>
+                        <div>{post.text}</div>
                         <div onClick={this.handleClick}>
                             {user.username}
                         </div>
