@@ -1,3 +1,4 @@
+
 .navbar-container {
     width: 100%;
     position: absolute;
@@ -5,29 +6,52 @@
     display: flex;
     /* margin-top: 5px; */
     padding-top: 85px;
-
     margin-left: 5%;
     margin-right: 5%;
 }
 
 .navbar-main {
     align-self: center;
-    height: 120px;
+    height: 130px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    /* background-color: #264225; */
     /* background-color: #132113; */
-    background-color: #132113;
+    /* light green below */
+    /* background-color: #aacdaa; */
+    /* background-color: #b6d5b6; */
+    /* middle green */
+    /* blue alts */
+    /* background-color: #56727a; */
+    /* background-color: #41565c; */
+    /* background-color: #516b73; */
+    /* background-color: #97afb6; */
+    /* background-color: #173f47; */
+    /* background-color: #0B353D; */
+    /* background-color: #0B414C; */
+    /* background-color: #0B4E37; */
+    /* background-color: #08423A; */
+    /* background-color: #0B3A3A; */
+    /* background-color: #0B2F2F; */
+    /* background-color: #0C3232; */
+    /* background-color: #155B3F; */
+    /* background-color: #13533C; */
+    /* background-color: #0D3131; */
+    /* background-color: #134545; */
+    /* background-color: #134533; */
+    /* background-color: #0d3124; */
+
+    /* background-color: #345834; */
+    background-color: #2d4c2d;
     position: fixed;
     width: 90%;
     z-index: 1;
     border-radius: 60px;
-}
+} 
 
 .navbar-center-holder {
-    width: 240px;
+    /* width: 100px; */
     height: 100%;
 }
 
@@ -35,12 +59,12 @@
     text-align: center;
     display: block;
     width: 100px;
+    padding-left: 30px;
 }
 
 .navbar-logo img {
     margin: auto;
     margin-top: 5px;
-    margin-left: 15px;
     width: 85%;
     height: 85%;
 }
@@ -51,8 +75,9 @@
     justify-content: space-around;
     align-items: center;
     text-transform: uppercase;
-    width: 200px;
+    width: 150px;
     padding: 0px;
+    padding-right: 30px;
 }
 
 .nav-bar-menu a {
@@ -62,7 +87,7 @@
 .navbar-menu a:link {
     color: whitesmoke;
     text-decoration: none;
-    /* margin-right: 10px; */
+    margin-right: 10px;
 }
 
 .navbar-menu a:hover {
@@ -82,8 +107,10 @@
 }
 
 .navbar-logo a:link {
-    color: whitesmoke;
+    /* color: whitesmoke; */
+    color: black;
     text-decoration: none;
+
 }
 
 .navbar-logo a:hover {
