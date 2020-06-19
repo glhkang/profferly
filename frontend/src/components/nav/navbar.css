@@ -147,7 +147,8 @@
 .navbar-menu-2 a:link {
     color: whitesmoke;
     text-decoration: none;
-    margin-right: 10px;
+    /* margin-right: 10px; */
+    margin-left: 10px;
 }
 
 .navbar-menu-2 a:hover {
@@ -164,6 +165,16 @@
 .navbar-menu-2 a:visited {
     color: whitesmoke;
     text-decoration: none;
+}
+
+.user-show {
+    cursor: pointer;
+    color: white;
+    margin: 10pxpx;
+}
+
+.user-logout {
+    margin-right: 100px;
 }
 
 /* 

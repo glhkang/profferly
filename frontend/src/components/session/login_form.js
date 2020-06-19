@@ -130,7 +130,13 @@ class LoginForm extends React.Component {
               <input 
                 className="session-button"
                 type="submit" value="Submit" />
-              <input className="demo-button" type="submit" value="Demo User" />
+              <input
+                className="demo-button"
+                type="submit"
+                value="Demo User"
+                onClick={this.demoUserLogin}
+              />
+
 
               <div className="session-form-bottom">
                 <span className="bottom-session-text">

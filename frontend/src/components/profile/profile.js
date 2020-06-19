@@ -31,14 +31,14 @@ class Profile extends React.Component {
 ////debugger
         const list = Object.values(this.props.posts[1]).map((post) => {
             return (
-                    <li className="profile-list-post" key={post._id}><img className="profile-post-image" src= {post.file} />{post.text}
+                    <li className="profile-list-post" key={post._id}><img className="profile-post-image" src= {post.file} />> 
+                    {post.text}
                     <button onClick={() => {
                         return(
                         this.props.removePost(post._id)
                         .then(() => this.props.history.go())                        
                         )
-                    }
-                }
+                    } } 
                         
                     >Delete</button>
                     </li>
@@ -48,7 +48,7 @@ class Profile extends React.Component {
         return (
             <div>
              
-                <h2>Hello {this.props.currentUser.email}</h2>
+                <h2>Hello {this.props.currentUser.username}</h2>
                 <PostCompose currentUser={this.props.currentUser} newPost={this.props.newPost} composePost={this.props.composePost} history={this.props.history} />
                 <ul className="profile-list">
                     {list}
