@@ -98,8 +98,9 @@ class PostCompose extends React.Component {
                   <input
                       type="file"
                       className="custom-file-input"
-                      name=""
-                      id=""
+                      name="file"
+                      id="file"
+                      for="file"
                       accept='image/*'
                       color={{color: 'tranparent'}}
                       onChange={this.handleSelectedFile}
