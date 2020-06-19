@@ -15,9 +15,14 @@ import PhotoIndex from "./photos/PhotoIndex";
 import NewPhotoUpload from "./photos/NewPhotoUpload";
 import FormWindow from './map/form';
 
+
+
+
+
+
 const App = () => (
   <div className="app-main">
-    <NavBarContainer />
+    <Route path="/" component={NavBarContainer} />
     {/* <BrowserRouter> */}
     {/* <PhotoIndex />
     <NewPhotoUpload /> */}
@@ -29,7 +34,7 @@ const App = () => (
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/users/:id" component={ProfileContainer} />
       <Route exact path="/map" component={MapContainer} />
-      <Route exact path='/form' component={FormWindow} />
+      <Route exact path="/form" component={FormWindow} />
     </Switch>
     <div className="app-main-footer">
       <Footer />

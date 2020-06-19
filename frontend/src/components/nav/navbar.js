@@ -34,18 +34,28 @@ class NavBar extends React.Component {
   }
 
   render() {
+    if (
+      this.props.location.pathname.startsWith("/map") ||
+      this.props.location.pathname.startsWith("/form")
+    ) {
+      return null;
+    } else {
       return (
         <div className="navbar-container">
           <div className="navbar-main">
-            <div className="navbar-logo"><Link to={'/'}><img src="/assets/images/profferly_logo_white_small.png" /></Link></div>
-            
-            
+            <div className="navbar-logo">
+              <Link to={"/"}>
+                <img src="/assets/images/profferly_logo_white_small.png" />
+              </Link>
+            </div>
+
             <div className="navbar-left-holder"></div>
             {this.getLinks()}
           </div>
         </div>
-    );
-  }
+      );
+    }
+    }
 }
 
 export default NavBar;

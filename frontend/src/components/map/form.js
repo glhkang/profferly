@@ -2,7 +2,7 @@ import React from 'react';
 import * as MarkerApiUtil from "../../util/marker_util";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-
+import "./map.css";
 
 class FormWindow extends React.Component {
     constructor(props) {
@@ -48,29 +48,41 @@ class FormWindow extends React.Component {
     render() {
       console.log(this.props)
         return (
-          <div>
-            <button
-              onClick={this.handleButton}>
-              Go back
-            </button>
-            <form onSubmit={this.handleSubmit}>
-              <input
-                type="text"
-                value={this.state.description}
-                onChange={this.update("description")}
-                placeholder="Description"
-              />
-              <br />
-              <input
-                type="text"
-                value={this.state.title}
-                onChange={this.update("title")}
-                placeholder="Title"
-              />
-              <br />
-              <button>Submit</button>
-            </form>
-          </div>
+            <div className="map-form-container">
+                <div className="map-form">
+                    <div className="map-form-header" >
+                        Add Your Event to the Map! 
+                    </div>
+                        <br />
+                        <form onSubmit={this.handleSubmit}>
+                        <input
+                            type="text"
+                            value={this.state.title}
+                            onChange={this.update("title")}
+                            placeholder="Title"
+                            className="map-inputs"
+                        />
+                        <br />
+                        <textarea
+                            type="text"
+                            value={this.state.description}
+                            onChange={this.update("description")}
+                            placeholder="Enter a detailed description"
+                            className="map-inputs"
+                        />
+                        <br />
+                        <button className="submit-button">Submit</button>
+                        </form>
+
+                   
+                    <button
+                        onClick={this.handleButton}
+                        className="return-button"
+                        >
+                        Return to Map
+                    </button>
+                </div>
+            </div>
         );
     }
 }
