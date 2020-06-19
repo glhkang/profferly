@@ -22,10 +22,10 @@ class MapContainer extends React.Component {
     // this.setState({ markers });
     // });
     console.log(this.state)
-    debugger;
+    //debugger;
     
     MarkerApiUtil.getMarkers().then(markers => this.setState({markers: Object.values(markers)[0]}))
-    //     debugger;
+    //     //debugger;
     // if (this.state.markers2.length !== 0) {
     //     const markersNew = [...this.state.markers, this.state.markers2[0]];
 
@@ -33,7 +33,7 @@ class MapContainer extends React.Component {
 
     // }
     console.log(this.state)
-    debugger;
+    //debugger;
   }
 
   onMapClick = (mapProps, map, clickEvent) => {

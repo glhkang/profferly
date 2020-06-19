@@ -5,7 +5,7 @@ import posts from './posts_reducer';
 import users from './users_reducer';
 import markers from './markers_reducer';
 
-//debugger
+////debugger
 import photos from './photos_reducer';
 
 const RootReducer = combineReducers({

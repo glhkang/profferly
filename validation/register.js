@@ -19,12 +19,12 @@ module.exports = function validateRegisterInput(data) {
   }
 
   // if (Validator.isEmpty(data.fname)) {
-  // //debugger
+  // ////debugger
   //   errors.fname = "First name is required";
   // }
 
   // if (Validator.isEmpty(data.lname)) {
-  // //debugger
+  // ////debugger
   //   errors.lname = "Last name is required";
   // }
 

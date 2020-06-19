@@ -2,13 +2,18 @@
   padding-left: 130px;
   padding-right: 130px;
   background-color: #f6f8fc;
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  /* height:30px; */
 }
 
 .footer-main {
     /* background-color: #bcc4c8; */
     /* background-color: white; */
     color: #002012;
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Muli', sans-serif;
     font-weight: bold;
     text-align: center;

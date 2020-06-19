@@ -31,7 +31,7 @@
     position: absolute;
     /* top: 400px; */
     top: 320px;
-    font-size: 65px;
+    font-size: 45px;
     text-shadow: azure;
     /* color: #000c07; */
     color: #002012;
@@ -74,7 +74,7 @@
 }
 
 .mid-container h3 {
-  font-size: 65px;
+  font-size: 45px;
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -95,7 +95,7 @@
   text-align: center;
   width: 45%;
   margin: 10px;
-  font-size: 25px;
+  font-size: 19px;
   /* font-family: 'Open Sans', sans-serif; */
 }
 
@@ -148,8 +148,8 @@
     margin: 0;
     margin-top: 0px;
     margin-left: 15px;
-    width: 150px;
-    height: 150px;
+    width: 145px;
+    height: 145px;
     padding-bottom: 10px;
    /* font-family: 'Muli', sans-serif; */
 }
@@ -157,7 +157,7 @@
 .bottom-container h3 {
     display: flex;
     align-self: flex-start;
-    font-size: 53px;
+    font-size: 40px;
     font-style: italic;
     font-family: 'Ubuntu', sans-serif;
     margin: 0px;
@@ -170,7 +170,7 @@
     align-self: flex-start;
     font-family: 'Muli', sans-serif;
     margin: 0px;
-    font-size: 35px;
+    font-size: 30px;
     /* padding-top: 6px; */
     /* font-family: 'Tajawal', sans-serif; */
 }
@@ -178,7 +178,7 @@
 .bottom-container  p {
     margin: 0px;
     padding-top: 20px;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bolder;
     padding-bottom: 50px;
     font-family: 'Muli', sans-serif;

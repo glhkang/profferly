@@ -21,7 +21,7 @@ class SignupForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-  //debugger
+  ////debugger
     if (nextProps.signedIn === true) {
       this.props.history.push('/posts');
     }
@@ -36,7 +36,7 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit(e) {
-//debugger
+////debugger
     e.preventDefault();
     let user = {
       email: this.state.email,
@@ -77,7 +77,7 @@ class SignupForm extends React.Component {
 
 
   render() {
-  ////debugger
+  //////debugger
     return (
       <div className="session-form-main">
         <div className="session-form-container">
