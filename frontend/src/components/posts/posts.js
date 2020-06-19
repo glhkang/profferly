@@ -40,6 +40,8 @@ class Posts extends React.Component {
                       </div>
                     </div>
                   </div>
+
+                  <div class="clear"></div>
               </div>
             )
         } else {

@@ -14,6 +14,7 @@ import MapContainer from "./map/map";
 import PhotoIndex from "./photos/PhotoIndex";
 import NewPhotoUpload from "./photos/NewPhotoUpload";
 import FormWindow from './map/form';
+import Splash from '../splash';
 
 const App = () => (
   <div className="app-main">
@@ -37,5 +38,29 @@ const App = () => (
     {/* </BrowserRouter> */}
   </div>
 );
+
+// const App = () => (
+//   <div className="app-main">
+//     <Route path="/" component={NavBarContainer} />
+//     {/* <BrowserRouter> */}
+//     {/* <PhotoIndex />
+//     <NewPhotoUpload /> */}
+//     <Switch>
+//       <AuthRoute exact path="/" component={MainPage} />
+//       <AuthRoute exact path="/login" component={LoginFormContainer} />
+//       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+//       <Splash />
+//       {/* <ProtectedRoute exact path="/posts" component={PostsContainer} />
+//       <ProtectedRoute exact path="/users/:id" component={ProfileContainer} /> */}
+//       <Route exact path="/map" component={MapContainer} />
+//       <Route exact path="/form" component={FormWindow} />
+//     </Switch>
+//     <div className="app-main-footer">
+//       <Footer />
+//     </div>
+//     {/* </BrowserRouter> */}
+//   </div>
+// );
+
 
 export default App;

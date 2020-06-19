@@ -86,11 +86,11 @@ class PostCompose extends React.Component {
                     {/* <div>
                         <form onSubmit={this.handleUpload}> */}
                   <div className="post-compose">
-                    <input className="post-textarea" type="textarea"
+                    <textarea className="post-textarea" 
                       value={this.state.text}
                       onChange={this.update()}
                       placeholder="What's up?"
-                      wrap="hard"
+                    //   wrap="hard"
                     />
                   <input className="post-button" type="submit" value="Submit" />
                   </div>
@@ -101,8 +101,9 @@ class PostCompose extends React.Component {
                       name="file"
                       id="file"
                       for="file"
+                    //   style={{display: "none"}}
                       accept='image/*'
-                      color={{color: 'tranparent'}}
+                    //   color={{color: 'tranparent'}}
                       onChange={this.handleSelectedFile}
                   />
                             {/* <button type="submit">Upload</button>

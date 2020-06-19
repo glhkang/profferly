@@ -11,7 +11,7 @@
     background-repeat: no-repeat;
     opacity: 0.5;
     z-index: -1;
-    padding-bottom: 50px;
+    padding-bottom: 80px;
 }
 
 /* .mainpage-border {
@@ -125,6 +125,7 @@
 
 .bottom-container {
     scroll-snap-align: center;
+    background-position: fixed;
     background: url("/assets/images/leaf-striation-bg.jpg");
     opacity: 0.9;
     background-size: cover;
@@ -134,7 +135,7 @@
     padding-top: 100px;
     padding-left: 150px;
     padding-right: 150px;
-    padding-bottom: 50px;
+    padding-bottom: 110px;
     min-height: 175px;
     color: white;
 }

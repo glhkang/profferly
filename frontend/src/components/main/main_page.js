@@ -7,7 +7,7 @@ class MainPage extends React.Component {
 
   render() {
     return (
-      <div className="mainpage-container">
+      <div>
         <div className="mainpage-main">
           {/* <div className="mainpage-side">
             <h1>Right</h1>

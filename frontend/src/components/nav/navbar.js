@@ -31,7 +31,7 @@ class NavBar extends React.Component {
             {/* <img className="globe-icon" src="/assets/icons/world.svg" /> */}
 
           <Link onClick={this.logoutUser}>
-            Logout
+            LOGOUT
           </Link>
         </div>
       );

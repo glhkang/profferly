@@ -1,7 +1,7 @@
 .app-main-footer {
   padding-left: 130px;
   padding-right: 130px;
-  background-color: white;
+  background-color:white;
   position:fixed;
   bottom:0;
   left:0;
@@ -13,8 +13,13 @@
     /* background-color: #bcc4c8; */
     /* background-color: white; */
     color: #002012;
-    font-size: 14px;
-    font-family: 'Muli', sans-serif;
+    font-size: 12px;
+    /* font-family: 'Muli', sans-serif; */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
     font-weight: bold;
     text-align: center;
     display: flex;
@@ -23,7 +28,7 @@
     z-index: 1;
     max-height: 40px;
     padding: 0px;
-    margin-top: 20px;
+    margin-top: 0px;
     /* margin-left: 60px; */
     border-top: 1px solid #132113;
 }

@@ -114,6 +114,7 @@ class MapContainer extends React.Component {
     return (
       <div className="map-main-border">
         <div className="map-window">
+          
           <button
             className="home-button"
             onClick={(e) => {
@@ -123,9 +124,10 @@ class MapContainer extends React.Component {
           >
             <FontAwesomeIcon className="home-icon" icon={faHome} />
           </button>
+
           <Map
             google={this.props.google}
-            zoom={2}
+            zoom={4}
             onClick={this.onMapClick}
             initialCenter={{ lat: 40.7128, lng: -74.006 }}
           >
