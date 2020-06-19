@@ -106,10 +106,10 @@ class MapContainer extends React.Component {
   };
 
   render() {
-    const style = {
-      width: "100%",
-      height: "100%",
-    };
+    // const style = {
+    //   width: "100%",
+    //   height: "100%",
+    // };
 
     return (
       <div className="map-main-border">

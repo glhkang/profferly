@@ -1,4 +1,32 @@
 .profile-main {
+    font-family: 'Muli', sans-serif;
     position: absolute;
-    top: 200px;
+    padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+
+}
+
+.profile-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-list-post {
+    width: 400px;
+    height: 300px;
+    border: 5px solid #365c36;
+    border-radius: 70px;
+    text-decoration: none;
+    padding-top: 50px;
+    margin-bottom: 20px;
+}
+
+.profile-loading {
+  
 }
