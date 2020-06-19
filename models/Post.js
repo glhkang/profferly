@@ -16,7 +16,7 @@ const PostSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  fileLink: { 
+  file: { 
     type: String 
   },
 

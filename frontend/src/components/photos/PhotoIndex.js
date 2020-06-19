@@ -22,7 +22,7 @@ class PhotoIndex extends Component {
   };
 
   render() {
-debugger
+//debugger
     return (
       <div >
             <table>

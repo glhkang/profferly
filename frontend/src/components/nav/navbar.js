@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MapContainer from "../map/map";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe, faMapMarker, faMap } from "@fortawesome/free-solid-svg-icons";
+import '../../index.css';
 import './navbar.css';
 
 class NavBar extends React.Component {
-////debugger
+//////debugger
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
@@ -19,8 +23,16 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div>
-          <button className="navbar-logout" onClick={this.logoutUser}>Logout</button>
+        <div className="navbar-menu-2">
+          <Link to={"/map"}>
+            <FontAwesomeIcon className="globe-icon" icon={faGlobe} />
+          </Link>
+
+            {/* <img className="globe-icon" src="/assets/icons/world.svg" /> */}
+
+          <Link onClick={this.logoutUser}>
+            Logout
+          </Link>
         </div>
       );
     } else {
@@ -34,18 +46,29 @@ class NavBar extends React.Component {
   }
 
   render() {
+    if (
+      this.props.location.pathname.startsWith("/map") ||
+      this.props.location.pathname.startsWith("/form")
+    ) {
+      return null;
+    } else {
       return (
         <div className="navbar-container">
+          <div className="navbar-whitepspace" />
           <div className="navbar-main">
-            <div className="navbar-logo"><Link to={'/'}><img src="/assets/images/profferly_logo_white_small.png" /></Link></div>
-            
-            
+            <div className="navbar-logo">
+              <Link to={"/"}>
+                <img src="/assets/images/profferly_logo_white_small.png" />
+              </Link>
+            </div>
+
             <div className="navbar-left-holder"></div>
             {this.getLinks()}
           </div>
         </div>
-    );
-  }
+      );
+    }
+    }
 }
 
 export default NavBar;

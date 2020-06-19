@@ -21,16 +21,17 @@ class PostItem extends React.Component {
     render() {
              const post = this.props.post;
              const user = this.props.users[this.props.post.user];
-//debugger
+////debugger
         if (post && user) {
             return (
                 <li>
                     <div>
+                        <div><img src= {post.file}/></div>
                         <div>{post.text}</div>
-                        <div>{post.date}</div>
                         <div onClick={this.handleClick}>
                             {user.username}
                         </div>
+                        <div className="post-date">{post.date}</div>
                         {(this.props.currentUser.id === user._id) ? 
                             <button onClick={this.handleButton}>Delete</button> : <div></div>
                         }
@@ -38,7 +39,7 @@ class PostItem extends React.Component {
                 </li>
             )
         } else {
-            // //debugger
+            // ////debugger
             return null;
         }
     }
