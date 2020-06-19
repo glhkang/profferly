@@ -6,6 +6,7 @@ class MainPageMid extends React.Component {
       <div className="mid-container">
         <h3>Featured Opportunities</h3>
 
+
         <div className="mid-body">
           <div className="mid-body-row">
             <img className="mid-icon-1" src="/assets/icons/chat_bubble.svg" />
