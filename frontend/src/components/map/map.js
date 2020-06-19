@@ -23,16 +23,14 @@ class MapContainer extends React.Component {
     // .then(markers => {
     // this.setState({ markers });
     // });
-
     MarkerApiUtil.getMarkers().then(markers => this.setState({markers: Object.values(markers)[0]}))
-    //     debugger;
+    //     //debugger;
     // if (this.state.markers2.length !== 0) {
     //     const markersNew = [...this.state.markers, this.state.markers2[0]];
 
     //     this.setState({ markers: markersNew });
 
     // }
-
   }
 
   onMapClick = (mapProps, map, clickEvent) => {

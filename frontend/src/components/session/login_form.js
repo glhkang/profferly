@@ -5,7 +5,7 @@ import "./session_form.css";
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
-    ////debugger
+    //////debugger
     this.state = {
       email: "",
       password: "",
@@ -43,7 +43,7 @@ class LoginForm extends React.Component {
       email: this.state.email,
       password: this.state.password,
     };
-    ////debugger
+    //////debugger
 
     this.props.login(user);
   }
@@ -79,7 +79,7 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    ////debugger
+    //////debugger
 
     const { errors } = this.props;
 
