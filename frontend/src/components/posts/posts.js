@@ -16,6 +16,7 @@ class Posts extends React.Component {
         if (this.props.users) {
             return (
               <div className="all-posts">
+                  <div className="all-posts-above" />
                     {/* <button onClick={(e) => {e.preventDefault(); this.props.history.push('/map')}}>Map</button> */}
                 <div className="posts-container">
                   <h3>Talk to us.</h3>

@@ -24,7 +24,7 @@
 .post-compose {
   display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   flex-direction: column;
   /* margin-left: -23px; */
 }
@@ -41,8 +41,9 @@
   /* margin-top: 0px; */
   margin-top: 10px;
   margin-bottom: 10px;
-  margin-left: 5px;
+  margin-left: 10px;
   width: 240px;
+  text-align: center;
   /* outline: 0; */
 }
 
@@ -71,27 +72,28 @@
   opacity: 0;
 }
 
-.custom-file-input{
+/* .custom-file-input{
   border: 0;
   outline: none;
   -webkit-appearance: none;
-}
+} */
 
 .custom-file-input::before {
   content: 'Choose a Photo';
   display: flex;
   align-self: center;
   align-content: center;
-  margin-left: 80px;
-  width: 140px;
+  /* margin-left: 80px; */
+  /* width: 140px; */
   margin-top: 10px;
   margin-bottom: 0px;
   margin-left: 10px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-right: 34px;
-  padding-left: 64px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  /* padding-right: 34px;
+  /* padding-left: 34px; */
   /* padding: 20px 20px; */
+  padding-left: 58px;
   border-radius: 40px;
   border: 0;
   background-color: #323b58;
@@ -102,18 +104,22 @@
   border: 1px solid #323b58;
   border-radius: 40px;
   outline: none;
-  white-space: nowrap;
-  -webkit-user-select: none;
+  /* -webkit-user-select: none; */
   cursor: pointer;
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
 }
 
-.custom-file-input:hover::before {
+.post-textarea:hover::before {
   /* background-color: #497c49; */
   background-color: #4e5c89;
 }
 
-
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .post-textarea {
   width: 420px;
@@ -202,3 +208,10 @@
   font-size: 15px;
 }
 
+.post-item-username:hover{text-transform: uppercase;
+  color: #264026;
+}
+
+/* .all-posts-above {
+
+} */
