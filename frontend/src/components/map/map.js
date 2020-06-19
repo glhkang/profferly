@@ -37,25 +37,44 @@ class MapContainer extends React.Component {
   }
 
   onMapClick = (mapProps, map, clickEvent) => {
-    if (this.state.showingInfoWindow) {
-      this.setState({
-        showingInfoWindow: false,
-        activeMarker: null,
-      });
+    console.log(clickEvent.latLng)
+    // if (this.state.showingInfoWindow) {
+    //   this.setState({
+    //     showingInfoWindow: false,
+    //     activeMarker: null,
+    //   });
 
-      return;
-    }
+    //   return;
+    // }
+    const lat = clickEvent.latLng.lat();
+    const lng = clickEvent.latLng.lng();
 
-    const newMarker = {
-      title: `New marker ${this.state.markers.length}`,
-      description: "",
-      longitude: clickEvent.latLng.lng(),
-      latitude: clickEvent.latLng.lat(),
-    };
+    console.log(lat, lng)
 
-    const markers = [...this.state.markers, newMarker];
+    this.props.history.push({
+      pathname: "/form",
+      state: { latitude: lat, longitude: lng},
+    });
+    //  longitude: clickEvent.latLng.lng(),
 
-    this.setState({ markers });
+    // return (
+
+    
+    // <FormWindow lat={40} lng={-70}/>
+    // )
+
+    // const newMarker = {
+    //   title: `New marker ${this.state.markers.length}`,
+    //   description: "Can not be empty!",
+    //   longitude: clickEvent.latLng.lng(),
+    //   latitude: clickEvent.latLng.lat(),
+    // };
+
+    // MarkerApiUtil.writeMarker(newMarker);
+
+    // const markers = [...this.state.markers, newMarker];
+
+    // this.setState({ markers });
 
     // SAVE NEW MARK ${this.state.mark}`R
     // POST http://api/marker (body: newMarker)
@@ -96,10 +115,12 @@ class MapContainer extends React.Component {
     };
 
     console.log(this.state)
+    console.log(this.props)
 
     return (
       <div>
-          <button onClick={(e) => {e.preventDefault(); this.props.history.goBack()}}>Go back</button>
+          
+          <button onClick={(e) => {e.preventDefault(); this.props.history.push('/posts')}}>Home</button>
         <Map
           style={style}
           height="400px"

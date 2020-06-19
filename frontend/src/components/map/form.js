@@ -1,4 +1,7 @@
 import React from 'react';
+import * as MarkerApiUtil from "../../util/marker_util";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 
 class FormWindow extends React.Component {
@@ -11,6 +14,12 @@ class FormWindow extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
+        this.handleButton = this.handleButton.bind(this);
+    }
+
+    handleButton(e) {
+      e.preventDefault();
+      this.props.history.push('/map');
     }
 
     update(field) {
@@ -21,21 +30,29 @@ class FormWindow extends React.Component {
     }
 
     handleSubmit(e){
-        e.preventDefault();
-        if (this.state.title.length !== 0 && this.state.description.length !== 0) {
             const newMarker = {
-                title: this.state.title,
-                description: this.state.description,
-                longitude: this.props.longitude,
-                latitude: this.props.latitude,
+              title: this.state.title,
+              description: this.state.description,
+              longitude: this.props.location.state.longitude,
+              latitude: this.props.location.state.latitude,
             };
-        this.props.newMarker(newMarker);
-        }
+            this.setState = ({
+              title: "",
+              description: "",
+            });
+         MarkerApiUtil.writeMarker(newMarker);
+         this.props.history.go();
+
     }
 
     render() {
+      console.log(this.props)
         return (
           <div>
+            <button
+              onClick={this.handleButton}>
+              Go back
+            </button>
             <form onSubmit={this.handleSubmit}>
               <input
                 type="text"
