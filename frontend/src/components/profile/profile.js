@@ -46,8 +46,7 @@ class Profile extends React.Component {
                         this.props.removePost(post._id)
                         .then(() => this.props.history.go())                        
                         )
-                    }
-                }
+                    } } 
                         
                     >Delete</button></div></div>
                   
@@ -57,9 +56,9 @@ class Profile extends React.Component {
         });
 
         return (
-            <div className="user-profile">
-                <h2>Hello, {this.props.currentUser.email}!</h2>
-                <div className="post-compose">
+            <div>
+                <div className="user-profile">
+                <h2>Hello {this.props.currentUser.username}</h2>
                 <PostCompose currentUser={this.props.currentUser} newPost={this.props.newPost} composePost={this.props.composePost} history={this.props.history} />
                 </div>
                 <ul className="profile-list">

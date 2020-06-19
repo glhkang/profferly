@@ -12,6 +12,8 @@ class NavBar extends React.Component {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   logoutUser(e) {
@@ -19,11 +21,19 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
+  handleClick() {
+    this.props.history.push(`/users/${this.props.currentUser.id}`)
+  }
+
+
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
     if (this.props.loggedIn) {
       return (
         <div className="navbar-menu-2">
+          <div className={"user-show"} onClick={this.handleClick}>
+            {this.props.currentUser.username}
+          </div>
           <Link to={"/map"}>
             <FontAwesomeIcon className="globe-icon" icon={faGlobe} />
           </Link>

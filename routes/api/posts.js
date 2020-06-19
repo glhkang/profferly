@@ -67,30 +67,30 @@ router.get(
     }
 );
 
-// router.delete(
-//     "/:postId", (req, res) => {
-//         Post
-//         .findByIdAndRemove(req.params.postId)
-//         .then((post) => {
-//             if (!post) {
-//                 return res.status(404).send({
-//                 message: `Post with id ${req.params.postId} not found`,
-//             });
-//         }
-//         return res.send({ message: "Post successfully deleted" });
-//         })
-//         .catch((err) => {
-//             if (err.kind === "ObjectId" || err.name === "NotFound") {
-//             return res.status(404).send({
-//             message: `Post with id ${req.params.postId} not found`,
-//             });
-//         }
+router.delete(
+    "/:postId", (req, res) => {
+        Post
+        .findByIdAndRemove(req.params.postId)
+        .then((post) => {
+            if (!post) {
+                return res.status(404).send({
+                message: `Post with id ${req.params.postId} not found`,
+            });
+        }
+        return res.send({ message: "Post successfully deleted" });
+        })
+        .catch((err) => {
+            if (err.kind === "ObjectId" || err.name === "NotFound") {
+            return res.status(404).send({
+            message: `Post with id ${req.params.postId} not found`,
+            });
+        }
 
-//         return res.status(500).send({
-//         message: `Could not delete post with id ${req.params.postId}`,
-//       });
-//     });
-// });
+        return res.status(500).send({
+        message: `Could not delete post with id ${req.params.postId}`,
+      });
+    });
+});
 
 // router.get("/:id/photos", (req, res) => {
 //   Photo
