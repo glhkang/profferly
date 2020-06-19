@@ -1,8 +1,9 @@
-.map-main-border {
+/* .map-main-border {
     background-color: rgb(229, 227, 223);
-}
+} */
 
 .map-window {
+    z-index: -999
     /* width: 90%;
     height: 90%; */
     /* margin-top: 5px; */
@@ -95,7 +96,7 @@
 }
 
 .home-button {
-    padding-left: 40px;
+    padding-left: 30px;
     padding-top: 15px;
     border: 0;
     color: #305030;
@@ -104,6 +105,14 @@
     background-color: rgb(229, 227, 223);
 }
 
+.home-button:hover {
+    color: white;
+}
+
 .home-button:focus {
     outline-width: 0;
+}
+
+.home-icon {
+
 }

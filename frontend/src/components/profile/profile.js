@@ -31,7 +31,7 @@ class Profile extends React.Component {
 ////debugger
         const list = Object.values(this.props.posts[1]).map((post) => {
             return (
-                    <li key={post._id}><img src= {post.file} />{post.text}
+                    <li className="profile-list-post" key={post._id}><img className="profile-post-image" src= {post.file} />{post.text}
                     <button onClick={() => {
                         return(
                         this.props.removePost(post._id)
@@ -50,7 +50,7 @@ class Profile extends React.Component {
              
                 <h2>Hello {this.props.currentUser.email}</h2>
                 <PostCompose currentUser={this.props.currentUser} newPost={this.props.newPost} composePost={this.props.composePost} history={this.props.history} />
-                <ul>
+                <ul className="profile-list">
                     {list}
                 </ul>
             </div>
@@ -66,14 +66,14 @@ class Profile extends React.Component {
         const list = Object.values(this.props.posts[1]).map((post) => {
 ////debugger
         return(
-                    <li key={post._id}><img src= {post.file} />{post.text}</li>  
+                    <li className="profile-list-post" key={post._id}><img className="profile-post-image" src= {post.file} />{post.text}</li>  
             )
         });
 
         return (
             <div>
                 <h2>All of {this.props.users[this.props.user].username}'s Posts</h2>
-                <ul>
+                <ul className="profile-list">
                     {list}
                 </ul>
             </div>
@@ -82,15 +82,19 @@ class Profile extends React.Component {
 }
 
     render() {
-        console.log(this.props)
-        if (this.state.posts.length === 0) {
-            return (<div>Loading..</div>)
+        if (!this.state.user && (this.state.posts.length === 0)) {
+            return (<div className="profile-main">
+                <div className="profile-loading">Loading...</div>
+                </div>
+            )
         } else {
             return (
                 <div className="profile-main">
-                    <button onClick={() => this.props.history.push('/posts')}>Go back</button>
-                    {this.props.currentUser.id === this.props.user ? 
-                    this.renderCurrentUser() : this.renderAsAnotherUser()}
+                    {/* <div className="profile-main-body"> */}
+                        <button className="profile-button" onClick={() => this.props.history.push('/posts')}>Go back</button>
+                        {this.props.currentUser.id === this.props.user ? 
+                        this.renderCurrentUser() : this.renderAsAnotherUser()}
+                    {/* </div> */}
                 </div>
             )
         }
