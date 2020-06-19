@@ -1,7 +1,7 @@
 .app-main-footer {
   padding-left: 130px;
   padding-right: 130px;
-  background-color: #f6f8fc;
+  background-color: white;
   position:fixed;
   bottom:0;
   left:0;
@@ -21,7 +21,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 1;
-    max-height: 60px;
+    max-height: 40px;
     padding: 0px;
     margin-top: 20px;
     /* margin-left: 60px; */
