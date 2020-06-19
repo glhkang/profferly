@@ -15,11 +15,6 @@ import PhotoIndex from "./photos/PhotoIndex";
 import NewPhotoUpload from "./photos/NewPhotoUpload";
 import FormWindow from './map/form';
 
-
-
-
-
-
 const App = () => (
   <div className="app-main">
     <Route path="/" component={NavBarContainer} />

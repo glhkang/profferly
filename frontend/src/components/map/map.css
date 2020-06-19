@@ -1,18 +1,16 @@
 .map-main-border {
-    background-color: light-blue;
+    background-color: rgb(229, 227, 223);
 }
 
 .map-window {
-    width: 90%;
-    height: 90%;
-    margin-top: 100px;
-    border-radius: 25px;
-    border: 1px;
+    /* width: 90%;
+    height: 90%; */
+    /* margin-top: 5px; */
+    /* border-radius: 25px; */
+    /* border: 1px; */
 }
 
 .map-form-container {
-    /* width: 100%;
-    height: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,6 +26,7 @@
 .map-form-header {
     font-size: 30px;
     font-family: 'Muli', sans-serif;
+    font-weight: 800;
 }
 
 
@@ -96,11 +95,13 @@
 }
 
 .home-button {
-    padding-left: 30px;
+    padding-left: 40px;
+    padding-top: 15px;
     border: 0;
     color: #305030;
     border-radius: 2px;
     font-size: 30px;
+    background-color: rgb(229, 227, 223);
 }
 
 .home-button:focus {
