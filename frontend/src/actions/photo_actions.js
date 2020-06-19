@@ -6,7 +6,7 @@ export const RECEIVE_POST_PHOTOS = "RECEIVE_POST_PHOTOS";
 export const DELETE_PHOTO = "DELETE_PHOTO";
 
 export const receivePhotos = photos => {
-debugger
+//debugger
     return {
         type: RECEIVE_PHOTOS,
         photos 

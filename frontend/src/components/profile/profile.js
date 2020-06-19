@@ -16,19 +16,19 @@ class Profile extends React.Component {
     }
 
     componentWillMount() {
-debugger
+//debugger
         this.props.fetchUserPosts(this.props.user);
         this.props.fetchUsers();
         this.props.fetchPhotos();
     }
 
     componentWillReceiveProps(newState) {
-//debugger
+////debugger
         this.setState({ posts: newState.posts });
     }
 
     renderCurrentUser() {
-//debugger
+////debugger
         const list = Object.values(this.props.posts[1]).map((post) => {
             return (
                     <li key={post._id}><img src= {post.file} />{post.text}
@@ -64,7 +64,7 @@ debugger
     renderAsAnotherUser() {
         if (this.props.users) {
         const list = Object.values(this.props.posts[1]).map((post) => {
-//debugger
+////debugger
         return(
                     <li key={post._id}><img src= {post.file} />{post.text}</li>  
             )
@@ -82,6 +82,7 @@ debugger
 }
 
     render() {
+        console.log(this.props)
         if (this.state.posts.length === 0) {
             return (<div>Loading..</div>)
         } else {

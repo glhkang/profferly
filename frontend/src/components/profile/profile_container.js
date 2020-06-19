@@ -5,7 +5,7 @@ import { fetchPhotos } from '../../actions/photo_actions';
 import Profile from './profile';
 
 const mapStateToProps = (state, ownProps) => {
-debugger
+//debugger
     return {
         posts: Object.values(state.posts),
         currentUser: state.session.user,
@@ -16,7 +16,7 @@ debugger
 };
 
 const mapDispatchToProps = dispatch => {
-debugger
+//debugger
     return {
         fetchUserPosts: id => dispatch(fetchUserPosts(id)),
         fetchPosts: () => dispatch(fetchPosts()),

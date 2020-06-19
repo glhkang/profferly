@@ -21,7 +21,7 @@ class SignupForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-  //debugger
+  ////debugger
     if (nextProps.signedIn === true) {
       this.props.history.push('/posts');
     }
@@ -36,7 +36,7 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit(e) {
-//debugger
+////debugger
     e.preventDefault();
     let user = {
       email: this.state.email,
@@ -77,7 +77,7 @@ class SignupForm extends React.Component {
 
 
   render() {
-  ////debugger
+  //////debugger
     return (
       <div className="session-form-main">
         <div className="session-form-container">
@@ -123,7 +123,7 @@ class SignupForm extends React.Component {
                 placeholder="Password"
               />
 
-              <br />
+              {/* <br /> */}
 
               <input className="session-button" type="submit" value="Submit" />
               <input
@@ -132,16 +132,20 @@ class SignupForm extends React.Component {
                 value="Demo User"
                 onClick={this.demoUserLogin}
               />
-              <div className="session-errors">
-                {this.renderErrors()}
-              </div>
+
+
 
               <div className="session-form-bottom">
-                <span className="bottom-session-text">Already have an account?{" "}
+                <span className="bottom-session-text">Already have an account?&nbsp;{" "}
                   <Link to="/login" className="bottom-session-link">Click here!
                   </Link>
                 </span>
               </div>
+
+              <div className="session-errors">
+                {this.renderErrors()}
+              </div>
+
             </div>
           </form>
         </div>

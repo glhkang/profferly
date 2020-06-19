@@ -12,7 +12,8 @@ class PostItem extends React.Component {
         this.props.history.push(`/users/${this.props.post.user}` )
     }
     
-    handleButton() {
+    handleButton(e) {
+        e.preventDefault();
         this.props.removePost(this.props.post._id);
         this.props.history.go();
     }
@@ -20,7 +21,7 @@ class PostItem extends React.Component {
     render() {
              const post = this.props.post;
              const user = this.props.users[this.props.post.user];
-//debugger
+////debugger
         if (post && user) {
             return (
                 <li>
@@ -30,6 +31,7 @@ class PostItem extends React.Component {
                         <div onClick={this.handleClick}>
                             {user.username}
                         </div>
+                        <div className="post-date">{post.date}</div>
                         {(this.props.currentUser.id === user._id) ? 
                             <button onClick={this.handleButton}>Delete</button> : <div></div>
                         }
@@ -37,7 +39,7 @@ class PostItem extends React.Component {
                 </li>
             )
         } else {
-            // //debugger
+            // ////debugger
             return null;
         }
     }

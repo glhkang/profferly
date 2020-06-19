@@ -1,14 +1,20 @@
 .app-main-footer {
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 130px;
+  padding-right: 130px;
+  background-color: #f6f8fc;
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  /* height:30px; */
 }
 
 .footer-main {
     /* background-color: #bcc4c8; */
     /* background-color: white; */
-    color: #132113;
-    font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
+    color: #002012;
+    font-size: 14px;
+    font-family: 'Muli', sans-serif;
     font-weight: bold;
     text-align: center;
     display: flex;
@@ -19,12 +25,12 @@
     padding: 0px;
     margin-top: 20px;
     /* margin-left: 60px; */
-    border-top: 1px solid #545f87;
+    border-top: 1px solid #132113;
 }
 
 .footer-copyright {
     /* padding: 20px; */
-    margin-left: 60px;
+    margin-left: 40px;
 }
 
 .footer-links ul {
@@ -32,7 +38,7 @@
     flex-direction: row;
     list-style: none;
     text-decoration: none;
-    margin-right: 60px;
+    margin-right: 40px;
 }
 
 .footer-links ul li {
@@ -46,5 +52,5 @@
 }
 
 .footer-link a:hover {
-    color: white;
+    color: #8bbc8b;
 }

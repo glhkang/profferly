@@ -71,37 +71,43 @@ class PostCompose extends React.Component {
     };
            
     update() {
-// debugger
+// //debugger
         return e => this.setState({
             text: e.currentTarget.value
         });
     }
 
     render() {
-debugger
+//debugger
         return (
             <div>
                 {/* <PhotoIndex /> */}
                 <form onSubmit={this.handleSubmit}>
                     {/* <div>
                         <form onSubmit={this.handleUpload}> */}
-                            <input
-                                type="file"
-                                name=""
-                                id=""
-                                onChange={this.handleSelectedFile}
-                            />
+                  <div className="post-compose">
+                    <input className="post-textarea" type="textarea"
+                      value={this.state.text}
+                      onChange={this.update()}
+                      placeholder="What's up?"
+                      wrap="hard"
+                    />
+                  <input className="post-button" type="submit" value="Submit" />
+                  </div>
+
+                  <input
+                      type="file"
+                      className="custom-file-input"
+                      name=""
+                      id=""
+                      accept='image/*'
+                      color={{color: 'tranparent'}}
+                      onChange={this.handleSelectedFile}
+                  />
                             {/* <button type="submit">Upload</button>
                         </form>
                     </div> */}
-                    <div>
-                        <input type="textarea"
-                            value={this.state.text}
-                            onChange={this.update()}
-                            placeholder="Write your post..."
-                        />
-                        <input type="submit" value="Submit" />
-                    </div>
+
                 </form>
                 <br />
                 {/* <PostItem text={this.state.newPost} /> */}

@@ -5,7 +5,7 @@ import "./session_form.css";
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
-    ////debugger
+    //////debugger
     this.state = {
       email: "",
       password: "",
@@ -43,7 +43,7 @@ class LoginForm extends React.Component {
       email: this.state.email,
       password: this.state.password,
     };
-    ////debugger
+    //////debugger
 
     this.props.login(user);
   }
@@ -61,6 +61,17 @@ class LoginForm extends React.Component {
     );
   }
 
+
+  // renderErrors() {
+  //   return (
+  //     <ul className='session-errors'>
+  //       {this.props.errors.map((error, idx) => (
+  //         <li key={`error.${idx}`}>{error}</li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
+
   demoUserLogin(e) {
     e.preventDefault();
     const demoUser = { email: "gloria@gloria.com", password: "gloria" };
@@ -68,7 +79,22 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    ////debugger
+    //////debugger
+
+    const { errors } = this.props;
+
+    // const allErrors = (
+    //   <div className='error-popup'>
+    //     <div>
+    //       <ul>
+    //         {errors.map((error, i) => (
+    //           <li key={`error-${i}`}>{error}</li>
+    //         ))}
+    //       </ul>
+    //     </div>
+    //   </div>
+    // )
+
     return (
       <div className="session-form-main">
         <div className="session-form-container">
@@ -105,21 +131,23 @@ class LoginForm extends React.Component {
                 className="session-button"
                 type="submit" value="Submit" />
               <input className="demo-button" type="submit" value="Demo User" />
-              
-              <div className="session-errors">
-                {this.renderErrors()}
-              </div>
-              
+
               <div className="session-form-bottom">
                 <span className="bottom-session-text">
-                  Don't have an account?{" "}
-                  <Link to="/signup" className="bottom-session-link">
-                    Click here!
+                  Don't have an account?&nbsp;{" "}
+                  <Link to="/signup" className="bottom-session-link">Click here!
                   </Link>
                 </span>
               </div>
+
+              <div className="session-errors">
+                {this.renderErrors()}
+              </div>
+
             </div>
           </form>
+
+          {/* {errors} */}
         </div>
       </div>
     );

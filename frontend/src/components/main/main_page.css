@@ -31,10 +31,10 @@
     position: absolute;
     /* top: 400px; */
     top: 320px;
-    font-size: 65px;
+    font-size: 45px;
     text-shadow: azure;
-    color: #000c07;
-    /* font-family: 'Tajawal', sans-serif; */
+    /* color: #000c07; */
+    color: #002012;
     font-family: 'Ubuntu', sans-serif;
     font-style: italic;
     font-weight: 700;
@@ -51,15 +51,22 @@
     background-color: aliceblue;
 } */
 
+.mainpage-mid {
+  /* background-color: #6F84D2; */
+  /* background-color: #8295d8; */
+  background-color: #f6f8fc;
+}
+
 .mid-container {
     /* background: white; */
     scroll-snap-align: center;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Muli', sans-serif;
     font-weight: bold;
     /* min-height: 600px; */
-    padding-top: 70px;
-    padding-bottom: 70px;
-    border-top: 2px dotted #132113;
+    padding-top: 65px;
+    padding-bottom: 65px;
+    border-top: 1px solid #132113;
+    /* border-top: 2px dotted #132113; */
     /* border-top: 1px dotted white; */
     margin-right: 140px;
     margin-left: 140px;
@@ -67,18 +74,17 @@
 }
 
 .mid-container h3 {
-  font-size: 60px;
+  font-size: 45px;
   display: flex;
   text-align: center;
   flex-direction: column;
-  font-family: 'Tajawal', sans-serif;
+  color: #002012;
 }
 
 .mid-body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 
@@ -89,8 +95,8 @@
   text-align: center;
   width: 45%;
   margin: 10px;
-  font-size: 25px;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 19px;
+  /* font-family: 'Open Sans', sans-serif; */
 }
 
 
@@ -142,16 +148,18 @@
     margin: 0;
     margin-top: 0px;
     margin-left: 15px;
-    width: 150px;
-    height: 150px;
+    width: 145px;
+    height: 145px;
     padding-bottom: 10px;
+   /* font-family: 'Muli', sans-serif; */
 }
 
 .bottom-container h3 {
     display: flex;
     align-self: flex-start;
-    font-size: 53px;
-    font-family: 'Tajawal', sans-serif;
+    font-size: 40px;
+    font-style: italic;
+    font-family: 'Ubuntu', sans-serif;
     margin: 0px;
     padding-bottom: 20px;
     display: flex;
@@ -160,17 +168,18 @@
 .bottom-container h5 {
     display: flex;
     align-self: flex-start;
+    font-family: 'Muli', sans-serif;
     margin: 0px;
-    font-size: 35px;
+    font-size: 30px;
     /* padding-top: 6px; */
-    font-family: 'Tajawal', sans-serif;
+    /* font-family: 'Tajawal', sans-serif; */
 }
 
 .bottom-container  p {
     margin: 0px;
     padding-top: 20px;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: bolder;
     padding-bottom: 50px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Muli', sans-serif;
 }

@@ -9,6 +9,7 @@ const path = require("path");
 
 const users = require("./routes/api/users");
 const posts = require("./routes/api/posts");
+const markers = require("./routes/api/markers");
 const photos = require("./routes/api/photos");
 const comments = require("./routes/api/comments");
 
@@ -21,7 +22,6 @@ mongoose
   .catch((err) => console.log(err));
 
 
-// app.get("/", (req, res) => res.send("Hello World"));
 app.get("/", (req, res) => res.send("Hello World"));
 
 
@@ -45,6 +45,7 @@ app.use(bodyParser.json());
 
 app.use("/api/users", users);
 app.use("/api/posts", posts);
+app.use("/api/markers", markers);
 app.use("/api/photos", photos);
 app.use("/api/comments", comments);
 
