@@ -12,18 +12,18 @@ class Footer extends React.Component {
             <div className="footer-links">
               <ul>
                 <li className="footer-link">
-                  <a href="https://github.com/glhkang/profferly">
+                  <a href="https://www.linkedin.com/in/catherine-kim-a9a26676/">
                     Catherine Kim
                   </a>
                 </li>
                 <li className="footer-link">
-                  <a href="https://github.com/glhkang/profferly">Emina Ramovic</a>
+                  <a href="https://www.linkedin.com/in/emina-ramovic-858835187/">Emina Ramovic</a>
                 </li>
                 <li className="footer-link">
-                  <a href="https://github.com/glhkang/profferly">Gloria Kang</a>
+                  <a href="https://www.linkedin.com/in/glhkang/">Gloria Kang</a>
                 </li>
                 <li className="footer-link">
-                  <a href="https://github.com/glhkang/profferly">Mari Kasanuki</a>
+                  <a href="https://www.linkedin.com/in/marikasanuki/">Mari Kasanuki</a>
                 </li>
               </ul>
             </div>
