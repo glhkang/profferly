@@ -10,6 +10,7 @@ import '../App.css';
 import PostsContainer from './posts/posts_container';
 import ProfileContainer from './profile/profile_container';
 import MapContainer from "./map/map";
+import CommentsContainer from './comments/comments_form_container';
 
 import PhotoIndex from "./photos/PhotoIndex";
 import NewPhotoUpload from "./photos/NewPhotoUpload";
@@ -26,7 +27,6 @@ const App = () => (
       <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/users/:id" component={ProfileContainer} />
       <Route exact path="/map" component={MapContainer} />
@@ -34,6 +34,7 @@ const App = () => (
     </Switch>
     <div className="app-main-footer">
       <Footer />
+            <CommentsContainer />
     </div>
     {/* </BrowserRouter> */}
   </div>
