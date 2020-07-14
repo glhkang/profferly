@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import PostItem from './post_item';
 import PostCompose from './post_compose';
+import MapContainer from '../map/map';
 import { removePost } from '../../actions/post_actions';
 import './posts.css';
 
@@ -15,12 +16,12 @@ class Posts extends React.Component {
 // //debugger
         if (this.props.users) {
             return (
-              <div className="all-posts">
+                <div className="all-posts">
+                <section className="navbar-white"></section>
                   <div className="all-posts-above" />
                     {/* <button onClick={(e) => {e.preventDefault(); this.props.history.push('/map')}}>Map</button> */}
                 <div className="posts-container">
-                  <h3>Talk to us.</h3>
-                  
+                  <h3>Talk to us.</h3>          
                     <div className="posts-body">
                     <PostCompose currentUser={this.props.currentUser} newPost={this.props.newPost} composePost={this.props.composePost} history={this.props.history}/>
 
@@ -41,7 +42,10 @@ class Posts extends React.Component {
                       </div>
                     </div>
                   </div>
-
+                
+                <div className="map-container">
+                    <MapContainer/>
+                </div>
                   <div class="clear"></div>
               </div>
             )

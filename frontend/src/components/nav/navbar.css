@@ -2,6 +2,7 @@
 .navbar-container {
     width: 100%;
     position: absolute;
+    z-index: 999;
     top: 0;
     display: flex;
     /* margin-top: 5px; */
@@ -194,6 +195,17 @@
 
 .user-logout {
     margin-right: 100px;
+}
+
+.all-posts .navbar-white {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    height: 150px;
+    width: 100%;
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
 }
 
 /* 

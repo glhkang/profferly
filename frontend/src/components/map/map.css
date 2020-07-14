@@ -120,3 +120,13 @@
 .home-icon {
 
 }
+
+/* map container at homepage */
+
+.map-container {
+    width: 60%;
+}
+
+.map-container .home-button {
+    display: none;
+}

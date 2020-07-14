@@ -113,9 +113,7 @@ class MapContainer extends React.Component {
     console.log(`${process.env.REACT_APP_GOOGLE_API_KEY}`);
 
     return (
-      <div className="map-main-border">
-        <div className="map-window">
-          
+        <div className="map-window">         
           <button
             className="home-button"
             onClick={(e) => {
@@ -155,7 +153,6 @@ class MapContainer extends React.Component {
             </InfoWindow>
           </Map>
         </div>
-      </div>
     );
   }
 }
