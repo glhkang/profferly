@@ -15,6 +15,8 @@ import PhotoIndex from "./photos/PhotoIndex";
 import NewPhotoUpload from "./photos/NewPhotoUpload";
 import FormWindow from './map/form';
 import Splash from '../splash';
+import Join from "./chat/join";
+import Chat from "./chat/chat";
 
 const App = () => (
   <div className="app-main">
@@ -30,6 +32,8 @@ const App = () => (
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/users/:id" component={ProfileContainer} />
       <Route exact path="/map" component={MapContainer} />
+      <Route path="/join" exact component={Join} />
+      <Route path="/chat" exact component={Chat} />
       <Route exact path="/form" component={FormWindow} />
     </Switch>
     <div className="app-main-footer">
