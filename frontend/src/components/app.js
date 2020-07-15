@@ -10,7 +10,7 @@ import '../App.css';
 import PostsContainer from './posts/posts_container';
 import ProfileContainer from './profile/profile_container';
 import MapContainer from "./map/map";
-import CommentsContainer from './comments/comments_form_container';
+import CommentsContainer from './comments/comments_container';
 
 import PhotoIndex from "./photos/PhotoIndex";
 import NewPhotoUpload from "./photos/NewPhotoUpload";
@@ -33,8 +33,8 @@ const App = () => (
       <Route exact path="/form" component={FormWindow} />
     </Switch>
     <div className="app-main-footer">
-      <Footer />
-            <CommentsContainer />
+        <Footer />
+        <CommentsContainer />
     </div>
     {/* </BrowserRouter> */}
   </div>
