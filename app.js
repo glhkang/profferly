@@ -19,7 +19,15 @@ const posts = require("./routes/api/posts");
 const markers = require("./routes/api/markers");
 const photos = require("./routes/api/photos");
 const comments = require("./routes/api/comments");
+const join = require("./routes/api/join");
 
+app.use("/api/join", join);
+io.on('connection', (socket) => {
+  console.log('we have a new conection');
+  socket.on('disconnect', () => {
+    console.log('user left');
+  })
+})
 //below for heroku
 // app.use("/", express.static(path.join(__dirname, "/client/build")));
 
@@ -58,7 +66,7 @@ app.use("/api/comments", comments);
 
 
 const port = process.env.PORT || 5000;
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+server.listen(port, () => console.log(`Server is running on port ${port}`));
 
 
 //below for heroku
