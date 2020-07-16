@@ -4,6 +4,7 @@ import io from 'socket.io-client';
 import InfoBar from './bar';
 import Input from './input';
 import Messages from './messages';
+import TextContainer from './text';
 
 
 import "./Chat.css";
@@ -25,6 +26,8 @@ const Chat = ({ location }) => {
 
     setRoom(room);
     setName(name);
+
+    console.log()
 
     socket.emit("join", { name, room }, (error) => {
       if (error) {
@@ -62,6 +65,8 @@ const Chat = ({ location }) => {
           sendMessage={sendMessage}
         />
       </div>
+
+      <TextContainer users={users} />
     </div>
   );
 };

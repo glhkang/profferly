@@ -32,8 +32,8 @@ const App = () => (
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/users/:id" component={ProfileContainer} />
       <Route exact path="/map" component={MapContainer} />
-      <Route path="/join" exact component={Join} />
-      <Route path="/chat" exact component={Chat} />
+      <ProtectedRoute path="/join" exact component={Join} />
+      <ProtectedRoute path="/chat" exact component={Chat} />
       <Route exact path="/form" component={FormWindow} />
     </Switch>
     <div className="app-main-footer">

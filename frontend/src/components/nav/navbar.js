@@ -38,11 +38,11 @@ class NavBar extends React.Component {
             <FontAwesomeIcon className="globe-icon" icon={faGlobe} />
           </Link>
 
-            {/* <img className="globe-icon" src="/assets/icons/world.svg" /> */}
-
-          <Link onClick={this.logoutUser}>
-            LOGOUT
+          {/* <img className="globe-icon" src="/assets/icons/world.svg" /> */}
+          <Link className={"user-show"} to={"/join"}>
+            CHAT
           </Link>
+          <Link onClick={this.logoutUser}>LOGOUT</Link>
         </div>
       );
     } else {
