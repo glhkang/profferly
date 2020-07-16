@@ -20,10 +20,32 @@ const markers = require("./routes/api/markers");
 const photos = require("./routes/api/photos");
 const comments = require("./routes/api/comments");
 const join = require("./routes/api/join");
+const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
 
-app.use("/api/join", join);
+
 io.on('connection', (socket) => {
-  console.log('we have a new conection');
+  socket.on('join', ({name, room}, callback) => {
+    const { error, user } = addUser({ id: socket.id, name, room });
+
+    if(error) return callback(error);
+
+    socket.join(user.room);
+
+    socket.emit('message', { user: 'admin', text: `${user.name}, welcome to the room ${user.name}`});
+    socket.broadcast.to(user.room).emit('message', { user: 'admin', text: `${user.name}, has joined`});
+
+
+    callback();
+  });
+
+  socket.on('sendMessage', (message, callback) => {
+    const user = getUser(socket.id);
+
+    io.to(user.room).emit('message', { user: user.name, text: message});
+
+    callback();
+  });
+
   socket.on('disconnect', () => {
     console.log('user left');
   })
@@ -63,6 +85,7 @@ app.use("/api/posts", posts);
 app.use("/api/markers", markers);
 app.use("/api/photos", photos);
 app.use("/api/comments", comments);
+app.use("/api/join", join);
 
 
 const port = process.env.PORT || 5000;
