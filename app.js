@@ -12,17 +12,18 @@ const posts = require("./routes/api/posts");
 const markers = require("./routes/api/markers");
 const photos = require("./routes/api/photos");
 const comments = require("./routes/api/comments");
+const likes = require("./routes/api/likes");
 
 //below for heroku
-app.use("/", express.static(path.join(__dirname, "/client/build")));
+// app.use("/", express.static(path.join(__dirname, "/client/build")));
 
 mongoose
-  .connect(db, { useNewUrlParser: true })
+  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch((err) => console.log(err));
 
 //below for dev
-// app.get("/", (req, res) => res.send("Hello World"));
+app.get("/", (req, res) => res.send("Hello World"));
 
 
 if (process.env.NODE_ENV === "production") {
@@ -48,12 +49,12 @@ app.use("/api/posts", posts);
 app.use("/api/markers", markers);
 app.use("/api/photos", photos);
 app.use("/api/comments", comments);
-
+app.use("/api/likes", likes);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 
 //below for heroku
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client/build", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "/client/build", "index.html"));
+// });

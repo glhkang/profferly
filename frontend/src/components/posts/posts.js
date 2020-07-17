@@ -12,6 +12,7 @@ class Posts extends React.Component {
     }
 
     render() {
+      // const currentUser = this.props.currentUser;
 // //debugger
         if (this.props.users) {
             return (
