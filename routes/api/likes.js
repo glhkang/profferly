@@ -8,9 +8,6 @@ router.post("/getLikes", (req, res) => {
   let obj = {}
   if (req.body.postId) {
     obj = { postId: req.body.postId }
-    // obj = { postId: req.body.postId, userId: req.body.userId }
-  // } else if (req.body.userId) {
-  //   obj = { userId: req.body.userId, postId: req.body.postId }
   }
 
   Like.find(obj)
@@ -24,9 +21,6 @@ router.post("/getDislikes", (req, res) => {
   let obj = {}
   if (req.body.postId) {
     obj = { postId: req.body.postId }
-    // obj = { postId: req.body.postId, userId: req.body.userId }
-  // } else if (req.body.userId) {
-  //   obj = { userId: req.body.userId, postId: req.body.postId }
   }
 
   Dislike.find(obj)
@@ -38,12 +32,8 @@ router.post("/getDislikes", (req, res) => {
 
 router.post("/upLike", (req, res) => {
   let obj = {};
-  // if (req.body.userId) {
   if (req.body.postId) {
     obj = { postId: req.body.postId, userId: req.body.userId }
-    // obj = { postId: req.body.postId, userId: req.body.userId }
-  // } else if (req.body.userId) {
-  //   obj = { userId: req.body.userId, postId: req.body.postId };
   }
 
   const like = new Like(obj)
@@ -61,16 +51,11 @@ router.post("/upLike", (req, res) => {
 
 router.post("/unLike", (req, res) => {
   let obj = {};
-  // if (req.body.userId) {
   if (req.body.postId) {
     obj = { postId: req.body.postId, userId: req.body.userId }
-    // obj = { postId: req.body.postId, userId: req.body.userId  }
-  // } else if (req.body.userId) {
-  //   obj = { userId: req.body.userId, postId: req.body.post_id  };
   }
 
   Like.findOneAndDelete(obj)
-  // newLike.findOneAndDelete(obj)
     .exec((err, result) => {
       if (err) return res.status(400).json({ success: false, err })
       res.status(200).json({ success: true })
@@ -81,13 +66,10 @@ router.post("/unDislike", (req, res) => {
   let obj = {};
   if (req.body.postId) {
     obj = { postId: req.body.postId, userId: req.body.userId }
-  // } else if (req.body.userId) {
-  //   obj = { userId: req.body.userId, postId: req.body.postId  };
   }
 
   Dislike.findOneAndDelete(obj)
     .exec((err, result) => {
-  // newDislike.findOneAndDelete(obj).exec((err, result) => {
       if (err) return res.status(400).json({ success: false, err });
       res.status(200).json({ success: true });
   });
@@ -95,11 +77,8 @@ router.post("/unDislike", (req, res) => {
 
 router.post("/upDislike", (req, res) => {
   let obj = {};
-  // if (req.body.userId) {
   if (req.body.postId) {
     obj = { postId: req.body.postId, userId: req.body.userId };
-  // } else if (req.body.userId) {
-  //   obj = { userId: req.body.userId, postId: req.body.postId };
   }
 
   const dislike = new Dislike(obj);
