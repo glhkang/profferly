@@ -12,7 +12,14 @@ class CommentsList extends React.Component {
 
 
     componentDidMount() {
-        this.props.fetchPostComments("5eecbe2e9dd093c7937b5b87"); //postId
+        console.log('componentdidmount in comments_list')
+        console.log(this.props)
+        debugger;
+
+
+        
+        this.props.fetchPostComments('5eed0a269803dd90071af9c5'); //postId
+        // this.props.fetchPostComments(this.props.currentPost._id); //postId
     }
 
     // componentDidUpdate() {
@@ -21,10 +28,11 @@ class CommentsList extends React.Component {
 
 
     render() {
+        console.log('render inside CommentsList')
         console.log(this.props);
         debugger;
 
-        const { isLoggedIn, currentUser, comments, removeComment, fetchComment, fetchPostComments, composeComment } = this.props;
+        const { comments, composeComment, currentUser, fetchComment, isLoggedIn, removeComment, currentPost } = this.props;
         
 
         return (
@@ -33,12 +41,15 @@ class CommentsList extends React.Component {
                 < CommentForm 
                     isLoggedIn={isLoggedIn}
                     currentUser={currentUser}
+                    composeComment={composeComment}
 
                 />
                 <ol>
                     <CommentItem
-                        comments={comments}
+                        comments={comments.comments}
                         removeComment={removeComment}
+                        isLoggedIn={isLoggedIn}
+                        currentUser={currentUser}
                     />
                     
                 </ol>

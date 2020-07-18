@@ -1,6 +1,7 @@
 import React from 'react';
 import Moment from "react-moment";
 import './post.css';
+import CommentsList from '../comments/comments_list';
 
 class PostItem extends React.Component {
     constructor(props) {
@@ -21,6 +22,9 @@ class PostItem extends React.Component {
     }
 
     render() {
+            // console.log('render inside PostItem')
+            // console.log(this.props)
+            // debugger;
              const post = this.props.post;
              const user = this.props.users[this.props.post.user];
             //  const date = post.date; 
@@ -44,7 +48,11 @@ class PostItem extends React.Component {
                                 <button className="post-item-footer-button" onClick={this.handleButton}>Delete</button> : <div></div>
                             }
                         </div>
-                        </div>
+
+                        {/* <CommentsList 
+                            // currentPost={this.props.post}
+                        /> */}
+                    </div>
                 </li>
             )
         } else {

@@ -6,30 +6,37 @@ class CommentItem extends React.Component {
     }
 
     render() {
+        console.log('render inside CommentItem');
+        console.log(this.props);
+        debugger;
+        const { comments, currentUser, removeComment } = this.props;
 
-        // const {} = this.props;
+        
 
         return (
             <div>
-                This is an individual Comment Item :) 
+                These are individual Comment Items
 
 
-                {/* { this.props.comments ? this.props.comments.maps(comment => (
+
+                {comments ? comments.map(comment => (
                     <li  >
                         <div>{comment.text}</div>
-
+                        <br/>
+                        <div>{'Comment left by: ' + comment.author.username}</div>
+                        <br />
                         <div>
-                            {(comment.author.id === this.props.session.user.id) ?
+                            {(comment.author._id === currentUser.id) ?
                                 (<button onClick={() => {
-                                    this.props.removeComment(comment.id)
+                                    removeComment(comment._id)
                                 }}>
                                     Delete comment
                                 </button>) : null}
-                            <div>{comment.author.username}</div>
                         </div>
 
+
                     </li>
-                )) : null} */}
+                )) : null}
             </div>
         )
     }

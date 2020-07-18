@@ -16,7 +16,7 @@ const CommentSchema = new Schema({
         default: Date.now,
     },
     author: {
-        authId: {
+        _id: {
             type: Schema.Types.ObjectId,
             ref: 'users',
         },

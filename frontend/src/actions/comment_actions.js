@@ -46,6 +46,14 @@ export const fetchComment = commentId => dispatch => (
 //         .catch(err => console.log(err))
 // );
 
+export const composeComment = data => dispatch => {
+    return (
+        createComment(data)
+            .then(comment => dispatch(receiveNewComment(comment)))
+            .catch(err => console.log(err))
+    )
+};
+
 export const fetchPostComments = (postId) => dispatch => {
     debugger;
     return (
@@ -55,13 +63,7 @@ export const fetchPostComments = (postId) => dispatch => {
     )
 };
 
-export const composeComment = data => dispatch => {
-    return (
-        createComment(data)
-            .then(comment => dispatch(receiveNewComment(comment)))
-            .catch(err => console.log(err))
-    )
-};
+
 
 export const removeComment = (commentId) => dispatch => (
     deleteComment(commentId)

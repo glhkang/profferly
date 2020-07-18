@@ -3,13 +3,12 @@ import { fetchComment, fetchPostComments, composeComment, removeComment } from '
 import CommentsList from './comments_list';
 
 const mapStateToProps = (state, ownProps) => {
-    console.log("mstp comments");
-    console.log(state)
-    debugger;
+    console.log("mstp comments container: this is current state: ");
     return {
         currentUser: state.session.user, //currentUser has .id and .username here.
         isLoggedIn: state.session.isAuthenticated,
         comments: state.comments,
+        // comments: state.post.comments,
     };
 };
 
