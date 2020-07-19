@@ -1,5 +1,7 @@
 import React from 'react';
-import '../posts/post.css';
+// import '../posts/post.css';
+import Moment from "react-moment";
+import './comments.css';
 
 class CommentItem extends React.Component {
     // constructor(props) {
@@ -7,13 +9,13 @@ class CommentItem extends React.Component {
     // }
 
     render() {
-        console.log('render inside CommentItem');
-
-
-        
+        // console.log('render inside CommentItem');
         const { comments, currentUser, removeComment } = this.props;
+
         console.log(comments);
-        debugger;
+        // debugger;
+
+        // if (comments === undefined ) return (<div></div>);
 
         return (
             <div className="comments-list-li-cont">
@@ -22,11 +24,14 @@ class CommentItem extends React.Component {
                         {/* <div>These are individual Comment Items</div> */}
                         <div className="comments-text" >{comment.text}</div>
 
-                        <div className="comments-username" >{'Comment left by: ' + comment.author.username}</div>
-
+                        <div className="comments-username" >{'Comment by: ' + comment.author.username}</div>
+                        <span className="comments-left">Left on </span>
+                        <Moment format="MMMM Do YYYY [at] h:mm a" className="comments-date" >{comment.date.toString()}</Moment>
                         <div>
                             {(comment.author._id === currentUser.id) ?
-                                (<button onClick={() => {
+                                (<button 
+                                    className="comments-del-button"
+                                    onClick={() => {
                                     removeComment(comment._id)
                                 }}>
                                     Delete comment

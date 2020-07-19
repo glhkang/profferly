@@ -3,46 +3,40 @@ import { withRouter } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import CommentItem from './comment_item';
 import CommentForm from './comment_form';
-import '../posts/post.css';
+// import '../posts/post.css';
+import './comments.css';
 
 class CommentsList extends React.Component {
-    // constructor(props) {
-    //     super(props);
-
-    // }
-
-
-    // componentDidMount() {
-    //     console.log('componentdidmount in comments_list')
-    //     console.log(this.props)
-    //     debugger;
-
-
+    constructor(props) {
+        super(props);
         
-    //     // this.props.fetchPostComments('5eed0a269803dd90071af9c5'); 
-    //     this.props.fetchPostComments(this.props.currentPost._id); //postId
-    // }
+
+    }
+
+
+    componentDidMount() {
+        // this.props.fetchPostComments('5eed0a269803dd90071af9c5'); 
+        console.log('componentdidmount in comments_list')
+        this.props.fetchPostComments(this.props.currentPost._id); //postId
+        this.props.fetchAllComments();
+        // console.log(this.props)
+        // debugger;
+    }
 
 
 
     render() {
-
-
-
         const { comments, composeComment, currentUser, currentPost, removeComment } = this.props;
-        // fetchComment
         
-        console.log('render inside CommentsList')
-        console.log(comments);
-        debugger;
+        // console.log('render inside CommentsList')
+        // console.log(comments);
+        // debugger;
         
 
         return (
             //SHOW ALL COMMENTS FOR POST HERE
             <div className="comments-cont" >
-                {/* THIS IS THE COMMENTS LIST */}
                 < CommentForm 
-
                     currentUser={currentUser}
                     composeComment={composeComment}
                     currentPost={currentPost}
@@ -50,10 +44,9 @@ class CommentsList extends React.Component {
                 <ol class="comments-list-ol" >
                     <CommentItem
                         comments={comments}
-
                         currentUser={currentUser}
                         removeComment={removeComment}
-
+                        currentPost={currentPost}
                     />
                     
                 </ol>

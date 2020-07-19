@@ -1,5 +1,6 @@
 import React from 'react';
-import '../posts/post.css';
+// import '../posts/post.css';
+import './comments.css';
 
 class CommentForm extends React.Component {
     constructor(props) {
@@ -47,16 +48,17 @@ class CommentForm extends React.Component {
         return (
                 <form className="comment-form" onSubmit={this.handleSubmit} >
                     <br />
-                    <label >Leave a Comment</label>
+                    {/* <label >Leave a Comment</label> */}
                     <textarea
+                        className="comment-form-textarea"
                         cols="30"
-                        rows="6"
+                        rows="5"
+                        maxlength="200"
                         value={this.state.text}
                         onChange={this.update("text")}
-                        placeholder="Write your comment!"
+                        placeholder="Leave a comment!"
                     />
-                    <br />
-                    <input className="comment-form" type='submit' value={'Submit Your Comment'} />
+                    <input className="comment-form-button" type='submit' value={'Submit Comment'} />
                 </form>
         )
     }
