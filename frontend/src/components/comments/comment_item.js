@@ -1,30 +1,29 @@
 import React from 'react';
+import '../posts/post.css';
 
 class CommentItem extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     render() {
         console.log('render inside CommentItem');
-        console.log(this.props);
-        debugger;
-        const { comments, currentUser, removeComment } = this.props;
+
 
         
+        const { comments, currentUser, removeComment } = this.props;
+        console.log(comments);
+        debugger;
 
         return (
-            <div>
-                These are individual Comment Items
-
-
-
+            <div className="comments-list-li-cont">
                 {comments ? comments.map(comment => (
-                    <li  >
-                        <div>{comment.text}</div>
-                        <br/>
-                        <div>{'Comment left by: ' + comment.author.username}</div>
-                        <br />
+                    <li className="comments-list-li" >
+                        {/* <div>These are individual Comment Items</div> */}
+                        <div className="comments-text" >{comment.text}</div>
+
+                        <div className="comments-username" >{'Comment left by: ' + comment.author.username}</div>
+
                         <div>
                             {(comment.author._id === currentUser.id) ?
                                 (<button onClick={() => {

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../posts/post.css';
 
 class CommentForm extends React.Component {
     constructor(props) {
@@ -21,17 +21,17 @@ class CommentForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-
-        console.log(this.props.match.params.postId);
-        debugger;
-
-        const postId = parseInt(this.props.match.params.postId);
+        const postId = this.props.currentPost._id;
+        // const postId = parseInt(this.props.currentPost._id);
         const text = this.state.text;
         const comment = Object.assign({}, this.state, {
-            post_id: postId,
+            post: postId,
             text,
 
         })
+        console.log(this.state.text)
+        console.log(comment)
+        debugger;
 
         this.props.composeComment(comment)
             .then(console.log('comment was succesfully saved to DB!'));
@@ -40,40 +40,24 @@ class CommentForm extends React.Component {
 
 
     render() {
-        const { isLoggedIn } = this.props;
-        
-        //SHOW NEWCOMMENTSUBMISSION FORM IF LOGGED IN/AUTHENTICATED
-
-        const newCommentForm = isLoggedIn ? (
-            <form onSubmit={this.handleSubmit} >
-                <label >Leave a Comment</label>
-                <br />
-                <textarea
-                    cols="30"
-                    rows="8"
-                    value={this.state.text}
-                    onChange={this.update("text")}
-                    placeholder="Write your comment!"
-                />
-                <br />
-                <input type='submit' value={'Submit Your Comment'} />
-            </form>
 
 
-        ) :
-
-            <div>
-                <a href="/login" >Log in</a> to leave a comment!
-            </div>
-
-            // hyperlink to login page
-            ;
 
 
         return (
-            <div>
-                {newCommentForm} 
-            </div>
+                <form className="comment-form" onSubmit={this.handleSubmit} >
+                    <br />
+                    <label >Leave a Comment</label>
+                    <textarea
+                        cols="30"
+                        rows="6"
+                        value={this.state.text}
+                        onChange={this.update("text")}
+                        placeholder="Write your comment!"
+                    />
+                    <br />
+                    <input className="comment-form" type='submit' value={'Submit Your Comment'} />
+                </form>
         )
     }
 

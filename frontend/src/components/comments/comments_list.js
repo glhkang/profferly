@@ -1,55 +1,59 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import CommentItem from './comment_item';
 import CommentForm from './comment_form';
+import '../posts/post.css';
 
 class CommentsList extends React.Component {
-    constructor(props) {
-        super(props);
-
-    }
-
-
-    componentDidMount() {
-        console.log('componentdidmount in comments_list')
-        console.log(this.props)
-        debugger;
-
-
-        
-        this.props.fetchPostComments('5eed0a269803dd90071af9c5'); //postId
-        // this.props.fetchPostComments(this.props.currentPost._id); //postId
-    }
-
-    // componentDidUpdate() {
+    // constructor(props) {
+    //     super(props);
 
     // }
 
 
-    render() {
-        console.log('render inside CommentsList')
-        console.log(this.props);
-        debugger;
+    // componentDidMount() {
+    //     console.log('componentdidmount in comments_list')
+    //     console.log(this.props)
+    //     debugger;
 
-        const { comments, composeComment, currentUser, fetchComment, isLoggedIn, removeComment, currentPost } = this.props;
+
+        
+    //     // this.props.fetchPostComments('5eed0a269803dd90071af9c5'); 
+    //     this.props.fetchPostComments(this.props.currentPost._id); //postId
+    // }
+
+
+
+    render() {
+
+
+
+        const { comments, composeComment, currentUser, currentPost, removeComment } = this.props;
+        // fetchComment
+        
+        console.log('render inside CommentsList')
+        console.log(comments);
+        debugger;
         
 
         return (
             //SHOW ALL COMMENTS FOR POST HERE
-            <div>
+            <div className="comments-cont" >
+                {/* THIS IS THE COMMENTS LIST */}
                 < CommentForm 
-                    isLoggedIn={isLoggedIn}
+
                     currentUser={currentUser}
                     composeComment={composeComment}
-
+                    currentPost={currentPost}
                 />
-                <ol>
+                <ol class="comments-list-ol" >
                     <CommentItem
-                        comments={comments.comments}
-                        removeComment={removeComment}
-                        isLoggedIn={isLoggedIn}
+                        comments={comments}
+
                         currentUser={currentUser}
+                        removeComment={removeComment}
+
                     />
                     
                 </ol>

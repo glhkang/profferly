@@ -1,4 +1,4 @@
-import { createComment, getAllComments, getPostComments, getComment, deleteComment } from '../util/comment_api_util';
+import { createComment, getPostComments, getComment, deleteComment } from '../util/comment_api_util';
 
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 export const RECEIVE_NEW_COMMENT = "RECEIVE_NEW_COMMENT";
@@ -65,8 +65,11 @@ export const fetchPostComments = (postId) => dispatch => {
 
 
 
-export const removeComment = (commentId) => dispatch => (
-    deleteComment(commentId)
-        .then(commentId => dispatch(destroyComment(commentId)))
-        .catch(err => console.log(err))
-);
+export const removeComment = (commentId) => dispatch => {
+    debugger; 
+    return (
+        deleteComment(commentId)
+            .then(commentId => dispatch(destroyComment(commentId)))
+            .catch(err => console.log(err))
+    )
+};
