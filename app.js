@@ -19,6 +19,8 @@ const posts = require("./routes/api/posts");
 const markers = require("./routes/api/markers");
 const photos = require("./routes/api/photos");
 const comments = require("./routes/api/comments");
+const rooms = require('./routes/api/rooms');
+const messages = require('./routes/api/messages');
 const join = require("./routes/api/join");
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
 const Message = require('./models/Message');
@@ -138,6 +140,8 @@ app.use("/api/markers", markers);
 app.use("/api/photos", photos);
 app.use("/api/comments", comments);
 app.use("/api/join", join);
+app.use("/api/rooms", rooms);
+app.use("/api/messages", messages);
 
 
 const port = process.env.PORT || 5000;
