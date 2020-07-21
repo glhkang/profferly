@@ -2,6 +2,8 @@ import React from 'react';
 import Moment from "react-moment";
 import './post.css';
 import CommentsList from '../comments/comments_list';
+import LikesDislikes from '../likesdislikes/likes_dislikes';
+
 
 class PostItem extends React.Component {
     constructor(props) {
@@ -22,8 +24,10 @@ class PostItem extends React.Component {
     }
 
     render() {
+      // debugger
              const post = this.props.post;
              const user = this.props.users[this.props.post.user];
+
             //  const date = post.date; 
             //  let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             //  let localtime = post.date.toLocaleString("en-US", options);
@@ -36,6 +40,8 @@ class PostItem extends React.Component {
                         <div><img className="post-item-image" src= {post.file}/></div>
                         <div className="post-item-text">{post.text}</div>
                         <div className="post-item-footer">
+                            {/* <LikesDislikes postId={post._id} userId={user._id} currentUserId={this.props.currentUser.id}/> */}
+                            <LikesDislikes postId={post._id} userId={user._id} currentUserId={this.props.currentUser.id}/>
                             <div className="post-item-username"onClick={this.handleClick}>
                                 {user.username}
                             </div>
