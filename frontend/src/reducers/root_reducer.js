@@ -4,6 +4,7 @@ import errors from './errors_reducer';
 import posts from './posts_reducer';
 import users from './users_reducer';
 import markers from './markers_reducer';
+import comments from './comments_reducer';
 
 ////debugger
 import photos from './photos_reducer';
@@ -15,6 +16,7 @@ const RootReducer = combineReducers({
   users,
   markers,
   photos,
+  comments,
 });
 
 export default RootReducer;
