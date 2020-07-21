@@ -174,9 +174,9 @@ form {
 
 }
 
-.posts li {
+.post-item-li {
   width: 420px;
-  height: 420px;
+  height: 1420px;
   border: 5px solid #365c36;
   border-radius: 70px;
   text-decoration: none;

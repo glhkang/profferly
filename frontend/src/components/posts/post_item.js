@@ -22,9 +22,6 @@ class PostItem extends React.Component {
     }
 
     render() {
-            // console.log('render inside PostItem')
-            // console.log(this.props)
-            // debugger;
              const post = this.props.post;
              const user = this.props.users[this.props.post.user];
             //  const date = post.date; 
@@ -34,7 +31,7 @@ class PostItem extends React.Component {
              const dateStr = post.date.toString();
              if (post && user) {
                  return (
-                <li>
+                <li className="post-item-li" >
                     <div className="post-item">
                         <div><img className="post-item-image" src= {post.file}/></div>
                         <div className="post-item-text">{post.text}</div>
@@ -49,9 +46,19 @@ class PostItem extends React.Component {
                             }
                         </div>
 
-                        {/* <CommentsList 
-                            // currentPost={this.props.post}
-                        /> */}
+                        <CommentsList 
+                            currentPost={this.props.post}
+                            comments={this.props.comments}
+                            fetchPostComments={this.props.fetchPostComments}
+
+                            composeComment={this.props.composeComment}
+                            fetchComment={this.props.fetchComment}
+                            removeComment={this.props.removeComment}
+                            isLoggedIn={this.props.isLoggedIn}
+                            currentUser={this.props.currentUser}
+                            fetchAllComments={this.props.fetchAllComments}
+                        />
+
                     </div>
                 </li>
             )
