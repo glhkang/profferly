@@ -26,6 +26,7 @@ router.get(
       // lname: req.user.lname,
       username: req.user.username,
       email: req.user.email,
+      rooms: req.user.rooms
     });
   }
 );
@@ -61,6 +62,7 @@ router.post("/register", (req, res) => {
               const payload = { 
                                 id: user.id, 
                                 username: user.username,
+                                rooms: user.rooms
                                 // fname: user.fname,
                                 // lname: user.lname
                               };
@@ -93,7 +95,7 @@ router.post("/login", (req, res) => {
 
   const email = req.body.email;
   const password = req.body.password;
-  const username = req.body.username
+  const username = req.body.username;
 //////debugger
   User.findOne({ email }).then((user) => {
     if (!user) {
@@ -103,7 +105,7 @@ router.post("/login", (req, res) => {
 
     bcrypt.compare(password, user.password).then((isMatch) => {
       if (isMatch) {
-        const payload = { id: user.id, email: user.email, username: user.username};
+        const payload = { id: user.id, email: user.email, username: user.username, rooms: user.rooms};
 
         jwt.sign(
           payload,

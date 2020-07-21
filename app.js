@@ -24,10 +24,13 @@ const messages = require('./routes/api/messages');
 const join = require("./routes/api/join");
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
 const Message = require('./models/Message');
+const User = require('./models/User');
 
 
 io.on("connect", (socket) => {
+
   socket.on("join", ({ name, room }, callback) => {
+  
     const { error, user } = addUser({ id: socket.id, name, room });
 
     if (error) return callback(error);
@@ -38,6 +41,9 @@ io.on("connect", (socket) => {
       user: "admin",
       text: `${user.name}, welcome to room ${user.room}.`,
     });
+
+    socket.emit("id", socket.id);
+
     socket.broadcast
       .to(user.room)
       .emit("message", { user: "admin", text: `${user.name} has joined!` });
@@ -47,16 +53,49 @@ io.on("connect", (socket) => {
       users: getUsersInRoom(user.room),
     });
 
-    callback();
-  });
-
-  socket.on("sendMessage", (message, callback) => {
-    const user = getUser(socket.id);
-
-    io.to(user.room).emit("message", { user: user.name, text: message });
+    io.to(socket.id).emit("this is from the back!");
 
     callback();
   });
+
+  socket.on("sendMessage", ({message, room, user }, callback) => {
+    const userr = getUser(socket.id);
+    io.to(userr.room).emit("message", { user: userr.name, text: message });
+    const message1 = new Message({
+      message: message,
+      user: user.id,
+      room: socket.id
+    });
+
+       message1.save((err) => {
+      if (err) return console.error(err);
+    });
+
+    callback();
+  });
+
+  // socket.on("sendMessage", (msg, callback) => {
+  //   // Create a message with the content and the name of the user.
+  //   const message = new Message({
+  //     message: msg.message,
+  //     user: msg.user,
+  //     room: msg.room
+  //   });
+
+  //   message.save((err) => {
+  //     if (err) return console.error(err);
+  //   });
+
+  //   const user = getUser(socket.id);
+
+  //   io.to(user.room).emit("message", { user: user.name, text: message });
+
+  //   callback();
+
+  //   //     // Notify all other users about a new message.
+  //   socket.broadcast.emit("push", msg);
+  //   });
+
 
   socket.on("disconnect", () => {
     const user = removeUser(socket.id);
@@ -73,6 +112,7 @@ io.on("connect", (socket) => {
     }
   });
 });
+
 
 // 2.put!!
 // io.on("connection", (socket) => {
@@ -91,18 +131,19 @@ io.on("connect", (socket) => {
 //   socket.on("message", (msg) => {
 //     // Create a message with the content and the name of the user.
 //     const message = new Message({
-//       content: msg.content,
-//       name: msg.name,
+//       message: msg.message,
+//       user: msg.user,
+//       room: msg.room
 //     });
 
-//     // Save the message to the database.
+// //     // Save the message to the database.
 //     message.save((err) => {
 //       if (err) return console.error(err);
 //     });
 
-//     // Notify all other users about a new message.
+// //     // Notify all other users about a new message.
 //     socket.broadcast.emit("push", msg);
-//   });
+// //   });
 // });
 // below for heroku
 app.use("/", express.static(path.join(__dirname, "/client/build")));

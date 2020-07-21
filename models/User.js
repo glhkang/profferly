@@ -18,7 +18,8 @@ const UserSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
-    }
+    },
+    rooms: { type: Array, "default": [] }
 })
 
 const User = mongoose.model("User", UserSchema);
