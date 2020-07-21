@@ -1,29 +1,15 @@
 import React from 'react';
-// import '../posts/post.css';
 import Moment from "react-moment";
 import './comments.css';
 
 class CommentItem extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    // }
 
     render() {
-        // console.log('render inside CommentItem');
-        const { comments, currentUser, removeComment, currentPost } = this.props;
-
-        console.log(comments);
-        debugger;
-
-        // if (comments === undefined ) return (<div></div>);
+        const { comment, currentUser, removeComment, currentPost } = this.props;
 
         return (
-            <div className="comments-list-li-cont">
-                {comments ? comments.map(comment => (
-                    
-                    
-                    <li className="comments-list-li" >
-                        {/* <div>These are individual Comment Items</div> */}
+            (comment.post === currentPost._id) ?
+                (<li className="comments-list-li" >
                         <div className="comments-text" >{comment.text}</div>
 
                         <div className="comments-username" >{'Comment by: ' + comment.author.username}</div>
@@ -36,16 +22,10 @@ class CommentItem extends React.Component {
                                     onClick={() => {
                                     removeComment(comment._id)
                                 }}>
-                                    Delete comment
+                                    Delete Your Comment
                                 </button>) : null}
                         </div>
-
-
-                    </li>
-
-                    
-                )) : null}
-            </div>
+                </li>) : null
         )
     }
 };

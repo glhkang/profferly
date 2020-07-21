@@ -8,6 +8,7 @@ class CommentForm extends React.Component {
 
         this.state = {
             text: '',
+
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,27 +24,20 @@ class CommentForm extends React.Component {
         e.preventDefault();
 
         const postId = this.props.currentPost._id;
-        // const postId = parseInt(this.props.currentPost._id);
         const text = this.state.text;
         const comment = Object.assign({}, this.state, {
             post: postId,
             text,
-
         })
-        console.log(this.state.text)
-        console.log(comment)
-        debugger;
+
 
         this.props.composeComment(comment)
-            .then(console.log('comment was succesfully saved to DB!'));
+            .then( () => this.setState({ text: '' }) )
+            .then(console.log('Comment successfully saved to DB!'));
 
     }
 
-
     render() {
-
-
-
 
         return (
                 <form className="comment-form" onSubmit={this.handleSubmit} >
@@ -53,7 +47,7 @@ class CommentForm extends React.Component {
                         className="comment-form-textarea"
                         cols="30"
                         rows="5"
-                        maxlength="200"
+                        maxLength="200"
                         value={this.state.text}
                         onChange={this.update("text")}
                         placeholder="Leave a comment!"
@@ -62,9 +56,6 @@ class CommentForm extends React.Component {
                 </form>
         )
     }
-
-
-
 
 };
 

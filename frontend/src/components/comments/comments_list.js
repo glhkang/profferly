@@ -1,40 +1,15 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-// import { Link } from 'react-router-dom';
 import CommentItem from './comment_item';
 import CommentForm from './comment_form';
-// import '../posts/post.css';
 import './comments.css';
 
 class CommentsList extends React.Component {
-    constructor(props) {
-        super(props);
-        
-
-    }
-
-
-    componentDidMount() {
-        // this.props.fetchPostComments('5eed0a269803dd90071af9c5'); 
-        console.log('componentdidmount in comments_list')
-        // this.props.fetchPostComments(this.props.currentPost._id); //postId
-        
-        // console.log(this.props)
-        // debugger;
-    }
-
-
-
+    
     render() {
         const { comments, composeComment, currentUser, currentPost, removeComment } = this.props;
-        
-        console.log('render inside CommentsList')
-        // console.log(comments);
-        // debugger;
-        
 
         return (
-            //SHOW ALL COMMENTS FOR POST HERE
             <div className="comments-cont" >
                 < CommentForm 
                     currentUser={currentUser}
@@ -42,14 +17,21 @@ class CommentsList extends React.Component {
                     currentPost={currentPost}
                 />
                 <ol class="comments-list-ol" >
+
+                    <div className="comments-list-li-cont">
+                        {comments ? comments.map(comment => (
+
+                            <CommentItem
+                                comment={comment}
+                                currentUser={currentUser}
+                                removeComment={removeComment}
+                                currentPost={currentPost}
+                                key={comment._id}
+                            />
                     
-                    <CommentItem
-                        comments={comments}
-                        currentUser={currentUser}
-                        removeComment={removeComment}
-                        currentPost={currentPost}
-                    />
-                    
+                        )) : null}
+                    </div>
+
                 </ol>
 
             </div>

@@ -73,7 +73,8 @@ export const removeComment = (commentId) => dispatch => {
     // debugger; 
     return (
         deleteComment(commentId)
-            .then(commentId => dispatch(destroyComment(commentId)))
+            .then( _ => dispatch(destroyComment(commentId))) //convention to use _ or () to indicate that we don't really need to use what's inside
+            // .then(payload => dispatch(destroyComment(commentId)))
             .catch(err => console.log(err))
     )
 };
