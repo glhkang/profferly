@@ -34,6 +34,7 @@ class NavBar extends React.Component {
           <div className={"user-show"} onClick={this.handleClick}>
             {this.props.currentUser.username}
           </div>
+
           <Link to={"/map"}>
             <FontAwesomeIcon className="globe-icon" icon={faGlobe} />
           </Link>
