@@ -86,9 +86,3 @@
     cursor: pointer;
     color: whitesmoke;
 }
-
-.all-posts {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}

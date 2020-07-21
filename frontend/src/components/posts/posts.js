@@ -20,7 +20,7 @@ class Posts extends React.Component {
                 <section className="navbar-white"></section>
                   <div className="all-posts-above" />
                     {/* <button onClick={(e) => {e.preventDefault(); this.props.history.push('/map')}}>Map</button> */}
-                <div className="posts-container">
+                  <div className="posts-container">
                   <h3>Talk to us.</h3>          
                     <div className="posts-body">
                     <PostCompose currentUser={this.props.currentUser} newPost={this.props.newPost} composePost={this.props.composePost} history={this.props.history}/>
@@ -44,7 +44,10 @@ class Posts extends React.Component {
                   </div>
                 
                 <div className="map-container">
-                    <MapContainer/>
+                    <MapContainer
+                        history={this.props.history}
+                        path='/posts'
+                    />
                 </div>
                   <div class="clear"></div>
               </div>

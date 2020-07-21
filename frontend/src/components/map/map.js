@@ -4,6 +4,7 @@ import FormWindow from "./form";
 import * as MarkerApiUtil from "../../util/marker_util";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { hashHistory } from 'react-router'
 
 
 class MapContainer extends React.Component {
@@ -23,7 +24,7 @@ class MapContainer extends React.Component {
     // .then(markers => {
     // this.setState({ markers });
     // });
-    MarkerApiUtil.getMarkers().then(markers => this.setState({markers: Object.values(markers)[0]}))
+    MarkerApiUtil.getMarkers().then(markers => this.setState({markers: Object.values(markers)[0]}));
     //     //debugger;
     // if (this.state.markers2.length !== 0) {
     //     const markersNew = [...this.state.markers, this.state.markers2[0]];
@@ -47,8 +48,9 @@ class MapContainer extends React.Component {
     const lng = clickEvent.latLng.lng();
 
     console.log(lat, lng)
-
-    this.props.history.push({
+debugger
+    
+      this.props.history.push({
       pathname: "/form",
       state: { latitude: lat, longitude: lng},
     });
@@ -106,12 +108,12 @@ class MapContainer extends React.Component {
   };
 
   render() {
+debugger
     // const style = {
     //   width: "100%",
     //   height: "100%",
     // };
     console.log(`${process.env.REACT_APP_GOOGLE_API_KEY}`);
-
     return (
         <div className="map-window">         
           <button

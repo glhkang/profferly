@@ -18,24 +18,6 @@ router.get("/test", (req, res) =>
 );
 
 
-// router.post(
-//   "/",
-//   passport.authenticate("jwt", { session: false }),
-//   (req, res) => {
-//     const { errors, isValid } = validatePostInput(req.body);
-
-//     if (!isValid) {
-//       return res.status(400).json(errors);
-//     }
-
-//     const newPost = new Post({
-//       text: req.body.text,
-//       user: req.user.id,
-//     });
-
-//     newPost.save().then((post) => res.json(post));
-//   }
-// );
 
 router.get(
     "/", (req, res) => {
@@ -45,8 +27,8 @@ router.get(
         .then(posts => res.json(posts))
         .catch(err => res.status(400).json(err))
     }
-);
-
+    );
+    
 router.get(
     "/user/:user_id", (req, res) => {
     Post.find({ user: req.params.user_id })
@@ -100,55 +82,86 @@ router.delete(
 //       .catch((err) => res.status(400).json(err));
 // });
 
+// router.post(
+//   "/",
+//   passport.authenticate("jwt", { session: false }),
+//   (req, res) => {
+//     const { errors, isValid } = validatePostInput(req.body);
+
+//     if (!isValid) {
+//       return res.status(400).json(errors);
+//     }
+
+//     const newPost = new Post({
+//       text: req.body.text,
+//       user: req.user.id,
+//     });
+
+//     newPost.save().then((post) => res.json(post));
+//   }
+// );
 
 router.post("/", upload.single("file"), 
             passport.authenticate("jwt", { session: false }), 
             function (req, res) {
- 
+debugger
   const { errors, isValid } = validatePostInput(req.body);
       if (!isValid) {
         return res.status(400).json(errors);
       }
-  
+
+  let newPost;
   const file = req.file;
-  const s3FileURL = process.env.AWS_Uploaded_File_URL_LINK;
 
-  let s3bucket = new AWS.S3({
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-      region: process.env.AWS_REGION,
-  });
+  if (file) {
+    let s3bucket = new AWS.S3({
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+        region: process.env.AWS_REGION,
+    });
+  
+    let params = {
+        Bucket: process.env.AWS_BUCKET_NAME,
+        Key: file.originalname,
+        Body: file.buffer,
+        ContentType: file.mimetype,
+        ACL: "public-read",
+    };
 
-  let params = {
-      Bucket: process.env.AWS_BUCKET_NAME,
-      Key: file.originalname,
-      Body: file.buffer,
-      ContentType: file.mimetype,
-      ACL: "public-read",
-  };
-
-  s3bucket.upload(params, function (err, data) {
-      if (err) {
-      res.status(500).json({ error: true, Message: err });
-      } else {
-      res.send({ data });
-      
-      // let newFileUploaded = {
-      //         post_id: req.body.post_id,
-      //         description: req.body.description,
-      // };
-
-        
-        const newPost = new Post({
-          text: req.body.text,
-          user: req.user.id,
-          file: s3FileURL + file.originalname,
-          s3_key: params.Key,
+    newPost = new Post({
+        text: req.body.text,
+        user: req.user.id,
+        file: s3FileURL + file.originalname,
+        s3_key: params.Key,
         });
 
+    const s3FileURL = process.env.AWS_Uploaded_File_URL_LINK;
+
+    s3bucket.upload(params, function (err, data) {
+        if (err) {
+        res.status(500).json({ error: true, Message: err });
+        } else {
+        res.send({ data });
+        
+        // let newFileUploaded = {
+        //         post_id: req.body.post_id,
+        //         description: req.body.description,
+        // };
+    
+            
+            newPost.save().then((post) => res.json(post));
+        }
+    });
+    } else {
+        newPost = new Post({
+            text: req.body.text,
+            user: req.user.id,
+            // s3_key: params.Key
+        })
+
         newPost.save().then((post) => res.json(post));
-      }
-  });
+    }
+debugger
 });
 
 module.exports = router;

@@ -212,6 +212,8 @@ form {
   color: #264026;
 }
 
-/* .all-posts-above {
-
-} */
+.all-posts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

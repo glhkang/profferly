@@ -4,12 +4,13 @@ import { fetchUsers } from '../../actions/user_actions';
 import Posts from './posts';
 
 const mapStateToProps = (state, ownProps) => {
-//debugger
+debugger
     return {
         posts: Object.values(state.posts.all),
         currentUser: state.session.user,
         newPost: state.posts.new,
         users: state.users,
+        history: ownProps.history
     };
 };
 
