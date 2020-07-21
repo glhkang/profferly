@@ -12,7 +12,7 @@ class Footer extends React.Component {
             <div className="footer-links">
               <ul>
                 <li className="footer-link">
-                  <a href="https://www.linkedin.com/in/catherine-kim-a9a26676/">
+                  <a href="https://www.linkedin.com/in/catherinekimyj/">
                     Catherine Kim
                   </a>
                 </li>

@@ -27,7 +27,7 @@ class PostCompose extends React.Component {
     // }
 
     handleSelectedFile = e => {
-// debugger
+debugger
         e.preventDefault();
         this.setState({
             file: e.target.files[0]
@@ -36,13 +36,26 @@ class PostCompose extends React.Component {
 
     handleSubmit(e) {
         // console.log(e, e.target, e.currentTarget);
-    // debugger
+    debugger
         e.preventDefault();
         
             const data = new FormData();
-            data.append("file", this.state.file);
-            data.append("text", this.state.text);
-            this.props.composePost(data);
+            if (this.state.file === null) {
+    debugger
+                // this.setState({
+            //     file: ""
+                // });
+
+                // data.append("file", this.state.file);
+                data.append("text", this.state.text);
+    debugger
+                this.props.composePost(data);
+            } else {
+    debugger
+                data.append("file", this.state.file);
+                data.append("text", this.state.text);
+                this.props.composePost(data);
+            }
     // debugger
         // console.log(data);
         // axios
@@ -78,7 +91,7 @@ class PostCompose extends React.Component {
     }
 
     render() {
-//debugger
+debugger
         return (
             <div>
                 {/* <PhotoIndex /> */}
