@@ -10,21 +10,16 @@ const CommentsReducer = (state = { }, action) => {
 
 
         case RECEIVE_POST_COMMENTS:
-            
-            // console.log('let us see all the states: ');
-            // console.log(newState);
-            // console.log(action.comments.data);
+            console.log('inside RECEIVE_POST_COMMENTS')
+            console.log(action.comments.data);
+            newState.comments = action.comments.data;
 
+            debugger;
+            return newState;
             // let nextState = Object.assign({}, newState, action.comments.data);
             // console.log(nextState);
             // let mergedState = merge({}, newState, action.comments.data);
             // console.log(mergedState);
-
-            newState.comments = action.comments.data;
-
-            // debugger;
-            return newState;
-
         
         case RECEIVE_COMMENT:
             newState.comment = action.comment.data;

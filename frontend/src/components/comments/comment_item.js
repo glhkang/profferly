@@ -10,16 +10,18 @@ class CommentItem extends React.Component {
 
     render() {
         // console.log('render inside CommentItem');
-        const { comments, currentUser, removeComment } = this.props;
+        const { comments, currentUser, removeComment, currentPost } = this.props;
 
         console.log(comments);
-        // debugger;
+        debugger;
 
         // if (comments === undefined ) return (<div></div>);
 
         return (
             <div className="comments-list-li-cont">
                 {comments ? comments.map(comment => (
+                    
+                    
                     <li className="comments-list-li" >
                         {/* <div>These are individual Comment Items</div> */}
                         <div className="comments-text" >{comment.text}</div>
@@ -40,6 +42,8 @@ class CommentItem extends React.Component {
 
 
                     </li>
+
+                    
                 )) : null}
             </div>
         )

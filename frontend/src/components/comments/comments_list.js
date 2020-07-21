@@ -17,8 +17,8 @@ class CommentsList extends React.Component {
     componentDidMount() {
         // this.props.fetchPostComments('5eed0a269803dd90071af9c5'); 
         console.log('componentdidmount in comments_list')
-        this.props.fetchPostComments(this.props.currentPost._id); //postId
-        this.props.fetchAllComments();
+        // this.props.fetchPostComments(this.props.currentPost._id); //postId
+        
         // console.log(this.props)
         // debugger;
     }
@@ -28,7 +28,7 @@ class CommentsList extends React.Component {
     render() {
         const { comments, composeComment, currentUser, currentPost, removeComment } = this.props;
         
-        // console.log('render inside CommentsList')
+        console.log('render inside CommentsList')
         // console.log(comments);
         // debugger;
         
@@ -42,6 +42,7 @@ class CommentsList extends React.Component {
                     currentPost={currentPost}
                 />
                 <ol class="comments-list-ol" >
+                    
                     <CommentItem
                         comments={comments}
                         currentUser={currentUser}
