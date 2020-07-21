@@ -9,11 +9,10 @@ class Posts extends React.Component {
      componentDidMount() {
         this.props.fetchUsers();
         this.props.fetchPosts();
+        this.props.fetchAllComments();
     }
 
     render() {
-      // const currentUser = this.props.currentUser;
-// //debugger
         if (this.props.users) {
             return (
               <div className="all-posts">
@@ -37,6 +36,14 @@ class Posts extends React.Component {
                                   history={this.props.history}
                                   currentUser={this.props.currentUser}
                                   removePost={this.props.removePost} 
+
+                                  fetchPostComments={this.props.fetchPostComments}
+                                  composeComment={this.props.composeComment}
+                                  fetchComment={this.props.fetchComment}
+                                  removeComment={this.props.removeComment}
+                                  comments={this.props.comments}
+                                  fetchAllComments={this.props.fetchAllComments}
+
                               />
                           )}
                       </div>

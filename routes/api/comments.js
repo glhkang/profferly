@@ -20,6 +20,9 @@ router.post(
             return res.status(400).json(errors) ;
         }
         const newComment = new Comment({
+            author: {
+                _id: req.user._id,
+                username: req.user.username },
             text: req.body.text,
             post: req.body.post,
         });

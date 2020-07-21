@@ -1,6 +1,7 @@
 import React from 'react';
 import Moment from "react-moment";
 import './post.css';
+import CommentsList from '../comments/comments_list';
 import LikesDislikes from '../likesdislikes/likes_dislikes';
 
 
@@ -34,7 +35,7 @@ class PostItem extends React.Component {
              const dateStr = post.date.toString();
              if (post && user) {
                  return (
-                <li>
+                <li className="post-item-li" >
                     <div className="post-item">
                         <div><img className="post-item-image" src= {post.file}/></div>
                         <div className="post-item-text">{post.text}</div>
@@ -50,7 +51,21 @@ class PostItem extends React.Component {
                                 <button className="post-item-footer-button" onClick={this.handleButton}>Delete</button> : <div></div>
                             }
                         </div>
-                      </div>
+
+                        <CommentsList 
+                            currentPost={this.props.post}
+                            comments={this.props.comments}
+                            fetchPostComments={this.props.fetchPostComments}
+
+                            composeComment={this.props.composeComment}
+                            fetchComment={this.props.fetchComment}
+                            removeComment={this.props.removeComment}
+                            isLoggedIn={this.props.isLoggedIn}
+                            currentUser={this.props.currentUser}
+                            fetchAllComments={this.props.fetchAllComments}
+                        />
+
+                    </div>
                 </li>
             )
         } else {
