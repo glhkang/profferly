@@ -15,14 +15,13 @@ import TextContainer from './text';
 import "./Chat.css";
 
 let socket;
-// console.log(io, "this is io")
 
 const Chat = ({ location }) => {
   const user = useSelector((state) => state.session.user);
   const messagesOld = useSelector((state) => state.messages);
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
-  const [users, setUsers] = useState("");
+  const [users, setUsers] = useState([]);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const dispatch = useDispatch();
@@ -33,15 +32,12 @@ const Chat = ({ location }) => {
     const { name, room } = queryString.parse(location.search);
 
     socket = io(ENDPOINT);
-    console.log(socket, "this is socket");
 
     setRoom(room);
     setName(name);
 
     dispatch(addRoomToRedux(room));
     dispatch(fetchRoomMessages(room));
-
-
 
     socket.emit("join", { name, room }, (error) => {
       if (error) {
@@ -50,7 +46,6 @@ const Chat = ({ location }) => {
     });
   }, [ENDPOINT, location.search]);
 
-  console.log(messagesOld, "from here");
 
   useEffect(() => {
     socket.on("message", (message) => {
@@ -58,11 +53,15 @@ const Chat = ({ location }) => {
     });
      socket.on("id", (id) => console.log(id, "what?"));
     socket.on("roomData", ({ users }) => {
-      setUsers(users);
+      const unique = [...new Set(users.map((item) => item.name))];
+      setUsers([...unique])
+
     });
   }, []);
 
+  console.log(users, "online");
 
+  
 const messagesOldMapped = messagesOld.map(o => ({ user: o.user, text: o.message }));
 
 

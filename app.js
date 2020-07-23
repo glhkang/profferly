@@ -9,6 +9,7 @@ const path = require("path");
 const socketio = require('socket.io');
 const http = require('http');
 
+
 const server = http.createServer(app);
 const io = socketio(server);
 
@@ -48,9 +49,15 @@ io.on("connect", (socket) => {
       .to(user.room)
       .emit("message", { user: "admin", text: `${user.name} has joined!` });
 
+    const arr = getUsersInRoom(user.room)
+
+    const items = arr.filter(function(elem, pos) {
+    return arr.indexOf(elem) == pos;
+    })
+
     io.to(user.room).emit("roomData", {
       room: user.room,
-      users: getUsersInRoom(user.room),
+      users: items
     });
 
     io.to(socket.id).emit("this is from the back!");
