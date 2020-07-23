@@ -20,6 +20,7 @@ const photos = require("./routes/api/photos");
 const comments = require("./routes/api/comments");
 const rooms = require('./routes/api/rooms');
 const messages = require('./routes/api/messages');
+const likes = require("./routes/api/likes");
 const join = require("./routes/api/join");
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./chatHelper");
 const Message = require('./models/Message');
@@ -33,6 +34,7 @@ io.on("connect", (socket) => {
     if (error) return callback(error);
 
     socket.join(user.room);
+
 
     socket.emit("message", {
       user: "admin",
@@ -94,11 +96,11 @@ io.on("connect", (socket) => {
 app.use("/", express.static(path.join(__dirname, "/client/build")));
 
 mongoose
-  .connect(db, { useNewUrlParser: true })
+  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch((err) => console.log(err));
 
-
+//below for dev
 app.get("/", (req, res) => res.send("Hello World"));
 
 
@@ -129,6 +131,7 @@ app.use("/api/join", join);
 app.use("/api/rooms", rooms);
 app.use("/api/messages", messages);
 
+app.use("/api/likes", likes);
 
 const port = process.env.PORT || 5000;
 server.listen(port, () => console.log(`Server is running on port ${port}`));

@@ -2,6 +2,7 @@ import React from 'react';
 import * as MarkerApiUtil from "../../util/marker_util";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { hashHistory } from 'react-router';
 import "./map.css";
 
 class FormWindow extends React.Component {
@@ -17,9 +18,13 @@ class FormWindow extends React.Component {
         this.handleButton = this.handleButton.bind(this);
     }
 
+    componentDidMount() {
+        console.log('hit componentdidmount');
+    }
+
     handleButton(e) {
       e.preventDefault();
-      this.props.history.push('/map');
+      this.props.history.goBack();
     }
 
     update(field) {
@@ -30,6 +35,8 @@ class FormWindow extends React.Component {
     }
 
     handleSubmit(e){
+        e.preventDefault();
+debugger
             const newMarker = {
               title: this.state.title,
               description: this.state.description,
@@ -40,9 +47,9 @@ class FormWindow extends React.Component {
               title: "",
               description: "",
             });
-         MarkerApiUtil.writeMarker(newMarker);
-         this.props.history.go();
-
+        MarkerApiUtil.writeMarker(newMarker);
+        this.handleButton(e);
+        setTimeout(function(){window.location.reload();},0);
     }
 
     render() {

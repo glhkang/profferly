@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import PostItem from './post_item';
 import PostCompose from './post_compose';
+import MapContainer from '../map/map';
 import { removePost } from '../../actions/post_actions';
 import './posts.css';
 
@@ -9,18 +10,18 @@ class Posts extends React.Component {
      componentDidMount() {
         this.props.fetchUsers();
         this.props.fetchPosts();
+        this.props.fetchAllComments();
     }
 
     render() {
-// //debugger
         if (this.props.users) {
             return (
-              <div className="all-posts">
+                <div className="all-posts">
+                <section className="navbar-white"></section>
                   <div className="all-posts-above" />
                     {/* <button onClick={(e) => {e.preventDefault(); this.props.history.push('/map')}}>Map</button> */}
-                <div className="posts-container">
-                  <h3>Talk to us.</h3>
-                  
+                  <div className="posts-container">
+                  <h3>Talk to us.</h3>          
                     <div className="posts-body">
                     <PostCompose currentUser={this.props.currentUser} newPost={this.props.newPost} composePost={this.props.composePost} history={this.props.history}/>
 
@@ -36,12 +37,26 @@ class Posts extends React.Component {
                                   history={this.props.history}
                                   currentUser={this.props.currentUser}
                                   removePost={this.props.removePost} 
+
+                                  fetchPostComments={this.props.fetchPostComments}
+                                  composeComment={this.props.composeComment}
+                                  fetchComment={this.props.fetchComment}
+                                  removeComment={this.props.removeComment}
+                                  comments={this.props.comments}
+                                  fetchAllComments={this.props.fetchAllComments}
+
                               />
                           )}
                       </div>
                     </div>
                   </div>
-
+                
+                <div className="map-container">
+                    <MapContainer
+                        history={this.props.history}
+                        path='/posts'
+                    />
+                </div>
                   <div class="clear"></div>
               </div>
             )

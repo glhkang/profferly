@@ -22,7 +22,6 @@ const App = () => (
       <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/users/:id" component={ProfileContainer} />
       <Route exact path="/map" component={MapContainer} />
@@ -31,7 +30,7 @@ const App = () => (
       <Route exact path="/form" component={FormWindow} />
     </Switch>
     <div className="app-main-footer">
-      <Footer />
+        <Footer />
     </div>
   </div>
 );

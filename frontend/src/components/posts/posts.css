@@ -174,9 +174,9 @@ form {
 
 }
 
-.posts li {
+.post-item-li {
   width: 420px;
-  height: 420px;
+  height: 1420px;
   border: 5px solid #365c36;
   border-radius: 70px;
   text-decoration: none;
@@ -212,6 +212,8 @@ form {
   color: #264026;
 }
 
-/* .all-posts-above {
-
-} */
+.all-posts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
