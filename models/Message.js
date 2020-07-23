@@ -9,9 +9,6 @@ const messageSchema = new mongoose.Schema({
   user: {
     type: String,
     required: "Message is required!",
-    // type: mongoose.Schema.Types.ObjectId,
-    // required: "Room is required!",
-    // ref: "User",
   },
   message: {
     type: String,

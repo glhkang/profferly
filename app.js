@@ -13,8 +13,6 @@ const http = require('http');
 const server = http.createServer(app);
 const io = socketio(server);
 
-// require("./chatServer")(server);
-
 const users = require("./routes/api/users");
 const posts = require("./routes/api/posts");
 const markers = require("./routes/api/markers");
@@ -23,10 +21,8 @@ const comments = require("./routes/api/comments");
 const rooms = require('./routes/api/rooms');
 const messages = require('./routes/api/messages');
 const join = require("./routes/api/join");
-const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
+const { addUser, removeUser, getUser, getUsersInRoom } = require("./chatHelper");
 const Message = require('./models/Message');
-const User = require('./models/User');
-
 
 io.on("connect", (socket) => {
 
@@ -81,29 +77,6 @@ io.on("connect", (socket) => {
     callback();
   });
 
-  // socket.on("sendMessage", (msg, callback) => {
-  //   // Create a message with the content and the name of the user.
-  //   const message = new Message({
-  //     message: msg.message,
-  //     user: msg.user,
-  //     room: msg.room
-  //   });
-
-  //   message.save((err) => {
-  //     if (err) return console.error(err);
-  //   });
-
-  //   const user = getUser(socket.id);
-
-  //   io.to(user.room).emit("message", { user: user.name, text: message });
-
-  //   callback();
-
-  //   //     // Notify all other users about a new message.
-  //   socket.broadcast.emit("push", msg);
-  //   });
-
-
   socket.on("disconnect", () => {
     const user = removeUser(socket.id);
 
@@ -120,39 +93,6 @@ io.on("connect", (socket) => {
   });
 });
 
-
-// 2.put!!
-// io.on("connection", (socket) => {
-//   // Get the last 10 messages from the database.
-//   Message.find()
-//     .sort({ createdAt: -1 })
-//     .limit(10)
-//     .exec((err, messages) => {
-//       if (err) return console.error(err);
-
-//       // Send the last messages to the user.
-//       socket.emit("init", messages);
-//     });
-
-//   // Listen to connected users for a new message.
-//   socket.on("message", (msg) => {
-//     // Create a message with the content and the name of the user.
-//     const message = new Message({
-//       message: msg.message,
-//       user: msg.user,
-//       room: msg.room
-//     });
-
-// //     // Save the message to the database.
-//     message.save((err) => {
-//       if (err) return console.error(err);
-//     });
-
-// //     // Notify all other users about a new message.
-//     socket.broadcast.emit("push", msg);
-// //   });
-// });
-// below for heroku
 app.use("/", express.static(path.join(__dirname, "/client/build")));
 
 mongoose
@@ -194,9 +134,3 @@ app.use("/api/messages", messages);
 
 const port = process.env.PORT || 5000;
 server.listen(port, () => console.log(`Server is running on port ${port}`));
-
-
-//below for heroku
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "/client/build", "index.html"));
-// });
