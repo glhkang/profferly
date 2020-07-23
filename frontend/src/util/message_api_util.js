@@ -1,6 +1,6 @@
 import axios from "axios";
 
 
-export const getRoomsMessages = (id) => {
-  return axios.get(`/api/messages/rooms/${id}`);
+export const getRoomsMessages = (name) => {
+  return axios.get(`/api/messages/rooms/${name}`);
 };

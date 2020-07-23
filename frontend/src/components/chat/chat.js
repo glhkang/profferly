@@ -2,7 +2,8 @@ import React,{ useState, useEffect} from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { addRoomToRedux } from "../../actions/session_actions"
-import { fetchRoomMessages } from "../../actions/message_action";
+import { fetchRoomMessages, newLocalMessage } from "../../actions/message_action";
+
 import queryString from 'query-string';
 import io from 'socket.io-client';
 import InfoBar from './bar';
@@ -14,7 +15,7 @@ import TextContainer from './text';
 import "./Chat.css";
 
 let socket;
-console.log(io, "this is io")
+// console.log(io, "this is io")
 
 const Chat = ({ location }) => {
   const user = useSelector((state) => state.session.user);
@@ -38,7 +39,7 @@ const Chat = ({ location }) => {
     setName(name);
 
     dispatch(addRoomToRedux(room));
-    dispatch(fetchRoomMessages("tPpa4Dt8CZKAtRcqAAAA"));
+    dispatch(fetchRoomMessages(room));
 
 
 
@@ -48,6 +49,8 @@ const Chat = ({ location }) => {
       }
     });
   }, [ENDPOINT, location.search]);
+
+  console.log(messagesOld, "from here");
 
   useEffect(() => {
     socket.on("message", (message) => {
@@ -59,14 +62,18 @@ const Chat = ({ location }) => {
     });
   }, []);
 
-  console.log(messagesOld, "msg")
 
+const messagesOldMapped = messagesOld.map(o => ({ user: o.user, text: o.message }));
+
+
+  console.log(name, "fixing!!");
 
   const sendMessage = (event) => {
     event.preventDefault();
 
     if (message) {
       socket.emit("sendMessage", {message, room, user }, () => setMessage(""));
+      dispatch(newLocalMessage(message));
     }
   };
 
@@ -74,7 +81,7 @@ const Chat = ({ location }) => {
     <div className="outerContainer">
       <div className="container">
         <InfoBar room={room} />
-        <Messages messages={messages} name={name} />
+        <Messages messages={[...messagesOldMapped, ...messages]} name={name} />
         <Input
           message={message}
           setMessage={setMessage}

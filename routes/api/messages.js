@@ -40,7 +40,7 @@ router.post(
 
 router.get("/rooms/:room_id", (req, res) => {
   Message.find({ room: req.params.room_id })
-    .sort({ date: -1 })
+    .sort({ date: 1 })
     .then((messages) => res.json(messages))
     .catch((err) => res.status(400).json(err));
 });

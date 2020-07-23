@@ -12,7 +12,7 @@ const http = require('http');
 const server = http.createServer(app);
 const io = socketio(server);
 
-
+// require("./chatServer")(server);
 
 const users = require("./routes/api/users");
 const posts = require("./routes/api/posts");
@@ -62,9 +62,9 @@ io.on("connect", (socket) => {
     const userr = getUser(socket.id);
     io.to(userr.room).emit("message", { user: userr.name, text: message });
     const message1 = new Message({
-      message: message,
-      user: user.id,
-      room: socket.id
+      message,
+      user: userr.name,
+      room,
     });
 
        message1.save((err) => {

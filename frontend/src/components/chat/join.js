@@ -13,6 +13,7 @@ const Join = () => {
     useEffect(() => {
        setRooms(rooms)
     })
+    console.log(rooms, "join")
     
     return (
   <div>
@@ -41,9 +42,7 @@ const Join = () => {
                         />
                 </div>
                 <Link onClick={e => (!name || !room) ? e.preventDefault() : null} to={`/chat?name=${name}&room=${room}`}>
-                    <button className={'button mt-20'} type="submit" onClick={() => {
-                        //setRooms(rooms)
-                    }}>Sign In</button>
+                    <button className={'button mt-20'} type="submit">JOIN</button>
                 </Link>
             </div>
         </div>

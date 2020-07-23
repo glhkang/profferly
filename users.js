@@ -3,7 +3,7 @@ const User = require('./models/User');
 const users = [];
 
 const addUser = ({ id, name, room}) => {
-  name = name.trim().toLowerCase();
+  // name = name.trim().toLowerCase();
   // room = room.trim().toLowerCase();
 
   // const existingUser = users.find(
@@ -49,9 +49,8 @@ const addUser = ({ id, name, room}) => {
           _id: id, 
           name: room
         })
-
-        newRoom.save().then((room) => res.json(room));
-
+       
+        newRoom.save().then((room) => (res.json(room)));
         console.log(room)
         console.log("we made a room")
       }
