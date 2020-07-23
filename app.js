@@ -56,8 +56,6 @@ io.on("connect", (socket) => {
       users: items
     });
 
-    io.to(socket.id).emit("this is from the back!");
-
     callback();
   });
 

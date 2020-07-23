@@ -25,8 +25,6 @@ class NavBar extends React.Component {
     this.props.history.push(`/users/${this.props.currentUser.id}`)
   }
 
-
-  // Selectively render links dependent on whether the user is logged in
   getLinks() {
     if (this.props.loggedIn) {
       return (
@@ -38,11 +36,10 @@ class NavBar extends React.Component {
             <FontAwesomeIcon className="globe-icon" icon={faGlobe} />
           </Link>
 
-          {/* <img className="globe-icon" src="/assets/icons/world.svg" /> */}
           <Link className={"user-show"} to={"/join"}>
             CHAT
           </Link>
-          <Link onClick={this.logoutUser}>LOGOUT</Link>
+          <Link onClick={this.logoutUser} to={"/login"}>LOGOUT</Link>
         </div>
       );
     } else {

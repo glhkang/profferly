@@ -51,21 +51,17 @@ const Chat = ({ location }) => {
     socket.on("message", (message) => {
       setMessages((messages) => [...messages, message]);
     });
-     socket.on("id", (id) => console.log(id, "what?"));
+
     socket.on("roomData", ({ users }) => {
       const unique = [...new Set(users.map((item) => item.name))];
       setUsers([...unique])
-
     });
   }, []);
 
-  console.log(users, "online");
 
   
 const messagesOldMapped = messagesOld.map(o => ({ user: o.user, text: o.message }));
 
-
-  console.log(name, "fixing!!");
 
   const sendMessage = (event) => {
     event.preventDefault();

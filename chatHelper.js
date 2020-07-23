@@ -12,24 +12,25 @@ const addUser = ({ id, name, room}) => {
       if (!user.rooms.includes(room)) {
         return user.updateOne({rooms: [...user.rooms, room]})
       } else {
-        return console.log("The room already exists");
+        return user;
       }
     })
     .catch(err => res.status(400).json(err));
 
-  Room.findOne({name:room})
-    .then(roomnam => {
+  Room.findOne({ name: room })
+    .then((roomnam) => {
       if (roomnam) {
-        console.log("we have a room in the db");
+        return roomnam;
       } else {
         let newRoom = new Room({
-          _id: id, 
-          name: room
-        })
-       
-        newRoom.save().then((room) => (res.json(room)));
+          _id: id,
+          name: room,
+        });
+
+        newRoom.save().then((room) => res.json(room));
       }
-    }).catch(() => console.log(""));
+    })
+    .catch((err) => res.status(400).json(err));
 
   users.push(user);
 
