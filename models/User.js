@@ -7,12 +7,6 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    // fname: {
-    //     type: String
-    // },
-    // lname: {
-    //     type: String
-    // },
     email: {
         type: String,
         required: true
@@ -25,10 +19,10 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now
     },
-
+    rooms: { type: Array, "default": [] },
     comments: [ Comment ]
-
 });
 
+  
 const User = mongoose.model("User", UserSchema);
 module.exports = User;

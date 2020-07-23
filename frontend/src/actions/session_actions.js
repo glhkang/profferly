@@ -5,6 +5,16 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
+export const RECEIVE_USER_ROOMS_ADD = "RECEIVE_USER_ROOMS_ADD";
+
+export const addRoomToRedux = room => {
+
+    return {
+        type: RECEIVE_USER_ROOMS_ADD,
+        room
+    };
+
+}
 
 export const receiveCurrentUser = currentUser => {
 //////debugger

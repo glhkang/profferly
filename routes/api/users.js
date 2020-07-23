@@ -26,6 +26,7 @@ router.get(
       // lname: req.user.lname,
       username: req.user.username,
       email: req.user.email,
+      rooms: req.user.rooms
     });
   }
 );
@@ -61,6 +62,7 @@ router.post("/register", (req, res) => {
               const payload = { 
                                 id: user.id, 
                                 username: user.username,
+                                rooms: user.rooms
                                 // fname: user.fname,
                                 // lname: user.lname
                               };
@@ -93,7 +95,7 @@ router.post("/login", (req, res) => {
 
   const email = req.body.email;
   const password = req.body.password;
-  const username = req.body.username
+  const username = req.body.username;
 //////debugger
   User.findOne({ email }).then((user) => {
     if (!user) {
@@ -103,7 +105,7 @@ router.post("/login", (req, res) => {
 
     bcrypt.compare(password, user.password).then((isMatch) => {
       if (isMatch) {
-        const payload = { id: user.id, email: user.email, username: user.username};
+        const payload = { id: user.id, email: user.email, username: user.username, rooms: user.rooms};
 
         jwt.sign(
           payload,
@@ -141,46 +143,6 @@ router.get(
       .catch(err => res.status(400).json(err))
   }
 );
-
-// router.post("/login", (req, res) => {
-//   const { errors, isValid } = validateLoginInput(req.body);
-// //////debugger
-//   if (!isValid) {
-//     return res.status(400).json(errors);
-//   }
-
-//   const username = req.body.username;
-//   const password = req.body.password;
-// //////debugger
-//   User.findOne({ username }).then((user) => {
-//     if (!user) {
-//       errors.username = "An account with this username does not exist!";
-//       return res.status(400).json(errors);
-//     }
-
-//     bcrypt.compare(password, user.password).then((isMatch) => {
-//       if (isMatch) {
-//         const payload = { id: user.id, username: user.username };
-
-//         jwt.sign(
-//           payload,
-//           keys.secretOrKey,
-//           { expiresIn: 3600 },
-//           (err, token) => {
-//             res.json({
-//               success: true,
-//               token: "Bearer " + token,
-//             });
-//           }
-//         );
-//       } else {
-//         errors.password = "This password is incorrect!";
-//         return res.status(400).json(errors);
-//       }
-//     });
-//   });
-// });
-
 
 module.exports = router;
 
