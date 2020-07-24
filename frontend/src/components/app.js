@@ -11,17 +11,13 @@ import PostsContainer from './posts/posts_container';
 import ProfileContainer from './profile/profile_container';
 import MapContainer from "./map/map";
 
-import PhotoIndex from "./photos/PhotoIndex";
-import NewPhotoUpload from "./photos/NewPhotoUpload";
 import FormWindow from './map/form';
-import Splash from '../splash';
+import Join from "./chat/join";
+import Chat from "./chat/chat";
 
 const App = () => (
   <div className="app-main">
     <Route path="/" component={NavBarContainer} />
-    {/* <BrowserRouter> */}
-    {/* <PhotoIndex />
-    <NewPhotoUpload /> */}
     <Switch>
       <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
@@ -29,37 +25,14 @@ const App = () => (
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/users/:id" component={ProfileContainer} />
       <Route exact path="/map" component={MapContainer} />
+      <ProtectedRoute path="/join" exact component={Join} />
+      <ProtectedRoute path="/chat" exact component={Chat} />
       <Route exact path="/form" component={FormWindow} />
     </Switch>
     <div className="app-main-footer">
         <Footer />
     </div>
-    {/* </BrowserRouter> */}
   </div>
 );
-
-// const App = () => (
-//   <div className="app-main">
-//     <Route path="/" component={NavBarContainer} />
-//     {/* <BrowserRouter> */}
-//     {/* <PhotoIndex />
-//     <NewPhotoUpload /> */}
-//     <Switch>
-//       <AuthRoute exact path="/" component={MainPage} />
-//       <AuthRoute exact path="/login" component={LoginFormContainer} />
-//       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-//       <Splash />
-//       {/* <ProtectedRoute exact path="/posts" component={PostsContainer} />
-//       <ProtectedRoute exact path="/users/:id" component={ProfileContainer} /> */}
-//       <Route exact path="/map" component={MapContainer} />
-//       <Route exact path="/form" component={FormWindow} />
-//     </Switch>
-//     <div className="app-main-footer">
-//       <Footer />
-//     </div>
-//     {/* </BrowserRouter> */}
-//   </div>
-// );
-
 
 export default App;
