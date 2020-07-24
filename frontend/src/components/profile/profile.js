@@ -111,7 +111,7 @@ debugger
     render() {
         if (!this.state.user && (this.state.posts.length === 0)) {
             return (<div className="profile-main">
-                <div className="profile-loading">Loading...</div>
+                <div className="profile-loading">LOADING...</div>
                 </div>
             )
         } else {
