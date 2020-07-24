@@ -65,7 +65,7 @@ class NavBar extends React.Component {
     } else {
       return (
         <div className="navbar-container">
-          <div className="navbar-whitepspace" />
+          <section className="navbar-white"></section>
           <div className="navbar-main">
             <div className="navbar-logo">
               <Link to={"/"}>

@@ -12,17 +12,17 @@ class CommentItem extends React.Component {
                 (<li className="comments-list-li" >
                         <div className="comments-text" >{comment.text}</div>
 
-                        <div className="comments-username" >{'Comment by: ' + comment.author.username}</div>
-                        <span className="comments-left">Left on </span>
-                        <Moment format="MMMM Do YYYY [at] h:mm a" className="comments-date" >{comment.date.toString()}</Moment>
-                        <div>
+                        <div className="comment-by" >
+                            Comment by <span className="comment-author">{comment.author.username}</span> on <Moment format="L [at] h:mmA" className="comments-date" >{comment.date.toString()}</Moment>
+                        </div>
+                        <div className="comment-author-delete">
                             {(comment.author._id === currentUser.id) ?
                                 (<button 
                                     className="comments-del-button"
                                     onClick={() => {
                                     removeComment(comment._id)
                                 }}>
-                                    Delete Your Comment
+                                    Delete Comment
                                 </button>) : null}
                         </div>
                 </li>) : null

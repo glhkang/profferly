@@ -229,29 +229,31 @@ const LikesDislikes = ({postId, userId, currentUserId}) => {
 
   return (
     <React.Fragment>
-      <span key="post-like">
-        <Tooltip>
-          <Icon
-            // component={LikeAction === 'liked' ? LikeTwoTone : LikeOutlined }
-            component={likeIcon}
-            onClick={onLike}
-          />
-        </Tooltip>
-        <span style={{ paddingLeft: "5px", cursor: "auto" }}>{Likes}
+      <div className="post-like-dislikes">
+        <span key="post-like" className="post-like">
+          <Tooltip>
+            <Icon
+              // component={LikeAction === 'liked' ? LikeTwoTone : LikeOutlined }
+              component={likeIcon}
+              onClick={onLike}
+            />
+          </Tooltip>
+          <span style={{ paddingLeft: "5px", cursor: "auto" }}>{Likes}
+          </span>
         </span>
-      </span>
-      <span key="post-dislike">
-        <Tooltip>
-          <Icon
-            // component={DislikeAction === 'disliked' ? DislikeTwoTone : DislikeOutlined }
-            component={dislikeIcon}
-            onClick={onDislike}
-          />
-        </Tooltip>
-        <span style={{ paddingLeft: "5px", cursor: "auto" }}>
-          {Dislikes}
+        <span key="post-dislike" className="post-dislike">
+          <Tooltip>
+            <Icon
+              // component={DislikeAction === 'disliked' ? DislikeTwoTone : DislikeOutlined }
+              component={dislikeIcon}
+              onClick={onDislike}
+            />
+          </Tooltip>
+          <span style={{ paddingLeft: "5px", cursor: "auto" }}>
+            {Dislikes}
+          </span>
         </span>
-      </span>
+      </div>
     </React.Fragment>
   );
 }

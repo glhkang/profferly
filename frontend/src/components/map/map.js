@@ -131,6 +131,7 @@ debugger
             zoom={4}
             onClick={this.onMapClick}
             initialCenter={{ lat: 40.7128, lng: -74.006 }}
+            className="google-map"
           >
             {this.state.markers.map((
               marker,

@@ -1,3 +1,5 @@
+
+
 .map-window {
     z-index: -999;
     /* width: 90%;
@@ -68,8 +70,6 @@
     outline-width: 0;
 }
 
-
-
 .return-button {
     width: 50%;
     padding: 15px;
@@ -117,17 +117,12 @@
     outline-width: 0;
 }
 
-.home-icon {
-
-}
-
 /* map container at homepage */
-
-.map-container {
-    width: 60%;
-    height: 100vh;
-}
 
 .map-container .home-button {
     display: none;
+}
+
+.google-map {
+    margin-bottom: 40px;
 }

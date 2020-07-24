@@ -17,12 +17,11 @@ class Posts extends React.Component {
         if (this.props.users) {
             return (
                 <div className="all-posts">
-                <section className="navbar-white"></section>
                   <div className="all-posts-above" />
                     {/* <button onClick={(e) => {e.preventDefault(); this.props.history.push('/map')}}>Map</button> */}
-                  <div className="posts-container">
-                  <h3>Talk to us.</h3>          
+                  <section className="posts-container">
                     <div className="posts-body">
+                    <h3>Talk to us.</h3>          
                     <PostCompose currentUser={this.props.currentUser} newPost={this.props.newPost} composePost={this.props.composePost} history={this.props.history}/>
 
                     <h5>Happenings:</h5>
@@ -44,12 +43,11 @@ class Posts extends React.Component {
                                   removeComment={this.props.removeComment}
                                   comments={this.props.comments}
                                   fetchAllComments={this.props.fetchAllComments}
-
                               />
                           )}
                       </div>
                     </div>
-                  </div>
+                  </section>
                 
                 <div className="map-container">
                     <MapContainer
@@ -57,7 +55,6 @@ class Posts extends React.Component {
                         path='/posts'
                     />
                 </div>
-                  <div class="clear"></div>
               </div>
             )
         } else {
