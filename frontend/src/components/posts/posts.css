@@ -1,26 +1,3 @@
-
-/* .all-posts {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  padding-bottom: 200px;
-} */
-
-.posts-container {
-  /* margin-left: -90px; */
-  /* padding-bottom: 200px; */
-  /* height: 100vh;
-  width: 100vh; */
-  height: 100%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  padding-bottom: 200px;
-}
-
 .post-compose {
   display: flex;
   align-items: center;
@@ -42,7 +19,7 @@
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
-  width: 240px;
+  width: 230px;
   text-align: center;
   /* outline: 0; */
 }
@@ -56,6 +33,7 @@
   /* background-color: #2E4C53; */
   /* background-color: #4e5c89; */
   background-color: #497c49;
+  cursor: pointer;
 }
 
 /* .input[type='file'] {
@@ -138,7 +116,9 @@ form {
   padding-bottom: 20px;
 }
 
-
+.posts-container {
+  width: 35%;
+}
 
 .posts-container h3 {
   margin-top: 200px;
@@ -155,36 +135,24 @@ form {
   font-size: 40px;
   margin-bottom: 45px;
   font-family: 'Muli', sans-serif;
+  align-self: center;
 }
 
 .posts-body {
+    width: 35%;
     position: absolute;
-    top: 300px;
-    height: 100vh;
+    align-self: center;
+    top: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
-  
 }
 
 .posts {
+  align-self: left;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-}
-
-.post-item-li {
-  width: 420px;
-  height: 1420px;
-  border: 5px solid #365c36;
-  border-radius: 70px;
-  text-decoration: none;
-  /* padding-top: 100px; */
-  margin-bottom: 30px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
 
 .posts li:last-child {
@@ -208,12 +176,25 @@ form {
   font-size: 15px;
 }
 
-.post-item-username:hover{text-transform: uppercase;
-  color: #264026;
-}
-
 .all-posts {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
+  animation: 3s fadeInDown;
+}
+
+@keyframes fadeInDown {
+  0% {
+     opacity: 0;
+  }
+  100% {
+     opacity: 1;
+  }
+} 
+
+.map-container {
+  width: 65%;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
 }

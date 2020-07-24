@@ -1,15 +1,23 @@
 .profile-main {
     font-family: 'Muli', sans-serif;
     position: absolute;
-    padding-top: 200px;
+    padding-top: 160px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     height: 100vh;
     width: 100%;
-
+    animation: 3s fadeInDown;
 }
+
+@keyframes fadeInDown {
+  0% {
+     opacity: 0;
+  }
+  100% {
+     opacity: 1;
+  }
+} 
 
 /* .profile-button {
   cursor: pointer;
@@ -65,7 +73,7 @@
   outline: 0; */
   /* color: black; */
   position: fixed;
-  left: 7%;
+  left: 6%;
   top: 50%;
   border-radius: 25px;
   border: 0;
@@ -76,7 +84,7 @@
 }
 
 .font-awesome-back {
-  color: #1d301d;
+  color: #365c36;
   font-size: 38px;
 }
 
@@ -91,8 +99,6 @@
   outline-color: transparent;
 }
 
-
-
 .user-profile h2 {
     display: flex;
     align-items: center;
@@ -103,6 +109,8 @@
     list-style-type: none;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-list-post {

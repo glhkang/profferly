@@ -3,15 +3,19 @@ import { fetchUserPosts, fetchPosts,composePost, removePost } from '../../action
 import { fetchUsers } from "../../actions/user_actions";
 import { fetchPhotos } from '../../actions/photo_actions';
 import Profile from './profile';
+import { fetchComment, fetchPostComments, composeComment, removeComment, fetchAllComments } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
-//debugger
+debugger
     return {
         posts: Object.values(state.posts),
         currentUser: state.session.user,
         user: ownProps.match.params.id,
         users: state.users,
         newPost: state.posts.new,
+        history: ownProps.history,
+        currentUser: state.session.user,
+        comments: state.comments.all
     };
 };
 
@@ -23,7 +27,12 @@ const mapDispatchToProps = dispatch => {
         composePost: data => dispatch(composePost(data)),
         fetchUsers: () => dispatch(fetchUsers()),
         removePost: id => dispatch(removePost(id)),
-        fetchPhotos: () => dispatch(fetchPhotos())
+        fetchPhotos: () => dispatch(fetchPhotos()),
+        fetchAllComments: () => dispatch(fetchAllComments()),
+        composeComment: (comment) => dispatch(composeComment(comment)),
+        removeComment: (commentId) => dispatch(removeComment(commentId)),
+        fetchPostComments: (postId) => dispatch(fetchPostComments(postId)),
+        fetchComment: commentId => dispatch(fetchComment(commentId)),
     };
 };
 

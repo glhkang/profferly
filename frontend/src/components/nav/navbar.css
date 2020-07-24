@@ -1,14 +1,12 @@
-
 .navbar-container {
     width: 100%;
-    position: absolute;
     z-index: 999;
     top: 0;
     display: flex;
     /* margin-top: 5px; */
     padding-top: 85px;
-    margin-left: 5%;
-    margin-right: 5%;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar-main {
@@ -32,7 +30,17 @@
     width: 90%;
     z-index: 1;
     border-radius: 60px;
+    animation: 3s slideInFromTop;
 } 
+
+@keyframes slideInFromTop {
+    0% {
+      transform: translateY(-150%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 
 /* .navbar-whitepspace {
   width: 1300px;
@@ -197,7 +205,7 @@
     margin-right: 100px;
 }
 
-.all-posts .navbar-white {
+.navbar-white {
     position: fixed;
     top: 0;
     z-index: 1;

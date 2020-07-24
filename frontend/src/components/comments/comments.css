@@ -1,58 +1,55 @@
 /* COMMENTS LIST AND COMMENT ITEMS */
-
-.comments-cont {
-    /* width: auto;
-    height: auto; */
-}
-
 .comments-list-ol {
-    /* width: auto;
-    height: auto; */
-    padding: 0;
-    /* font-size: 8px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .comments-list-li-cont {
-    /* width: auto;
-    height: auto; */
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .comments-list-li {
-    /* width: auto;
-    height: auto; */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.comments-list-li:last-child {
 }
 
 .comments-text {
-    /* width: auto; */
     font-size: 16px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    
+    text-align: center;
 }
 
-.comments-username {
+.comment-by {
     width: auto;
     font-size: 14px;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 5px;
+    text-align: center;
 }
 
-.comments-left {
-    font-size: 12px;
+.comment-author {
+    font-weight: bold;
 }
 
 .comments-date {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .comments-del-button {
     margin-top: 10px;
     margin-bottom: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     width: auto;
-    height: 30px;
+    height: 33px;
     border-radius: 25px;
     font-family: 'Muli', sans-serif;
     font-weight: bold;
@@ -61,8 +58,14 @@
     border: none;
     background-color: #323b58;
     color: whitesmoke;
-    font-size: 12px;
+    font-size: 11px;
     outline: none;
+}
+
+.comment-author-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .comments-del-button:hover {
@@ -70,13 +73,6 @@
     cursor: pointer;
     color: whitesmoke;
 }
-
-
-
-
-
-
-
 
 /* COMMENT FORM */
 
@@ -105,10 +101,10 @@
 .comment-form-button {
     margin-top: 5px;
     margin-bottom: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     width: auto;
-    height: 30px;
+    height: 33px;
     border-radius: 25px;
     font-family: 'Muli', sans-serif;
     font-weight: bold;
@@ -117,7 +113,7 @@
     border: none;
     background-color: #365c36;
     color: whitesmoke;
-    font-size: 12px;
+    font-size: 11px;
     outline: none;
 }
 

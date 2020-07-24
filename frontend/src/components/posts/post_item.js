@@ -33,7 +33,7 @@ class PostItem extends React.Component {
             //  let localtime = post.date.toLocaleString("en-US", options);
              ////debugger
              const dateStr = post.date.toString();
-             if (post && user) {
+             if (post.file && user) {
                  return (
                 <li className="post-item-li" >
                     <div className="post-item">
@@ -41,11 +41,12 @@ class PostItem extends React.Component {
                         <div className="post-item-text">{post.text}</div>
                         <div className="post-item-footer">
                             {/* <LikesDislikes postId={post._id} userId={user._id} currentUserId={this.props.currentUser.id}/> */}
-                            <LikesDislikes postId={post._id} userId={user._id} currentUserId={this.props.currentUser.id}/>
-                            <div className="post-item-username"onClick={this.handleClick}>
-                                {user.username}
+                            <div className="post-item-posted">
+                                Posted by <span className="post-item-username" onClick={this.handleClick}>{user.username}</span>
                             </div>
-                            <Moment format="HH:mm on MMM DD, YYYY" className="post-date" >{dateStr}</Moment>
+                            <Moment format="MMM DD, YYYY [at] h:mmA" className="post-date" >{dateStr}</Moment>
+                            <br/>
+                            <LikesDislikes postId={post._id} userId={user._id} currentUserId={this.props.currentUser.id}/>
                             {/* <div className="post-date">{localtime}</div> */}
                             {(this.props.currentUser.id === user._id) ? 
                                 <button className="post-item-footer-button" onClick={this.handleButton}>Delete</button> : <div></div>
@@ -68,6 +69,41 @@ class PostItem extends React.Component {
                     </div>
                 </li>
             )
+            } else if (!post.file && user) {
+                return (
+                    <li className="post-item-li" >
+                        <div className="post-item">
+                            <div className="post-item-text">{post.text}</div>
+                            <div className="post-item-footer">
+                                {/* <LikesDislikes postId={post._id} userId={user._id} currentUserId={this.props.currentUser.id}/> */}
+                                <div className="post-item-posted">
+                                    Posted by <span className="post-item-username" onClick={this.handleClick}>{user.username}</span>
+                                </div>
+                                <Moment format="MMM DD, YYYY [at] h:mmA" className="post-date" >{dateStr}</Moment>
+                                <br/>
+                                <LikesDislikes postId={post._id} userId={user._id} currentUserId={this.props.currentUser.id}/>
+                                {/* <div className="post-date">{localtime}</div> */}
+                                {(this.props.currentUser.id === user._id) ? 
+                                    <button className="post-item-footer-button" onClick={this.handleButton}>Delete</button> : <div></div>
+                                }
+                            </div>
+    
+                            <CommentsList 
+                                currentPost={this.props.post}
+                                comments={this.props.comments}
+                                fetchPostComments={this.props.fetchPostComments}
+    
+                                composeComment={this.props.composeComment}
+                                fetchComment={this.props.fetchComment}
+                                removeComment={this.props.removeComment}
+                                isLoggedIn={this.props.isLoggedIn}
+                                currentUser={this.props.currentUser}
+                                fetchAllComments={this.props.fetchAllComments}
+                            />
+    
+                        </div>
+                    </li>
+                )
         } else {
             // ////debugger
             return null;
