@@ -81,7 +81,7 @@ class LoginForm extends React.Component {
   render() {
     //////debugger
 
-    const { errors } = this.props;
+    // const { errors } = this.props;
 
     // const allErrors = (
     //   <div className='error-popup'>
@@ -101,7 +101,7 @@ class LoginForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <div className="session-form">
               <div className="login-signup-header">
-                <img src="/assets/images/black_logo_bold.png" />
+                <img src="/assets/images/black_logo_bold.png" alt="Profferly Logo" />
                 <h3>Welcome Back to Profferly!</h3>
               </div>
               {/* <label

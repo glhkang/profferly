@@ -4,7 +4,7 @@ class MainPageBottom extends React.Component {
   render() {
     return (
       <div className="bottom-container">
-        <img src="/assets/images/profferly_logo_white_small.png" />
+        <img src="/assets/images/profferly_logo_white_small.png" alt="Profferly Logo" />
         <h3>profferly</h3>
         <h5>
           Where volunteers unite to inspire and help others accomplish their

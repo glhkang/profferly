@@ -1,10 +1,10 @@
 import React from 'react';
-import axios from 'axios';
-import PostItem from './post_item';
-import PhotoIndex from "../photos/PhotoIndex";
-import NewPhotoUpload from "../photos/NewPhotoUpload";
+// import axios from 'axios';
+// import PostItem from './post_item';
+// import PhotoIndex from "../photos/PhotoIndex";
+// import NewPhotoUpload from "../photos/NewPhotoUpload";
 
-const endpoint = "http://localhost:3000/api/posts/";
+// const endpoint = "http://localhost:3000/api/posts/";
 // const endpoint = "http://profferly.herokuapp/api/photos/upload";
 
 class PostCompose extends React.Component {
@@ -27,7 +27,7 @@ class PostCompose extends React.Component {
     // }
 
     handleSelectedFile = e => {
-debugger
+// debugger
         e.preventDefault();
         this.setState({
             file: e.target.files[0]
@@ -36,22 +36,22 @@ debugger
 
     handleSubmit(e) {
         // console.log(e, e.target, e.currentTarget);
-    debugger
+    // debugger
         e.preventDefault();
         
             const data = new FormData();
             if (this.state.file === null) {
-    debugger
+    // debugger
                 // this.setState({
             //     file: ""
                 // });
 
                 // data.append("file", this.state.file);
                 data.append("text", this.state.text);
-    debugger
+    // debugger
                 this.props.composePost(data);
             } else {
-    debugger
+    // debugger
                 data.append("file", this.state.file);
                 data.append("text", this.state.text);
                 this.props.composePost(data);
@@ -84,14 +84,14 @@ debugger
     };
            
     update() {
-// //debugger
+// debugger
         return e => this.setState({
             text: e.currentTarget.value
         });
     }
 
     render() {
-debugger
+// debugger
         return (
             <div>
                 {/* <PhotoIndex /> */}
@@ -113,7 +113,7 @@ debugger
                       className="custom-file-input"
                       name="file"
                       id="file"
-                      for="file"
+                      htmlFor="file"
                     //   style={{display: "none"}}
                       accept='image/*'
                     //   color={{color: 'tranparent'}}

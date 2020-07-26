@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import PostItem from './post_item';
 import PostCompose from './post_compose';
 import MapContainer from '../map/map';
-import { removePost } from '../../actions/post_actions';
+// import { removePost } from '../../actions/post_actions';
 import './posts.css';
 
 class Posts extends React.Component {

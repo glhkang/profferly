@@ -5,7 +5,8 @@ import './Join.css';
 
 const Join = () => {
     const user = useSelector((state) => state.session.user);
-    const [name, setName] = useState(user.username);
+    // const [name, setName] = useState(user.username);
+    const [name] = useState(user.username);
     const [room, setRoom] = useState('');
     const [rooms, setRooms] = useState(user.rooms);
   

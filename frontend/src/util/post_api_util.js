@@ -9,7 +9,7 @@ export const getUserPosts = id => {
 };
 
 export const writePost = data => {
-debugger
+// debugger
     return axios.post('/api/posts/', data)
 }
 

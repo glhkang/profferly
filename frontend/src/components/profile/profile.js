@@ -4,9 +4,9 @@ import PostCompose from '../posts/post_compose';
 import './profile.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
-import CommentsList from '../comments/comments_list';
-import LikesDislikes from '../likesdislikes/likes_dislikes';
-import Moment from "react-moment";
+// import CommentsList from '../comments/comments_list';
+// import LikesDislikes from '../likesdislikes/likes_dislikes';
+// import Moment from "react-moment";
 
 class Profile extends React.Component {
     constructor(props) {
@@ -74,7 +74,7 @@ class Profile extends React.Component {
     }
 
     renderAsAnotherUser() {
-debugger
+// debugger
         if (this.props.users) {
             const list = Object.values(this.props.posts[1]).map((post, idx) =>
                 <PostItem

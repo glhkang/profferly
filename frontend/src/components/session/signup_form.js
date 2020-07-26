@@ -69,13 +69,6 @@ class SignupForm extends React.Component {
     );
   }
 
-  demoUserLogin(e) {
-    e.preventDefault();
-    const demoUser = { email: "gloria@gloria.com", password: "gloria" };
-    this.props.login(demoUser);
-  }
-
-
   render() {
   //////debugger
     return (
@@ -84,7 +77,7 @@ class SignupForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <div className="session-form">
               <div className="login-signup-header">
-                <img src="/assets/images/black_logo_bold.png" />
+                <img src="/assets/images/black_logo_bold.png" alt="Profferly Logo" />
                 <h3>Sign Up for Profferly!</h3>
               </div>
               {/* <label className="session-form-label">

@@ -104,7 +104,7 @@ router.delete(
 router.post("/", upload.single("file"), 
             passport.authenticate("jwt", { session: false }), 
             function (req, res) {
-debugger
+// debugger
   const { errors, isValid } = validatePostInput(req.body);
       if (!isValid) {
         return res.status(400).json(errors);
@@ -161,7 +161,7 @@ debugger
 
         newPost.save().then((post) => res.json(post));
     }
-debugger
+// debugger
 });
 
 module.exports = router;

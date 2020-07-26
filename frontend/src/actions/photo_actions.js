@@ -1,4 +1,4 @@
-import { getPhotos, getPhoto, getPostPhotos, deletePhoto } from '../util/photo_api_util';
+import { getPhotos, getPhoto, getPostPhotos } from '../util/photo_api_util';
 
 export const RECEIVE_PHOTOS = "RECEIVE_PHOTOS";
 export const RECEIVE_PHOTO = "RECEIVE_PHOTO";

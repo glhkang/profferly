@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import MapContainer from "../map/map";
+// import MapContainer from "../map/map";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe, faMapMarker, faMap } from "@fortawesome/free-solid-svg-icons";
+// import { faGlobe, faMapMarker, faMap } from "@fortawesome/free-solid-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import '../../index.css';
 import './navbar.css';
 
@@ -66,7 +67,7 @@ class NavBar extends React.Component {
           <div className="navbar-main">
             <div className="navbar-logo">
               <Link to={"/"}>
-                <img src="/assets/images/profferly_logo_white_small.png" />
+                <img src="/assets/images/profferly_logo_white_small.png" alt="Profferly Logo" />
               </Link>
             </div>
 
