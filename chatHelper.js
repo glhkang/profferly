@@ -3,7 +3,6 @@ const User = require('./models/User');
 const users = [];
 
 const addUser = ({ id, name, room}) => {
-
   const user = { id, name, room};
 
   User
@@ -33,7 +32,6 @@ const addUser = ({ id, name, room}) => {
     .catch((err) => res.status(400).json(err));
 
   users.push(user);
-
   return { user };
 };
 
@@ -44,7 +42,6 @@ const removeUser = (id) => {
 };
 
 const getUser = (id) => users.find((user) => user.id === id);
-
 const getUsersInRoom = (room) => users.filter((user) => user.room === room);
 
 module.exports = { addUser, removeUser, getUser, getUsersInRoom };

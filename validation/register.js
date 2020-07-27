@@ -5,8 +5,6 @@ module.exports = function validateRegisterInput(data) {
   let errors = {};
 
   data.username = validText(data.username) ? data.username : "";
-  // data.fname = validText(data.fname) ? data.fname : "";
-  // data.lname = validText(data.lname) ? data.lname : "";
   data.email = validText(data.email) ? data.email : "";
   data.password = validText(data.password) ? data.password : "";
 
@@ -18,23 +16,9 @@ module.exports = function validateRegisterInput(data) {
     errors.username = "Username field is required";
   }
 
-  // if (Validator.isEmpty(data.fname)) {
-  // ////debugger
-  //   errors.fname = "First name is required";
-  // }
-
-  // if (Validator.isEmpty(data.lname)) {
-  // ////debugger
-  //   errors.lname = "Last name is required";
-  // }
-
   if (Validator.isEmpty(data.email)) {
     errors.email = "Email field is required";
   }
-
-//   if (!Validator.isEmail(data.email)) {
-//     errors.email = "Email is invalid";
-//   }
 
   if (Validator.isEmpty(data.password)) {
     errors.password = "Password field is required";
