@@ -1,15 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import Root from './components/root';
-import configureStore from './store/store';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import Root from "./components/root";
+import configureStore from "./store/store";
 import jwt_decode from "jwt-decode";
 
 import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
-import { fetchMarkers, createMarker } from './actions/marker_action';
+import { fetchMarkers, createMarker } from "./actions/marker_action";
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   let store;
   store = configureStore();
   window.getState = store.getState;
@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setAuthToken(localStorage.jwtToken);
 
     const decodedUser = jwt_decode(localStorage.jwtToken);
-    const preloadedState = { session: { isAuthenticated: true, user: decodedUser } };
+    const preloadedState = {
+      session: { isAuthenticated: true, user: decodedUser },
+    };
 
     store = configureStore(preloadedState);
 
@@ -29,13 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (decodedUser.exp < currentTime) {
       store.dispatch(logout());
-      window.location.href = '/login';
+      window.location.href = "/login";
     }
   } else {
     store = configureStore({});
   }
-  window.getState = store.getState; 
-  const root = document.getElementById('root');
+  window.getState = store.getState;
+  const root = document.getElementById("root");
 
   ReactDOM.render(<Root store={store} />, root);
 });
