@@ -9,7 +9,6 @@ const path = require("path");
 const socketio = require('socket.io');
 const http = require('http');
 
-
 const server = http.createServer(app);
 const io = socketio(server);
 
@@ -38,7 +37,7 @@ io.on("connect", (socket) => {
 
     socket.emit("message", {
       user: "admin",
-      text: `${user.name}, welcome to room ${user.room}.`,
+      text: `${user.name}, welcome to ${user.room}`,
     });
 
     socket.emit("id", socket.id);
@@ -83,7 +82,7 @@ io.on("connect", (socket) => {
     if (user) {
       io.to(user.room).emit("message", {
         user: "Admin",
-        text: `${user.name} has left.`,
+        text: `${user.name} has left`,
       });
       io.to(user.room).emit("roomData", {
         room: user.room,

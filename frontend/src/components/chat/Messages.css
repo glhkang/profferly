@@ -1,5 +1,10 @@
 .messages {
-  padding: 5% 0;
+  padding: 0 0;
   overflow: auto;
   flex: auto;
+}
+
+.css-1qyrjaz {
+  display: none;
+  background: red;
 }

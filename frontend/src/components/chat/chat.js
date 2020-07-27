@@ -17,76 +17,77 @@ import "./Chat.css";
 let socket;
 
 const Chat = ({ location }) => {
-  const user = useSelector((state) => state.session.user);
-  const messagesOld = useSelector((state) => state.messages);
-  const [name, setName] = useState("");
-  const [room, setRoom] = useState("");
-  const [users, setUsers] = useState([]);
-  const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([]);
-  const dispatch = useDispatch();
-
-  const ENDPOINT = "localhost:3000";
-
-  useEffect(() => {
-    const { name, room } = queryString.parse(location.search);
-
-    socket = io(ENDPOINT);
-
-    setRoom(room);
-    setName(name);
-
-    dispatch(addRoomToRedux(room));
-    dispatch(fetchRoomMessages(room));
-
-    socket.emit("join", { name, room }, (error) => {
-      if (error) {
-        alert(error);
-      }
-    });
-  }, [ENDPOINT, location.search]);
-
-
-  useEffect(() => {
-    socket.on("message", (message) => {
-      setMessages((messages) => [...messages, message]);
-    });
-
-    socket.on("roomData", ({ users }) => {
-      const unique = [...new Set(users.map((item) => item.name))];
-      setUsers([...unique])
-    });
-  }, []);
-
-
+debugger
+    const user = useSelector((state) => state.session.user);
+    const messagesOld = useSelector((state) => state.messages);
+    const [name, setName] = useState("");
+    const [room, setRoom] = useState("");
+    const [users, setUsers] = useState([]);
+    const [message, setMessage] = useState("");
+    const [messages, setMessages] = useState([]);
+    const dispatch = useDispatch();
   
-const messagesOldMapped = messagesOld.map(o => ({ user: o.user, text: o.message }));
+    const ENDPOINT = "localhost:3000";
+
+    useEffect(() => {
+  debugger
+      const { name, room } = queryString.parse(location.search);
+
+      socket = io(ENDPOINT);
+
+      setRoom(room);
+      setName(name);
+
+      dispatch(addRoomToRedux(room));
+      dispatch(fetchRoomMessages(room));
+
+      socket.emit("join", { name, room }, (error) => {
+        if (error) {
+          alert(error);
+        }
+      });
+    }, [ENDPOINT, location.search]);
 
 
-  const sendMessage = (event) => {
-    event.preventDefault();
+    useEffect(() => {
+      socket.on("message", (message) => {
+        setMessages((messages) => [...messages, message]);
+      });
 
-    if (message) {
-      socket.emit("sendMessage", {message, room, user }, () => setMessage(""));
-      dispatch(newLocalMessage(message));
-    }
-  };
+      socket.on("roomData", ({ users }) => {
+        const unique = [...new Set(users.map((item) => item.name))];
+        setUsers([...unique])
+      });
+    }, []);
 
-  return (
-    <div className="outerContainer">
-      <div className="container">
-        <InfoBar room={room} />
-        <Messages messages={[...messagesOldMapped, ...messages]} name={name} />
-        <Input
-          message={message}
-          setMessage={setMessage}
-          sendMessage={sendMessage}
-        />
+
+    
+  const messagesOldMapped = messagesOld.map(o => ({ user: o.user, text: o.message }));
+
+
+    const sendMessage = (event) => {
+      event.preventDefault();
+
+      if (message) {
+        socket.emit("sendMessage", {message, room, user }, () => setMessage(""));
+        dispatch(newLocalMessage(message));
+      }
+    };
+
+    return (
+      <div className="outerContainer">
+        <TextContainer className="users-online" users={users} />
+        <div className="container">
+          <InfoBar room={room} />
+          <Messages messages={[...messagesOldMapped, ...messages]} name={name} />
+          <Input
+            message={message}
+            setMessage={setMessage}
+            sendMessage={sendMessage}
+          />
+        </div>
       </div>
-
-      <TextContainer users={users} />
-    </div>
-  );
+    );
 };
 
 export default Chat;

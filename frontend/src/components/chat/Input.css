@@ -5,23 +5,38 @@
 
 .input {
   border: none;
-  border-radius: 0;
-  padding: 5%;
+  font-size: 15px;
+  border-radius: 25px;
+  padding: 15px;
   width: 80%;
-  font-size: 1.2em;
+  background-color: #D3D3D3;
+  border: 2px solid #D3D3D3;
+  opacity: 0.4;
 }
 
 input:focus, textarea:focus, select:focus{
   outline: none;
+  border: 2px solid #D3D3D3;
+  background-color: white;
+  opacity: 0.6;
 }
 
 .sendButton {
   color: #fff !important;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 25px;
   text-transform: uppercase;
   text-decoration: none;
-  background: #2979FF;
-  padding: 20px;
+  background: #305030;
+  padding: 15px;
   display: inline-block;
   border: none;
   width: 20%;
+}
+
+.sendButton:hover {
+  background: #4a7d4a;
+  cursor: pointer;
 }

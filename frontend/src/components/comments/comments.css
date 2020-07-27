@@ -20,6 +20,7 @@
 }
 
 .comments-list-li:last-child {
+    margin-bottom: 30px;
 }
 
 .comments-text {

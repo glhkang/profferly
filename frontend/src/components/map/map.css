@@ -57,13 +57,14 @@
   color: white;
   font-size: 14px;
   font-weight: bolder;
-  margin-top: 5px;
-  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 15px;
     font-family: 'Muli', sans-serif;
 }
 
 .submit-button:hover {
   background-color: #4a7d4a;
+  cursor: pointer;
 }
 
 .submit-button:focus {
@@ -86,6 +87,7 @@
 
 .return-button:hover {
   background-color: #4a7d4a;
+  cursor: pointer;
 }
 
 .return-button:focus {

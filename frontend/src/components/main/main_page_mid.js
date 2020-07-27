@@ -4,14 +4,14 @@ class MainPageMid extends React.Component {
   render() {
     return (
       <div className="mid-container">
-        <h3>Featured Opportunities</h3>
+        <span className="profferly-title">PROFFERLY</span>
 
 
         <div className="mid-body">
           <div className="mid-body-row">
             <img className="mid-icon-1" src="/assets/icons/chat_bubble.svg" alt="chat bubble icon"/>
 
-            <p>
+            <p className="p1">
               I just moved to the area and was itching for some volunteering
               work. I got involved with GrowNYC, an organization that helps to
               feed New Yorkers, and met so many people from my new neighborhood!

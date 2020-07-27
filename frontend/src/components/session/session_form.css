@@ -160,7 +160,7 @@ to   { opacity: 1; }
 }
 
 .session-button {
-  width: 87%;
+  width: 80%;
   padding: 15px;
   border-radius: 25px;
   border: 0;
@@ -186,10 +186,11 @@ to   { opacity: 1; }
   /* background-color: #4e5c89; */
   /* background-color: #2E4C53; */
   background-color: #4d804d;
+  cursor: pointer;
 }
 
 .demo-button {
-  width: 87%;
+  width: 80%;
   padding: 15px;
   border-radius: 25px;
   border: 0;
@@ -200,6 +201,8 @@ to   { opacity: 1; }
   color: white;
   font-size: 14px;
   font-weight: bolder;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 
 .demo-button:focus {
@@ -209,6 +212,7 @@ to   { opacity: 1; }
 .demo-button:hover {
   /* background-color: #4e5c89; */
   background-color: #4e5c89;
+  cursor: pointer;
 }
 
 
@@ -227,10 +231,6 @@ to   { opacity: 1; }
   text-align: center; 
   font-size: 15px;
   /* padding-right: 10px; */
-}
-
-.bottom-session-link {
-  text-decoration: none;
 }
 
 .session-form-field:active {
@@ -262,3 +262,19 @@ to   { opacity: 1; }
   text-decoration: none;
 }
 
+.bottom-session-link:hover {
+  transition: 1s;
+  text-decoration: underline;
+}
+
+.bottom-session-link:visited {
+  color: blue;
+}
+
+.bottom-session-link:active {
+  color: blue;
+}
+
+.bottom-session-link:focus {
+  color: blue;
+}
