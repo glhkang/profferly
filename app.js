@@ -27,13 +27,9 @@ const Message = require('./models/Message');
 io.on("connect", (socket) => {
 
   socket.on("join", ({ name, room }, callback) => {
-  
     const { error, user } = addUser({ id: socket.id, name, room });
-
     if (error) return callback(error);
-
     socket.join(user.room);
-
 
     socket.emit("message", {
       user: "admin",
@@ -99,9 +95,11 @@ mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch((err) => console.log(err));
 
+//below for heroku ** DO NOT DELETE
+// app.use("/", express.static(path.join(__dirname, "/client/build")));
+
 //below for dev
 app.get("/", (req, res) => res.send("Hello World"));
-
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("frontend/build"));
@@ -134,3 +132,8 @@ app.use("/api/likes", likes);
 
 const port = process.env.PORT || 5000;
 server.listen(port, () => console.log(`Server is running on port ${port}`));
+
+//below for heroku ** DO NOT DELETE
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "/client/build", "index.html"));
+// });
