@@ -3,61 +3,51 @@ import axios from "axios";
 
 class PhotoIndex extends Component {
   state = {
-    photos: []
+    photos: [],
   };
 
-  deletePhoto = id => {
+  deletePhoto = (id) => {
     axios.delete("/api/photos/" + id).then(() => {
       this.setState({
-        photos: this.state.photos.filter(photo => photo._id !== id)
+        photos: this.state.photos.filter((photo) => photo._id !== id),
       });
     });
   };
 
   componentDidMount() {
-    axios.get("/api/photos").then(res => {
+    axios.get("/api/photos").then((res) => {
       this.setState({ photos: res.data });
     });
   }
 
   render() {
     return (
-      <div >
-            <table>
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {this.state.photos.map(photo => (
-                        <tr>
-                            <td>{photo.photo_id}</td>
-                            <td>
-                            <a href={photo.fileLink}>
-                                    View Photo
-                            </a>
-                     
-                            <img src={photo.fileLink}></img>
-                            </td>
-                    
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Id</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.photos.map((photo) => (
+              <tr>
+                <td>{photo.photo_id}</td>
+                <td>
+                  <a href={photo.fileLink}>View Photo</a>
 
-                            <td>
-                                <button
-                                    onClick={this.deletePhoto.bind(
-                                        this,
-                                        photo._id
-                                    )}
+                  <img src={photo.fileLink}></img>
+                </td>
 
-                                >
-                                    Delete Photo
-                          </button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-
+                <td>
+                  <button onClick={this.deletePhoto.bind(this, photo._id)}>
+                    Delete Photo
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     );
   }

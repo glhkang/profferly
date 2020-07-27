@@ -1,12 +1,13 @@
-import { RECEIVE_CURRENT_USER, 
-    RECEIVE_USER_LOGOUT, 
-    RECEIVE_USER_SIGN_IN,
-  RECEIVE_USER_ROOMS_ADD
- } from '../actions/session_actions';
+import {
+  RECEIVE_CURRENT_USER,
+  RECEIVE_USER_LOGOUT,
+  RECEIVE_USER_SIGN_IN,
+  RECEIVE_USER_ROOMS_ADD,
+} from "../actions/session_actions";
 
 const initialState = {
-isAuthenticated: false,
-user: {}
+  isAuthenticated: false,
+  user: {},
 };
 
 export default function (state = initialState, action) {
@@ -26,7 +27,6 @@ export default function (state = initialState, action) {
       };
     }
     case RECEIVE_CURRENT_USER:
-      //////debugger
       return {
         ...state,
         isAuthenticated: !!action.currentUser,
@@ -38,7 +38,6 @@ export default function (state = initialState, action) {
         user: undefined,
       };
     case RECEIVE_USER_SIGN_IN:
-      //////debugger
       return {
         ...state,
         isAuthenticated: !!action.currentUser,

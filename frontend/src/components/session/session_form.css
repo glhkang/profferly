@@ -1,7 +1,4 @@
 .session-form-main {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
   width: 100%;
   height: 100%;
   padding-top: 30px;
@@ -10,54 +7,67 @@
   background-repeat: no-repeat;
   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 1s; /* Firefox < 16 */
-   -ms-animation: fadein 1s; /* Internet Explorer */
-    -o-animation: fadein 1s; /* Opera < 12.1 */
-       animation: fadein 1s;
+  -ms-animation: fadein 1s; /* Internet Explorer */
+  -o-animation: fadein 1s; /* Opera < 12.1 */
+  animation: fadein 1s;
 
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    height: 100vh;
-    /* position: relative; */
-    /* background: url("/assets/images/mountains.jpg"); */
-    background-color: whitesmoke;
-    background-size: cover;
-    background-position: center;
-    /* background-position: fixed; */
-    background-repeat: no-repeat;
+  height: 100vh;
+  background-color: whitesmoke;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 @keyframes fadein {
-from { opacity: 0; }
-to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Firefox < 16 */
 @-moz-keyframes fadein {
-from { opacity: 0; }
-to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
-from { opacity: 0; }
-to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Internet Explorer */
 @-ms-keyframes fadein {
-from { opacity: 0; }
-to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Opera < 12.1 */
 @-o-keyframes fadein {
-from { opacity: 0; }
-to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
 
 .session-form-container {
   display: flex;
@@ -65,7 +75,6 @@ to   { opacity: 1; }
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  /* height: calc(100vh - 60px); */
 }
 
 .session-form {
@@ -90,11 +99,12 @@ to   { opacity: 1; }
   width: 100%;
   font-size: 15px;
 }
+
 .session-form-field {
   padding-top: 5px;
   padding: 15px;
   font-size: 15px;
-  color:#161a27;
+  color: #161a27;
   border: 0px;
   border-radius: 25px;
   width: 80%;
@@ -113,48 +123,6 @@ to   { opacity: 1; }
   margin-left: -20px;
 }
 
-/* .error-popup {
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    display: flex;
-    justify-content: center;
-    z-index: 2000;
-}
-
-.error-popup > div {
-    border-radius: 5px;
-    position: absolute;
-    border-radius: 5px;
-    background-color: white;
-    -webkit-animation: fadeinout 1s linear forwards;
-    animation: fadeinout 3s linear forwards;
-    box-shadow: 0 4px 12px white;
-}
-
-@-webkit-keyframes fadeinout {
-    0%,100% { opacity: 0; top:-50px; }
-    5%, 96% { opacity: 1; top:0px;}
-}
-  
-@keyframes fadeinout {
-    0%,100% { opacity: 0; top:-50px; }
-    5%, 96% { opacity: 1; top:0px;}
-}
-
-.error-popup > div > ul {
-    font-weight: lighter;
-    font-family: 'Raleway', sans-serif;
-    font-size: 14px;
-    margin: 0px;
-    padding: 10px;
-    border-radius: 5px;
-    background: orange;
-    color: white;
-} 
- */
-
 .login-signup-header img {
   width: 100px;
 }
@@ -164,18 +132,12 @@ to   { opacity: 1; }
   padding: 15px;
   border-radius: 25px;
   border: 0;
-  /* background-color: #264026; */
-  /* background-color: #1a3515; */
-  /* background-color: #305030; */
   background-color: #3a603a;
-
   color: white;
   font-size: 14px;
   font-weight: bolder;
-  /* margin-top: 0px; */
   margin-top: 10px;
   margin-bottom: 10px;
-  /* outline: 0; */
 }
 
 .session-button:focus {
@@ -183,8 +145,6 @@ to   { opacity: 1; }
 }
 
 .session-button:hover {
-  /* background-color: #4e5c89; */
-  /* background-color: #2E4C53; */
   background-color: #4d804d;
   cursor: pointer;
 }
@@ -194,10 +154,7 @@ to   { opacity: 1; }
   padding: 15px;
   border-radius: 25px;
   border: 0;
-  /* background-color: #161a27; */
   background-color: #323b58;
-  /* background-color: #323b58; */
-  /* background-color: orange; */
   color: white;
   font-size: 14px;
   font-weight: bolder;
@@ -210,11 +167,9 @@ to   { opacity: 1; }
 }
 
 .demo-button:hover {
-  /* background-color: #4e5c89; */
   background-color: #4e5c89;
   cursor: pointer;
 }
-
 
 .session-form-bottom {
   display: flex;
@@ -226,24 +181,22 @@ to   { opacity: 1; }
 .bottom-session-text {
   color: black;
   display: flex;
-  /* flex-direction: column; */
   align-self: center;
-  text-align: center; 
+  text-align: center;
   font-size: 15px;
-  /* padding-right: 10px; */
 }
 
 .session-form-field:active {
   padding: 15px;
   font-size: 15px;
-  color:#161a27;
+  color: #161a27;
   border-radius: 25px;
 }
 
 .session-form-field:focus {
   padding: 15px;
   font-size: 15px;
-  color:#161a27;
+  color: #161a27;
   border: solid 1px grey;
   outline-style: none;
   border-radius: 25px;
@@ -252,9 +205,8 @@ to   { opacity: 1; }
 .bottom-session-text {
   color: black;
   display: flex;
-  /* flex-direction: column; */
   align-self: center;
-  text-align: center; 
+  text-align: center;
   font-size: 15px;
 }
 
