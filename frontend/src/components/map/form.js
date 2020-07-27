@@ -1,8 +1,8 @@
 import React from 'react';
 import * as MarkerApiUtil from "../../util/marker_util";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { hashHistory } from 'react-router';
+// import { useEffect } from "react";
+// import { useLocation } from "react-router-dom";
+// import { hashHistory } from 'react-router';
 import "./map.css";
 
 class FormWindow extends React.Component {
@@ -36,7 +36,7 @@ class FormWindow extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-debugger
+// debugger
             const newMarker = {
               title: this.state.title,
               description: this.state.description,

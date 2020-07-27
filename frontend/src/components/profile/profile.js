@@ -5,9 +5,6 @@ import './profile.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-import CommentsList from '../comments/comments_list';
-import LikesDislikes from '../likesdislikes/likes_dislikes';
-import Moment from "react-moment";
 import Join from '../chat/join';
 
 class Profile extends React.Component {
@@ -23,14 +20,12 @@ class Profile extends React.Component {
     }
 
     componentWillMount() {
-//debugger
         this.props.fetchUserPosts(this.props.user);
         this.props.fetchUsers();
         this.props.fetchPhotos();
     }
 
     componentWillReceiveProps(newState) {
-////debugger
         this.setState({ posts: newState.posts });
     }
 
@@ -42,7 +37,6 @@ class Profile extends React.Component {
     }
 
     renderCurrentUser() {
-////debugger
         const list = Object.values(this.props.posts[1]).map((post, idx) => 
             <PostItem
                 key={idx}
@@ -80,7 +74,6 @@ class Profile extends React.Component {
     }
 
     renderAsAnotherUser() {
-debugger
         if (this.props.users) {
             const list = Object.values(this.props.posts[1]).map((post, idx) =>
                 <PostItem

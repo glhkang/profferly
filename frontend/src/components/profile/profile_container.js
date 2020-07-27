@@ -6,7 +6,7 @@ import Profile from './profile';
 import { fetchComment, fetchPostComments, composeComment, removeComment, fetchAllComments } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
-debugger
+// debugger
     return {
         posts: Object.values(state.posts),
         currentUser: state.session.user,
@@ -14,7 +14,6 @@ debugger
         users: state.users,
         newPost: state.posts.new,
         history: ownProps.history,
-        currentUser: state.session.user,
         comments: state.comments.all
     };
 };

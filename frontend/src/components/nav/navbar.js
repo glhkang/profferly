@@ -1,21 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import MapContainer from "../map/map";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWindowMinimize } from "@fortawesome/free-solid-svg-icons";
-import { faGlobe, faMapMarker, faMap, faCommentDots } from "@fortawesome/free-solid-svg-icons";
+import { faGlobe, faCommentDots } from "@fortawesome/free-solid-svg-icons";
 import '../../index.css';
 import './navbar.css';
-import ChatModal from '../chat/chat_modal';
 
 class NavBar extends React.Component {
-//////debugger
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
-    // this.openModal = this.openModal.bind(this);
-    // this.closeModal = this.closeModal.bind(this);
     this.handleClick = this.handleClick.bind(this);
     
   }
@@ -27,17 +21,6 @@ class NavBar extends React.Component {
 
   handleClick() {
     this.props.history.push(`/users/${this.props.currentUser.id}`)
-  }
-
-  openModal() {
-    const modal = document.getElementsByClassName("chat-modal");
-    modal.className += "open-modal";
-  }
-
-  closeModal() {
-    const modal = document.getElementsByClassName("chat-modal");
-    modal.className += "close-modal";
-    modal.removeClass("open-modal");
   }
 
   getLinks() {
@@ -52,9 +35,6 @@ class NavBar extends React.Component {
             <FontAwesomeIcon className="globe-icon" icon={faGlobe} />
           </Link>
 
-          {/* <Link className="user-show" to={"/join"}>
-            CHAT
-          </Link> */}
           <Link onClick={this.logoutUser} to={"/login"}>LOG OUT</Link>
         </div>
       );
@@ -82,7 +62,7 @@ class NavBar extends React.Component {
             <div className="navbar-main">
               <div className="navbar-logo">
                 <Link to={"/"}>
-                  <img src="/assets/images/profferly_logo_white_small.png" />
+                  <img src="/assets/images/profferly_logo_white_small.png" alt="Profferly Logo"/>
                 </Link>
               </div>
 
@@ -97,12 +77,6 @@ class NavBar extends React.Component {
                 <FontAwesomeIcon className="chat-button" icon={faCommentDots} />
               </div>
             </Link>
-              {/* <span className="modal-minimize">
-                  <FontAwesomeIcon className="minimize-button" icon={faWindowMinimize} />
-              </span>
-            <div className="chat-modal"> */}
-              {/* <ChatModal /> */}
-            {/* </div> */}
         </div>
       </div>
       );

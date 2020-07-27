@@ -1,10 +1,10 @@
 import React from "react";
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from "google-maps-react";
-import FormWindow from "./form";
+// import FormWindow from "./form";
 import * as MarkerApiUtil from "../../util/marker_util";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { hashHistory } from 'react-router'
+// import { hashHistory } from 'react-router';
 
 
 class MapContainer extends React.Component {
@@ -48,7 +48,7 @@ class MapContainer extends React.Component {
     const lng = clickEvent.latLng.lng();
 
     console.log(lat, lng)
-debugger
+// debugger
     
       this.props.history.push({
       pathname: "/form",
@@ -108,7 +108,7 @@ debugger
   };
 
   render() {
-debugger
+// debugger
     // const style = {
     //   width: "100%",
     //   height: "100%",
