@@ -1,20 +1,19 @@
-const Room = require('./models/Room');
-const User = require('./models/User');
+const Room = require("./models/Room");
+const User = require("./models/User");
 const users = [];
 
-const addUser = ({ id, name, room}) => {
-  const user = { id, name, room};
+const addUser = ({ id, name, room }) => {
+  const user = { id, name, room };
 
-  User
-    .findOne({username:name})
-    .then(user => {
+  User.findOne({ username: name })
+    .then((user) => {
       if (!user.rooms.includes(room)) {
-        return user.updateOne({rooms: [...user.rooms, room]})
+        return user.updateOne({ rooms: [...user.rooms, room] });
       } else {
         return user;
       }
     })
-    .catch(err => res.status(400).json(err));
+    .catch((err) => res.status(400).json(err));
 
   Room.findOne({ name: room })
     .then((roomnam) => {
