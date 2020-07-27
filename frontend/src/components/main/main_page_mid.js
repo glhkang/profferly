@@ -4,14 +4,14 @@ class MainPageMid extends React.Component {
   render() {
     return (
       <div className="mid-container">
-        <h3>Featured Opportunities</h3>
+        <span className="profferly-title">PROFFERLY</span>
 
 
         <div className="mid-body">
           <div className="mid-body-row">
             <img className="mid-icon-1" src="/assets/icons/chat_bubble.svg" />
 
-            <p>
+            <p className="p1">
               I just moved to the area and was itching for some volunteering
               work. I got involved with GrowNYC, an organization that helps to
               feed New Yorkers, and met so many people from my new neighborhood!
@@ -23,7 +23,7 @@ class MainPageMid extends React.Component {
           </div>
           <div className="mid-body-row">
             <img className="mid-icon-2" src="/assets/icons/location.svg" />
-            <p>
+            <p className="p2">
               Hey! Oldie but goodie here. Was advised by my doctor to avoid
               large crowds until a vaccine for coronavirus has been approved and
               I'm out of food. Can someone please help me get groceries?
@@ -31,7 +31,7 @@ class MainPageMid extends React.Component {
           </div>
           <div className="mid-body-row">
             <img className="mid-icon-3" src="/assets/icons/world.svg" />
-            <p>
+            <p className="p3">
               I had so much fun today volunteering for Sea Turtle Conservation
               today! I love animals and I thank profferly for connecting me with
               so many amazing volunteering opporunties near me! I get to

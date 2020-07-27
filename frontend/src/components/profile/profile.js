@@ -4,9 +4,11 @@ import PostCompose from '../posts/post_compose';
 import './profile.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import CommentsList from '../comments/comments_list';
 import LikesDislikes from '../likesdislikes/likes_dislikes';
 import Moment from "react-moment";
+import Join from '../chat/join';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -61,14 +63,18 @@ class Profile extends React.Component {
         ); 
 
         return (
-            <div>
+            <div className="current-user-main">
                 <div className="user-profile">
-                <h2>Hello, {this.capitalize(this.props.currentUser.username)}</h2>
+                <div className="user-profile-box" />
+                <h2 className="user-profile-header">Hello, {this.capitalize(this.props.currentUser.username)}</h2>
                 <PostCompose currentUser={this.props.currentUser} newPost={this.props.newPost} composePost={this.props.composePost} history={this.props.history} />
-                </div>
                 <ul className="profile-list">
                     {list}
                 </ul>
+                </div>
+                <div className="current-user-join">
+                    <Join/>
+                </div>
             </div>
         )        
     }
@@ -98,7 +104,8 @@ debugger
             );
 
             return (
-                <div className="another-class">
+                <div className="user-profile-content">
+                    <div className="user-profile-box" />
                     <h2>All of {this.props.users[this.props.user].username}'s Posts</h2>
                     <ul className="posts">
                         {list}
@@ -111,18 +118,18 @@ debugger
     render() {
         if (!this.state.user && (this.state.posts.length === 0)) {
             return (<div className="profile-main">
-                <div className="profile-loading">LOADING...</div>
+                <div className="profile-loading">
+                    <FontAwesomeIcon className="loading-icon" icon={faSpinner} />
+                </div>
                 </div>
             )
         } else {
             return (
                 <div className="profile-main">
-                    {/* <div className="profile-main-body"> */}
                         <button className="profile-button" onClick={() => this.props.history.push('/posts')}><FontAwesomeIcon className="font-awesome-back" icon={faArrowCircleLeft} /></button>
                         {this.props.currentUser.id === this.props.user ? 
                         this.renderCurrentUser() : this.renderAsAnotherUser()}
-                    {/* </div> */}
-                </div>
+                </div> 
             )
         }
     }

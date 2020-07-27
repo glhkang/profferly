@@ -4,13 +4,13 @@
     top: 0;
     display: flex;
     /* margin-top: 5px; */
-    padding-top: 85px;
     align-items: center;
     justify-content: center;
 }
 
 .navbar-main {
     align-self: center;
+    margin-top: 85px;
     height: 110px;
     display: flex;
     flex-direction: row;
@@ -93,6 +93,54 @@
 
 .user-show {
 
+}
+
+.chat-bubble {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 54px;
+    height: 54px;
+    position: fixed;
+    right: 20px;;
+    bottom: 20px;
+    z-index: 9999;
+    background-color: #264026;
+    color: white;
+    border: solid 3px #264026;
+    border-radius: 50%;
+    animation: 3s slideInFromRight;
+}
+
+@keyframes slideInFromRight {
+    0% {
+      transform: translateX(150%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+.chat-bubble:hover {
+    color: #a5b3a7;
+}
+
+.chat-button {
+    font-size: 27px;
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px white, 0 0 15px white, 0 0 20px white, 0 0 25px white, 0 0 30px white, 0 0 35px white; 
+    }
+    
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white, 0 0 80px white; 
+    }
+}
+
+.user-show:hover {
+    font-weight: bold;
 }
 
 .globe-icon {
@@ -216,6 +264,38 @@
     background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
 }
 
+.chat-modal {
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    right: 90px;
+    bottom: 90px;
+    width: 400px;
+    height: 300px;
+    overflow: auto;
+}
+
+/* .chat-modal .open-modal {
+    display: block;
+}
+
+.chat-modal .close-modal {
+    display: none;
+}
+*/
+
+.chat-modal-container {
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+}
+
+.modal-minimize {
+    position: absolute;
+    top: -100px;
+    right: 20px;
+    z-index: 9999;  
+}
 /* 
 .navbar-logout {
     color: whitesmoke;

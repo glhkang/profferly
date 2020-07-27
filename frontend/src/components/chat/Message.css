@@ -1,7 +1,7 @@
 .messageBox {
   background: #F3F3F3;
-  border-radius: 20px;
-  padding: 5px 20px;
+  border-radius: 25px;
+  padding: 0px 20px;
   color: white;
   display: inline-block;
   max-width: 80%;
@@ -11,8 +11,18 @@
   width: 100%;
   letter-spacing: 0;
   float: left;
-  font-size: 1.1em;
+  font-size: 15px;
   word-wrap: break-word;
+}
+
+.messageText-admin {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #828282;
 }
 
 .messageText img {
@@ -26,10 +36,24 @@
   margin-top: 3px;
 }
 
+.admin {
+  justify-content: center;
+}
+
+.messageContainer:first-of-type {
+  margin-top: 20px;
+}
+
+.messageContainer:last-of-type {
+  margin-bottom: 20px;
+}
+
 .sentText {
   display: flex;
   align-items: center;
-  font-family: Helvetica;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
   color: #828282;
   letter-spacing: 0.3px;
 }
@@ -58,10 +82,14 @@
   color: #353535;
 }
 
-.backgroundBlue {
-  background: #2979FF;
+.backgroundGreen {
+  background: #264026;
 }
 
 .backgroundLight {
   background: #F3F3F3;
+}
+
+.backgroundRed {
+  background: red;
 }

@@ -5,18 +5,21 @@ import closeIcon from "../../icons/closeIcon.png";
 
 import "./Bar.css";
 
-const InfoBar = ({ room }) => (
-  <div className="infoBar">
-    <div className="leftInnerContainer">
-      <img className="onlineIcon" src={onlineIcon} alt="online icon" />
-      <h3>{room}</h3>
+const InfoBar = ({ room }) => {
+
+  return (
+    <div className="infoBar">
+      <div className="leftInnerContainer">
+        <img className="onlineIcon" src={onlineIcon} alt="online icon" />
+        <h3 className="infobar-room-name">{room}</h3>
+      </div>
+      <div className="rightInnerContainer">
+        <a href="javascript:history.back()">
+          <img src={closeIcon} alt="close icon" />
+        </a>
+      </div>
     </div>
-    <div className="rightInnerContainer">
-      <a href="/#/join">
-        <img src={closeIcon} alt="close icon" />
-      </a>
-    </div>
-  </div>
-);
+  )
+};
 
 export default InfoBar;
