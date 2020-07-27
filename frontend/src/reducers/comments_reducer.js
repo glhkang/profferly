@@ -18,7 +18,6 @@ const CommentsReducer = (state = {}, action) => {
       newState.all = newState.all.filter(
         (comment) => action.commentId !== comment._id
       );
-      // delete newState.all[action.commentId]
       return newState;
     case RECEIVE_COMMENTS:
       newState.all = action.comments.data;
