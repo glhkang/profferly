@@ -169,7 +169,7 @@
 } */
 
 .user-profile-content {
-  padding-top: 350px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;

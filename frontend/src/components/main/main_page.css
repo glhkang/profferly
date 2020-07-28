@@ -74,6 +74,7 @@
 .mid-container .profferly-title {
     position: absolute;
     top: 50vh;
+    margin-bottom: 100vh;
     width: 100%;
     text-align: center;
     font-size: 75px;
@@ -90,10 +91,12 @@
 }
 
 .mid-body {
+    margin-top: 120vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: transparent;
+  width: 100%;
+  padding: 20px;
 }
 
 
@@ -102,17 +105,31 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 45%;
-  border: 2px solid black;
+  width: 33%;
+  border: 1px solid black;
   padding: 20px;
-  border-radius: 50px;
+  border-radius: 75px;
   font-size: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  background-color: white;
+  opacity: 0.8;
+  box-shadow: 5px 10px #888888;
   /* font-family: 'Open Sans', sans-serif; */
 }
 
-.p1 {
+.row1 {
     align-self: flex-start;
+    margin-left: 8%;
+}
+
+.row2 {
+    align-self: flex-end;
+    margin-right: 8%;
+}
+
+.row3 {
+    align-self: flex-start;
+    margin-left: 8%;
 }
 
 .mid-icon-1 {
@@ -142,11 +159,9 @@
     background-position: fixed;
     background-color: transparent;
     background: transparent;
-    /* background: url("/assets/images/leaf-striation-bg-op.jpg"); */
     opacity: 1;
     border-radius: 100px;
-    margin: 40px;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -154,8 +169,7 @@
     justify-content: center;
     padding: 50px;
     min-height: 175px;
-    color: black;
-    margin-top: 200px;
+    color: white;
 }
 
 /* .bottom-container {
@@ -167,11 +181,11 @@
 .bottom-container img {
     background-color: #264026;
     border-radius: 50%;
-    opacity: 0.8;
+    opacity: 0.6;
     transition: 1s;
     justify-content: center;
-    width: 175px;
-    height: 175px;
+    width: 155px;
+    height: 155px;
     padding: 15px;
    /* font-family: 'Muli', sans-serif; */
 }
@@ -212,6 +226,9 @@
 }
 
 .mainpage-bottom {
-    background-color: transparent;
-    background: transparent;
+    background-color: #264026;
+    margin-top: 80px;
+    border-top-left-radius:40%;
+    border-top-right-radius:40%;
+    color: white;
 }

@@ -46,7 +46,7 @@ class PostItem extends React.Component {
              const dateStr = post.date.toString();
              if (post.file && user) {
                  return (
-                   <li className="post-item-li">
+                   <li className="post-item-li" data-aos="zoom-out-right"  data-aos-once="true">
                      <div className="post-item">
                        <div>
                          <img className="post-item-image" src={post.file} alt="uploaded by user to accompany post" />
@@ -118,7 +118,7 @@ class PostItem extends React.Component {
                  );
             } else if (!post.file && user) {
                 return (
-                  <li className="post-item-li">
+                  <li className="post-item-li"  data-aos="zoom-out-right"  data-aos-once="true">
                     <div className="post-item">
                       <div className="post-item-text">{post.text}</div>
                       <div className="post-item-footer">

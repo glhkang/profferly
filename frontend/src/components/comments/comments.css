@@ -19,10 +19,6 @@
     margin-bottom: 20px;
 }
 
-.comments-list-li:last-child {
-    margin-bottom: 30px;
-}
-
 .comments-text {
     font-size: 16px;
     text-align: center;
@@ -76,11 +72,6 @@
 }
 
 /* COMMENT FORM */
-
-.comment-form {
-
-}
-
 .comment-form-textarea {
     width: 350px;
     font-size: 16px;

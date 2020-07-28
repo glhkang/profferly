@@ -3,9 +3,9 @@ html, body {
   background-color: transparent;
 }
 
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
 .rooms-list {
   display: flex;

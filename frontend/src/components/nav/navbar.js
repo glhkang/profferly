@@ -26,21 +26,21 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div className="navbar-menu-2">
-          <div className="user-show" onClick={this.handleClick}>
-            {this.props.currentUser.username}
+          <div className="navbar-menu-2">
+            <div className="user-show" onClick={this.handleClick}>
+              {this.props.currentUser.username}
+            </div>
+
+            <Link to={"/map"}>
+              <FontAwesomeIcon className="globe-icon" icon={faGlobe} />
+            </Link>
+
+            <Link onClick={this.logoutUser} to={"/login"}>LOG OUT</Link>
           </div>
-
-          <Link to={"/map"}>
-            <FontAwesomeIcon className="globe-icon" icon={faGlobe} />
-          </Link>
-
-          <Link onClick={this.logoutUser} to={"/login"}>LOG OUT</Link>
-        </div>
       );
     } else {
       return (
-        <div className="navbar-menu">
+        <div className="navbar-menu-2">
           <Link to={'/signup'}>Sign up</Link>
           <Link to={'/login'}>Log in</Link>
         </div>
@@ -56,29 +56,34 @@ class NavBar extends React.Component {
       return null;
     } else {
       return (
-        <div>
+        <div className="navbar-frame">
+          <section className="navbar-white"></section>
           <div className="navbar-container">
-            <section className="navbar-white"></section>
+            <div className="navbar-profferly">
+              <span className="navbar-profferly-title">
+                <Link to={"/"}>Profferly</Link>
+              </span>
+            </div>
             <div className="navbar-main">
-              <div className="navbar-logo">
+              <div className="navbar-logo" data-aos="zoom-in" data-aos-duration="1400" data-aos-delay="1000">
                 <Link to={"/"}>
                   <img src="/assets/images/profferly_logo_white_small.png" alt="Profferly Logo"/>
                 </Link>
               </div>
-
-              <div className="navbar-left-holder"></div>
+            </div>
+            <div className="navbar-right-holder">
               {this.getLinks()}
             </div>
           </div>
 
-        <div className="chat-container">
-            <Link className="user-show" to={"/join"}>
-              <div className="chat-bubble">
-                <FontAwesomeIcon className="chat-button" icon={faCommentDots} />
-              </div>
-            </Link>
+          <div className="chat-container">
+              <Link className="user-show" to={"/join"}>
+                <div className="chat-bubble">
+                  <FontAwesomeIcon className="chat-button" icon={faCommentDots} />
+                </div>
+              </Link>
+          </div>
         </div>
-      </div>
       );
     }
     }

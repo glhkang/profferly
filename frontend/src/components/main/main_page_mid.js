@@ -4,14 +4,13 @@ class MainPageMid extends React.Component {
   render() {
     return (
       <div className="mid-container">
-        <span className="profferly-title">PROFFERLY</span>
+        <span className="profferly-title" data-aos="zoom-out"  data-aos-duration="1400">PROFFERLY</span>
 
 
         <div className="mid-body">
-          <div className="mid-body-row">
+          <div className="mid-body-row row1" data-aos="fade-right">
             <img className="mid-icon-1" src="/assets/icons/chat_bubble.svg" alt="chat bubble icon"/>
-
-            <p className="p1">
+            <p>
               I just moved to the area and was itching for some volunteering
               work. I got involved with GrowNYC, an organization that helps to
               feed New Yorkers, and met so many people from my new neighborhood!
@@ -21,7 +20,7 @@ class MainPageMid extends React.Component {
               Thanks, profferly!
             </p>
           </div>
-          <div className="mid-body-row">
+          <div className="mid-body-row row2" data-aos="fade-left">
             <img className="mid-icon-2" src="/assets/icons/location.svg" alt="location icon" />
             <p>
               Hey! Oldie but goodie here. Was advised by my doctor to avoid
@@ -29,7 +28,7 @@ class MainPageMid extends React.Component {
               I'm out of food. Can someone please help me get groceries?
             </p>
           </div>
-          <div className="mid-body-row">
+          <div className="mid-body-row row3" data-aos="fade-right">
             <img className="mid-icon-3" src="/assets/icons/world.svg" alt="world icon" />
             <p>
               I had so much fun today volunteering for Sea Turtle Conservation

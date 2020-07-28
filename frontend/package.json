@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.1.2",
     "@types/query-string": "^6.3.0",
     "antd": "^4.4.3",
+    "aos": "^2.3.4",
     "axios": "^0.19.2",
     "google-maps-react": "^2.0.6",
     "jwt-decode": "^2.2.0",

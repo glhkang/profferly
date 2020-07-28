@@ -8,10 +8,6 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className="mainpage-main">
-        <div className="mainpage-header">
-          <div className="mainpage-logo">
-            <h1>profferly</h1>
-          </div>
           <div className="mainpage-mid">
               <MainPageMid/>
           </div>
@@ -19,7 +15,6 @@ class MainPage extends React.Component {
             <MainPageBottom />
           </div> 
         </div>
-      </div>
     );
   }
 }

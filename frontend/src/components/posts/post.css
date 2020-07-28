@@ -54,23 +54,19 @@
     color: #222;
     line-height: 1.15em;
     text-decoration: none;
-    transition: background-position 0.5s ease-out;
+    transition: 1s;
 }
 
 .post-item-username:hover {
-    text-align: right;
+    text-decoration: underline;
     cursor: pointer;
-    background-position: -99.99% 0;
-    color: whitesmoke;
 }
 
   .post-item-username:active {
-      text-align: right;
       cursor: pointer;
   }
 
   .post-item-username:visited {
-      text-align: right;
       cursor: pointer;
   }
 
@@ -139,4 +135,22 @@
 .post-dislike:hover {
   cursor: pointer;
   font-weight: bold;
+}
+
+.show-hide-comments {
+  border: none;
+  color: black;
+  margin-bottom: 5px;
+  transition: 1s;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-family: 'Muli', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.show-hide-comments:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transition: 1s;
 }
