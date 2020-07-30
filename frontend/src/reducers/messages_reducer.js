@@ -1,11 +1,14 @@
-import { RECEIVE_ROOMS_MESSAGES, NEW_LOCAL_MESSAGE } from "../actions/message_action"
+import {
+  RECEIVE_ROOMS_MESSAGES,
+  NEW_LOCAL_MESSAGE,
+} from "../actions/message_action";
 
-const MessagesReducer = ( state = [], action) => {
+const MessagesReducer = (state = [], action) => {
   Object.freeze(state);
 
   let newState = Object.assign({}, state);
 
-  switch(action.type) {
+  switch (action.type) {
     case RECEIVE_ROOMS_MESSAGES:
       newState = action.messages.data;
       return newState;
@@ -13,7 +16,7 @@ const MessagesReducer = ( state = [], action) => {
     case NEW_LOCAL_MESSAGE:
       newState = [...state, action.message];
       return newState;
-    default: 
+    default:
       return state;
   }
 };

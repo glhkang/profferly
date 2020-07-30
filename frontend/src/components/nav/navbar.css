@@ -1,86 +1,84 @@
 .navbar-container {
-    z-index: 999;
-    margin-top: 30px;
-    height: 70px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #264026;
-    position: fixed;
-    width: 90%;
-    z-index: 1;
-    border-radius: 60px;
-    animation: 3s slideInFromTop;
-    margin-left: 5%;
-    margin-right: 5%;
+  z-index: 999;
+  margin-top: 30px;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #264026;
+  position: fixed;
+  width: 90%;
+  border-radius: 60px;
+  animation: 3s slideInFromTop;
 }
 
 .navbar-frame {
-    width: 100%;
-} 
+  width: 100%;
+}
 
 .navbar-profferly {
-    width: 300px;
-    margin-left: 30px;
+  width: 300px;
+  margin-left: 30px;
 }
 
 .navbar-profferly-title {
-    text-transform: uppercase;
-    font-weight: bold;
-    color: white;
-    font-size: 12.5px;
-    letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  font-size: 12.5px;
+  letter-spacing: 1px;
 }
 
 .navbar-profferly-title a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
-
 .navbar-profferly-title a:hover {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .navbar-right-holder {
-    width: 300px;
-    text-transform: uppercase;
-    margin-right: 30px;
+  width: 300px;
+  text-transform: uppercase;
+  margin-right: 30px;
 }
 
 @keyframes slideInFromTop {
-    0% {
-      transform: translateY(-150%);
-    }
-    100% {
-      transform: translateY(0);
-    }
+  0% {
+    transform: translateY(-150%);
   }
+  100% {
+    transform: translateY(0);
+  }
+}
 
 .navbar-logo {
-    text-align: center;
-    display: block;
-    background-color: #264026;
-    border-radius: 50%;
-    width: 90px;
+  text-align: center;
+  display: block;
+  background-color: #264026;
+  border-radius: 50%;
+  width: 90px;
 }
 
 .navbar-logo img {
-    margin: auto;
-    width: 85%;
-    height: 85%;
+  margin: auto;
+  width: 85%;
+  height: 85%;
 }
 
 @keyframes zoomOut {
-    0% {
-        transform: scale(0);
-    }
+  0% {
+    transform: scale(0);
+  }
 
-    100% {
-        transform: scale(1);
-    }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .navbar-menu {
@@ -94,53 +92,42 @@
   padding-right: 30px;
 }
 
-
 .chat-bubble {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 54px;
-    height: 54px;
-    position: fixed;
-    right: 20px;;
-    bottom: 20px;
-    z-index: 9999;
-    background-color: #264026;
-    color: white;
-    border: solid 3px #264026;
-    border-radius: 50%;
-    animation: 3s slideInFromRight;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 54px;
+  height: 54px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  background-color: #264026;
+  color: white;
+  border: solid 3px #264026;
+  border-radius: 50%;
+  animation: 3s slideInFromRight;
 }
 
 @keyframes slideInFromRight {
-    0% {
-      transform: translateX(150%);
-    }
-    100% {
-      transform: translateX(0);
-    }
+  0% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .chat-bubble:hover {
-    color: #a5b3a7;
+  color: #a5b3a7;
 }
 
 .chat-button {
-    font-size: 27px;
-}
-
-@-webkit-keyframes glow {
-    from {
-        text-shadow: 0 0 5px #fff, 0 0 10px white, 0 0 15px white, 0 0 20px white, 0 0 25px white, 0 0 30px white, 0 0 35px white; 
-    }
-    
-    to {
-        text-shadow: 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white, 0 0 80px white; 
-    }
+  font-size: 27px;
 }
 
 .user-show:hover {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .globe-icon {
@@ -158,54 +145,53 @@
 }
 
 .navbar-menu a:link {
-    color: whitesmoke;
-    text-decoration: none;
-    margin-right: 10px;
+  color: whitesmoke;
+  text-decoration: none;
+  margin-right: 10px;
 }
 
 .navbar-menu a:hover {
-    color: whitesmoke;
-    font-weight: bold;
-    text-decoration: none;
+  color: whitesmoke;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .navbar-menu a:active {
-    color: whitesmoke;
-    text-decoration: none;
+  color: whitesmoke;
+  text-decoration: none;
 }
 
 .navbar-menu a:visited {
-    color: whitesmoke;
-    text-decoration: none;
+  color: whitesmoke;
+  text-decoration: none;
 }
 
 .navbar-logo a:link {
-    color: whitesmoke;
-    color: black;
-    text-decoration: none;
-
+  color: whitesmoke;
+  color: black;
+  text-decoration: none;
 }
 
 .navbar-logo a:hover {
-    color: whitesmoke;
-    text-decoration: none;
+  color: whitesmoke;
+  text-decoration: none;
 }
 
 .navbar-logo a:visited {
-    color: whitesmoke;
-    text-decoration: none;
+  color: whitesmoke;
+  text-decoration: none;
 }
 
 .navbar-logo a:active {
-    color: whitesmoke;
-    text-decoration: none;
+  color: whitesmoke;
+  text-decoration: none;
 }
 
 .navbar-menu-2 {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .navbar-menu-2 a {
@@ -215,53 +201,64 @@
 }
 
 .navbar-menu-2 a:link {
-    color: whitesmoke;
-    text-decoration: none;
-    /* margin-right: 10px; */
-    margin-left: 10px;
+  color: whitesmoke;
+  text-decoration: none;
+  margin-left: 10px;
 }
 
 .navbar-menu-2 a:hover {
-    color: whitesmoke;
-    font-weight: bold;
-    text-decoration: none;
+  color: whitesmoke;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .navbar-menu-2 a:active {
-    color: whitesmoke;
-    text-decoration: none;
+  color: whitesmoke;
+  text-decoration: none;
 }
 
 .navbar-menu-2 a:visited {
-    color: whitesmoke;
-    text-decoration: none;
-    font-size: 10px;
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 10px;
 }
 
 .user-show {
-    cursor: pointer;
-    color: white;
-    margin: 0px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  cursor: pointer;
+  color: white;
+  margin: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 12.5px;
-    text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 12.5px;
+  text-transform: uppercase;
 }
 
 .user-logout {
-    margin-right: 100px;
+  margin-right: 100px;
 }
 
 .navbar-white {
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    height: 150px;
-    width: 100%;
-    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  height: 150px;
+  width: 100%;
+  background: -moz-linear-gradient(
+    top,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }

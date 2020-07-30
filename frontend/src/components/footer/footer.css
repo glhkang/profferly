@@ -1,195 +1,190 @@
 .app-main-footer {
   padding-left: 130px;
   padding-right: 130px;
-  background-color:white;
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  /* height:30px; */
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .footer-main {
-    color: #002012;
-    font-size: 12px;
-    font-family: 'Muli', sans-serif;
-    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
+  color: #002012;
+  font-size: 12px;
+  font-family: 'Muli', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-    font-weight: bold;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1;
-    max-height: 40px;
-    padding: 0px;
-    margin-top: 0px;
-    border-top: 1px solid #132113;
-    letter-spacing: 1px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  max-height: 40px;
+  padding: 0px;
+  margin-top: 0px;
+  border-top: 1px solid #132113;
+  letter-spacing: 1px;
 }
 
 .footer-copyright {
-    /* padding: 20px; */
-    margin-left: 40px;
+  margin-left: 40px;
 }
 
 .footer-links ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    text-decoration: none;
-    margin-right: 40px;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  text-decoration: none;
+  margin-right: 40px;
 }
 
 .footer-links ul li {
-    letter-spacing: 1px;
-    margin-left: 20px;
+  letter-spacing: 1px;
+  margin-left: 20px;
 }
 
 .footer-link {
-    position: relative;
-    height: 100%;
-    z-index: 998;
+  position: relative;
+  height: 100%;
+  z-index: 998;
 }
 
 .footer-link a {
-    text-decoration: none;
-    color: #132113;
-    margin-top: 15px;
-    margin-bottom: 15px;
+  text-decoration: none;
+  color: #132113;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .footer-link a:hover {
-    color: #497c49;
-    cursor: pointer;
+  color: #497c49;
+  cursor: pointer;
 }
 
 .footer-link a:active {
-    color: #497c49;
-    cursor: pointer;
+  color: #497c49;
+  cursor: pointer;
 }
 
 .footer-link a:focus {
-    color: #497c49;
-    cursor: pointer;
+  color: #497c49;
+  cursor: pointer;
 }
 
 .footer-link ul.dropdown {    
-    min-width: 100%;
-    display: none;
-    position: absolute;
-    z-index: 999;
-    left: 0;
-    top: -240px;
-    left: -20px;
-    animation: 1s fadeInDown;
+  min-width: 100%;
+  display: none;
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  top: -240px;
+  left: -20px;
+  animation: 1s fadeInDown;
 }
 
 .footer-link .member-gloria ul.dropdown {
-    min-width: 100%;
-    display: none;
-    position: absolute;
-    z-index: 999;
-    left: 0;
-    top: -180px;
-    left: 0px;
-    animation: 1s fadeInDown;
+  min-width: 100%;
+  display: none;
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  top: -180px;
+  left: 0px;
+  animation: 1s fadeInDown;
 }
 
 @keyframes fadeInDown {
-    0% {
-       opacity: 0;
-    }
-    100% {
-       opacity: 1;
-    }
-  } 
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+} 
 
 .footer-link:hover ul.dropdown {
-    display: block;
-    transition: 1s;
+  display: block;
+  transition: 1s;
 }
 
 .footer-link ul.dropdown li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #264026;
-    border-radius: 25px;
-    color: white;
-    height: 40px;
-    width: 90px;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #264026;
+  border-radius: 25px;
+  color: white;
+  height: 40px;
+  width: 90px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 11px;
 }
 
 .git-button {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .dropdown .linkedin-button:hover {
-    background: #497c49;
-    color: white;
-    cursor: pointer;
+  background: #497c49;
+  color: white;
+  cursor: pointer;
 }
 
 .linkedin-button a {
-    color: white;
+  color: white;
 }
 
 .linkedin-button:hover a {
-    color: white;
+  color: white;
 }
 
 .dropdown .git-button:hover {
-    background: #497c49;
-    color: white;
-    cursor: pointer;
+  background: #497c49;
+  color: white;
+  cursor: pointer;
 }
 
 .git-button a {
-    color: white;
+  color: white;
 }
 
 .git-button:hover a {
-    color: white;
+  color: white;
 }
 
 .dropdown .angel-button:hover {
-    background: #497c49;
-    color: white;
-    cursor: pointer;
+  background: #497c49;
+  color: white;
+  cursor: pointer;
 }
 
 .angel-button a {
-    color: white;
+  color: white;
 }
 
 .angel-button:hover a {
-    color: white;
+  color: white;
 }
 
 #profile-photo {
-    background: transparent;
+  background: transparent;
 }
 
 #profile-photo img {
-    width: 150px;
-    height: 150px;
-    border-radius: 25px;
-    margin-bottom: 120px;
-    border: 2px solid #264026;
-    z-index: 997;
+  width: 150px;
+  height: 150px;
+  border-radius: 25px;
+  margin-bottom: 120px;
+  border: 2px solid #264026;
+  z-index: 997;
 }
 
 #profile-position {
-    background: transparent;
-    position: absolute;
-    top: -3px;
-    z-index: 9999;
+  background: transparent;
+  position: absolute;
+  top: -3px;
+  z-index: 9999;
 }

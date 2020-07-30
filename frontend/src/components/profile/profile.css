@@ -1,11 +1,11 @@
 .profile-main {
-    font-family: 'Muli', sans-serif;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    animation: 2s fadeInDown;
+  font-family: "Muli", sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  animation: 2s fadeInDown;
 }
 
 .user-profile {
@@ -20,9 +20,9 @@
   height: 50px;
 }
 
-.current-user-main {  
+.current-user-main {
   height: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -32,12 +32,12 @@
 
 @keyframes fadeInDown {
   0% {
-     opacity: 0;
+    opacity: 0;
   }
   100% {
-     opacity: 1;
+    opacity: 1;
   }
-} 
+}
 
 .current-user-join {
   height: 100%;
@@ -47,68 +47,13 @@
   width: 30%;
 }
 
-/* .profile-button {
-  cursor: pointer;
-  display: inline-block;  
-  height: 40px;
-  margin-left: 40px;
-  margin-right: 40px;
-  position: relative;
-  line-height: 2.5em;
-  padding-left: 1em;
-  padding-right: 2em;
-  background: white;
-  color: black;
-   &:after {
-    border-left: 20px solid white;
-  }
-}
-
-.profile-button:after {
-  content: "";
-  position: absolute;
-  border-bottom: 20px solid transparent;
-  border-top: 20px solid transparent;
-  height: 0px;
-  width: 0px;
-  margin-right: -20px;
-  right: 0; 
-}
-
-.profile-button:hover, .profile-button:active {
-  background: yellow;
-  color: black;
-  &:after {
-    border-left: 20px solid yellow;
-  }
-} */
-
-
-
-
 .profile-button {
-  /* background-color: #616b73;
-  color: white;
-  font-size: 14px;
-  font-weight: bolder;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  width: 240px;
-  position: absolute;
-  left: 7%;
-  top: 20%;
-  outline: 0; */
-  /* color: black; */
   position: fixed;
   left: 6%;
   top: 50%;
   border-radius: 25px;
   border: 0;
-  /* background-color: #323b58; */
-  /* color: white; */
   font-weight: bolder;
-  /* margin-top: 0px; */
 }
 
 .font-awesome-back {
@@ -128,45 +73,30 @@
 }
 
 .user-profile h2 {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .profile-list {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-list-post {
-    /* width: 400px;
-    height: 300px;
-    border: 5px solid #365c36;
-    border-radius: 70px;
-    text-decoration: none;
-    padding-top: 50px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; */
-    width: 420px;
-    height: 420px;
-    border: 5px solid #365c36;
-    border-radius: 70px;
-    text-decoration: none;
-    /* padding-top: 100px; */
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  width: 420px;
+  height: 420px;
+  border: 5px solid #365c36;
+  border-radius: 70px;
+  text-decoration: none;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-
-/* .profile-loading {
-  
-} */
 
 .user-profile-content {
   display: flex;
@@ -177,8 +107,7 @@
 }
 
 .user-profile-content h2 {
-  display: flex;
-  display: inline;
+  display: flex-inline;
   text-align: center;
   align-items: center;
   flex-direction: column;

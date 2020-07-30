@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faCommentDots } from "@fortawesome/free-solid-svg-icons";
-import '../../index.css';
-import './navbar.css';
+import "../../index.css";
+import "./navbar.css";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -11,16 +11,15 @@ class NavBar extends React.Component {
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    
   }
-  
+
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
   }
 
   handleClick() {
-    this.props.history.push(`/users/${this.props.currentUser.id}`)
+    this.props.history.push(`/users/${this.props.currentUser.id}`);
   }
 
   getLinks() {
@@ -67,7 +66,10 @@ class NavBar extends React.Component {
             <div className="navbar-main">
               <div className="navbar-logo" data-aos="zoom-in" data-aos-duration="1400" data-aos-delay="1000">
                 <Link to={"/"}>
-                  <img src="/assets/images/profferly_logo_white_small.png" alt="Profferly Logo"/>
+                  <img
+                    src="/assets/images/profferly_logo_white_small.png"
+                    alt="Profferly Logo"
+                  />
                 </Link>
               </div>
             </div>
@@ -86,7 +88,7 @@ class NavBar extends React.Component {
         </div>
       );
     }
-    }
+  }
 }
 
 export default NavBar;

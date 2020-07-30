@@ -1,51 +1,44 @@
-
-
 .map-window {
-    z-index: -999;
-    /* width: 90%;
-    height: 90%; */
-    /* margin-top: 5px; */
-    /* border-radius: 25px; */
-    /* border: 1px; */
+  z-index: -999;
 }
 
 .map-form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: whitesmoke;
 }
+
 .map-form {
-    display: block;
-    text-align: center;
-    width: 400px;
-    height: 380px;
+  display: block;
+  text-align: center;
+  width: 400px;
+  height: 380px;
 }
 
 .map-form-header {
-    font-size: 30px;
-    font-family: 'Muli', sans-serif;
-    font-weight: 800;
+  font-size: 30px;
+  font-family: "Muli", sans-serif;
+  font-weight: 800;
 }
 
-
 .map-inputs {
-    outline-width: 0;
-    padding-top: 15px;
-    padding: 15px;
-    font-size: 15px;
-    color:#161a27;
-    border: 0px;
-    border-radius: 25px;
-    width: 80%;
-    margin-bottom: 15px;
-    opacity: 0.6;
-    font-family: 'Muli', sans-serif;
+  outline-width: 0;
+  padding-top: 15px;
+  padding: 15px;
+  font-size: 15px;
+  color: #161a27;
+  border: 0px;
+  border-radius: 25px;
+  width: 80%;
+  margin-bottom: 15px;
+  opacity: 0.6;
+  font-family: "Muli", sans-serif;
 }
 
 .map-inputs:focus {
-    outline-width: 0;
+  outline-width: 0;
 }
 
 .submit-button {
@@ -59,7 +52,7 @@
   font-weight: bolder;
   margin-top: 0px;
   margin-bottom: 15px;
-    font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
 }
 
 .submit-button:hover {
@@ -68,21 +61,21 @@
 }
 
 .submit-button:focus {
-    outline-width: 0;
+  outline-width: 0;
 }
 
 .return-button {
-    width: 50%;
-    padding: 15px;
-    border-radius: 25px;
-    border: 0;
-    background-color: #305030;
-    color: white;
-    font-size: 14px;
-    font-weight: bolder;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    font-family: 'Muli', sans-serif;
+  width: 50%;
+  padding: 15px;
+  border-radius: 25px;
+  border: 0;
+  background-color: #305030;
+  color: white;
+  font-size: 14px;
+  font-weight: bolder;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-family: "Muli", sans-serif;
 }
 
 .return-button:hover {
@@ -91,40 +84,35 @@
 }
 
 .return-button:focus {
-    outline-width: 0;
+  outline-width: 0;
 }
 
 .home-button {
-    z-index: 999;
-    position: absolute;
-    top: 10px;
-    left: 185px;
-    /* padding-left: 30px;
-    padding-top: 15px; */
-    /* top: 5%; */
-    color: white;
-    background-color: #305030;
-    border-radius: 2px;
-    border: 1px solid;
-    font-size: 30px;
-    background-color: none;
+  z-index: 999;
+  position: absolute;
+  top: 10px;
+  left: 185px;
+  color: white;
+  background-color: #305030;
+  border-radius: 2px;
+  border: 1px solid;
+  font-size: 30px;
+  background-color: none;
 }
 
 .home-button:hover {
-    background-color: #4a7d4a;
-    cursor: pointer;
+  background-color: #4a7d4a;
+  cursor: pointer;
 }
 
 .home-button:focus {
-    outline-width: 0;
+  outline-width: 0;
 }
 
-/* map container at homepage */
-
 .map-container .home-button {
-    display: none;
+  display: none;
 }
 
 .google-map {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }

@@ -3,25 +3,21 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* margin-left: -23px; */
 }
 
 .post-button {
   padding: 15px;
   border-radius: 25px;
   border: 0;
-  /* background-color: #323b58; */
   background-color: #365c36;
   color: white;
   font-size: 14px;
   font-weight: bolder;
-  /* margin-top: 0px; */
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
   width: 230px;
   text-align: center;
-  /* outline: 0; */
 }
 
 .post-button:focus {
@@ -29,19 +25,9 @@
 }
 
 .post-button:hover {
-  /* background-color: #4e5c89; */
-  /* background-color: #2E4C53; */
-  /* background-color: #4e5c89; */
   background-color: #497c49;
   cursor: pointer;
 }
-
-/* .input[type='file'] {
-  color: transparent;
-  opacity: 0;
-  display: none;
-  width: 0px;
-} */
 
 .custom-file-input::-webkit-file-upload-button {
   visibility: hidden;
@@ -50,27 +36,16 @@
   opacity: 0;
 }
 
-/* .custom-file-input{
-  border: 0;
-  outline: none;
-  -webkit-appearance: none;
-} */
-
 .custom-file-input::before {
-  content: 'Choose a Photo';
+  content: "Choose a Photo";
   display: flex;
   align-self: center;
   align-content: center;
-  /* margin-left: 80px; */
-  /* width: 140px; */
   margin-top: 10px;
   margin-bottom: 0px;
   margin-left: 10px;
   padding-top: 14px;
   padding-bottom: 14px;
-  /* padding-right: 34px;
-  /* padding-left: 34px; */
-  /* padding: 20px 20px; */
   padding-left: 58px;
   border-radius: 40px;
   border: 0;
@@ -82,13 +57,10 @@
   border: 1px solid #323b58;
   border-radius: 40px;
   outline: none;
-  /* -webkit-user-select: none; */
   cursor: pointer;
-  /* -webkit-appearance: none; */
 }
 
 .post-textarea:hover::before {
-  /* background-color: #497c49; */
   background-color: #4e5c89;
 }
 
@@ -109,7 +81,7 @@ form {
   margin-bottom: 15px;
   word-wrap: break-word;
   background-color: white;
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   padding-top: 20px;
   padding-left: 20px;
   padding-right: 10px;
@@ -126,9 +98,7 @@ form {
   flex-direction: column;
   align-items: center;
   font-size: 50px;
-  /* margin-left: 80px; */
-  font-family: 'Muli', sans-serif;
-
+  font-family: "Muli", sans-serif;
 }
 
 .posts-item-li:last-of-type {
@@ -138,18 +108,18 @@ form {
 .posts-container h5 {
   font-size: 40px;
   margin-bottom: 45px;
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   align-self: center;
 }
 
 .posts-body {
-    width: 35%;
-    position: absolute;
-    align-self: center;
-    top: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 35%;
+  position: absolute;
+  align-self: center;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .posts {
@@ -185,12 +155,12 @@ form {
 
 @keyframes fadeInDown {
   0% {
-     opacity: 0;
+    opacity: 0;
   }
   100% {
-     opacity: 1;
+    opacity: 1;
   }
-} 
+}
 
 .map-container {
   width: 65%;
