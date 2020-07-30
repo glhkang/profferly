@@ -104,10 +104,10 @@ mongoose
   .catch((err) => console.log(err));
 
 //below for heroku ** DO NOT DELETE
-// app.use("/", express.static(path.join(__dirname, "/client/build")));
+app.use("/", express.static(path.join(__dirname, "/client/build")));
 
 //below for dev
-app.get("/", (req, res) => res.send("Hello World"));
+// app.get("/", (req, res) => res.send("Hello World"));
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("frontend/build"));
@@ -142,6 +142,6 @@ const port = process.env.PORT || 5000;
 server.listen(port, () => console.log(`Server is running on port ${port}`));
 
 //below for heroku ** DO NOT DELETE
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "/client/build", "index.html"));
-// });
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/client/build", "index.html"));
+});
