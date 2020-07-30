@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 const path = require("path");
 const socketio = require("socket.io");
-const http = require("https");
+const http = require("http");
 
 const server = http.createServer(app);
 const io = socketio(server);
