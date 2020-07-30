@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faCommentDots } from "@fortawesome/free-solid-svg-icons";
-import '../../index.css';
-import './navbar.css';
+import "../../index.css";
+import "./navbar.css";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -11,16 +11,15 @@ class NavBar extends React.Component {
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    
   }
-  
+
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
   }
 
   handleClick() {
-    this.props.history.push(`/users/${this.props.currentUser.id}`)
+    this.props.history.push(`/users/${this.props.currentUser.id}`);
   }
 
   getLinks() {
@@ -35,14 +34,16 @@ class NavBar extends React.Component {
             <FontAwesomeIcon className="globe-icon" icon={faGlobe} />
           </Link>
 
-          <Link onClick={this.logoutUser} to={"/login"}>LOG OUT</Link>
+          <Link onClick={this.logoutUser} to={"/login"}>
+            LOG OUT
+          </Link>
         </div>
       );
     } else {
       return (
         <div className="navbar-menu">
-          <Link to={'/signup'}>Sign up</Link>
-          <Link to={'/login'}>Log in</Link>
+          <Link to={"/signup"}>Sign up</Link>
+          <Link to={"/login"}>Log in</Link>
         </div>
       );
     }
@@ -62,7 +63,10 @@ class NavBar extends React.Component {
             <div className="navbar-main">
               <div className="navbar-logo">
                 <Link to={"/"}>
-                  <img src="/assets/images/profferly_logo_white_small.png" alt="Profferly Logo"/>
+                  <img
+                    src="/assets/images/profferly_logo_white_small.png"
+                    alt="Profferly Logo"
+                  />
                 </Link>
               </div>
 
@@ -71,17 +75,17 @@ class NavBar extends React.Component {
             </div>
           </div>
 
-        <div className="chat-container">
+          <div className="chat-container">
             <Link className="user-show" to={"/join"}>
               <div className="chat-bubble">
                 <FontAwesomeIcon className="chat-button" icon={faCommentDots} />
               </div>
             </Link>
+          </div>
         </div>
-      </div>
       );
     }
-    }
+  }
 }
 
 export default NavBar;

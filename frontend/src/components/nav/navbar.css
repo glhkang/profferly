@@ -1,84 +1,62 @@
 .navbar-container {
-    width: 100%;
-    z-index: 999;
-    top: 0;
-    display: flex;
-    /* margin-top: 5px; */
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  z-index: 999;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar-main {
-    align-self: center;
-    margin-top: 85px;
-    height: 110px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #264026;
-    /* background-color: #1a3515; */
-    /* background-color: #305030; */
-
-
-    /* background-color: #11230e; */
-    /* background-color: #22411D; */
-    /* background-color: #345B2E; */
-    /* background-color: #445046; */
-    /* background-color: #425140; */
-    position: fixed;
-    width: 90%;
-    z-index: 1;
-    border-radius: 60px;
-    animation: 3s slideInFromTop;
-} 
+  align-self: center;
+  margin-top: 85px;
+  height: 110px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #264026;
+  position: fixed;
+  width: 90%;
+  z-index: 1;
+  border-radius: 60px;
+  animation: 3s slideInFromTop;
+}
 
 @keyframes slideInFromTop {
-    0% {
-      transform: translateY(-150%);
-    }
-    100% {
-      transform: translateY(0);
-    }
+  0% {
+    transform: translateY(-150%);
   }
-
-/* .navbar-whitepspace {
-  width: 1300px;
-  height: 100px;
-  background-color: whitesmoke;
-  opacity: 0.5;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-} */
+  100% {
+    transform: translateY(0);
+  }
+}
 
 .navbar-center-holder {
-    /* width: 100px; */
-    height: 100%;
+  height: 100%;
 }
 
 .navbar-logo {
-    text-align: center;
-    display: block;
-    width: 100px;
-    padding-left: 30px;
+  text-align: center;
+  display: block;
+  width: 100px;
+  padding-left: 30px;
 }
 
 .navbar-logo img {
-    margin: auto;
-    margin-top: 5px;
-    width: 85%;
-    height: 85%;
+  margin: auto;
+  margin-top: 5px;
+  width: 85%;
+  height: 85%;
 }
 
 .navbar-menu-2 {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 200px;
-    padding: 0px;
-    padding-right: 30px;
-
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+  padding: 0px;
+  padding-right: 30px;
 }
 .navbar-menu {
   font-size: 12.5px;
@@ -91,56 +69,54 @@
   padding-right: 30px;
 }
 
-.user-show {
-
-}
-
 .chat-bubble {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 54px;
-    height: 54px;
-    position: fixed;
-    right: 20px;;
-    bottom: 20px;
-    z-index: 9999;
-    background-color: #264026;
-    color: white;
-    border: solid 3px #264026;
-    border-radius: 50%;
-    animation: 3s slideInFromRight;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 54px;
+  height: 54px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  background-color: #264026;
+  color: white;
+  border: solid 3px #264026;
+  border-radius: 50%;
+  animation: 3s slideInFromRight;
 }
 
 @keyframes slideInFromRight {
-    0% {
-      transform: translateX(150%);
-    }
-    100% {
-      transform: translateX(0);
-    }
+  0% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .chat-bubble:hover {
-    color: #a5b3a7;
+  color: #a5b3a7;
 }
 
 .chat-button {
-    font-size: 27px;
+  font-size: 27px;
 }
 
 @-webkit-keyframes glow {
-    from {
-        text-shadow: 0 0 5px #fff, 0 0 10px white, 0 0 15px white, 0 0 20px white, 0 0 25px white, 0 0 30px white, 0 0 35px white; 
-    }
-    
-    to {
-        text-shadow: 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white, 0 0 80px white; 
-    }
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px white, 0 0 15px white, 0 0 20px white,
+      0 0 25px white, 0 0 30px white, 0 0 35px white;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white,
+      0 0 60px white, 0 0 70px white, 0 0 80px white;
+  }
 }
 
 .user-show:hover {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .globe-icon {
@@ -158,199 +134,141 @@
 }
 
 .navbar-menu a:link {
-    color: whitesmoke;
-    text-decoration: none;
-    margin-right: 10px;
+  color: whitesmoke;
+  text-decoration: none;
+  margin-right: 10px;
 }
 
 .navbar-menu a:hover {
-    color: whitesmoke;
-    font-weight: bold;
-    text-decoration: none;
+  color: whitesmoke;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .navbar-menu a:active {
-    color: whitesmoke;
-    text-decoration: none;
+  color: whitesmoke;
+  text-decoration: none;
 }
 
 .navbar-menu a:visited {
-    color: whitesmoke;
-    text-decoration: none;
+  color: whitesmoke;
+  text-decoration: none;
 }
 
 .navbar-logo a:link {
-    color: whitesmoke;
-    color: black;
-    text-decoration: none;
-
+  color: whitesmoke;
+  color: black;
+  text-decoration: none;
 }
 
 .navbar-logo a:hover {
-    color: whitesmoke;
-    text-decoration: none;
+  color: whitesmoke;
+  text-decoration: none;
 }
 
 .navbar-logo a:visited {
-    color: whitesmoke;
-    text-decoration: none;
+  color: whitesmoke;
+  text-decoration: none;
 }
 
 .navbar-logo a:active {
-    color: whitesmoke;
-    text-decoration: none;
+  color: whitesmoke;
+  text-decoration: none;
 }
 
 .navbar-menu-2 {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
 
 .navbar-menu-2 a {
-  /* padding-top: 15px; */
   font-size: 12.5px;
 }
 
 .navbar-menu-2 a:link {
-    color: whitesmoke;
-    text-decoration: none;
-    /* margin-right: 10px; */
-    margin-left: 10px;
+  color: whitesmoke;
+  text-decoration: none;
+  margin-left: 10px;
 }
 
 .navbar-menu-2 a:hover {
-    color: whitesmoke;
-    font-weight: bold;
-    text-decoration: none;
+  color: whitesmoke;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .navbar-menu-2 a:active {
-    color: whitesmoke;
-    text-decoration: none;
+  color: whitesmoke;
+  text-decoration: none;
 }
 
 .navbar-menu-2 a:visited {
-    color: whitesmoke;
-    text-decoration: none;
-    font-size: 10px;
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 10px;
 }
 
 .user-show {
-    cursor: pointer;
-    color: white;
-    margin: 0px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  cursor: pointer;
+  color: white;
+  margin: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 12.5px;
-    text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 12.5px;
+  text-transform: uppercase;
 }
 
 .user-logout {
-    margin-right: 100px;
+  margin-right: 100px;
 }
 
 .navbar-white {
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    height: 150px;
-    width: 100%;
-    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  height: 150px;
+  width: 100%;
+  background: -moz-linear-gradient(
+    top,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .chat-modal {
-    display: block;
-    position: fixed;
-    z-index: 9999;
-    right: 90px;
-    bottom: 90px;
-    width: 400px;
-    height: 300px;
-    overflow: auto;
+  display: block;
+  position: fixed;
+  z-index: 9999;
+  right: 90px;
+  bottom: 90px;
+  width: 400px;
+  height: 300px;
+  overflow: auto;
 }
-
-/* .chat-modal .open-modal {
-    display: block;
-}
-
-.chat-modal .close-modal {
-    display: none;
-}
-*/
 
 .chat-modal-container {
-    width: 100%;
-    height: 100%;
-    z-index: 9998;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
 }
 
 .modal-minimize {
-    position: absolute;
-    top: -100px;
-    right: 20px;
-    z-index: 9999;  
+  position: absolute;
+  top: -100px;
+  right: 20px;
+  z-index: 9999;
 }
-/* 
-.navbar-logout {
-    color: whitesmoke;
-}
-
-.navbar-logout a:link {
-    color: whitesmoke;
-    color: inherit;
-    text-decoration: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    margin: 0;
-    border: none;
-    margin-right: 10px;
-}
-
-
-
-.navbar-logout a:hover {
-    color: whitesmoke;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.navbar-logout a:active {
-    color: whitesmoke;
-    text-decoration: none;
-}
-
-.navbar-logout a:visited {
-    color: whitesmoke;
-    text-decoration: none;
-} */
- 
-/* .navbar-logout {
-  width: 75px;
-  padding: 10px;
-  height: 40px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  border: 0;
-  color: white;
-  background-color: #264026;
-  font-size: 14px;
-  font-weight: bolder;
-  margin-right: 140px;
-  margin-right: 10px;
-} */
-
-/* .logout-button:focus {
-  outline-width: 0;
-}
-
-.logout-button:hover {
-  background-color: #4e5c89;
-} */

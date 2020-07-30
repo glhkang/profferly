@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class MainPageMid extends React.Component {
   render() {
@@ -6,11 +6,13 @@ class MainPageMid extends React.Component {
       <div className="mid-container">
         <span className="profferly-title">PROFFERLY</span>
 
-
         <div className="mid-body">
           <div className="mid-body-row">
-            <img className="mid-icon-1" src="/assets/icons/chat_bubble.svg" alt="chat bubble icon"/>
-
+            <img
+              className="mid-icon-1"
+              src="/assets/icons/chat_bubble.svg"
+              alt="chat bubble icon"
+            />
             <p className="p1">
               I just moved to the area and was itching for some volunteering
               work. I got involved with GrowNYC, an organization that helps to
@@ -21,22 +23,35 @@ class MainPageMid extends React.Component {
               Thanks, profferly!
             </p>
           </div>
+
           <div className="mid-body-row">
-            <img className="mid-icon-2" src="/assets/icons/location.svg" alt="location icon" />
+            <img
+              className="mid-icon-2"
+              src="/assets/icons/location.svg"
+              alt="location icon"
+            />
             <p>
               Hey! Oldie but goodie here. Was advised by my doctor to avoid
               large crowds until a vaccine for coronavirus has been approved and
               I'm out of food. Can someone please help me get groceries?
             </p>
           </div>
+
           <div className="mid-body-row">
-            <img className="mid-icon-3" src="/assets/icons/world.svg" alt="world icon" />
+            <img
+              className="mid-icon-3"
+              src="/assets/icons/world.svg"
+              alt="world icon"
+            />
             <p>
               I had so much fun today volunteering for Sea Turtle Conservation
               today! I love animals and I thank profferly for connecting me with
               so many amazing volunteering opporunties near me! I get to
               continue my life mission of helping one animal at a time, for a
-              better world <span role="img" aria-labelledby="img">🌎</span>
+              better world{" "}
+              <span role="img" aria-labelledby="img">
+                🌎
+              </span>
             </p>
           </div>
         </div>

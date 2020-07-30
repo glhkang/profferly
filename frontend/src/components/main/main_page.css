@@ -1,84 +1,66 @@
 .mainpage-main {
-    background: url("/assets/images/rubber-tree-bg-op.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+  background: url("/assets/images/rubber-tree-bg-op.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
-/* 
-.app-main {
-    height: 100%;
-    position: absolute;
-    top: 0;
-} */
 
 .mainpage-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    /* position: relative; */
-    z-index: -1;
-    padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: -1;
+  padding-bottom: 80px;
 }
 
 .mainpage-header {
-    height: 100vh;
-    width: 100%;
-    font-size: 50px;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+  height: 100vh;
+  width: 100%;
+  font-size: 50px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
 .mainpage-logo {
-    height: 100vh;
+  height: 100vh;
 }
 
 .mainpage-logo h1 {
-    padding-top: 70vh;
-    padding-bottom: 70vh;
-    z-index: 9999;
-    width: 100%;
-    text-align: center;
+  padding-top: 70vh;
+  padding-bottom: 70vh;
+  z-index: 9999;
+  width: 100%;
+  text-align: center;
 }
 
-/* .mainpage-dummy-second {
-    scroll-snap-align: center;
-    height: 915px;
-} */
-
-/* .mainpage-dummy-third {
-    scroll-snap-align: center;
-    height: 915px;
-    background-color: aliceblue;
-} */
-
 .mainpage-mid {
-    background: transparent;
+  background: transparent;
 }
 
 .mid-container {
-    scroll-snap-align: center;
-    font-family: 'Muli', sans-serif;
-    font-weight: bold;
-    font-size: 14px;
-    padding-top: 130vh;
-    background: none;
-    background-color: none;
+  scroll-snap-align: center;
+  font-family: "Muli", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  padding-top: 130vh;
+  background: none;
+  background-color: none;
 }
 
 .mid-container .profferly-title {
-    position: absolute;
-    top: 50vh;
-    width: 100%;
-    text-align: center;
-    font-size: 75px;
-    font-family: "Josefin Sans";
-    font-weight: bold;
+  position: absolute;
+  top: 50vh;
+  width: 100%;
+  text-align: center;
+  font-size: 75px;
+  font-family: "Josefin Sans";
+  font-weight: bold;
 }
 
 .mid-container h3 {
@@ -96,7 +78,6 @@
   background-color: transparent;
 }
 
-
 .mid-body-row {
   display: flex;
   flex-direction: column;
@@ -108,110 +89,98 @@
   border-radius: 50px;
   font-size: 18px;
   margin-bottom: 30px;
-  /* font-family: 'Open Sans', sans-serif; */
 }
 
 .p1 {
-    align-self: flex-start;
+  align-self: flex-start;
 }
 
 .mid-icon-1 {
-    height: 50px;
-    width: 50px;
-    padding-top: 10px;
-    opacity: 0.7;
-    
+  height: 50px;
+  width: 50px;
+  padding-top: 10px;
+  opacity: 0.7;
 }
 
 .mid-icon-2 {
-    height: 50px;
-    width: 50px;
-    padding-top: 10px;
-    opacity: 0.7;
+  height: 50px;
+  width: 50px;
+  padding-top: 10px;
+  opacity: 0.7;
 }
 
 .mid-icon-3 {
-    height: 50px;
-    width: 50px;
-    padding-top: 10px;
-    opacity: 0.7;
+  height: 50px;
+  width: 50px;
+  padding-top: 10px;
+  opacity: 0.7;
 }
 
 .bottom-container {
-    scroll-snap-align: center;
-    background-position: fixed;
-    background-color: transparent;
-    background: transparent;
-    /* background: url("/assets/images/leaf-striation-bg-op.jpg"); */
-    opacity: 1;
-    border-radius: 100px;
-    margin: 40px;
-    margin-bottom: 100px;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
-    min-height: 175px;
-    color: black;
-    margin-top: 200px;
+  scroll-snap-align: center;
+  background-position: fixed;
+  background-color: transparent;
+  background: transparent;
+  opacity: 1;
+  border-radius: 100px;
+  margin: 40px;
+  margin-bottom: 100px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  min-height: 175px;
+  color: black;
+  margin-top: 200px;
 }
 
-/* .bottom-container {
-  display: flex;
-  align-items: flex-start;
-  padding-top: 70px;
-} */
-
 .bottom-container img {
-    background-color: #264026;
-    border-radius: 50%;
-    opacity: 0.8;
-    transition: 1s;
-    justify-content: center;
-    width: 175px;
-    height: 175px;
-    padding: 15px;
-   /* font-family: 'Muli', sans-serif; */
+  background-color: #264026;
+  border-radius: 50%;
+  opacity: 0.8;
+  transition: 1s;
+  justify-content: center;
+  width: 175px;
+  height: 175px;
+  padding: 15px;
 }
 
 .bottom-container img:hover {
-    opacity: 1;
-    transition: 1s;
-    cursor: pointer;
+  opacity: 1;
+  transition: 1s;
+  cursor: pointer;
 }
 
 .bottom-container h3 {
-    font-size: 40px;
-    font-style: italic;
-    font-family: 'Ubuntu', sans-serif;
-    margin: 0px;
-    padding-bottom: 20px;
-    display: flex;
+  font-size: 40px;
+  font-style: italic;
+  font-family: "Ubuntu", sans-serif;
+  margin: 0px;
+  padding-bottom: 20px;
+  display: flex;
 }
 
 .bottom-container h5 {
-    font-family: 'Muli', sans-serif;
-    margin: 0px;
-    font-size: 30px;
-    margin-top: 25px;
-    /* padding-top: 6px; */
-    /* font-family: 'Tajawal', sans-serif; */
+  font-family: "Muli", sans-serif;
+  margin: 0px;
+  font-size: 30px;
+  margin-top: 25px;
 }
 
-.bottom-container  p {
-    margin: 0px;
-    padding-top: 20px;
-    font-size: 20px;
-    font-weight: bolder;
-    padding-bottom: 20px;
-    width: 70%;
-    text-align: center;
-    font-family: 'Muli', sans-serif;
+.bottom-container p {
+  margin: 0px;
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: bolder;
+  padding-bottom: 20px;
+  width: 70%;
+  text-align: center;
+  font-family: "Muli", sans-serif;
 }
 
 .mainpage-bottom {
-    background-color: transparent;
-    background: transparent;
+  background-color: transparent;
+  background: transparent;
 }

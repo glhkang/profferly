@@ -1,12 +1,9 @@
 import React from "react";
-
 import onlineIcon from "../../icons/onlineIcon.png";
 import closeIcon from "../../icons/closeIcon.png";
-
 import "./Bar.css";
 
 const InfoBar = ({ room }) => {
-
   return (
     <div className="infoBar">
       <div className="leftInnerContainer">
@@ -19,7 +16,7 @@ const InfoBar = ({ room }) => {
         </a>
       </div>
     </div>
-  )
+  );
 };
 
 export default InfoBar;
