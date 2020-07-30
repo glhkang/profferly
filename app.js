@@ -23,7 +23,6 @@ const likes = require("./routes/api/likes");
 const join = require("./routes/api/join");
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./chatHelper");
 const Message = require('./models/Message');
-
 io.on("connect", (socket) => {
 
   socket.on("join", ({ name, room }, callback) => {

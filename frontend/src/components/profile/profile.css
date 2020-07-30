@@ -169,20 +169,30 @@
 } */
 
 .user-profile-content {
-  margin-top: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  height: 100%;
   width: 100%;
-  justify-content: center;
 }
 
 .user-profile-content h2 {
   display: flex;
+  display: inline;
+  text-align: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
   justify-content: center;
+  margin-top: 150px;
+  margin-bottom: 30px;
+}
+
+.user-profile-content .post-item-li:last-of-type {
+  margin-bottom: 100px;
+}
+
+.profile-list .post-item-li:last-of-type {
+  margin-bottom: 100px;
 }
 
 .profile-loading {
@@ -234,9 +244,18 @@
 }
 
 .user-profile-box {
-  padding-top: 180px;
+  padding-top: 0px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.user-profile-header {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.user-profile-username {
+  text-transform: capitalize;
 }

@@ -1,7 +1,5 @@
 import React from 'react';
-import Link from 'react-router-dom';
 import Join from "./join";
-import Chat from "./chat";
 
 
 const ChatModal = () => {

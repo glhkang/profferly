@@ -6,7 +6,9 @@
     width: 400px;
     height: auto;
     font-family: 'Muli', sans-serif;
-    padding: 10px;
+    padding-top: 20px;
+    padding: 15px;
+    transition: 1s;
     /* margin-bottom: 50px; */
     /* background-color: grey; */
   /* background-color: white; */

@@ -12,11 +12,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0;
 }
 
 .comments-list-li {
     width: 100%;
     margin-bottom: 20px;
+}
+
+.comments-list-li:first-of-type {
+    margin-top: 15px;
 }
 
 .comments-text {

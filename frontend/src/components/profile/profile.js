@@ -98,8 +98,8 @@ class Profile extends React.Component {
 
             return (
                 <div className="user-profile-content">
-                    <div className="user-profile-box" />
-                    <h2>All of {this.props.users[this.props.user].username}'s Posts</h2>
+                    {/* <div className="user-profile-box" /> */}
+                    <h2>All of <span className="user-profile-username">{this.props.users[this.props.user].username}</span>'s Posts</h2>
                     <ul className="posts">
                         {list}
                     </ul>

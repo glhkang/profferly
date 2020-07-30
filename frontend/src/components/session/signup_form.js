@@ -52,7 +52,7 @@ class SignupForm extends React.Component {
 
   demoUserLogin(e) {
     e.preventDefault();
-    const demoUser = { email: "gloria@gloria.com", password: "gloria" };
+    const demoUser = { email: "demouser@profferly.com", password: "demouser" };
     this.props.login(demoUser)
   };
 

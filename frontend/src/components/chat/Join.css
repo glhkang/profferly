@@ -81,7 +81,6 @@ html, body {
   text-align: center;
   width: 100%;
   align-items: center;
-  padding: 20px;
 }
 
 .joinInnerContainer {
@@ -94,6 +93,7 @@ html, body {
   border-radius: 50px;
   width: 350px;
   padding: 50px;
+  margin: 20px;
   margin-bottom: 80px;
 }
 

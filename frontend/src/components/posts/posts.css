@@ -121,7 +121,7 @@ form {
 }
 
 .posts-container h3 {
-  margin-top: 200px;
+  margin-top: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -129,6 +129,10 @@ form {
   /* margin-left: 80px; */
   font-family: 'Muli', sans-serif;
 
+}
+
+.posts-item-li:last-of-type {
+  margin-bottom: 100px;
 }
 
 .posts-container h5 {
@@ -153,10 +157,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.posts li:last-child {
-  margin-bottom: 100px;
+  padding-bottom: 60px;
 }
 
 .post-text {
@@ -166,7 +167,6 @@ form {
   padding-top: 20px;
   font-size: 20px;
   font-weight: bold;
-  padding-bottom: 10px;
 }
 
 .post-date {
@@ -180,6 +180,7 @@ form {
   display: flex;
   justify-content: flex-start;
   animation: 3s fadeInDown;
+  padding-bottom: 100px;
 }
 
 @keyframes fadeInDown {
@@ -193,8 +194,8 @@ form {
 
 .map-container {
   width: 65%;
-  height: 100%;
+  height: 120%;
   position: fixed;
   right: 0;
-  top: 0;
+  top: -40px;
 }
