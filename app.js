@@ -106,7 +106,7 @@ mongoose
 //below for heroku ** DO NOT DELETE
 app.use("/", express.static(path.join(__dirname, "/client/build")));
 
-//below for dev
+//below for dev ** DO NOT DELETE
 // app.get("/", (req, res) => res.send("Hello World"));
 
 if (process.env.NODE_ENV === "production") {
