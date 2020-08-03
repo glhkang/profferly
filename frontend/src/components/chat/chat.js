@@ -16,7 +16,6 @@ import "./Chat.css";
 let socket;
 
 const Chat = ({ location }) => {
-  debugger;
   const user = useSelector((state) => state.session.user);
   const messagesOld = useSelector((state) => state.messages);
   const [name, setName] = useState("");
@@ -29,10 +28,10 @@ const Chat = ({ location }) => {
   const ENDPOINT = "localhost:3000";
 
   useEffect(() => {
-    debugger;
     const { name, room } = queryString.parse(location.search);
 
-    socket = io(ENDPOINT);
+    // socket = io(ENDPOINT);
+    socket = io();
 
     setRoom(room);
     setName(name);

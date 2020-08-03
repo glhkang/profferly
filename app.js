@@ -28,7 +28,7 @@ const {
 } = require("./chatHelper");
 const Message = require("./models/Message");
 
-io.set("origins", "*:*");
+// io.set("origins", "*:*");
 
 io.on("connect", (socket) => {
   socket.on("join", ({ name, room }, callback) => {
