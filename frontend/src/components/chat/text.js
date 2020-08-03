@@ -6,17 +6,18 @@ const TextContainer = ({ users }) => (
   <div className="textContainer">
     {users ? (
       <div>
-        <h1>USERS ONLINE:</h1>
+        <h1>USERS ONLINE</h1>
         <div className="activeContainer">
           <h2>
             {users.map((name) => (
               <div key={name} className="activeItem">
-                {name}
                 <img
                   className="online-icon"
                   alt="Online Icon"
                   src={onlineIcon}
                 />
+                &nbsp;&nbsp;
+                {name}
               </div>
             ))}
           </h2>

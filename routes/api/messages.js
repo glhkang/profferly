@@ -36,6 +36,7 @@ router.post(
 );
 
 router.get("/rooms/:room_id", (req, res) => {
+  // debugger;
   Message.find({ room: req.params.room_id })
     .sort({ date: 1 })
     .limit(20)

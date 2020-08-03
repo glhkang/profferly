@@ -2,6 +2,7 @@ import React from "react";
 import "./Message.css";
 
 const Message = ({ message: { text, user }, name }) => {
+  // debugger;
   let isSentByCurrentUser = false;
   const trimmedName = name.trim().toLowerCase();
 
@@ -10,6 +11,7 @@ const Message = ({ message: { text, user }, name }) => {
   }
 
   if (isSentByCurrentUser) {
+    // debugger;
     return (
       <div className="messageContainer justifyEnd">
         <p className="sentText pr-10">{name}</p>
@@ -26,7 +28,8 @@ const Message = ({ message: { text, user }, name }) => {
         </div>
       </div>
     );
-  } else if (!isSentByCurrentUser) {
+  } else if (!isSentByCurrentUser && text !== "") {
+    // debugger;
     return (
       <div className="messageContainer justifyStart">
         <div className="messageBox backgroundLight">

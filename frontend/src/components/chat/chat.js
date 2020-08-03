@@ -29,7 +29,6 @@ const Chat = ({ location }) => {
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
-
     // socket = io(ENDPOINT);
     socket = io();
 
@@ -48,6 +47,7 @@ const Chat = ({ location }) => {
 
   useEffect(() => {
     socket.on("message", (message) => {
+      // debugger;
       setMessages((messages) => [...messages, message]);
     });
 
@@ -63,10 +63,12 @@ const Chat = ({ location }) => {
   }));
 
   const sendMessage = (event) => {
+    // debugger;
     event.preventDefault();
-
     if (message) {
+      // debugger;
       socket.emit("sendMessage", { message, room, user }, () => setMessage(""));
+
       dispatch(newLocalMessage(message));
     }
   };
@@ -86,5 +88,4 @@ const Chat = ({ location }) => {
     </div>
   );
 };
-
 export default Chat;
