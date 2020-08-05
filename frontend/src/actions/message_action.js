@@ -6,12 +6,12 @@ export const FAIL_RECEIVE_ROOMS_MESSAGES = "FAIL_RECEIVE_ROOMS_MESSAGES";
 export const NEW_LOCAL_MESSAGE = "NEW_LOCAL_MESSAGE";
 
 export const beginReceiveRoomMessages = () => ({
-         type: BEGIN_RECEIVE_ROOMS_MESSAGES,
-       });
+  type: BEGIN_RECEIVE_ROOMS_MESSAGES,
+});
 
 export const failReceiveRoomMessages = () => ({
-         type: FAIL_RECEIVE_ROOMS_MESSAGES,
-       });
+  type: FAIL_RECEIVE_ROOMS_MESSAGES,
+});
 
 export const receiveRoomMessages = (messages) => ({
   type: RECEIVE_ROOMS_MESSAGES,
@@ -19,7 +19,6 @@ export const receiveRoomMessages = (messages) => ({
 });
 
 export const newLocalMessage = function (message) {
-  // debugger;
   return {
     type: NEW_LOCAL_MESSAGE,
     message,
@@ -27,7 +26,6 @@ export const newLocalMessage = function (message) {
 };
 
 export const fetchRoomMessages = (name) => (dispatch) => {
-
   dispatch(beginReceiveRoomMessages());
 
   getRoomsMessages(name)
@@ -36,5 +34,4 @@ export const fetchRoomMessages = (name) => (dispatch) => {
       console.log(err);
       dispatch(failReceiveRoomMessages());
     });
-}
-
+};

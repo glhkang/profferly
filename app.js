@@ -28,8 +28,6 @@ const {
 } = require("./chatHelper");
 const Message = require("./models/Message");
 
-// io.set("origins", "*:*");
-
 io.on("connect", (socket) => {
   socket.on("join", ({ name, room }, callback) => {
     const { error, user } = addUser({ id: socket.id, name, room });
@@ -63,7 +61,6 @@ io.on("connect", (socket) => {
 
   socket.on("sendMessage", ({ message, room, user }, callback) => {
     const userr = getUser(socket.id);
-    // debugger;
     io.to(userr.room).emit("message", { user: userr.name, text: message });
     const message1 = new Message({
       message,

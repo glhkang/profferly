@@ -30,15 +30,12 @@ const Chat = ({ location }) => {
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
-    // socket = io(ENDPOINT);
     socket = io();
 
     setRoom(room);
     setName(name);
 
     dispatch(addRoomToRedux(room));
-
-
     dispatch(fetchRoomMessages(room));
 
     socket.emit("join", { name, room }, (error) => {
@@ -47,16 +44,14 @@ const Chat = ({ location }) => {
       }
     });
   }, [location.search]);
-  //}, [ENDPOINT, location.search]);
 
   useEffect(() => {
     socket.on("message", (message) => {
-
       if (message.user.toUpperCase() === user.username.toUpperCase()) {
         return;
       }
 
-      setMessages((messages) => [...messages,  message]);
+      setMessages((messages) => [...messages, message]);
     });
 
     socket.on("roomData", ({ users }) => {
@@ -71,29 +66,29 @@ const Chat = ({ location }) => {
   }));
 
   const sendMessage = (event) => {
-    // debugger;
     event.preventDefault();
     if (message) {
-      // debugger;
       socket.emit("sendMessage", { message, room, user }, () => setMessage(""));
-      dispatch(newLocalMessage({
-        message,
-        user: user.username,
-        room,
-      }));
+      dispatch(
+        newLocalMessage({
+          message,
+          user: user.username,
+          room,
+        })
+      );
     }
   };
 
   if (loading) {
-    return <p>Loading...</p>
+    return <p>Loading...</p>;
   }
-  console.log(messagesOldMapped)
+
   return (
     <div className="outerContainer">
       <TextContainer className="users-online" users={users} />
       <div className="container">
         <InfoBar room={room} />
-        <Messages messages={[...messagesOld,...messages]} name={name} />
+        <Messages messages={[...messagesOld, ...messages]} name={name} />
         <Input
           message={message}
           setMessage={setMessage}
