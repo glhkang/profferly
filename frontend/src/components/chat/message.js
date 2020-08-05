@@ -27,14 +27,25 @@ const Message = ({ message: { message, user, text }, name }) => {
       </div>
     );
   } else if (!isSentByCurrentUser) {
-    return (
-      <div className="messageContainer justifyStart">
-        <div className="messageBox backgroundLight">
-          <p className="messageText colorDark">{message}</p>
+    if (text) {
+      return (
+        <div className="messageContainer justifyStart">
+          <div className="messageBox backgroundLight">
+            <p className="messageText colorDark">{text}</p>
+          </div>
+          <p className="sentText pl-10 ">{user}</p>
         </div>
-        <p className="sentText pl-10 ">{user}</p>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="messageContainer justifyStart">
+          <div className="messageBox backgroundLight">
+            <p className="messageText colorDark">{message}</p>
+          </div>
+          <p className="sentText pl-10 ">{user}</p>
+        </div>
+      );
+    }
   }
 };
 
