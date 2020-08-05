@@ -10,6 +10,7 @@ const Message = ({ message: { message, user }, name }) => {
   }
 
   if (isSentByCurrentUser) {
+    // debugger;
     return (
       <div className="messageContainer justifyEnd">
         <p className="sentText pr-10">{name}</p>
@@ -27,6 +28,7 @@ const Message = ({ message: { message, user }, name }) => {
       </div>
     );
   } else if (!isSentByCurrentUser) {
+    // debugger;
     return (
       <div className="messageContainer justifyStart">
         <div className="messageBox backgroundLight">

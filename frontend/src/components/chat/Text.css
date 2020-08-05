@@ -20,6 +20,15 @@
 
 .activeContainer {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.activeContainer h2 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -27,17 +36,22 @@
 .activeItem {
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   font-size: 14px;
+  margin: 7px;
+  left: -10px;
 }
 
 .activeContainer img {
-  padding-left: 10px;
   font-size: 14px;
 }
 
 .textContainer h1 {
   margin-bottom: 0px;
   font-size: 15px;
+  text-decoration: bold;
+  text-align: center;
 }
 
 @media (min-width: 320px) and (max-width: 1200px) {
@@ -51,6 +65,7 @@
   -moz-animation: flickerAnimation 1s infinite;
   -o-animation: flickerAnimation 1s infinite;
   animation: flickerAnimation 1s infinite;
+  padding-left: 0;
 }
 
 @keyframes flickerAnimation {

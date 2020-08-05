@@ -18,10 +18,13 @@ export const receiveRoomMessages = (messages) => ({
   messages,
 });
 
-export const newLocalMessage = (message) => ({
-  type: NEW_LOCAL_MESSAGE,
-  message,
-});
+export const newLocalMessage = function (message) {
+  // debugger;
+  return {
+    type: NEW_LOCAL_MESSAGE,
+    message,
+  };
+};
 
 export const fetchRoomMessages = (name) => (dispatch) => {
 

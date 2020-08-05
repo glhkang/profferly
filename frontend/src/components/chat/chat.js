@@ -16,7 +16,6 @@ import "./Chat.css";
 let socket;
 
 const Chat = ({ location }) => {
-  debugger;
   const user = useSelector((state) => state.session.user);
   const messagesOld = useSelector((state) => state.messages.messages);
   const loading = useSelector((state) => state.messages.loading);
@@ -27,13 +26,12 @@ const Chat = ({ location }) => {
   const [messages, setMessages] = useState([]);
   const dispatch = useDispatch();
 
-  const ENDPOINT = "localhost:5000";
+  const ENDPOINT = "localhost:3000";
 
   useEffect(() => {
-    debugger;
     const { name, room } = queryString.parse(location.search);
-
-    socket = io(ENDPOINT);
+    // socket = io(ENDPOINT);
+    socket = io();
 
     setRoom(room);
     setName(name);
@@ -73,9 +71,10 @@ const Chat = ({ location }) => {
   }));
 
   const sendMessage = (event) => {
+    // debugger;
     event.preventDefault();
-
     if (message) {
+      // debugger;
       socket.emit("sendMessage", { message, room, user }, () => setMessage(""));
       dispatch(newLocalMessage({
         message,
@@ -88,7 +87,7 @@ const Chat = ({ location }) => {
   if (loading) {
     return <p>Loading...</p>
   }
-
+  console.log(messagesOldMapped)
   return (
     <div className="outerContainer">
       <TextContainer className="users-online" users={users} />
@@ -104,5 +103,4 @@ const Chat = ({ location }) => {
     </div>
   );
 };
-
 export default Chat;

@@ -8,7 +8,6 @@ const passport = require("passport");
 const path = require("path");
 const socketio = require("socket.io");
 const http = require("http");
-
 const server = http.createServer(app);
 const io = socketio(server);
 
@@ -28,6 +27,8 @@ const {
   getUsersInRoom,
 } = require("./chatHelper");
 const Message = require("./models/Message");
+
+// io.set("origins", "*:*");
 
 io.on("connect", (socket) => {
   socket.on("join", ({ name, room }, callback) => {
@@ -62,6 +63,7 @@ io.on("connect", (socket) => {
 
   socket.on("sendMessage", ({ message, room, user }, callback) => {
     const userr = getUser(socket.id);
+    // debugger;
     io.to(userr.room).emit("message", { user: userr.name, text: message });
     const message1 = new Message({
       message,
@@ -106,7 +108,7 @@ mongoose
 //below for heroku ** DO NOT DELETE
 app.use("/", express.static(path.join(__dirname, "/client/build")));
 
-//below for dev
+//below for dev ** DO NOT DELETE
 // app.get("/", (req, res) => res.send("Hello World"));
 
 if (process.env.NODE_ENV === "production") {
