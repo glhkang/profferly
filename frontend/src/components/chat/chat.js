@@ -69,7 +69,7 @@ const Chat = ({ location }) => {
       // debugger;
       socket.emit("sendMessage", { message, room, user }, () => setMessage(""));
 
-      dispatch(newLocalMessage(message));
+      // dispatch(newLocalMessage(message));
     }
   };
 
