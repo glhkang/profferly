@@ -18,7 +18,8 @@ let socket;
 const Chat = ({ location }) => {
   debugger;
   const user = useSelector((state) => state.session.user);
-  const messagesOld = useSelector((state) => state.messages);
+  const messagesOld = useSelector((state) => state.messages.messages);
+  const loading = useSelector((state) => state.messages.loading);
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   const [users, setUsers] = useState([]);
@@ -26,7 +27,7 @@ const Chat = ({ location }) => {
   const [messages, setMessages] = useState([]);
   const dispatch = useDispatch();
 
-  const ENDPOINT = "localhost:3000";
+  const ENDPOINT = "localhost:5000";
 
   useEffect(() => {
     debugger;
@@ -38,6 +39,8 @@ const Chat = ({ location }) => {
     setName(name);
 
     dispatch(addRoomToRedux(room));
+
+
     dispatch(fetchRoomMessages(room));
 
     socket.emit("join", { name, room }, (error) => {
@@ -45,11 +48,17 @@ const Chat = ({ location }) => {
         alert(error);
       }
     });
-  }, [ENDPOINT, location.search]);
+  }, [location.search]);
+  //}, [ENDPOINT, location.search]);
 
   useEffect(() => {
     socket.on("message", (message) => {
-      setMessages((messages) => [...messages, message]);
+
+      if (message.user.toUpperCase() === user.username.toUpperCase()) {
+        return;
+      }
+
+      setMessages((messages) => [...messages,  message]);
     });
 
     socket.on("roomData", ({ users }) => {
@@ -68,16 +77,24 @@ const Chat = ({ location }) => {
 
     if (message) {
       socket.emit("sendMessage", { message, room, user }, () => setMessage(""));
-      dispatch(newLocalMessage(message));
+      dispatch(newLocalMessage({
+        message,
+        user: user.username,
+        room,
+      }));
     }
   };
+
+  if (loading) {
+    return <p>Loading...</p>
+  }
 
   return (
     <div className="outerContainer">
       <TextContainer className="users-online" users={users} />
       <div className="container">
         <InfoBar room={room} />
-        <Messages messages={[...messagesOldMapped, ...messages]} name={name} />
+        <Messages messages={[...messagesOld,...messages]} name={name} />
         <Input
           message={message}
           setMessage={setMessage}
