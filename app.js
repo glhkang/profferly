@@ -34,16 +34,16 @@ io.on("connect", (socket) => {
     if (error) return callback(error);
     socket.join(user.room);
 
-    socket.emit("message", {
-      user: "admin",
-      text: `${user.name}, welcome to ${user.room}`,
-    });
+    // socket.emit("message", {
+    //   user: "admin",
+    //   text: `${user.name}, welcome to ${user.room}`,
+    // });
 
     socket.emit("id", socket.id);
 
-    socket.broadcast
-      .to(user.room)
-      .emit("message", { user: "admin", text: `${user.name} has joined!` });
+    // socket.broadcast
+    //   .to(user.room)
+    //   .emit("message", { user: "admin", text: `${user.name} has joined!` });
 
     const arr = getUsersInRoom(user.room);
 
