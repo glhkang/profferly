@@ -10,14 +10,25 @@ const Message = ({ message: { message, user, text }, name }) => {
   }
 
   if (isSentByCurrentUser) {
-    return (
-      <div className="messageContainer justifyEnd">
-        <p className="sentText pr-10">{name}</p>
-        <div className="messageBox backgroundGreen">
-          <p className="messageText colorWhite">{message}</p>
+    if (text) {
+      return (
+        <div className="messageContainer justifyEnd">
+          <p className="sentText pr-10">{name}</p>
+          <div className="messageBox backgroundGreen">
+            <p className="messageText colorWhite">{text}</p>
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="messageContainer justifyEnd">
+          <p className="sentText pr-10">{name}</p>
+          <div className="messageBox backgroundGreen">
+            <p className="messageText colorWhite">{message}</p>
+          </div>
+        </div>
+      );
+    }
   } else if (user.toLowerCase() === "admin") {
     return (
       <div className="messageContainer admin">
