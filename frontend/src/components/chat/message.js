@@ -10,16 +10,6 @@ const Message = ({ message: { message, user, text, date }, name }) => {
   }
 
   if (isSentByCurrentUser) {
-    // if (text) {
-    //   return (
-    //     <div className="messageContainer justifyEnd">
-    //       <p className="sentText pr-10">{name}</p>
-    //       <div className="messageBox backgroundGreen">
-    //         <p className="messageText colorWhite">{text}</p>
-    //       </div>
-    //     </div>
-    //   );
-    // } else {
     return (
       <div className="messageContainer justifyEnd">
         <p className="sentText pr-10">{name}</p>
@@ -28,7 +18,6 @@ const Message = ({ message: { message, user, text, date }, name }) => {
         </div>
       </div>
     );
-    // }
   } else if (user.toLowerCase() === "admin") {
     return (
       <div className="messageContainer admin">
@@ -38,19 +27,7 @@ const Message = ({ message: { message, user, text, date }, name }) => {
       </div>
     );
   } else if (!isSentByCurrentUser) {
-    // console.log(
-    //   message,
-    //   "this the message",
-    //   user,
-    //   "this is the user",
-    //   text,
-    //   "this is the text",
-    //   name,
-    //   "this is the name"
-    // );
     if (message === undefined) {
-      console.log("HELLO?");
-      debugger;
       return (
         <div className="messageContainer justifyStart">
           <div className="messageBox backgroundLight">
@@ -60,7 +37,6 @@ const Message = ({ message: { message, user, text, date }, name }) => {
         </div>
       );
     } else {
-      debugger;
       return (
         <div className="messageContainer justifyStart">
           <div className="messageBox backgroundLight">

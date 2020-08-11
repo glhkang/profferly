@@ -64,7 +64,6 @@ io.on("connect", (socket) => {
 
     const message1 = new Message({
       message,
-      // user: userr.name,
       user,
       room,
       date: Date.now()
@@ -77,22 +76,6 @@ io.on("connect", (socket) => {
     });
 
     callback();
-    //-----------
-    // const userr = getUser(socket.id);
-    // debugger;
-    // io.to(userr.room).emit("message", { user: userr.name, text: message });
-    // debugger;
-    // const message1 = new Message({
-    //   message,
-    //   user: userr.name,
-    //   room,
-    // });
-    // debugger;
-    // message1.save((err) => {
-    //   if (err) return console.error(err);
-    // });
-    // debugger;
-    // callback();
   });
 
   socket.on("disconnect", () => {
