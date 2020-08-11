@@ -12,9 +12,7 @@ import Input from "./input";
 import Messages from "./messages";
 import TextContainer from "./text";
 import "./Chat.css";
-
 let socket;
-
 const Chat = ({ location }) => {
   const user = useSelector((state) => state.session.user);
   const messages = useSelector((state) => state.messages.messages);
@@ -24,60 +22,54 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState([]);
   const [message, setMessage] = useState("");
   const dispatch = useDispatch();
-
+  const ENDPOINT = "localhost:3000";
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
     socket = io();
-
     setRoom(room);
     setName(name);
-
     dispatch(addRoomToRedux(room));
     dispatch(fetchRoomMessages(room));
-
     socket.emit("join", { name, room }, (error) => {
       if (error) {
         alert(error);
       }
     });
   }, [location.search]);
-
   useEffect(() => {
     socket.on("message", (message) => {
-      console.log(message)
-      // if (message.user.toUpperCase() === user.username.toUpperCase()) {
-      //   return;
-      // }
-
+      if (message.user.toUpperCase() === user.username.toUpperCase()) {
+        return;
+      }
+      //setMessages((messages) => [...messages, message]);
       dispatch(newLocalMessage(message));
     });
-
     socket.on("roomData", ({ users }) => {
       const unique = [...new Set(users.map((item) => item.name))];
       setUsers([...unique]);
     });
   }, []);
-
+  // const messagesOldMapped = messagesOld.map((o) => ({
+  //   user: o.user,
+  //   text: o.message,
+  // }));
   const sendMessage = (event) => {
     event.preventDefault();
     if (message) {
-      debugger;
       socket.emit("sendMessage", { message, room, user }, () => setMessage(""));
       dispatch(
         newLocalMessage({
           message,
           user: user.username,
           room,
-          date: (new Date()).toISOString(),
+          date: new Date().toISOString(),
         })
       );
     }
   };
-
   if (loading) {
     return <p>Loading...</p>;
   }
-
   return (
     <div className="outerContainer">
       <TextContainer className="users-online" users={users} />
