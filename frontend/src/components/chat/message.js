@@ -10,25 +10,25 @@ const Message = ({ message: { message, user, text }, name }) => {
   }
 
   if (isSentByCurrentUser) {
-    if (text) {
-      return (
-        <div className="messageContainer justifyEnd">
-          <p className="sentText pr-10">{name}</p>
-          <div className="messageBox backgroundGreen">
-            <p className="messageText colorWhite">{text}</p>
-          </div>
+    // if (text) {
+    //   return (
+    //     <div className="messageContainer justifyEnd">
+    //       <p className="sentText pr-10">{name}</p>
+    //       <div className="messageBox backgroundGreen">
+    //         <p className="messageText colorWhite">{text}</p>
+    //       </div>
+    //     </div>
+    //   );
+    // } else {
+    return (
+      <div className="messageContainer justifyEnd">
+        <p className="sentText pr-10">{name}</p>
+        <div className="messageBox backgroundGreen">
+          <p className="messageText colorWhite">{message}</p>
         </div>
-      );
-    } else {
-      return (
-        <div className="messageContainer justifyEnd">
-          <p className="sentText pr-10">{name}</p>
-          <div className="messageBox backgroundGreen">
-            <p className="messageText colorWhite">{message}</p>
-          </div>
-        </div>
-      );
-    }
+      </div>
+    );
+    // }
   } else if (user.toLowerCase() === "admin") {
     return (
       <div className="messageContainer admin">
@@ -38,7 +38,19 @@ const Message = ({ message: { message, user, text }, name }) => {
       </div>
     );
   } else if (!isSentByCurrentUser) {
-    if (text) {
+    // console.log(
+    //   message,
+    //   "this the message",
+    //   user,
+    //   "this is the user",
+    //   text,
+    //   "this is the text",
+    //   name,
+    //   "this is the name"
+    // );
+    if (message === undefined) {
+      console.log("HELLO?");
+      debugger;
       return (
         <div className="messageContainer justifyStart">
           <div className="messageBox backgroundLight">
@@ -48,6 +60,7 @@ const Message = ({ message: { message, user, text }, name }) => {
         </div>
       );
     } else {
+      debugger;
       return (
         <div className="messageContainer justifyStart">
           <div className="messageBox backgroundLight">

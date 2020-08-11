@@ -41,7 +41,7 @@ class PostItem extends React.Component {
     const post = this.props.post;
     const user = this.props.users[this.props.post.user];
     const dateStr = post.date.toString();
-    console.log(this.props);
+
     if (post.file && user) {
       return (
         <li

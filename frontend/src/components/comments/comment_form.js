@@ -33,7 +33,6 @@ class CommentForm extends React.Component {
   }
 
   render() {
-    // console.log(this.props);
     return (
       <form className="comment-form" onSubmit={this.handleSubmit}>
         <br />

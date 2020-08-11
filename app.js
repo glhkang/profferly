@@ -61,18 +61,35 @@ io.on("connect", (socket) => {
 
   socket.on("sendMessage", ({ message, room, user }, callback) => {
     const userr = getUser(socket.id);
-    io.to(userr.room).emit("message", { user: userr.name, text: message });
+
     const message1 = new Message({
       message,
-      user: userr.name,
+      // user: userr.name,
+      user,
       room,
     });
 
-    message1.save((err) => {
-      if (err) return console.error(err);
+    message1.save().then(() => {
+      io.to(userr.room).emit("message", { message1 });
     });
 
     callback();
+    //-----------
+    // const userr = getUser(socket.id);
+    // debugger;
+    // io.to(userr.room).emit("message", { user: userr.name, text: message });
+    // debugger;
+    // const message1 = new Message({
+    //   message,
+    //   user: userr.name,
+    //   room,
+    // });
+    // debugger;
+    // message1.save((err) => {
+    //   if (err) return console.error(err);
+    // });
+    // debugger;
+    // callback();
   });
 
   socket.on("disconnect", () => {

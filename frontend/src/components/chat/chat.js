@@ -26,8 +26,6 @@ const Chat = ({ location }) => {
   const [messages, setMessages] = useState([]);
   const dispatch = useDispatch();
 
-  const ENDPOINT = "localhost:3000";
-
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
     socket = io();
@@ -60,14 +58,16 @@ const Chat = ({ location }) => {
     });
   }, []);
 
-  const messagesOldMapped = messagesOld.map((o) => ({
-    user: o.user,
-    text: o.message,
-  }));
+  // const messagesOldMapped = messagesOld.map((o) => ({
+  //   user: o.user,
+  //   // text: o.message,
+  //   text: "onomonopia",
+  // }));
 
   const sendMessage = (event) => {
     event.preventDefault();
     if (message) {
+      debugger;
       socket.emit("sendMessage", { message, room, user }, () => setMessage(""));
       dispatch(
         newLocalMessage({
@@ -82,7 +82,7 @@ const Chat = ({ location }) => {
   if (loading) {
     return <p>Loading...</p>;
   }
-
+  console.log(message, messagesOld, messages);
   return (
     <div className="outerContainer">
       <TextContainer className="users-online" users={users} />
