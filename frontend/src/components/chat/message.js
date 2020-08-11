@@ -35,7 +35,7 @@ const Message = ({ message: { message, user, text, date }, name }) => {
           <div className="messageBox backgroundLight">
             <p className="messageText colorDark">{text}</p>
           </div>
-          {/* <p className="sentText pl-10 ">{user}</p> */}
+          <p className="sentText pl-10 ">{user}</p>
         </div>
       );
     } else {
