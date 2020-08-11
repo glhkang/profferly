@@ -17,51 +17,43 @@ const Message = ({ message: { message, user, text, date }, name }) => {
           </div>
         </div>
         <div className="message-current-date">
-          <Moment
-            format="MMM DD, YYYY [at] h:mmA"
-          >
-            {date}
-          </Moment>
+          <Moment format="MMM DD, YYYY [at] h:mmA">{date}</Moment>
         </div>
       </div>
     );
-  } else if (user.toLowerCase() === "admin") {
-    return (
-      <div className="messageContainer admin">
-        <div className="messageBox-admin">
-          <p className="messageText-admin">{text}</p>
-        </div>
-      </div>
-    );
+    // } else if (user.toLowerCase() === "admin") {
+    //   return (
+    //     <div className="messageContainer admin">
+    //       <div className="messageBox-admin">
+    //         <p className="messageText-admin">{text}</p>
+    //       </div>
+    //     </div>
+    //   );
   } else if (!isSentByCurrentUser) {
-    if (text) {
-      return (
+    // if (text) {
+    //   return (
+    //     <div className="messageContainer justifyStart">
+    //       <div className="messageBox backgroundLight">
+    //         <p className="messageText colorDark">{text}</p>
+    //         <p className="sentText pl-10 ">{user}</p>
+    //       </div>
+    //     </div>
+    //   );
+    // } else {
+    return (
+      <div>
         <div className="messageContainer justifyStart">
           <div className="messageBox backgroundLight">
-            <p className="messageText colorDark">{text}</p>
-            <p className="sentText pl-10 ">{user}</p>
+            <p className="messageText colorDark">{message}</p>
           </div>
+          <p className="sentText pl-10 ">{user}</p>
         </div>
-      );
-    } else {
-      return (
-        <div>
-          <div className="messageContainer justifyStart">
-            <div className="messageBox backgroundLight">
-              <p className="messageText colorDark">{message}</p>
-            </div>
-            <p className="sentText pl-10 ">{user}</p>
-          </div>
-          <div className="message-other-date">
-            <Moment
-              format="MMM DD, YYYY [at] h:mmA"
-            >
-              {date}
-            </Moment>
-          </div>
+        <div className="message-other-date">
+          <Moment format="MMM DD, YYYY [at] h:mmA">{date}</Moment>
         </div>
-      );
-    }
+      </div>
+    );
   }
+  // }
 };
 export default Message;

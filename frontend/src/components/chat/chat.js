@@ -41,7 +41,6 @@ const Chat = ({ location }) => {
       if (message.user.toUpperCase() === user.username.toUpperCase()) {
         return;
       }
-      //setMessages((messages) => [...messages, message]);
       dispatch(newLocalMessage(message));
     });
     socket.on("roomData", ({ users }) => {
@@ -49,10 +48,7 @@ const Chat = ({ location }) => {
       setUsers([...unique]);
     });
   }, []);
-  // const messagesOldMapped = messagesOld.map((o) => ({
-  //   user: o.user,
-  //   text: o.message,
-  // }));
+
   const sendMessage = (event) => {
     event.preventDefault();
     if (message) {
