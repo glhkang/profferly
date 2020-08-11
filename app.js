@@ -61,12 +61,15 @@ io.on("connect", (socket) => {
 
   socket.on("sendMessage", ({ message, room, user }, callback) => {
     const userr = getUser(socket.id);
-    io.to(userr.room).emit("message", { user: userr.name, text: message });
+
     const message1 = new Message({
       message,
       user: userr.name,
       room,
+      date: Date.now()
     });
+    
+    io.to(userr.room).emit("message", message1);
 
     message1.save((err) => {
       if (err) return console.error(err);

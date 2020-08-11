@@ -22,17 +22,26 @@ const MessagesReducer = (state = { loadin: true, messages: [] }, action) => {
 
     case RECEIVE_ROOMS_MESSAGES:
       newState.loading = false;
-      newState.messages = action.messages.data;
+      newState.messages = action.messages.data.sort(dateSort);
 
       return newState;
 
     case NEW_LOCAL_MESSAGE:
-      newState.messages = [...state.messages, action.message];
+      newState.messages = [...state.messages, action.message].sort(dateSort);
 
       return newState;
     default:
       return state;
   }
 };
+
+function dateSort(value1, value2) {
+
+  const date1 = Date.parse(value1);
+  const date2 = Date.parse(value2);
+
+  return date1 - date2;
+
+}
 
 export default MessagesReducer;

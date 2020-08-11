@@ -17,13 +17,12 @@ let socket;
 
 const Chat = ({ location }) => {
   const user = useSelector((state) => state.session.user);
-  const messagesOld = useSelector((state) => state.messages.messages);
+  const messages = useSelector((state) => state.messages.messages);
   const loading = useSelector((state) => state.messages.loading);
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   const [users, setUsers] = useState([]);
   const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([]);
   const dispatch = useDispatch();
 
   const ENDPOINT = "localhost:3000";
@@ -51,7 +50,9 @@ const Chat = ({ location }) => {
         return;
       }
 
-      setMessages((messages) => [...messages, message]);
+      //setMessages((messages) => [...messages, message]);
+
+      dispatch(newLocalMessage(message));
     });
 
     socket.on("roomData", ({ users }) => {
@@ -60,10 +61,10 @@ const Chat = ({ location }) => {
     });
   }, []);
 
-  const messagesOldMapped = messagesOld.map((o) => ({
-    user: o.user,
-    text: o.message,
-  }));
+  // const messagesOldMapped = messagesOld.map((o) => ({
+  //   user: o.user,
+  //   text: o.message,
+  // }));
 
   const sendMessage = (event) => {
     event.preventDefault();
@@ -74,6 +75,7 @@ const Chat = ({ location }) => {
           message,
           user: user.username,
           room,
+          date: (new Date()).toISOString(),
         })
       );
     }
@@ -88,7 +90,7 @@ const Chat = ({ location }) => {
       <TextContainer className="users-online" users={users} />
       <div className="container">
         <InfoBar room={room} />
-        <Messages messages={[...messagesOld, ...messages]} name={name} />
+        <Messages messages={messages} name={name} />
         <Input
           message={message}
           setMessage={setMessage}
