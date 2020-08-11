@@ -1,5 +1,6 @@
 import React from "react";
 import "./Message.css";
+import Moment from "react-moment";
 const Message = ({ message: { message, user, text, date }, name }) => {
   let isSentByCurrentUser = false;
   const trimmedName = name.trim().toLowerCase();
@@ -8,12 +9,19 @@ const Message = ({ message: { message, user, text, date }, name }) => {
   }
   if (isSentByCurrentUser) {
     return (
-      <div className="messageContainer justifyEnd">
-        <p className="sentText pr-10">{name}</p>
-        <div className="messageBox backgroundGreen">
-          <p className="messageText colorWhite">
-            {date}-{message}
-          </p>
+      <div>
+        <div className="messageContainer justifyEnd">
+          <p className="sentText pr-10">{name}</p>
+          <div className="messageBox backgroundGreen">
+            <p className="messageText colorWhite">{message}</p>
+          </div>
+        </div>
+        <div className="message-current-date">
+          <Moment
+            format="MMM DD, YYYY [at] h:mmA"
+          >
+            {date}
+          </Moment>
         </div>
       </div>
     );
@@ -31,19 +39,26 @@ const Message = ({ message: { message, user, text, date }, name }) => {
         <div className="messageContainer justifyStart">
           <div className="messageBox backgroundLight">
             <p className="messageText colorDark">{text}</p>
+            <p className="sentText pl-10 ">{user}</p>
           </div>
-          {/* <p className="sentText pl-10 ">{user}</p> */}
         </div>
       );
     } else {
       return (
-        <div className="messageContainer justifyStart">
-          <div className="messageBox backgroundLight">
-            <p className="messageText colorDark">
-              {date}-{message}
-            </p>
+        <div>
+          <div className="messageContainer justifyStart">
+            <div className="messageBox backgroundLight">
+              <p className="messageText colorDark">{message}</p>
+            </div>
+            <p className="sentText pl-10 ">{user}</p>
           </div>
-          <p className="sentText pl-10 ">{user}</p>
+          <div className="message-other-date">
+            <Moment
+              format="MMM DD, YYYY [at] h:mmA"
+            >
+              {date}
+            </Moment>
+          </div>
         </div>
       );
     }
