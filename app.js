@@ -64,28 +64,45 @@ io.on("connect", (socket) => {
 
     const message1 = new Message({
       message,
-      user: userr.name,
+      // user: userr.name,
+      user,
       room,
       date: Date.now()
     });
     
     io.to(userr.room).emit("message", message1);
 
-    message1.save((err) => {
-      if (err) return console.error(err);
+    message1.save().then(() => {
+      io.to(userr.room).emit("message", { message1 });
     });
 
     callback();
+    //-----------
+    // const userr = getUser(socket.id);
+    // debugger;
+    // io.to(userr.room).emit("message", { user: userr.name, text: message });
+    // debugger;
+    // const message1 = new Message({
+    //   message,
+    //   user: userr.name,
+    //   room,
+    // });
+    // debugger;
+    // message1.save((err) => {
+    //   if (err) return console.error(err);
+    // });
+    // debugger;
+    // callback();
   });
 
   socket.on("disconnect", () => {
     const user = removeUser(socket.id);
 
     if (user) {
-      io.to(user.room).emit("message", {
-        user: "Admin",
-        text: `${user.name} has left`,
-      });
+      // io.to(user.room).emit("message", {
+      //   user: "Admin",
+      //   text: `${user.name} has left`,
+      // });
       io.to(user.room).emit("roomData", {
         room: user.room,
         users: getUsersInRoom(user.room),
