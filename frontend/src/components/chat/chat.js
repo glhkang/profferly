@@ -44,9 +44,10 @@ const Chat = ({ location }) => {
 
   useEffect(() => {
     socket.on("message", (message) => {
-      if (message.user.toUpperCase() === user.username.toUpperCase()) {
-        return;
-      }
+      console.log(message)
+      // if (message.user.toUpperCase() === user.username.toUpperCase()) {
+      //   return;
+      // }
 
       dispatch(newLocalMessage(message));
     });
@@ -76,7 +77,7 @@ const Chat = ({ location }) => {
   if (loading) {
     return <p>Loading...</p>;
   }
-  console.log(message, messagesOld, messages);
+
   return (
     <div className="outerContainer">
       <TextContainer className="users-online" users={users} />
