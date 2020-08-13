@@ -89,7 +89,8 @@ class PostItem extends React.Component {
             <CommentForm
               currentUser={this.props.currentUser}
               composeComment={this.props.composeComment}
-              currentPost={this.props.currentPost}
+              // currentPost={this.props.currentPost}
+              currentPost={this.props.post}
             />
             <div className="show-hide-comments" onClick={() => this.onClick()}>
               {this.state.commentDisplayText}
@@ -149,7 +150,7 @@ class PostItem extends React.Component {
             <CommentForm
               currentUser={this.props.currentUser}
               composeComment={this.props.composeComment}
-              currentPost={this.props.currentPost}
+              currentPost={this.props.post}
             />
             <div className="show-hide-comments" onClick={() => this.onClick()}>
               {this.state.commentDisplayText}

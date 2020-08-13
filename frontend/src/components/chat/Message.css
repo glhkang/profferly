@@ -32,7 +32,7 @@
 .messageContainer {
   display: flex;
   justify-content: flex-end;
-  padding: 0 5%;
+  padding: 2% 5%;
   margin-top: 3px;
 }
 
@@ -92,4 +92,17 @@
 
 .backgroundRed {
   background: red;
+}
+
+.message-current-date {
+  float: right;
+  padding: 5px 40px 0 0;
+  font-size: 12px;
+  opacity: 0.4;
+}
+
+.message-other-date {
+  padding: 5px 0 0 40px;
+  font-size: 12px;
+  opacity: 0.4;
 }

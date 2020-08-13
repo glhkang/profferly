@@ -9,7 +9,7 @@ class CommentsList extends React.Component {
 
     return (
       <div className="comments-cont">
-        <ol class="comments-list-ol">
+        <ol className="comments-list-ol">
           <div className="comments-list-li-cont">
             {comments
               ? comments.map((comment) => (
