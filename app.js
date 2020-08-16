@@ -118,6 +118,7 @@ app.use("/api/messages", messages);
 app.use("/api/likes", likes);
 const port = process.env.PORT || 5000;
 server.listen(port, () => console.log(`Server is running on port ${port}`));
+
 //below for heroku ** DO NOT DELETE
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "/frontend/public", "/index.html"));
