@@ -71,6 +71,7 @@ router.post(
 
     let newPost;
     const file = req.file;
+    const s3FileURL = process.env.AWS_Uploaded_File_URL_LINK;
 
     if (file) {
       let s3bucket = new AWS.S3({
@@ -94,8 +95,6 @@ router.post(
         s3_key: params.Key,
       });
 
-      const s3FileURL = process.env.AWS_Uploaded_File_URL_LINK;
-
       s3bucket.upload(params, function (err, data) {
         if (err) {
           res.status(500).json({ error: true, Message: err });
@@ -105,6 +104,7 @@ router.post(
         }
       });
     } else {
+  debugger
       newPost = new Post({
         text: req.body.text,
         user: req.user.id,

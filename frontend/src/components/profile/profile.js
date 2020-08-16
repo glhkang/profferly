@@ -31,10 +31,10 @@ class Profile extends React.Component {
   }
 
   capitalize(string) {
-    let firstChar = string[0].toUpperCase();
-    let rest = string.slice(1);
-
-    return firstChar + rest;
+    let splitStr = string.split(" ");
+    let capWords = splitStr.map((subStr) => subStr[0].toUpperCase() + subStr.slice(1));
+    let capped = capWords.join(" ");
+    return capped;
   }
 
   renderCurrentUser() {
@@ -105,7 +105,7 @@ class Profile extends React.Component {
           <h2>
             All of{" "}
             <span className="user-profile-username">
-              {this.props.users[this.props.user].username}
+              {this.props.users[this.props.user] ? this.props.users[this.props.user].username : null}
             </span>
             's Posts
           </h2>
