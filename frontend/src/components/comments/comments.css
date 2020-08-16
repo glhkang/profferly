@@ -77,7 +77,7 @@
 
 /* COMMENT FORM */
 .comment-form-textarea {
-  width: 350px;
+  width: 90%;
   font-size: 16px;
   border-radius: 35px;
   border: 2px solid gray;

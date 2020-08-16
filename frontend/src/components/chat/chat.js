@@ -12,6 +12,9 @@ import Input from "./input";
 import Messages from "./messages";
 import TextContainer from "./text";
 import "./Chat.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+
 let socket;
 const Chat = ({ location }) => {
   const user = useSelector((state) => state.session.user);
@@ -64,8 +67,14 @@ const Chat = ({ location }) => {
     }
   };
   if (loading) {
-    return <p>Loading...</p>;
-  }
+    return (
+      <div className="outerContainer">
+        <p className="chat-loading">
+          <FontAwesomeIcon className="loading-icon" icon={faSpinner} />
+        </p>
+      </div>
+    )
+  };
   return (
     <div className="outerContainer">
       <TextContainer className="users-online" users={users} />

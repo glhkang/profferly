@@ -48,6 +48,7 @@ export const fetchUserPosts = (id) => (dispatch) =>
     .catch((err) => console.log(err));
 
 export const composePost = (data) => (dispatch) => {
+debugger
   return writePost(data)
     .then((post) => dispatch(receiveNewPost(post)))
     .catch((err) => console.log(err));
