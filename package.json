@@ -4,7 +4,7 @@
   "description": "where volunteers unite to inspire and help others accomplish their goal.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "NODE_ENV=production node_modules/react-scripts/bin/react-scripts.js start",
     "server": "nodemon app.js",
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
