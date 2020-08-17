@@ -42,6 +42,7 @@
     "npm": "^6.14.6",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "react-scripts": "^3.4.3",
     "sass-loader": "^8.0.2",
     "socket.io": "^2.3.0",
     "validator": "^13.1.1",

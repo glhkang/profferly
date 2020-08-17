@@ -26,6 +26,7 @@ const {
   getUsersInRoom,
 } = require("./chatHelper");
 const Message = require("./models/Message");
+
 io.on("connect", (socket) => {
   socket.on("join", ({ name, room }, callback) => {
     const { error, user } = addUser({ id: socket.id, name, room });
@@ -49,6 +50,7 @@ io.on("connect", (socket) => {
     });
     callback();
   });
+
   socket.on("sendMessage", ({ message, room, user }, callback) => {
     const userr = getUser(socket.id);
     const message1 = new Message({
@@ -63,6 +65,7 @@ io.on("connect", (socket) => {
     });
     callback();
   });
+
   socket.on("disconnect", () => {
     const user = removeUser(socket.id);
     if (user) {
@@ -77,6 +80,7 @@ io.on("connect", (socket) => {
     }
   });
 });
+
 app.use("/", express.static(path.join(__dirname, "/client/build")));
 mongoose
   .connect(db, {
@@ -99,10 +103,12 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "frontend", "public", "index.html"));
   });
 }
+
 app.get("/logout", function (req, res) {
   req.logout();
   res.redirect("/");
 });
+
 app.use(passport.initialize());
 require("./config/passport")(passport);
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -116,8 +122,10 @@ app.use("/api/join", join);
 app.use("/api/rooms", rooms);
 app.use("/api/messages", messages);
 app.use("/api/likes", likes);
+
 const port = process.env.PORT || 5000;
 server.listen(port, () => console.log(`Server is running on port ${port}`));
+
 //below for heroku ** DO NOT DELETE
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "/frontend/public", "/index.html"));
