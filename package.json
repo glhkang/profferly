@@ -46,7 +46,6 @@
     "sass-loader": "^8.0.2",
     "socket.io": "^2.3.0",
     "validator": "^13.1.1",
-    "webpack": "4.42.0",
     "yarn": "^1.22.4"
   },
   "devDependencies": {}

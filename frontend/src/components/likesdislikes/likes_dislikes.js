@@ -61,8 +61,6 @@ const LikesDislikes = ({ postId, userId, currentUserId }) => {
         ) {
           setDislikeIcon(DislikeFilled);
         }
-      } else {
-        alert("Could not get dislikes");
       }
     });
   }, []);
