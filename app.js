@@ -92,7 +92,8 @@ mongoose
   .catch((err) => console.log(err));
 
 //below for heroku ** DO NOT DELETE
-app.use("/", express.static(path.join(__dirname, "./client/build")));
+// app.use("/", express.static(path.join(__dirname, "./client/build")));
+app.use("/static", express.static(path.join(__dirname, "client/build")));
 
 //below for dev ** DO NOT DELETE
 // app.get("/", (req, res) => res.send("Hello World"));
