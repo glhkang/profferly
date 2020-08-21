@@ -81,7 +81,8 @@ io.on("connect", (socket) => {
   });
 });
 
-app.use("/", express.static(path.join(__dirname, "/client/build")));
+// app.use("/", express.static(path.join(__dirname, "/client/build")));
+app.use("/", express.static(path.join(__dirname, "/frontend/build")));
 mongoose
   .connect(db, {
     useNewUrlParser: true,
@@ -93,7 +94,9 @@ mongoose
 
 //below for heroku ** DO NOT DELETE
 // app.use("/", express.static(path.join(__dirname, "./client/build")));
-app.use("/static", express.static(path.join(__dirname, "/client/build")));
+
+// app.use("/static", express.static(path.join(__dirname, "/client/build")));
+app.use("/static", express.static(path.join(__dirname, "/frontend/build")));
 
 //below for dev ** DO NOT DELETE
 // app.get("/", (req, res) => res.send("Hello World"));
@@ -134,5 +137,6 @@ server.listen(port, () => console.log(`Server is running on port ${port}`));
 
 //below for heroku ** DO NOT DELETE
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client/build", "/index.html"));
+//   res.sendFile(path.join(__dirname, "/client/build", "/index.html"));
+  res.sendFile(path.join(__dirname, "/frontend/build", "/index.html"));
 });
