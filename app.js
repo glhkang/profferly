@@ -99,8 +99,8 @@ app.use("/static", express.static(path.join(__dirname, "/client/build")));
 // app.get("/", (req, res) => res.send("Hello World"));
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("frontend/"));
-//   app.use(express.static("frontend/build"));
+//   app.use(express.static("frontend/"));
+  app.use(express.static("frontend/build"));
 //   app.use(express.static("frontend/public"));
 
   app.get("/", (req, res) => {
