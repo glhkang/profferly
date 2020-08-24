@@ -60,12 +60,11 @@ class NewPhotoUpload extends Component {
               type="file"
               name=""
               id=""
-              onChange={this.handleSelectedFile}
+              // onChange={this.handleSelectedFile}
+              onChange={this.handleFile}
             />
           </div>
-          <button type="submit" onChange={this.handleFile}>
-            Upload
-          </button>
+          <button type="submit">Upload</button>
         </form>
       </div>
     );
