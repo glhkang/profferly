@@ -8,6 +8,7 @@ class NewPhotoUpload extends Component {
     super(props);
     this.state = {
       selectedFile: null,
+      imageURL: null,
     };
   }
 
@@ -37,6 +38,18 @@ class NewPhotoUpload extends Component {
       });
   };
 
+  handleFile = (e) => {
+    const reader = new FileReader();
+    const file = e.currentTarget.files[0];
+    reader.onloadend = () =>
+      this.setState({ imageURL: reader.result, selectedFile: file });
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ imageURL: "", selectedFile: null });
+    }
+  };
+
   render() {
     return (
       <div>
@@ -50,7 +63,9 @@ class NewPhotoUpload extends Component {
               onChange={this.handleSelectedFile}
             />
           </div>
-          <button type="submit">Upload</button>
+          <button type="submit" onChange={this.handleFile}>
+            Upload
+          </button>
         </form>
       </div>
     );
