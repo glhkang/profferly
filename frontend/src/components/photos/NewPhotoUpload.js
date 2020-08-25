@@ -13,12 +13,12 @@ class NewPhotoUpload extends Component {
     };
   }
 
-  handleSelectedFile = (e) => {
-    e.preventDefault();
-    this.setState({
-      selectedFile: e.target.files[0],
-    });
-  };
+  // handleSelectedFile = (e) => {
+  //   e.preventDefault();
+  //   this.setState({
+  //     selectedFile: e.target.files[0],
+  //   });
+  // };
 
   onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
@@ -39,17 +39,17 @@ class NewPhotoUpload extends Component {
       });
   };
 
-  // handleFile = (e) => {
-  //   const reader = new FileReader();
-  //   const file = e.currentTarget.files[0];
-  //   reader.onloadend = () =>
-  //     this.setState({ imageURL: reader.result, selectedFile: file });
-  //   if (file) {
-  //     reader.readAsDataURL(file);
-  //   } else {
-  //     this.setState({ imageURL: "", selectedFile: null });
-  //   }
-  // };
+  handleFile = (e) => {
+    const reader = new FileReader();
+    const file = e.currentTarget.files[0];
+    reader.onloadend = () =>
+      this.setState({ imageURL: reader.result, selectedFile: file });
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ imageURL: "", selectedFile: null });
+    }
+  };
 
   render() {
     return (
@@ -61,8 +61,8 @@ class NewPhotoUpload extends Component {
               type="file"
               name=""
               id=""
-              onChange={this.handleSelectedFile}
-              // onChange={this.handleFile}
+              // onChange={this.handleSelectedFile}
+              onChange={this.handleFile}
             />
           </div>
           <button type="submit">Upload</button>
