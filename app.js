@@ -102,13 +102,13 @@ app.use("/static", express.static(path.join(__dirname, "/frontend/build")));
 // app.get("/", (req, res) => res.send("Hello World"));
 
 if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("frontend/"));
+  //   app.use(express.static("frontend/"));
   app.use(express.static("frontend/build"));
   app.use(express.static("frontend/public"));
 
   app.get("/", (req, res) => {
     res.sendFile(
-        path.resolve(__dirname, "frontend", "build", "public", "index.html")
+      path.resolve(__dirname, "frontend", "build", "public", "index.html")
     );
   });
 }
@@ -137,6 +137,6 @@ server.listen(port, () => console.log(`Server is running on port ${port}`));
 
 //below for heroku ** DO NOT DELETE
 app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "/client/build", "/index.html"));
+  //   res.sendFile(path.join(__dirname, "/client/build", "/index.html"));
   res.sendFile(path.join(__dirname, "/frontend/build", "/index.html"));
 });
