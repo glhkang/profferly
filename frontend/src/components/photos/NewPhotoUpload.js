@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-// const endpoint = "http://localhost:3000/api/photos/upload";
-const endpoint = "http://profferly.herokuapp.com/api/photos/upload";
+const endpoint = "http://localhost:3000/api/photos/upload";
+// const endpoint = "http://profferly.herokuapp.com/api/photos/upload";
 
 class NewPhotoUpload extends Component {
   constructor(props) {

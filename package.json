@@ -11,6 +11,10 @@
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.14.8"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/glhkang/profferly.git"
