@@ -84,6 +84,8 @@ debugger
         <button
           className="info-button"
           onClick={this.showModal}
+          data-aos="zoom-in"
+          data-aos-duration="1000"
         >
             <FontAwesomeIcon className="info-icon" icon={faInfoCircle} />
             <span class="tooltiptext">Click to learn how to create an event</span>
