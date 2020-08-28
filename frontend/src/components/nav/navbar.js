@@ -78,13 +78,13 @@ class NavBar extends React.Component {
             </div>
           </div>
 
-          <div className="chat-container">
+          {/* <span className="chat-container"> */}
               <Link className="user-show" to={"/join"}>
                 <div className="chat-bubble">
                   <FontAwesomeIcon className="chat-button" icon={faCommentDots} />
                 </div>
               </Link>
-          </div>
+          {/* </span> */}
         </div>
       );
     }

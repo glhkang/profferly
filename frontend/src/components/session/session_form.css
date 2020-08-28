@@ -115,6 +115,7 @@
 .session-errors {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-self: center;
   font-size: 12px;
   color: red;

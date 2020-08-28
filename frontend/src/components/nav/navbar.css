@@ -16,7 +16,7 @@
 }
 
 .navbar-frame {
-  width: 100%;
+  height: 0px;
 }
 
 .navbar-profferly {
@@ -125,6 +125,7 @@
 .chat-button {
   font-size: 27px;
 }
+
 
 .user-show:hover {
   font-weight: bold;

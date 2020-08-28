@@ -90,7 +90,7 @@
 .home-button {
   z-index: 999;
   position: absolute;
-  top: 10px;
+  top: 11px;
   left: 185px;
   color: white;
   background-color: #305030;
@@ -113,6 +113,81 @@
   display: none;
 }
 
+.map-container {
+  height: 120%;
+}
+
 .google-map {
-  margin-bottom: 40px;
+  height: 100%;
+}
+
+.map-container .info-button {
+  position: absolute;
+  left: 5px;
+  top: 150px;
+  color: #305030;
+  z-index: 99999;
+  background: none;
+  border: 0px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.map-container .info-button:hover {
+  color: #4a7d4a;
+}
+
+.info-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #305030;
+  z-index: 99999;
+  background: none;
+  border: 0px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.info-button:hover {
+  cursor: pointer;
+  color: #4a7d4a;
+}
+
+.info-modal-container {
+  display: none;
+}
+
+.gm-style .gm-style-iw-c {
+  padding: 20px;
+  padding-top: 10px;
+
+  padding-right: 20px;
+  padding-bottom: 20px;
+  width: 350px;
+}
+
+.gm-style-iw-d h1 {
+  text-transform: uppercase;
+  font-size: 16px;
+  text-align: center;
+}
+
+.gm-style-iw-d p {
+  text-align: center;
+  line-height: 1.5;
+  
+}
+
+.gm-ui-hover-effect {
+  padding-top: 3px;
+  padding-right: 3px;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
 }

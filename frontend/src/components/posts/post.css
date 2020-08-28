@@ -12,7 +12,8 @@
 }
 
 .post-item-image {
-  height: 200px;
+  max-height: 200px;
+  max-width: 300px;
   border: #365c36 2px solid;
   margin-top: 20px;
   border-radius: 25px;
