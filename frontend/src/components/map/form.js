@@ -19,6 +19,7 @@ class FormWindow extends React.Component {
   // }
 
   handleButton(e) {
+debugger
     e.preventDefault();
     this.props.history.goBack();
   }
@@ -51,6 +52,7 @@ class FormWindow extends React.Component {
 
   render() {
     console.log(this.props);
+  debugger
     return (
       <div className="map-form-container">
         <div className="map-form">

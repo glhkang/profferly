@@ -2,13 +2,15 @@ import React from "react";
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from "google-maps-react";
 import * as MarkerApiUtil from "../../util/marker_util";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import InfoModal from "./info_modal";
 
 class MapContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       markers: [],
+      show: false,
     };
   }
 
@@ -53,7 +55,20 @@ class MapContainer extends React.Component {
     });
   };
 
+  showModal = () => {
+      this.setState({
+        show: true
+      });
+  };
+
+  closeModal = () => {
+      this.setState({
+        show: false
+      });
+  };
+
   render() {
+debugger
     return (
       <div className="map-window">
         <button
@@ -65,10 +80,25 @@ class MapContainer extends React.Component {
         >
           <FontAwesomeIcon className="home-icon" icon={faHome} />
         </button>
+        
+        <button
+          className="info-button"
+          onClick={this.showModal}
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        >
+            <FontAwesomeIcon className="info-icon" icon={faInfoCircle} />
+            <span class="tooltiptext">Click to learn how to create an event</span>
+        </button>
 
-        <Map
+        <InfoModal show={this.state.show} handleClose={this.closeModal} />
+
+        <Map 
           google={this.props.google}
           zoom={4}
+          zoomControl={false}
+          streetViewControl={false}
+          fullscreenControl={false}
           onClick={this.onMapClick}
           initialCenter={{ lat: 40.7128, lng: -74.006 }}
           className="google-map"

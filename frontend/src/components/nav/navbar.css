@@ -16,7 +16,7 @@
 }
 
 .navbar-frame {
-  width: 100%;
+  height: 0px;
 }
 
 .navbar-profferly {
@@ -126,6 +126,7 @@
   font-size: 27px;
 }
 
+
 .user-show:hover {
   font-weight: bold;
 }
@@ -226,7 +227,8 @@
 .user-show {
   cursor: pointer;
   color: white;
-  margin: 0px;
+  margin-right: 7px;
+  text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
