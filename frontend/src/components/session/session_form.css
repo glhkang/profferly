@@ -121,7 +121,11 @@
   color: red;
   list-style: none;
   margin-top: 0px;
-  margin-left: -20px;
+  margin-left: 0px;
+}
+
+.session-errors li {
+  margin-bottom: 5px;
 }
 
 .login-signup-header img {
