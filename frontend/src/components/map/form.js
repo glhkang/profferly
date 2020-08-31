@@ -14,14 +14,10 @@ class FormWindow extends React.Component {
     this.handleButton = this.handleButton.bind(this);
   }
 
-  // componentDidMount() {
-  //   console.log("hit componentdidmount");
-  // }
-
   handleButton(e) {
-debugger
     e.preventDefault();
     this.props.history.goBack();
+    return false;
   }
 
   update(field) {
@@ -45,14 +41,15 @@ debugger
     };
     MarkerApiUtil.writeMarker(newMarker);
     this.handleButton(e);
+    console.log('heroku test');
     setTimeout(function () {
       window.location.reload();
-    }, 0);
+    }, 10);
+
+    console.log('heroku test');
   }
 
   render() {
-    console.log(this.props);
-  debugger
     return (
       <div className="map-form-container">
         <div className="map-form">
@@ -79,7 +76,7 @@ debugger
           </form>
 
           <button onClick={this.handleButton} className="return-button">
-            Return to Map
+            Cancel
           </button>
         </div>
       </div>
