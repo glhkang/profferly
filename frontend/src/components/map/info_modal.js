@@ -6,7 +6,6 @@ import './info_modal.css';
 
 const InfoModal = ({ handleClose, show }) => {
     const showHideClassName = show ? "info-modal display-block" : "info-modal display-none";
-  debugger
     return (
       <div className={showHideClassName} id="info-modal-div">
         <button className="modal-exit-button" onClick={handleClose}>

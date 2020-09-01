@@ -41,12 +41,9 @@ class FormWindow extends React.Component {
     };
     MarkerApiUtil.writeMarker(newMarker);
     this.handleButton(e);
-    console.log('heroku test');
     setTimeout(function () {
       window.location.reload();
-    }, 10);
-
-    console.log('heroku test');
+    }, 8);
   }
 
   render() {

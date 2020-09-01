@@ -68,7 +68,6 @@ class MapContainer extends React.Component {
   };
 
   render() {
-debugger
     return (
       <div className="map-window">
         <button
@@ -88,7 +87,7 @@ debugger
           data-aos-duration="1000"
         >
             <FontAwesomeIcon className="info-icon" icon={faInfoCircle} />
-            <span class="tooltiptext">Click to learn how to create an event</span>
+            <span className="tooltiptext">Click to learn how to create an event</span>
         </button>
 
         <InfoModal show={this.state.show} handleClose={this.closeModal} />
