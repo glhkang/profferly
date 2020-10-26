@@ -30,6 +30,10 @@
   cursor: pointer;
 }
 
+input[type="file"] {
+  color: transparent;
+}
+
 .custom-file-input::-webkit-file-upload-button {
   visibility: hidden;
   color: transparent;
