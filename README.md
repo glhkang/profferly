@@ -1,83 +1,102 @@
-# profferly
-profferly is an app where volunteers unite to inspire and help others accomplish their goal.
+# Profferly
 
-## Background and Overview
+Profferly is an app where volunteers unite to inspire and help others accomplish their goal.&nbsp;&nbsp;&nbsp;&nbsp;
 
-Born out of the coronavirus pandemic, the idea behind profferly started with the recognized need for lending hands. Whether it’s an at-risk person needing a volunteer to grab them groceries during lockdown, or an outreach program needing a group of volunteers to help run their event for the day, profferly is about connecting opportunities with those who can serve to ultimately strengthen the bonds of community.
+[Live Link](https://bit.ly/profferly) &nbsp;&nbsp;&nbsp;&nbsp;
 
-profferly is primarily built with the MERN stack, a combination of the following four technologies: MongoDB, Express, React, and Node.
+![Profferly Preview](frontend/public/assets/images/profferly.gif "Profferly Preview")
 
-## Functionality & MVP
-- [ ] User authorization: sign up and log in
-- [ ] News feed of all volunteering opportunities and inspirational messages to help keep community morale
-- [ ] Posts and Pictures. Users can write a post or upload a picture about their act of service. “Volunteering inspo”
-- [ ] Comments. Users can comment on posts and pictures
-- [ ] Integrate Google Maps API: users can “pin” locations asking for volunteers. “Pinned locations” can include information describing the opportunity
-- [ ] Production README
+## **Background and Overview**
 
-#### Bonus Features
-- [ ] Notifications. Notifies user of responses to their activity
-- [ ] Live Chat. Users can discuss their ventures in real time
-- [ ] Karma Spotlight. 
+Born out of the coronavirus pandemic, the idea behind Profferly started with the recognized need for lending hands. Whether it’s an at-risk person needing a volunteer to grab them groceries during lockdown, or an outreach program needing a group of volunteers to help run their event for the day, Profferly is about connecting opportunities with those who can serve to ultimately strengthen the bonds of community.
 
-## Wireframes
-TBA
+## **Architecture and Technologies**
 
-## Technologies and Technical Challenges
+Profferly was built using:
 
-##### Google Maps API
-##### Backend: MongoDB/Express
-##### Frontend: React/Node.js
+- MongoDB
+- Express
+- React
+- React Hooks
+- Node
+- AWS S3
+- Google Maps API
+- Socket&#46;IO
+- SCSS and CSS
 
+## **Overview**
 
-#### Google Maps API
-Users will have the ability to pin a location needing volunteers. A note may be added to that location that may describe the volunteering opportunity. This may include: title, description, time of event, number of volunteers needed, etc.). User’s may RSVP to a volunteering opportunity on this note.
+- **Create your profile.** Sign up to become a volunteer, or to provide volunteering opportunities.
+- **Post.** Post a picture from your event or spread some feel good volunteering inspo on the Profferly wall.
+- **Pin a Marker.** Locate pinned volunteering opportunities near you or create a pin on the Profferly map so that others nearby can view your event.
+- **Chat.** Have a live chat with fellow volunteers or organization leaders to discuss the necessary details.
 
-Technical Challenges:
-Adding functionality to Google Maps API where users will be able to write descriptive notes about their volunteering opportunities. Collecting all of the locations from our users’ volunteering opportunities and securely storing that information in our database.  The default setting should be for the map to position itself to the user’s location, but also allow users to search for opportunities elsewhere. The default setting will require that the user allow's for location services to be enabled.
+## **Features**
 
-#### Backend: MongoDB/Express
+### Full User Authentication
 
-Technical Challenges:
-Properly functioning user auth.
+---
 
+Users can sign up to create an account and then use the same credentials to sign-in. On the front end, required fields are checked for presence errors and are displayed accordingly. Passwords are hashed using BCrypt to ensure security and users will remain signed in even if they leave the site. A demo user has been created so that those who may wish can preview Profferly before signing up.
 
-#### Frontend: React/Node.js
+### Google Maps API
 
-Technical Challenges:
-Allowing seamless user journey through UX/UI design.
+---
 
-## Group Members and Work Breakdown
-#### Mari Kasanuki, Catherine Kim, Emina Ramovic, Gloria Kang 
+The roadmap implmented via Google Maps API allows users to not only view local pinned events, but also to create them.
 
-### Day 0
-* All members of the team completed the MERN tutorials
-* Discussed brand strategy: colors, fonts, logos
-* Planned out and set up database
-* Wrote proposal Readme and structured the work week
+To pin a marker for your event or cause, click on the location on the map to activate the marker modal. Then, fill in the required information and submit. A full screen map may be accessed by clicking the globe icon in the top navigation bar, located between the user's profile link and the log out button.  
+&nbsp;&nbsp;&nbsp;&nbsp;
 
-### Day 1
-- Build front end user auth and start basic styling for splash
-- Build backend user auth
-- Discuss UX/UI design and start implementing
+![Profferly Map Preview](frontend/public/assets/images/profferly-map.gif "Profferly Map Preview")  
+&nbsp;&nbsp;&nbsp;&nbsp;
 
-### Day 2
-- Build newsfeed (user’s show page) and ability to submit a post and or picture
-- Set up AWS
-- User’s show pages/uploading pics (newsfeed - comments, pics, posts)
-- Styling for newsfeed
+### Real-Time Live Chat
 
-### Day 3
-- Build ability to comment on newsfeed
-- Set up Google Maps API
-- Complete styling for newsfeed
-- Discuss current state of progress
+---
 
-### Day 4
-* Google Maps API implementation
-* Pinning/RSVP-ing
-* Discuss final touches on styling and or ability to implement bonus features
+Users can create a new chat room or join an existing one to chat with others as Socket&#46;IO enables real-time bidirectional event-based communcation.
 
-### Day 5
-* Complete all styling for presentation
-* Production README
+When a new socket instance has been connected to the chat room, the admin greets the the entering user by emitting both a welcome message and a notification that said user has joined. A count of users in each chat room is also kept, so that users can see a live count of who is in the same room.
+
+Chat rooms may be accessed by clicking the chat icon in the bottom right hand corner of the app.
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+```javascript
+io.on("connect", (socket) => {
+  socket.on("join", ({ name, room }, callback) => {
+    const { error, user } = addUser({ id: socket.id, name, room });
+    if (error) return callback(error);
+    socket.join(user.room);
+    socket.emit("message", {
+       user: "admin",
+       text: `${user.name}, welcome to ${user.room}`,
+     });
+    socket.emit("id", socket.id);
+    socket.broadcast
+       .to(user.room)
+       .emit("message", { user: "admin", text: `${user.name} has joined!` });
+    const arr = getUsersInRoom(user.room);
+    const items = arr.filter(function (elem, pos) {
+      return arr.indexOf(elem) == pos;
+    });
+    io.to(user.room).emit("roomData", {
+      room: user.room,
+      users: items,
+    });
+    callback();
+  });
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+![Profferly Chat Preview](frontend/public/assets/images/profferly-chat.gif "Profferly Chat Preview")
+
+## **Group Members and Work Breakdown**
+
+#### Backend Lead: [Mari Kasanuki](https://github.com/marikasanuki)
+
+#### Front End Lead: [Catherine Kim](https://github.com/catherinekimyj)
+
+#### Flex: [Emina Ramovic](https://github.com/Emina288)
+
+#### Team Lead: [Gloria Kang](https://bit.ly/glorias-github)
