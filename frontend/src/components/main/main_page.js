@@ -37,9 +37,9 @@ class MainPage extends React.Component {
                 alt="location icon"
               />
               <p>
-                Hey! Was advised by my doctor to avoid
-                large crowds until a vaccine for coronavirus has been approved
-                and I'm out of food. Can someone please help me get groceries?
+                Hey! Was advised by my doctor to avoid large crowds until a
+                vaccine for coronavirus has been approved and I'm out of food.
+                Can someone please help me get groceries?
               </p>
             </div>
             <div className="mid-body-row row3" data-aos="fade-right">
@@ -62,12 +62,15 @@ class MainPage extends React.Component {
           </section>
         </div>
         <div className="bottom-container">
-          <img src="/assets/images/profferly_logo_white_small.png" alt="profferly logo" />
+          <img
+            src="/assets/images/profferly_logo_white_small.png"
+            alt="profferly logo"
+          />
           <h5>Where volunteers unite and inspire to lend a hand.</h5>
           <p>
             Born out of the coronavirus pandemic, the idea behind Profferly
             started with the recognized need for help around the community.
-            Whether you are looking for help or a volunteer opportunity,
+            Whether you are looking for help or a volunteering opportunity,
             Profferly is about connecting volunteers to serve and, ultimately,
             strengthen the bonds of community.
           </p>
